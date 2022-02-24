@@ -17,11 +17,13 @@ import android.util.Log;
  */
 public class PigLocalGame extends LocalGame {
 
+    private PigGameState goldenPig;  //will be used to store the official game state
+
     /**
      * This ctor creates a new game state
      */
     public PigLocalGame() {
-        //TODO  You will implement this constructor
+        goldenPig = new PigGameState();
     }
 
     /**
@@ -29,8 +31,12 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected boolean canMove(int playerIdx) {
-        //TODO  You will implement this method
-        return false;
+        if(playerIdx == goldenPig.getPlayerTurn()){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**
@@ -40,8 +46,54 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected boolean makeMove(GameAction action) {
-        //TODO  You will implement this method
-        return false;
+        int currentPlayer = goldenPig.getPlayerTurn();
+
+        if(action instanceof PigHoldAction){
+            if(currentPlayer == 0) {
+                goldenPig.setPlayer0Score(goldenPig.getPlayer0Score()
+                        + goldenPig.getRunTotal());
+            }
+            else {
+                goldenPig.setPlayer1Score(goldenPig.getPlayer1Score()
+                        + goldenPig.getRunTotal());
+            }
+
+            goldenPig.setRunTotal(0);
+
+            if(currentPlayer == 0){
+                goldenPig.setPlayerTurn(1);
+            }
+            else{
+                goldenPig.setPlayerTurn(0);
+            }
+            return true;
+        }
+
+        else if (action instanceof  PigRollAction){
+           goldenPig.setCurrentDieVal((int) (Math.random()*6));
+           if (goldenPig.getCurrentDieVal() != 1){
+               //add die value to current running total
+               int newTotal = goldenPig.getCurrentDieVal() + goldenPig.getRunTotal();
+               goldenPig.setRunTotal(newTotal);
+           }
+           else{
+               //current running total=0
+               goldenPig.setRunTotal(0);
+
+               //make it other player's turn
+               if(currentPlayer == 0){
+                   goldenPig.setPlayerTurn(1);
+               }
+               else{
+                   goldenPig.setPlayerTurn(0);
+               }
+           }
+           return true;
+        }
+        else {
+            return false;
+        }
+
     }//makeMove
 
     /**
@@ -49,7 +101,12 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected void sendUpdatedStateTo(GamePlayer p) {
-        //TODO  You will implement this method
+        //make a copy of current game state
+        PigGameState copyPig = new PigGameState(goldenPig);
+
+        //use GamePlayer sendInfo to send it to p
+        p.sendInfo(copyPig);
+
     }//sendUpdatedSate
 
     /**
@@ -61,8 +118,17 @@ public class PigLocalGame extends LocalGame {
      */
     @Override
     protected String checkIfGameOver() {
-        //TODO  You will implement this method
-        return null;
+        if(goldenPig.getPlayer0Score() >= 50){
+            //return name of player and score
+            return "" + this.playerNames[0] + " wins! Score: " + goldenPig.getPlayer0Score();
+        }
+        else if(goldenPig.getPlayer1Score() >= 50){
+            //return name of player and score
+            return "" + this.playerNames[1] + " wins! Score: " + goldenPig.getPlayer1Score();
+        }
+        else {
+            return null;
+        }
     }
 
 }// class PigLocalGame
