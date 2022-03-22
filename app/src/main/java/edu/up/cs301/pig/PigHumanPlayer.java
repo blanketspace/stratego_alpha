@@ -23,7 +23,7 @@ import android.view.View.OnClickListener;
  */
 public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
 
-    /* instance variables */
+	/* instance variables */
 
     // These variables will reference widgets that will be modified during play
     private TextView    playerScoreTextView = null;
@@ -50,7 +50,7 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
      * 		the top object in the GUI's view heirarchy
      */
     public View getTopView() {
-        return myActivity.findViewById(R.id.top_gui_layout);
+        return myActivity.findViewById(R.id.BoardIBackGround);
     }
 
     /**
@@ -65,9 +65,9 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
         //Log.d("HEllO!???", "I think it worked!!");
         if(info instanceof PigGameState) {
             //update TextView to display score, opponent score and total
-            oppScoreTextView = myActivity.findViewById(R.id.oppScoreValue);
-            playerScoreTextView = myActivity.findViewById(R.id.yourScoreValue);
-            turnTotalTextView = myActivity.findViewById(R.id.turnTotalValue);
+            oppScoreTextView = myActivity.findViewById(R.id.NumTroopYours);
+            playerScoreTextView = myActivity.findViewById(R.id.NumberEnemyTroops);
+            turnTotalTextView = myActivity.findViewById(R.id.numTroopEnemy);
 
             if(playerNum == 0){
                 oppScoreTextView.setText("" + ((PigGameState) info).getPlayer1Score());
@@ -116,7 +116,7 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
     public void onClick(View button) {
         //send appropriate action objects to the game
         if(button instanceof ImageButton){
-            //then it's a roll
+            //then it's the die
             PigRollAction pra = new PigRollAction(this);
             //send to game
             game.sendAction(pra);
@@ -126,8 +126,6 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
             PigHoldAction pha = new PigHoldAction(this);
             game.sendAction(pha);
         }
-        //tell the game that my turn is over
-
 
     }// onClick
 
@@ -144,19 +142,19 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
         myActivity = activity;
 
         // Load the layout resource for our GUI
-        activity.setContentView(R.layout.pig_layout);
+        activity.setContentView(R.layout.stratego_board);
 
         //Initialize the widget reference member variables
-        this.playerScoreTextView = (TextView)activity.findViewById(R.id.yourScoreValue);
+        /*this.playerScoreTextView = (TextView)activity.findViewById(R.id.yourScoreValue);
         this.oppScoreTextView    = (TextView)activity.findViewById(R.id.oppScoreValue);
         this.turnTotalTextView   = (TextView)activity.findViewById(R.id.turnTotalValue);
         this.messageTextView     = (TextView)activity.findViewById(R.id.messageTextView);
         this.dieImageButton      = (ImageButton)activity.findViewById(R.id.dieButton);
-        this.holdButton          = (Button)activity.findViewById(R.id.holdButton);
+        this.holdButton          = (Button)activity.findViewById(R.id.holdButton);*/
 
         //Listen for button presses
-        dieImageButton.setOnClickListener(this);
-        holdButton.setOnClickListener(this);
+      /*  dieImageButton.setOnClickListener(this);
+        holdButton.setOnClickListener(this);*/
 
     }//setAsGui
 

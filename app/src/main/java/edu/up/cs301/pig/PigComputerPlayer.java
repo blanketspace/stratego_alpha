@@ -1,7 +1,5 @@
 package edu.up.cs301.pig;
 
-import java.util.Random;
-
 import edu.up.cs301.game.GameComputerPlayer;
 import edu.up.cs301.game.actionMsg.GameAction;
 import edu.up.cs301.game.infoMsg.GameInfo;
@@ -34,20 +32,17 @@ public class PigComputerPlayer extends GameComputerPlayer {
         if(oinkGame.getPlayerTurn() != this.playerNum){
             return;
         }
-        this.sleep(2000);
-
-        Random rand = new Random();
-        int r = rand.nextInt(2);
-
-        if(r == 0){
-            PigHoldAction ph = new PigHoldAction(this);
-            game.sendAction(ph);
-        }
         else{
-            PigRollAction pr = new PigRollAction(this);
-            game.sendAction(pr);
+            double rand = Math.random();
+            if(rand % 2 == 0){
+                PigRollAction pr = new PigRollAction(this);
+                game.sendAction(pr);
+            }
+            else{
+                PigHoldAction ph = new PigHoldAction(this);
+                game.sendAction(ph);
+            }
         }
-
     }//receiveInfo
 
 }

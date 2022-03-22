@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/game_config_main.xml" value="0.2546875" />
+        <entry key="..\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/game_no_gui.xml" value="0.2546875" />
+        <entry key="..\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/game_player_list_row.xml" value="0.2546875" />
+        <entry key="..\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/game_remote_tab.xml" value="0.2546875" />
         <entry key="..\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/pig_layout.xml" value="0.2546875" />
+        <entry key="..\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/stratego_board.xml" value="0.2546875" />
       </map>
     </option>
   </component>
