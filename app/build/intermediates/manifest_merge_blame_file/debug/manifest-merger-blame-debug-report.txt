@@ -1,0 +1,49 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="edu.up.cs301.game"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="1"
+8-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:6:5-67
+11-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:7:5-79
+12-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:7:22-76
+13
+14    <application
+14-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:9:5-22:19
+15        android:debuggable="true"
+16        android:icon="@drawable/face1"
+16-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:10:9-39
+17        android:label="@string/app_name"
+17-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:11:9-41
+18        android:testOnly="true"
+19        android:theme="@style/AppTheme" >
+19-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:12:9-40
+20        <activity
+20-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:14:9-20:20
+21            android:name="edu.up.cs301.pig.PigMainActivity"
+21-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:14:19-66
+22            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
+22-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:15:13-83
+23            <intent-filter>
+23-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:16:13-19:29
+24                <action android:name="android.intent.action.MAIN" />
+24-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:17:17-69
+24-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:17:25-66
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:18:17-77
+26-->C:\Users\blank\AndroidStudioProjects\PigGameStarter\app\src\main\AndroidManifest.xml:18:27-74
+27            </intent-filter>
+28        </activity>
+29    </application>
+30
+31</manifest>
