@@ -7,7 +7,8 @@ import android.graphics.Canvas;
  *
  * @author Anne Marie Blank,
  * @author Harry Vu,
- * @author Vincent Truong
+ * @author Vincent Truong,
+ * @author Kathryn Weidman
  * @version 3/11/2022
  */
 public class Unit {

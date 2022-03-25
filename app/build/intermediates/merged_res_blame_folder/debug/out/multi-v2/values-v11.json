@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\blank\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v11\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

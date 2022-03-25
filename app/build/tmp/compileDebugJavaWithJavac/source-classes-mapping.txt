@@ -15,8 +15,8 @@ edu/up/cs301/stratego/StrategoMainActivity.java
  edu.up.cs301.stratego.StrategoMainActivity
  edu.up.cs301.stratego.StrategoMainActivity$1
  edu.up.cs301.stratego.StrategoMainActivity$2
-edu/up/cs301/game/Game.java
- edu.up.cs301.game.Game
+edu/up/cs301/stratego/StrategoGameState.java
+ edu.up.cs301.stratego.StrategoGameState
 edu/up/cs301/game/infoMsg/StartGameInfo.java
  edu.up.cs301.game.infoMsg.StartGameInfo
 edu/up/cs301/stratego/BoardView.java
@@ -113,9 +113,9 @@ edu/up/cs301/game/util/MessageBox.java
  edu.up.cs301.game.util.MessageBox
 edu/up/cs301/stratego/PlacePieceAction.java
  edu.up.cs301.stratego.PlacePieceAction
-edu/up/cs301/game/util/IPCoder.java
- edu.up.cs301.game.util.IPCoder
 edu/up/cs301/stratego/StrategoLocalGame.java
  edu.up.cs301.stratego.StrategoLocalGame
-edu/up/cs301/stratego/StrategoGameState.java
- edu.up.cs301.stratego.StrategoGameState
+edu/up/cs301/game/Game.java
+ edu.up.cs301.game.Game
+edu/up/cs301/game/util/IPCoder.java
+ edu.up.cs301.game.util.IPCoder
