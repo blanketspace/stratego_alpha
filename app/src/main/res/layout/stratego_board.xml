@@ -139,6 +139,8 @@
                 android:layout_height="625dp"
                 android:background="@drawable/good_board" />
 
+
+
         </RelativeLayout>
 
     </LinearLayout>
