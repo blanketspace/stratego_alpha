@@ -109,6 +109,37 @@ public class Unit {
         this.yLoc = yLoc;
     }
 
+    public String nameRank() {
+        String name;
+        switch (this.rank)
+        {
+            case 1:
+                return "Spy";
+            case 2:
+                return "Scout";
+            case 3:
+                return "Miner";
+            case 4:
+                return "Sergeant";
+            case 5:
+                return "Lieutenant";
+            case 6:
+                return "Captain";
+            case 7:
+                return "Major";
+            case 8:
+                return "Colonel";
+            case 9:
+                return "General";
+            case 10:
+                return "Marshal";
+            case 11:
+                return "Bomb";
+            case 12:
+                return "Flag";
+        }
+        return "bad";
+    }
 
 }//class Unit
 

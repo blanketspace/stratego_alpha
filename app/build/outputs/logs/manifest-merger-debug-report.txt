@@ -37,12 +37,12 @@ ADDED from C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\Andr
 		ADDED from C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:10:9-39
 	android:theme
 		ADDED from C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:12:9-40
-activity#edu.up.cs301.pig.PigMainActivity
+activity#edu.up.cs301.stratego.StrategoMainActivity
 ADDED from C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:configChanges
 		ADDED from C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:15:13-83
 	android:name
-		ADDED from C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:19-66
+		ADDED from C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:19-76
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:16:13-19:29
 action#android.intent.action.MAIN
