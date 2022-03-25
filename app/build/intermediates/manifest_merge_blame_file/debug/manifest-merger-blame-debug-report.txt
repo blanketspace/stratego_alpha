@@ -29,8 +29,8 @@
 19-->C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:12:9-40
 20        <activity
 20-->C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:9-20:20
-21            android:name="edu.up.cs301.pig.PigMainActivity"
-21-->C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:19-66
+21            android:name="edu.up.cs301.stratego.StrategoMainActivity"
+21-->C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:19-76
 22            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
 22-->C:\Users\blank\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:15:13-83
 23            <intent-filter>
