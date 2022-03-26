@@ -24,6 +24,7 @@ public class StrategoGameState {
     private Unit[][] gameboard;
     private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is
     private double timeElapsed;  //for the timer
+
     private ArrayList<Unit> p1Troops;
     private ArrayList<Unit> p2Troops;
 

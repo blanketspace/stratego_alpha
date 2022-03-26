@@ -1,6 +1,7 @@
 package edu.up.cs301.stratego;
 
 import android.graphics.Canvas;
+import android.graphics.Rect;
 
 /**
  * class Unit

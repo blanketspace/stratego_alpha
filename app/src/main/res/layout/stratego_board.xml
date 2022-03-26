@@ -139,10 +139,12 @@
                 android:layout_width="625dp"
                 android:layout_height="625dp"
                 android:background="@drawable/good_board" />
+            --!this ImageView is currently used in Pig files to setTopView!--
 
             <edu.up.cs301.stratego.BoardView
                 android:layout_height="625dp"
-                android:layout_width="625dp"/>
+                android:layout_width="625dp"
+                android:background="@drawable/good_board" />
 
 
 

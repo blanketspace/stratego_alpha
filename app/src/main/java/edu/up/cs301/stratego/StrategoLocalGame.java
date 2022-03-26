@@ -205,5 +205,6 @@ public class StrategoLocalGame extends LocalGame {
             //return legal;
        // }//movePiece
         return false;
-    }
-}
+    }//makeMove
+
+}//class StrategoLocalGame
