@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_main.xml.flat",
-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_main.xml"
-    },
-    {
         "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_purple_delete_button.png.flat",
         "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\purple_delete_button.png"
+    },
+    {
+        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_main.xml.flat",
+        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_main.xml"
     },
     {
         "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face6.png.flat",

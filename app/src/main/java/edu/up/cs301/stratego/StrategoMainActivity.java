@@ -10,10 +10,14 @@ import edu.up.cs301.game.config.GameConfig;
 import edu.up.cs301.game.config.GamePlayerType;
 
 /**
- * this is the primary activity for Pig
+ * StrategoMainActivity-- based heavily off of PigMainActivity from the starter code
  *
- * @author Andrew M. Nuxoll, modified by Steven R. Vegdahl
- * @version February 2016
+ * @author Anne Marie Blank
+ * @author Harry Vu
+ * @author Vincent Truong
+ * @author Kathryn Weidman
+ *
+ * @version 3/29/2022
  */
 public class StrategoMainActivity extends GameMainActivity {
 
@@ -56,8 +60,7 @@ public class StrategoMainActivity extends GameMainActivity {
     /**
      * create a local game
      *
-     * @return
-     * 		the local game, a pig game
+     * @return  the local stratego game
      */
     @Override
     public LocalGame createLocalGame() {

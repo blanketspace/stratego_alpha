@@ -4,6 +4,16 @@ import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
 
+/**
+ * StrategoLocalGame
+ *
+ * @author Anne Marie Blank
+ * @author Harry Vu
+ * @author Vincent Truong
+ * @author Kathryn Weidman
+ *
+ * @version 3/29/2022
+ */
 public class StrategoLocalGame extends LocalGame {
 
     private StrategoGameState goldie;
@@ -16,7 +26,10 @@ public class StrategoLocalGame extends LocalGame {
      * EXTERNAL CITATION
      *
      * lifted from PigLocalGame
-     * TODO: get github url of pig lab
+     * https://github.com/cs301up/PigGameStarter
+     *
+     * canMove
+     *
      * can the player with the given id take an action right now?
      */
     @Override
@@ -36,7 +49,13 @@ public class StrategoLocalGame extends LocalGame {
 
     @Override
     protected String checkIfGameOver() {
-        return null;
+        if(goldie.isFlagCaptured()){
+            return "Flag Captured. Player Wins";
+        }
+        else {
+            return null;
+        }
+
     }
 
     @Override
@@ -201,6 +220,13 @@ public class StrategoLocalGame extends LocalGame {
                     break;
                 //End of default case
             }//End switch-case*/
+
+            //if (goldie.getWhoseTurn() == 0) {
+                //goldie.setWhoseTurn(1);
+            //}
+            //else {
+                //goldie.setWhoseTurn(0);
+            //}
 
             //return legal;
        // }//movePiece

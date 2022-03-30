@@ -6,18 +6,22 @@ import android.icu.text.UnicodeSetIterator;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import edu.up.cs301.game.infoMsg.GameState;
+
 /**
  * StrategoGameState
  *
- * (will eventually extend GameState interface in the GameFramework)
+ * class to store and describe the current state of the game
  *
  * @author Anne Marie Blank,
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 3/11/2022
+ * @version 3/29/2022
  */
-public class StrategoGameState {
+public class StrategoGameState extends GameState {
+
+    protected StrategoGameState state;
 
     private int whoseTurn;
 
@@ -288,8 +292,28 @@ public class StrategoGameState {
         }
     }
 
+    public void setWhoseTurn(int whoseTurn) {
+        this.whoseTurn = whoseTurn;
+    }
+
     public int getWhoseTurn() {
         return whoseTurn;
+    }
+
+    public Unit[][] getGameboard() {
+        return gameboard;
+    }
+
+    public ArrayList<Unit> getP1Troops() {
+        return p1Troops;
+    }
+
+    public ArrayList<Unit> getP2Troops() {
+        return p2Troops;
+    }
+
+    public boolean isFlagCaptured() {
+        return flagCaptured;
     }
 }//StrategoGameState
 

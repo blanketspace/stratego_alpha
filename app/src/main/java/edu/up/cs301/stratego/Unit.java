@@ -1,6 +1,7 @@
 package edu.up.cs301.stratego;
 
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.Rect;
 
 /**
@@ -10,7 +11,7 @@ import android.graphics.Rect;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 3/11/2022
+ * @version 3/29/2022
  */
 public class Unit {
     /**
@@ -35,9 +36,13 @@ public class Unit {
     public static final int WATER = 13; //only completely non-movable piece
 
 
+    //for drawing Units
+    public static final int UNIT_WIDTH = 92;
+    public static final int UNIT_HEIGHT = 98;
+
     /*** Nothing else needs to be added in this Unit class
      * IMPORTANT ELABORATION: Every unit has their ownerID, meaning that
-     * the owner's id that comes with the unit,*/
+     * the owner's id comes with the unit*/
 
 
     private int ownerID;  //the id of the player who owns the piece
@@ -47,11 +52,15 @@ public class Unit {
     private int xLoc;
     private int yLoc;
 
+
     public Unit(int id, int initRank){
         ownerID = id;
         rank = initRank;
         isSelected = false;
         isDead = false;
+       /* xLoc = x;
+        yLoc = y;*/
+
     }
 
     public int getOwnerID(){
@@ -126,7 +135,16 @@ public class Unit {
                 return "Flag";
         }
         return "bad";
-    }
+    }//nameRank
+
+    /**
+     * drawMe
+     *
+     * @param c  the canvas to draw on
+     */
+    public void drawMe(Canvas c, Paint paint){
+        c.drawRect(xLoc, yLoc, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, paint);
+    }//drawMe
 
 }//class Unit
 
