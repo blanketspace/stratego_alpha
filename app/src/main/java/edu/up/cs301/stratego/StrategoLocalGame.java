@@ -76,6 +76,8 @@ public class StrategoLocalGame extends LocalGame {
  *
  * @return  false if move is illegal, true otherwise
  */
+
+//TODO: up/down/l/r actions will be classes-- switch case will likely need to be modified to accomodate
        /* public boolean movePiece(int playerID, Unit chosen, int dir){
             int chosenY = chosen.getyLoc();
             int chosenX = chosen.getxLoc();

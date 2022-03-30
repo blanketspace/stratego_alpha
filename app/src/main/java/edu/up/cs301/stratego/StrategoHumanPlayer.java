@@ -102,18 +102,23 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     public void onClick(View view) {
         if(view.getId() == R.id.upButton){
             Log.i("BUTTON_CLICK", " UP_fakjhsgkajlfkga_UP_ldkfnba;ndfb;");
-            MovePieceAction mpa = new MovePieceAction(this);
-            game.sendAction(mpa);
-            //TODO: this currently doens't report direction-- maybe have seperate classes for directions?
+            UpAction ua = new UpAction(this);
+            game.sendAction(ua);
         }
         else if(view.getId() == R.id.downButton){
-            //2
+            Log.i("DOWN_BUTTON_CLICK", "ashkgjaero;igja;lkdfbnslkdfb;ldkf");
+            DownAction da = new DownAction(this);
+            game.sendAction(da);
         }
         else if(view.getId() == R.id.leftButton){
-            //3
+            Log.i("LEFT_BUTTON_CLICK", "asjglaurjfaskfjasjgla");
+            LeftAction la = new LeftAction(this);
+            game.sendAction(la);
         }
         else if(view.getId() == R.id.rightButton);{
-            //4
+            Log.i("RIGHT_BUTTON_CLICK", "glkjdfkjglaksjklgdfklsldfk");
+            RightAction ra = new RightAction(this);
+            game.sendAction(ra);
         }
 
 
