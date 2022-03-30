@@ -16,7 +16,7 @@ public class StrategoLocalGame extends LocalGame {
      * EXTERNAL CITATION
      *
      * lifted from PigLocalGame
-     * TODO: get github url of pig lab
+     * https://github.com/cs301up/PigGameStarter
      * can the player with the given id take an action right now?
      */
     @Override
