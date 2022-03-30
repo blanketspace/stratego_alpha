@@ -1,6 +1,10 @@
 package edu.up.cs301.stratego;
 
+import android.graphics.Color;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 
 import edu.up.cs301.game.GameHumanPlayer;
 import edu.up.cs301.game.GameMainActivity;
@@ -15,9 +19,17 @@ import edu.up.cs301.game.infoMsg.GameInfo;
  * @author Harry Vu
  * @author Vincent Truong
  * @author Kathryn Weidman
- * @version 3/18/2022
+ * @version 3/29/2022
  */
-public class StrategoHumanPlayer extends GameHumanPlayer {
+public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClickListener, View.OnTouchListener {
+
+    private Button up;
+    private Button down;
+    private Button left;
+    private Button right;
+    private BoardView boardView;
+
+    private GameMainActivity gma;
 
     /**
      * constructor
@@ -28,21 +40,106 @@ public class StrategoHumanPlayer extends GameHumanPlayer {
         super(name);
     }
 
+
+    /**
+     * getTopView
+     *
+     * @return
+     */
     @Override
     public View getTopView() {
         return null;
     }
 
+
+    /**
+     * receiveInfo
+     *
+     * @param info
+     */
     @Override
     public void receiveInfo(GameInfo info) {
+        if(info instanceof StrategoGameState){
 
-    }
+        }
+        else {
+            //something has gone wrong, or it's not this player's turn
+            this.flash(Color.RED, 2);
+        }
+
+    }//receiveInfo
 
     @Override
     public void setAsGui(GameMainActivity activity) {
 
         // set the GUI to be the game's layout xml
         activity.setContentView(R.layout.stratego_board);
-    }
+
+        //set up each button so it aligns with GUI
+        this.up = activity.findViewById(R.id.upButton);
+        this.down = activity.findViewById(R.id.downButton);
+        this.left = activity.findViewById(R.id.leftButton);
+        this.right = activity.findViewById(R.id.rightButton);
+
+        //set up boardView variable to reference boardView on Gui
+        this.boardView = activity.findViewById(R.id.strat_boardView);
+
+        //set onTouch and onClick listeners
+        up.setOnClickListener(this);
+        down.setOnClickListener(this);
+        left.setOnClickListener(this);
+        right.setOnClickListener(this);
+        boardView.setOnTouchListener(this);
+
+    }//setAsGui
+
+    /**
+     * onClick
+     *
+     * @param view
+     */
+    @Override
+    public void onClick(View view) {
+        if(view.getId() == R.id.upButton){
+            Log.i("BUTTON_CLICK", " UP_fakjhsgkajlfkga_UP_ldkfnba;ndfb;");
+            MovePieceAction mpa = new MovePieceAction(this);
+            game.sendAction(mpa);
+            //TODO: this currently doens't report direction-- maybe have seperate classes for directions?
+        }
+        else if(view.getId() == R.id.downButton){
+            //2
+        }
+        else if(view.getId() == R.id.leftButton){
+            //3
+        }
+        else if(view.getId() == R.id.rightButton);{
+            //4
+        }
+
+
+    }//onClick
+
+
+    /**
+     * onTouch
+     *
+     * @param view
+     * @param motionEvent
+     * @return
+     */
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        //find where the touch event occurred
+        int x = (int)motionEvent.getX();
+        int y = (int)motionEvent.getY();
+
+        //match that x,y to a Unit
+
+
+        //initial run testing message
+        Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
+        return false;
+    }//onTouch
+
 }//StrategoHumanPlayer
 

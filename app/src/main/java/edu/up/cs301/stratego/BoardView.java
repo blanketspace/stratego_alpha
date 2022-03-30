@@ -1,6 +1,8 @@
 package edu.up.cs301.stratego;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -11,20 +13,44 @@ import android.widget.ImageView;
 import edu.up.cs301.animation.AnimationSurface;
 import edu.up.cs301.game.R;
 
-public class BoardView extends AnimationSurface {
+/**
+ * BoardView
+ *
+ * @author Anne Marie Blank
+ * @author Harry Vu
+ * @author Vincent Truong
+ * @author Kathryn Weidman
+ *
+ * @version 3/29/2022
+ */
+public class BoardView extends SurfaceView {
 
-    protected StrategoGameState state;
+    private StrategoGameState gameState;
+    private Unit[][] board;
 
-    public static final float unitXSide = 95.0f;
-    public static final float unitYSide = 92.0f;
-    public static final float topLeftX = 5.0f;
-    public static final float topLeftY = 5.0f;
+    private Paint redUnits = new Paint();
+    private Paint blueUnits = new Paint();
+    private Paint highlighter = new Paint();
+
+
+
+    public static final int UNIT_WIDTH = 92;
+    public static final int UNIT_HEIGHT = 98;
+
 
     public BoardView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
+        redUnits.setColor(0xfff24141);
+        blueUnits.setColor(0xff4287f5);
+        highlighter.setColor(0xfff2e641);
+
+        gameState = new StrategoGameState();
+        board = gameState.getGameboard();
+
         setWillNotDraw(false);
     }
+
 
     /**
      * onDraw
@@ -42,23 +68,25 @@ public class BoardView extends AnimationSurface {
 
         //dimensions are 60dp wide per piece
 
-        //Paint paint = new Paint();
-        //paint.setColor(Color.BLUE);
-        //paint.setStyle(Paint.Style.FILL);
-        //
-        //Paint paint2 = new Paint();
-        //paint2.setColor(Color.RED);
-        //paint2.setStyle(Paint.Style.FILL);
+        canvas.drawRect(98,92,190,190, blueUnits);
 
-        //920x980 units...?
-        //canvas.drawRect(topLeftX+1,topLeftY,unitXSide,unitYSide, paint);
-        //canvas.drawRect(unitXSide+topLeftX-1,topLeftY,2*(unitXSide)-1,unitYSide, paint2);
-        //canvas.drawRect(2*unitXSide+topLeftX-2,topLeftY,3*(unitXSide)-3,unitYSide, paint);
-        //canvas.drawRect(3*unitXSide+topLeftX-5,topLeftY,4*(unitXSide)-6,unitYSide, paint2);
-        //Rectangles not in dp I think (in px?)
+        Paint paint2 = new Paint();
+        paint2.setColor(Color.BLUE);
+        paint2.setStyle(Paint.Style.FILL);
+
+        //use gameState variable to access which units are there?
+        //for loop
+        //for(int i = 0; i < gameState.p1Troops)
+        //gameState.getUnit(0, 0).drawMe(canvas, redUnits);
+        gameState.getP1Troops().get(0).drawMe(canvas, redUnits);
 
 
-
+        //will only work after phase 0 is over
+       /* for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board[i].length; j++){
+                board[i][j].drawMe(canvas, blueUnits);
+            }
+        }*/
 
     }//onDraw
 
