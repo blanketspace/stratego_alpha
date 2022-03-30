@@ -6,6 +6,8 @@ import android.icu.text.UnicodeSetIterator;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import edu.up.cs301.game.infoMsg.GameState;
+
 /**
  * StrategoGameState
  *
@@ -18,6 +20,8 @@ import java.util.Arrays;
  * @version 3/11/2022
  */
 public class StrategoGameState {
+
+    protected StrategoGameState state;
 
     private int whoseTurn;
 
@@ -288,9 +292,16 @@ public class StrategoGameState {
         }
     }
 
+    public void setWhoseTurn(int whoseTurn) {
+        this.whoseTurn = whoseTurn;
+    }
+
     public int getWhoseTurn() {
         return whoseTurn;
     }
+
+    public StrategoGameState getGameState() {return state;}
+
 }//StrategoGameState
 
 

@@ -13,7 +13,12 @@ import edu.up.cs301.game.R;
 
 public class BoardView extends AnimationSurface {
 
-    private StrategoGameState gameState;
+    protected StrategoGameState state;
+
+    public static final float unitXSide = 95.0f;
+    public static final float unitYSide = 92.0f;
+    public static final float topLeftX = 5.0f;
+    public static final float topLeftY = 5.0f;
 
     public BoardView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -21,15 +26,15 @@ public class BoardView extends AnimationSurface {
         setWillNotDraw(false);
     }
 
-
     /**
-     * drawMe
+     * onDraw
      *
      * method to get the Unit onto the GUI board
      *
      * @param canvas the drawing space for the Unit
      */
-    public void drawMe(Canvas canvas){
+    @Override
+    public void onDraw(Canvas canvas){
         //TODO: need a rect somewhere with constant/final dimensions
         //TODO: need a color (designated by owner id?)
         //TODO: maybe xy locations to be drawn in? no clue how we'll get those
@@ -37,21 +42,28 @@ public class BoardView extends AnimationSurface {
 
         //dimensions are 60dp wide per piece
 
-        Paint paint = new Paint();
-        paint.setColor(0x00000000);
-        paint.setStyle(Paint.Style.STROKE);
+        //Paint paint = new Paint();
+        //paint.setColor(Color.BLUE);
+        //paint.setStyle(Paint.Style.FILL);
+        //
+        //Paint paint2 = new Paint();
+        //paint2.setColor(Color.RED);
+        //paint2.setStyle(Paint.Style.FILL);
 
-        Paint paint2 = new Paint();
-        paint2.setColor(Color.BLUE);
-        paint2.setStyle(Paint.Style.FILL);
-
-        canvas.drawRect(0,0,60,60, paint);
-        //Rectangles not in dp I think
-
-
+        //920x980 units...?
+        //canvas.drawRect(topLeftX+1,topLeftY,unitXSide,unitYSide, paint);
+        //canvas.drawRect(unitXSide+topLeftX-1,topLeftY,2*(unitXSide)-1,unitYSide, paint2);
+        //canvas.drawRect(2*unitXSide+topLeftX-2,topLeftY,3*(unitXSide)-3,unitYSide, paint);
+        //canvas.drawRect(3*unitXSide+topLeftX-5,topLeftY,4*(unitXSide)-6,unitYSide, paint2);
+        //Rectangles not in dp I think (in px?)
 
 
+
+
+    }//onDraw
+
+    protected void setState(StrategoGameState state) {
+        this.state = state;
     }
-
 
 }//BoardView

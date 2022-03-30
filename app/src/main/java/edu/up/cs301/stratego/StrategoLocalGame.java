@@ -202,6 +202,13 @@ public class StrategoLocalGame extends LocalGame {
                 //End of default case
             }//End switch-case*/
 
+            //if (goldie.getWhoseTurn() == 0) {
+                //goldie.setWhoseTurn(1);
+            //}
+            //else {
+                //goldie.setWhoseTurn(0);
+            //}
+
             //return legal;
        // }//movePiece
         return false;
