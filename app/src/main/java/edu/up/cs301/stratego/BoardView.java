@@ -62,8 +62,4 @@ public class BoardView extends AnimationSurface {
 
     }//onDraw
 
-    protected void setState(StrategoGameState state) {
-        this.state = state;
-    }
-
 }//BoardView

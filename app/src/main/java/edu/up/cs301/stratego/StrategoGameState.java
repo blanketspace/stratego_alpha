@@ -300,8 +300,6 @@ public class StrategoGameState {
         return whoseTurn;
     }
 
-    public StrategoGameState getGameState() {return state;}
-
 }//StrategoGameState
 
 
