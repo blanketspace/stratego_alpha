@@ -28,8 +28,7 @@ public class BoardView extends SurfaceView {
     private StrategoGameState gameState;
     private Unit[][] board;
 
-    private Paint redUnits = new Paint();
-    private Paint blueUnits = new Paint();
+
     private Paint highlighter = new Paint();
 
 
@@ -41,8 +40,7 @@ public class BoardView extends SurfaceView {
     public BoardView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        redUnits.setColor(0xfff24141);
-        blueUnits.setColor(0xff4287f5);
+
         highlighter.setColor(0xfff2e641);
 
         gameState = new StrategoGameState();
@@ -61,32 +59,30 @@ public class BoardView extends SurfaceView {
      */
     @Override
     public void onDraw(Canvas canvas) {
-        //TODO: need a rect somewhere with constant/final dimensions
-        //TODO: need a color (designated by owner id?)
-        //TODO: maybe xy locations to be drawn in? no clue how we'll get those
-        //TODO: death by ifs for each rank's visual aspect?
-
-        //dimensions are 60dp wide per piece
-
-        canvas.drawRect(98,92,190,190, blueUnits);
-
-        Paint paint2 = new Paint();
-        paint2.setColor(Color.BLUE);
-        paint2.setStyle(Paint.Style.FILL);
-
-        //use gameState variable to access which units are there?
-        //for loop
-        //for(int i = 0; i < gameState.p1Troops)
-        //gameState.getUnit(0, 0).drawMe(canvas, redUnits);
-        gameState.getP1Troops().get(0).drawMe(canvas, redUnits);
 
 
-        //will only work after phase 0 is over
+        //TODO: this is only for phase 0?
+        //maybe a if(phase == 0)
+        //top side of board's units
        for(int i = 0; i < board.length; i++){
-            for(int j = 0; j < 5; j++){ //final will be i<baord.length
-                board[i][j].drawMe(canvas, blueUnits);
+            for(int j = 0; j < board.length; j++){
+                if(board[i][j] != null){
+                    board[i][j].drawMe(canvas);
+                }
+                else{
+                    //do nothing
+                }
             }
         }
+
+       /*//bottom side of board's units
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < board.length; j++){
+                Unit temp = board[i][j];
+                board[i][j].drawMe(canvas);
+            }
+        }*/
+
 
     }//onDraw
 

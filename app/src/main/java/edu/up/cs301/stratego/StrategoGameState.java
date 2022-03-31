@@ -53,12 +53,31 @@ public class StrategoGameState extends GameState {
         this.fillRanks(0);
         this.fillRanks(1);
 
-        //TODO: loop through each "hand", fill gameboard array
-        for(int i = 0; i < gameboard.length; i++){
-            for(int j = 0; j < 5; j++){
-                gameboard[i][j] = p1Troops.get(i + j);
+        //loop through each "hand", fill gameboard array
+
+        //p1 aka the "top" half of board
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < gameboard.length; j++){
+                gameboard[i][j] = p1Troops.get(10*i + j); //10*i + j necessary to keep p1Troops on track
+                Unit test = gameboard[i][j];
+                // set x and y
+                test.setxLoc(j * Unit.UNIT_WIDTH);
+                test.setyLoc(i * Unit.UNIT_HEIGHT);
             }
         }
+
+        //p2 aka "bottom" half of board
+        int k = 0; //for math purposes-- so we can keep formulas from prev loop
+        for(int i = 6; i < 10; i++){
+            for(int j = 0; j < gameboard.length; j++){
+                gameboard[i][j] = p2Troops.get(10*k + j); //10*k + j keeps us moving through arraylist
+                Unit test = gameboard[i][j];
+                // set x and y
+                test.setxLoc(j * Unit.UNIT_WIDTH);
+                test.setyLoc(i * Unit.UNIT_HEIGHT);
+            }
+        }
+
 
 
 
@@ -83,68 +102,68 @@ public class StrategoGameState extends GameState {
             p1Troops.add(new Unit(0, Unit.MAJOR));
             p1Troops.add(new Unit(0, Unit.MAJOR));
 
-            for(int i = 0; i < 3; i++){
+            for(int i = 0; i < 4; i++){
                 p1Troops.add(new Unit(0, Unit.SERGEANT));
             }
 
-            for(int i = 0; i < 3; i++){
+            for(int i = 0; i < 4; i++){
                 p1Troops.add(new Unit(0, Unit.LIEUTENANT));
             }
 
-            for(int i = 0; i < 3; i++){
+            for(int i = 0; i < 4; i++){
                 p1Troops.add(new Unit(0, Unit.CAPTAIN));
             }
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 5; i++) {
                 p1Troops.add(new Unit(0, Unit.MINER));
             }
 
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < 8; i++) {
                 p1Troops.add(new Unit(0, Unit.SCOUT));
             }
 
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 6; i++) {
                 p1Troops.add(new Unit(0, Unit.BOMB));
             }
 
         } else if (pID == 1) {
-            p2Troops.add(new Unit(0, Unit.MARSHAL));
-            p2Troops.add(new Unit(0, Unit.GENERAL));
-            p2Troops.add(new Unit(0, Unit.FLAG));
-            p2Troops.add(new Unit(0, Unit.SPY));
+            p2Troops.add(new Unit(1, Unit.MARSHAL));
+            p2Troops.add(new Unit(1, Unit.GENERAL));
+            p2Troops.add(new Unit(1, Unit.FLAG));
+            p2Troops.add(new Unit(1, Unit.SPY));
 
-            p2Troops.add(new Unit(0, Unit.COLONEL));
-            p2Troops.add(new Unit(0, Unit.COLONEL));
+            p2Troops.add(new Unit(1, Unit.COLONEL));
+            p2Troops.add(new Unit(1, Unit.COLONEL));
 
-            p2Troops.add(new Unit(0, Unit.MAJOR));
-            p2Troops.add(new Unit(0, Unit.MAJOR));
-            p2Troops.add(new Unit(0, Unit.MAJOR));
+            p2Troops.add(new Unit(1, Unit.MAJOR));
+            p2Troops.add(new Unit(1, Unit.MAJOR));
+            p2Troops.add(new Unit(1, Unit.MAJOR));
 
-            p2Troops.add(new Unit(0, Unit.SERGEANT));
-            p2Troops.add(new Unit(0, Unit.SERGEANT));
-            p2Troops.add(new Unit(0, Unit.SERGEANT));
-            p2Troops.add(new Unit(0, Unit.SERGEANT));
+            p2Troops.add(new Unit(1, Unit.SERGEANT));
+            p2Troops.add(new Unit(1, Unit.SERGEANT));
+            p2Troops.add(new Unit(1, Unit.SERGEANT));
+            p2Troops.add(new Unit(1, Unit.SERGEANT));
 
-            p2Troops.add(new Unit(0, Unit.LIEUTENANT));
-            p2Troops.add(new Unit(0, Unit.LIEUTENANT));
-            p2Troops.add(new Unit(0, Unit.LIEUTENANT));
-            p2Troops.add(new Unit(0, Unit.LIEUTENANT));
+            p2Troops.add(new Unit(1, Unit.LIEUTENANT));
+            p2Troops.add(new Unit(1, Unit.LIEUTENANT));
+            p2Troops.add(new Unit(1, Unit.LIEUTENANT));
+            p2Troops.add(new Unit(1, Unit.LIEUTENANT));
 
-            p2Troops.add(new Unit(0, Unit.CAPTAIN));
-            p2Troops.add(new Unit(0, Unit.CAPTAIN));
-            p2Troops.add(new Unit(0, Unit.CAPTAIN));
-            p2Troops.add(new Unit(0, Unit.CAPTAIN));
+            p2Troops.add(new Unit(1, Unit.CAPTAIN));
+            p2Troops.add(new Unit(1, Unit.CAPTAIN));
+            p2Troops.add(new Unit(1, Unit.CAPTAIN));
+            p2Troops.add(new Unit(1, Unit.CAPTAIN));
 
             for (int i = 0; i < 4; i++) {
-                p2Troops.add(new Unit(0, Unit.MINER));
+                p2Troops.add(new Unit(1, Unit.MINER));
             }
 
-            for (int i = 0; i < 7; i++) {
-                p2Troops.add(new Unit(0, Unit.SCOUT));
+            for (int i = 0; i < 8; i++) {
+                p2Troops.add(new Unit(1, Unit.SCOUT));
             }
 
             for (int i = 0; i < 5; i++) {
-                p2Troops.add(new Unit(0, Unit.BOMB));
+                p2Troops.add(new Unit(1, Unit.BOMB));
             }
         }
     }//fillRanks
