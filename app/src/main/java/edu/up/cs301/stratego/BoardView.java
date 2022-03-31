@@ -82,11 +82,11 @@ public class BoardView extends SurfaceView {
 
 
         //will only work after phase 0 is over
-       /* for(int i = 0; i < board.length; i++){
-            for(int j = 0; j < board[i].length; j++){
+       for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < 5; j++){ //final will be i<baord.length
                 board[i][j].drawMe(canvas, blueUnits);
             }
-        }*/
+        }
 
     }//onDraw
 

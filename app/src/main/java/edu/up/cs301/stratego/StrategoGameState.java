@@ -53,6 +53,15 @@ public class StrategoGameState extends GameState {
         this.fillRanks(0);
         this.fillRanks(1);
 
+        //TODO: loop through each "hand", fill gameboard array
+        for(int i = 0; i < gameboard.length; i++){
+            for(int j = 0; j < 5; j++){
+                gameboard[i][j] = p1Troops.get(i + j);
+            }
+        }
+
+
+
     }//ctor
 
     /**

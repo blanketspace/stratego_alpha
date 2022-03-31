@@ -146,6 +146,10 @@ public class Unit {
         c.drawRect(xLoc, yLoc, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, paint);
     }//drawMe
 
+    /*public boolean containsPoint(int x, int y){
+
+    }*/
+
 }//class Unit
 
 

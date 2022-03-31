@@ -3,6 +3,10 @@ package edu.up.cs301.stratego;
 import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
+import edu.up.cs301.stratego.actions.DownAction;
+import edu.up.cs301.stratego.actions.LeftAction;
+import edu.up.cs301.stratego.actions.RightAction;
+import edu.up.cs301.stratego.actions.UpAction;
 
 /**
  * StrategoLocalGame
@@ -60,6 +64,50 @@ public class StrategoLocalGame extends LocalGame {
 
     @Override
     protected boolean makeMove(GameAction action) {
+        //chosenPiece = playerWhoseTurnItIs.getSelected();
+
+        //chosenX = chosenPiece.getX();
+        //chosenY = chosenPiece.getY();
+
+        if(action instanceof UpAction){
+            if(goldie.getWhoseTurn() == 0){
+                //player 0's turn, therefore p1Troops
+            }
+            else {
+                //player 1's turn, therefore p2Troops
+            }
+
+
+        }
+        else if(action instanceof DownAction){
+            if(goldie.getWhoseTurn() == 0){
+                //player 0's turn, therefore p1Troops
+            }
+            else {
+                //player 1's turn, therefore p2Troops
+            }
+        }
+        else if(action instanceof LeftAction){
+            if(goldie.getWhoseTurn() == 0){
+                //player 0's turn, therefore p1Troops
+            }
+            else {
+                //player 1's turn, therefore p2Troops
+            }
+        }
+        else if(action instanceof RightAction){
+            if(goldie.getWhoseTurn() == 0){
+                //player 0's turn, therefore p1Troops
+            }
+            else {
+                //player 1's turn, therefore p2Troops
+            }
+        }
+        else {
+            //something went wrong
+            return false;
+        }
+
 /**
  * movePiece
  *
@@ -83,6 +131,7 @@ public class StrategoLocalGame extends LocalGame {
             int chosenX = chosen.getxLoc();
 
             //1 = up, 2 = down, 3 = left, 4 = right
+
             switch(dir) {
                 case 1:  //aka "up"
                     if (gameboard[chosenX][chosenY - 1] == null && chosenY - 1 >= 0) {
