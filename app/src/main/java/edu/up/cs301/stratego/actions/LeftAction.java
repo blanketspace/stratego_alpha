@@ -1,4 +1,4 @@
-package edu.up.cs301.stratego;
+package edu.up.cs301.stratego.actions;
 
 import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.actionMsg.GameAction;

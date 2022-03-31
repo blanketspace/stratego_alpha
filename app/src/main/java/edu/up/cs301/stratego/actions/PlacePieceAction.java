@@ -1,10 +1,10 @@
-package edu.up.cs301.stratego;
+package edu.up.cs301.stratego.actions;
 
 import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.actionMsg.GameAction;
 
 /**
- * StrategoLocalGame
+ * PlacePieceAction
  *
  * @author Anne Marie Blank
  * @author Harry Vu
@@ -12,13 +12,15 @@ import edu.up.cs301.game.actionMsg.GameAction;
  * @author Kathryn Weidman
  * @version 3/18/2022
  */
-public class UpAction extends GameAction {
+public class PlacePieceAction extends GameAction {
     /**
      * constructor for GameAction
      *
      * @param player the player who created the action
      */
-    public UpAction(GamePlayer player) {
+    public PlacePieceAction(GamePlayer player) {
         super(player);
     }
-}//UpAction
+
+}//PlacePieceAction
+

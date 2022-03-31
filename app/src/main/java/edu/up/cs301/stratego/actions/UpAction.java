@@ -1,5 +1,4 @@
-package edu.up.cs301.stratego;
-
+package edu.up.cs301.stratego.actions;
 
 import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.actionMsg.GameAction;
@@ -13,14 +12,13 @@ import edu.up.cs301.game.actionMsg.GameAction;
  * @author Kathryn Weidman
  * @version 3/18/2022
  */
-public class MovePieceAction extends GameAction {
+public class UpAction extends GameAction {
     /**
      * constructor for GameAction
      *
      * @param player the player who created the action
      */
-    public MovePieceAction(GamePlayer player) {
+    public UpAction(GamePlayer player) {
         super(player);
     }
-}//MovePieceAction
-
+}//UpAction
