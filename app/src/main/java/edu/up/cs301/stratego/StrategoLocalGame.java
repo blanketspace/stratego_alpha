@@ -34,7 +34,7 @@ public class StrategoLocalGame extends LocalGame {
      */
     @Override
     protected boolean canMove(int playerIdx) {
-        if(playerIdx == goldie.getWhoseTurn()){
+        if (playerIdx == goldie.getWhoseTurn()) {
             return true;
         }
         else {
@@ -49,7 +49,7 @@ public class StrategoLocalGame extends LocalGame {
 
     @Override
     protected String checkIfGameOver() {
-        if(goldie.isFlagCaptured()){
+        if (goldie.isFlagCaptured()) {
             return "Flag Captured. Player Wins";
         }
         else {
@@ -78,7 +78,7 @@ public class StrategoLocalGame extends LocalGame {
  */
 
 //TODO: up/down/l/r actions will be classes-- switch case will likely need to be modified to accomodate
-       /* public boolean movePiece(int playerID, Unit chosen, int dir){
+       /* public boolean movePiece(int playerID, Unit chosen, int dir) {
             int chosenY = chosen.getyLoc();
             int chosenX = chosen.getxLoc();
 
@@ -89,27 +89,33 @@ public class StrategoLocalGame extends LocalGame {
                         chosen.setyLoc(chosenY - 1);
                         gameboard[chosenX][chosenY] = chosen;
                         legal = true;
-                    } else if (gameboard[chosenX][chosenY - 1].getRank() == Unit.WATER) {
+                    }
+                    else if (gameboard[chosenX][chosenY - 1].getRank() == Unit.WATER) {
                         legal = false;
-                    } else if (gameboard[chosenX][chosenY - 1].getRank() == Unit.FLAG) {
+                    }
+                    else if (gameboard[chosenX][chosenY - 1].getRank() == Unit.FLAG) {
                         legal = true;
-                    } else if (gameboard[chosenX][chosenY - 1].getRank() == Unit.BOMB){
+                    }
+                    else if (gameboard[chosenX][chosenY - 1].getRank() == Unit.BOMB) {
                         legal = isMinerAttack(chosen.getRank());
-                    } else if (gameboard[chosenX][chosenY].getOwnerID() != playerID) {
+                    }
+                    else if (gameboard[chosenX][chosenY].getOwnerID() != playerID) {
                         //attack
                         int opponentRank = gameboard[chosenX][chosenY].getRank();
                         if (opponentRank > chosen.getRank()) {
                             chosen.setStatus(false);
                             gameboard[chosenX][chosenY] = null;
                             legal = true;
-                        } else {
+                        }
+                        else {
                             gameboard[chosenX][chosenY].setStatus(false);
                             gameboard[chosenX][chosenY] = null;
                             chosen.setxLoc(chosenY - 1);
                             gameboard[chosenX][chosenY] = chosen;
                             legal = true;
                         }
-                    } else {
+                    }
+                    else {
                         legal = false;
                     }
                     break;
@@ -120,27 +126,33 @@ public class StrategoLocalGame extends LocalGame {
                         chosen.setyLoc(chosenY + 1);  //move into space
                         gameboard[chosenX][chosenY] = chosen;
                         legal = true;
-                    } else if (gameboard[chosenX][chosenY + 1].getRank() == Unit.WATER) {
+                    }
+                    else if (gameboard[chosenX][chosenY + 1].getRank() == Unit.WATER) {
                         legal = false;  //can't walk on water
-                    } else if (gameboard[chosenX][chosenY + 1].getRank() == Unit.FLAG) {
+                    }
+                    else if (gameboard[chosenX][chosenY + 1].getRank() == Unit.FLAG) {
                         legal = true;
-                    } else if (gameboard[chosenX][chosenY + 1].getRank() == Unit.BOMB){
+                    }
+                    else if (gameboard[chosenX][chosenY + 1].getRank() == Unit.BOMB) {
                         legal = isMinerAttack(chosen.getRank());
-                    } else if (gameboard[chosenX][chosenY + 1].getOwnerID() != playerID) {
+                    }
+                    else if (gameboard[chosenX][chosenY + 1].getOwnerID() != playerID) {
                         //attack
                         int opponentRank = gameboard[chosenX][chosenY + 1].getRank();
                         if (opponentRank > chosen.getRank()) {
                             chosen.setStatus(false);  //you died
                             gameboard[chosenX][chosenY] = null;  //empty space you were just in
                             legal = true;
-                        } else {
+                        }
+                        else {
                             gameboard[chosenX][chosenY + 1].setStatus(false);  //they died
                             gameboard[chosenX][chosenY] = null;  //empty the space you were just in
                             chosen.setyLoc(chosenY + 1);  //move into opponent's space
                             gameboard[chosenX][chosenY + 1] = chosen;  //report location to array
                             legal = true;
                         }
-                    } else {
+                    }
+                    else {
                         legal = false;
                     }
                     break;
@@ -151,13 +163,17 @@ public class StrategoLocalGame extends LocalGame {
                         chosen.setxLoc(chosenX - 1);
                         gameboard[chosenX - 1][chosenY] = chosen;
                         legal = true;
-                    } else if (gameboard[chosenX - 1][chosenY].getRank() == Unit.WATER) {
+                    }
+                    else if (gameboard[chosenX - 1][chosenY].getRank() == Unit.WATER) {
                         legal = false;
-                    } else if (gameboard[chosenX - 1][chosenY].getRank() == Unit.FLAG) {
+                    }
+                    else if (gameboard[chosenX - 1][chosenY].getRank() == Unit.FLAG) {
                         legal = true;
-                    } else if (gameboard[chosenX - 1][chosenY].getRank() == Unit.BOMB){
+                    }
+                    else if (gameboard[chosenX - 1][chosenY].getRank() == Unit.BOMB) {
                         legal = isMinerAttack(chosen.getRank());
-                    } else if (gameboard[chosenX - 1][chosenY].getOwnerID() != playerID) {
+                    }
+                    else if (gameboard[chosenX - 1][chosenY].getOwnerID() != playerID) {
                         //attack
                         int opponentRank = gameboard[chosenX - 1][chosenY].getRank();
 
@@ -165,14 +181,16 @@ public class StrategoLocalGame extends LocalGame {
                             chosen.setStatus(false);  //you died
                             gameboard[chosenX][chosenY] = null;
                             legal = true;
-                        } else {
+                        }
+                        else {
                             gameboard[chosenX - 1][chosenY].setStatus(false);  //they died
                             gameboard[chosenX][chosenY] = null;  //empty your spot
                             chosen.setxLoc(chosenX - 1);
                             gameboard[chosenX - 1][chosenY] = chosen;  //take their spot
                             legal = true;
                         }
-                    } else {
+                    }
+                    else {
                         legal = false;
                     }
                     break;
@@ -184,13 +202,17 @@ public class StrategoLocalGame extends LocalGame {
                             chosen.setxLoc(chosenX + 1);
                             gameboard[chosenX + 1][chosenY] = chosen;
                             legal = true;
-                        } else if (gameboard[chosenX + 1][chosenY].getRank() == Unit.WATER) {
+                        }
+                        else if (gameboard[chosenX + 1][chosenY].getRank() == Unit.WATER) {
                             legal = false;
-                        } else if (gameboard[chosenX + 1][chosenY].getRank() == Unit.FLAG) {
+                        }
+                        else if (gameboard[chosenX + 1][chosenY].getRank() == Unit.FLAG) {
                             legal = true;
-                        } else if (gameboard[chosenX + 1][chosenY].getRank() == Unit.BOMB){
+                        }
+                        else if (gameboard[chosenX + 1][chosenY].getRank() == Unit.BOMB) {
                             legal = isMinerAttack(chosen.getRank());
-                        } else {
+                        }
+                        else {
                             if (gameboard[chosenX + 1][chosenY].getOwnerID() != playerID) {
                                 //attack
                                 int opponentRank = gameboard[chosenX + 1][chosenY].getRank();
@@ -199,16 +221,19 @@ public class StrategoLocalGame extends LocalGame {
                                     chosen.setStatus(false);  //you died
                                     gameboard[chosenX][chosenY] = null;
                                     legal = true;
-                                } else if (opponentRank <= chosen.getRank()) {
+                                }
+                                else if (opponentRank <= chosen.getRank()) {
                                     gameboard[chosenX + 1][chosenY].setStatus(false);  //they died
                                     gameboard[chosenX][chosenY] = null;  //empty your space
                                     chosen.setxLoc(chosenX + 1);
                                     gameboard[chosenX + 1][chosenY] = chosen;  //take theirs
                                     legal = true;
-                                } else {
+                                }
+                                else {
                                     legal = false;
                                 }
-                            } else {
+                            }
+                            else {
                                 legal = false;
                             }
 

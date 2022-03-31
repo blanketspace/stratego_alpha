@@ -60,7 +60,7 @@ public class BoardView extends SurfaceView {
      * @param canvas the drawing space for the Unit
      */
     @Override
-    public void onDraw(Canvas canvas){
+    public void onDraw(Canvas canvas) {
         //TODO: need a rect somewhere with constant/final dimensions
         //TODO: need a color (designated by owner id?)
         //TODO: maybe xy locations to be drawn in? no clue how we'll get those

@@ -199,7 +199,7 @@ public class StrategoGameState extends GameState {
      * @param playerID   the id of the player attempting to choose
      * @param chosenP    the Unit being selected
      */
-    public boolean selectPiece(int playerID, Unit chosenP){
+    public boolean selectPiece(int playerID, Unit chosenP) {
         if (chosenP.getOwnerID() == playerID) {
             clearSelection(playerID);  //sets all Units to false
             chosenP.setSelected(true); //sets selection to true
@@ -274,20 +274,20 @@ public class StrategoGameState extends GameState {
      * @param index the index you want to access
      * @return      the unit at the given index in the player's "hand"
      */
-    public Unit getUnit(int id, int index){
-        if(id == 0){
+    public Unit getUnit(int id, int index) {
+        if (id == 0) {
             return p1Troops.get(index);
         }
-        else{
+        else {
             return p2Troops.get(index);
         }
     }//getUnit
 
-    public boolean isMinerAttack(int chosenRank){
-        if(chosenRank == Unit.MINER){
+    public boolean isMinerAttack(int chosenRank) {
+        if (chosenRank == Unit.MINER){
             return true;
         }
-        else{
+        else {
             return false;
         }
     }

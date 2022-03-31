@@ -53,7 +53,7 @@ public class Unit {
     private int yLoc;
 
 
-    public Unit(int id, int initRank){
+    public Unit(int id, int initRank) {
         ownerID = id;
         rank = initRank;
         isSelected = false;
@@ -72,7 +72,7 @@ public class Unit {
     }
 
     public void setSelected(boolean selected) {
-        if(!isDead) {
+        if (!isDead) {
             isSelected = selected;
         }
     }
@@ -142,7 +142,7 @@ public class Unit {
      *
      * @param c  the canvas to draw on
      */
-    public void drawMe(Canvas c, Paint paint){
+    public void drawMe(Canvas c, Paint paint) {
         c.drawRect(xLoc, yLoc, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, paint);
     }//drawMe
 

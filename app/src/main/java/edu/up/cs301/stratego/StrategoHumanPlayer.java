@@ -63,7 +63,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      */
     @Override
     public void receiveInfo(GameInfo info) {
-        if(info instanceof StrategoGameState){
+        if (info instanceof StrategoGameState) {
 
         }
         else {
@@ -104,22 +104,22 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      */
     @Override
     public void onClick(View view) {
-        if(view.getId() == R.id.upButton){
+        if (view.getId() == R.id.upButton) {
             Log.i("BUTTON_CLICK", " UP_fakjhsgkajlfkga_UP_ldkfnba;ndfb;");
             UpAction ua = new UpAction(this);
             game.sendAction(ua);
         }
-        else if(view.getId() == R.id.downButton){
+        else if (view.getId() == R.id.downButton) {
             Log.i("DOWN_BUTTON_CLICK", "ashkgjaero;igja;lkdfbnslkdfb;ldkf");
             DownAction da = new DownAction(this);
             game.sendAction(da);
         }
-        else if(view.getId() == R.id.leftButton){
+        else if (view.getId() == R.id.leftButton) {
             Log.i("LEFT_BUTTON_CLICK", "asjglaurjfaskfjasjgla");
             LeftAction la = new LeftAction(this);
             game.sendAction(la);
         }
-        else if(view.getId() == R.id.rightButton);{
+        else if (view.getId() == R.id.rightButton); {
             Log.i("RIGHT_BUTTON_CLICK", "glkjdfkjglaksjklgdfklsldfk");
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
