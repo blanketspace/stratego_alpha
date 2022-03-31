@@ -76,6 +76,7 @@ public class StrategoGameState extends GameState {
                 test.setxLoc(j * Unit.UNIT_WIDTH);
                 test.setyLoc(i * Unit.UNIT_HEIGHT);
             }
+            k++;
         }
 
 
@@ -154,7 +155,7 @@ public class StrategoGameState extends GameState {
             p2Troops.add(new Unit(1, Unit.CAPTAIN));
             p2Troops.add(new Unit(1, Unit.CAPTAIN));
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 5; i++) {
                 p2Troops.add(new Unit(1, Unit.MINER));
             }
 
@@ -162,7 +163,7 @@ public class StrategoGameState extends GameState {
                 p2Troops.add(new Unit(1, Unit.SCOUT));
             }
 
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 6; i++) {
                 p2Troops.add(new Unit(1, Unit.BOMB));
             }
         }

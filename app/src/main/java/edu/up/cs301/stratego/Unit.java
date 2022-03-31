@@ -154,8 +154,8 @@ public class Unit {
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
         }
         else if (ownerID == 1){
-            c.drawRect(xLoc, yLoc, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, blueUnits);
-            c.drawRect(xLoc , yLoc , xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
+            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, blueUnits);
+            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
         }
 
     }//drawMe
