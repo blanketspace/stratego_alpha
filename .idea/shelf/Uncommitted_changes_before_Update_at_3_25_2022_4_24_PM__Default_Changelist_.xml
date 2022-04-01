@@ -1,0 +1,254 @@
+<changelist name="Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]" date="1648250721657" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 3/25/2022 4:24 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/graph.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/values-v14_values-v14.arsc.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/values-v14_values-v14.arsc.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/values-v14_values-v14.arsc.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/game/GameMainActivity.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/game/GameMainActivity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/GameMainActivity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/graph1.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/menu_game_main.xml.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/menu_game_main.xml.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/menu_game_main.xml.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/layout_game_remote_tab.xml.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/layout_game_remote_tab.xml.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/layout_game_remote_tab.xml.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/values-v11_values-v11.arsc.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/values-v11_values-v11.arsc.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/values-v11_values-v11.arsc.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/layout_game_config_tabhost.xml.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/layout_game_config_tabhost.xml.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/layout_game_config_tabhost.xml.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face4.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face4.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-xhdpi_face4.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face2.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face2.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-xhdpi_face2.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/classes.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/outputs/apk/debug/app-debug.apk" />
+    <option name="AFTER_PATH" value="app/build/outputs/apk/debug/app-debug.apk" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/app-debug.apk" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/layout_game_no_gui.xml.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/layout_game_no_gui.xml.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/layout_game_no_gui.xml.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/graph2.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/layout_game_local_tab.xml.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/layout_game_local_tab.xml.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/layout_game_local_tab.xml.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/pig/PigHumanPlayer.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/pig/PigHumanPlayer.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/PigHumanPlayer.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face5.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face5.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-xhdpi_face5.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face1.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face1.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-xhdpi_face1.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/javaCompile/taskHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/javaCompile/taskHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/taskHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/game/GameMainActivity.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/game/GameMainActivity.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/GameMainActivity.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/processed_res/debug/out/resources-debug.ap_" />
+    <option name="AFTER_PATH" value="app/build/intermediates/processed_res/debug/out/resources-debug.ap_" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/resources-debug.ap_" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/javaCompile/javaCompile.lock" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/javaCompile/javaCompile.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/javaCompile.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/dex_archive_input_jar_hashes/debug/out" />
+    <option name="AFTER_PATH" value="app/build/intermediates/dex_archive_input_jar_hashes/debug/out" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/out" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_good_board.jpg.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_good_board.jpg.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-xhdpi_good_board.jpg.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-mdpi_ic_launcher.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-mdpi_ic_launcher.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-mdpi_ic_launcher.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_action_search.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_action_search.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-xhdpi_ic_action_search.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/graph3.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-hdpi_ic_launcher.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-hdpi_ic_launcher.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-hdpi_ic_launcher.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/pig/PigHumanPlayer.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/pig/PigHumanPlayer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/PigHumanPlayer.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face6.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face6.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-xhdpi_face6.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/outputFiles.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" />
+    <option name="AFTER_PATH" value="app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/R.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-hdpi_ic_action_search.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-hdpi_ic_action_search.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-hdpi_ic_action_search.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-mdpi_ic_action_search.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-mdpi_ic_action_search.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-mdpi_ic_action_search.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-hdpi_purple_delete_button.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-hdpi_purple_delete_button.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-hdpi_purple_delete_button.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" />
+    <option name="AFTER_PATH" value="app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/androidResources" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/layout_game_config_main.xml.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/layout_game_config_main.xml.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/layout_game_config_main.xml.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-ldpi_ic_launcher.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-ldpi_ic_launcher.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-ldpi_ic_launcher.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/graph4.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_launcher.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_launcher.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-xhdpi_ic_launcher.png.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/values_values.arsc.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/values_values.arsc.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/values_values.arsc.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/layout_game_player_list_row.xml.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/layout_game_player_list_row.xml.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/layout_game_player_list_row.xml.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/layout_stratego_board.xml.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/layout_stratego_board.xml.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/layout_stratego_board.xml.flat" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/graph5.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face3.png.flat" />
+    <option name="AFTER_PATH" value="app/build/intermediates/merged_res/debug/drawable-xhdpi_face3.png.flat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_25_2022_4_24_PM_[Default_Changelist]/drawable-xhdpi_face3.png.flat" />
+  </binary>
+</changelist>

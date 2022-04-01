@@ -1,0 +1,121 @@
+Index: .idea/deploymentTargetDropDown.xml
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+deleted file mode 100644
+--- a/.idea/deploymentTargetDropDown.xml	(revision 3c81195b2e992762b3c82b64e466e40367eacce4)
++++ /dev/null	(revision 3c81195b2e992762b3c82b64e466e40367eacce4)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="deploymentTargetDropDown">
+-    <runningDeviceTargetSelectedWithDropDown>
+-      <Target>
+-        <type value="RUNNING_DEVICE_TARGET" />
+-        <deviceKey>
+-          <Key>
+-            <type value="SERIAL_NUMBER" />
+-            <value value="R52N81A5C7M" />
+-          </Key>
+-        </deviceKey>
+-      </Target>
+-    </runningDeviceTargetSelectedWithDropDown>
+-    <timeTargetWasSelectedWithDropDown value="2022-03-31T02:52:19.028967500Z" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: app/src/main/java/edu/up/cs301/stratego/BoardView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package edu.up.cs301.stratego;\r\n\r\nimport android.content.Context;\r\nimport android.graphics.Bitmap;\r\nimport android.graphics.BitmapFactory;\r\nimport android.graphics.Canvas;\r\nimport android.graphics.Color;\r\nimport android.graphics.Paint;\r\nimport android.util.AttributeSet;\r\nimport android.view.SurfaceView;\r\nimport android.widget.ImageView;\r\n\r\nimport edu.up.cs301.animation.AnimationSurface;\r\nimport edu.up.cs301.game.R;\r\n\r\n/**\r\n * BoardView\r\n *\r\n * @author Anne Marie Blank\r\n * @author Harry Vu\r\n * @author Vincent Truong\r\n * @author Kathryn Weidman\r\n *\r\n * @version 3/29/2022\r\n */\r\npublic class BoardView extends SurfaceView {\r\n\r\n    private StrategoGameState gameState;\r\n    private Unit[][] board;\r\n\r\n\r\n    private Paint highlighter = new Paint();\r\n\r\n\r\n\r\n    public static final int UNIT_WIDTH = 92;\r\n    public static final int UNIT_HEIGHT = 98;\r\n\r\n\r\n    public BoardView(Context context, AttributeSet attrs) {\r\n        super(context, attrs);\r\n\r\n\r\n        highlighter.setColor(0xfff2e641);\r\n\r\n        gameState = new StrategoGameState();\r\n        board = gameState.getGameboard();\r\n\r\n        setWillNotDraw(false);\r\n    }\r\n\r\n\r\n    /**\r\n     * onDraw\r\n     *\r\n     * method to get the Unit onto the GUI board\r\n     *\r\n     * @param canvas the drawing space for the Unit\r\n     */\r\n    @Override\r\n    public void onDraw(Canvas canvas) {\r\n\r\n\r\n        //TODO: this is only for phase 0?\r\n        //maybe a if(phase == 0)\r\n        //top side of board's units\r\n       for(int i = 0; i < board.length; i++){\r\n            for(int j = 0; j < board.length; j++){\r\n                if(board[i][j] != null){\r\n                    board[i][j].drawMe(canvas);\r\n                }\r\n                else{\r\n                    //do nothing\r\n                }\r\n            }\r\n        }\r\n\r\n       /*//bottom side of board's units\r\n        for(int i = 0; i < 4; i++){\r\n            for(int j = 0; j < board.length; j++){\r\n                Unit temp = board[i][j];\r\n                board[i][j].drawMe(canvas);\r\n            }\r\n        }*/\r\n\r\n\r\n    }//onDraw\r\n\r\n}//BoardView\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/stratego/BoardView.java b/app/src/main/java/edu/up/cs301/stratego/BoardView.java
+--- a/app/src/main/java/edu/up/cs301/stratego/BoardView.java	(revision 3c81195b2e992762b3c82b64e466e40367eacce4)
++++ b/app/src/main/java/edu/up/cs301/stratego/BoardView.java	(date 1648780004589)
+@@ -62,22 +62,22 @@
+ 
+ 
+         //TODO: this is only for phase 0?
+-        //maybe a if(phase == 0)
++        //maybe a if (phase == 0)
+         //top side of board's units
+-       for(int i = 0; i < board.length; i++){
+-            for(int j = 0; j < board.length; j++){
+-                if(board[i][j] != null){
++       for (int i = 0; i < board.length; i++) {
++            for (int j = 0; j < board.length; j++ ) {
++                if (board[i][j] != null) {
+                     board[i][j].drawMe(canvas);
+                 }
+-                else{
++                else {
+                     //do nothing
+                 }
+             }
+         }
+ 
+        /*//bottom side of board's units
+-        for(int i = 0; i < 4; i++){
+-            for(int j = 0; j < board.length; j++){
++        for (int i = 0; i < 4; i++) {
++            for (int j = 0; j < board.length; j++) {
+                 Unit temp = board[i][j];
+                 board[i][j].drawMe(canvas);
+             }
+Index: app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package edu.up.cs301.stratego;\r\n\r\n\r\nimport android.icu.text.UnicodeSetIterator;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Arrays;\r\n\r\nimport edu.up.cs301.game.infoMsg.GameState;\r\n\r\n/**\r\n * StrategoGameState\r\n *\r\n * class to store and describe the current state of the game\r\n *\r\n * @author Anne Marie Blank,\r\n * @author Harry Vu,\r\n * @author Vincent Truong,\r\n * @author Kathryn Weidman\r\n * @version 3/29/2022\r\n */\r\npublic class StrategoGameState extends GameState {\r\n\r\n    protected StrategoGameState state;\r\n\r\n    private int whoseTurn;\r\n\r\n    private Unit[][] gameboard;\r\n    private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is\r\n    private double timeElapsed;  //for the timer\r\n\r\n    private ArrayList<Unit> p1Troops;\r\n    private ArrayList<Unit> p2Troops;\r\n\r\n    private boolean flagCaptured;\r\n    private boolean legal;\r\n\r\n    /**\r\n     * ctor\r\n     *\r\n     * defines the state of the game on startup\r\n     *\r\n     */\r\n    public StrategoGameState(){\r\n        gameboard = new Unit[10][10];\r\n        roundNumber = 0;\r\n        whoseTurn = 0;\r\n        timeElapsed = 0.0;\r\n        flagCaptured = false;\r\n        p1Troops = new ArrayList<Unit>();\r\n        p2Troops = new ArrayList<Unit>();\r\n\r\n        this.fillRanks(0);\r\n        this.fillRanks(1);\r\n\r\n        //loop through each \"hand\", fill gameboard array\r\n\r\n        //p1 aka the \"top\" half of board\r\n        for(int i = 0; i < 4; i++){\r\n            for(int j = 0; j < gameboard.length; j++){\r\n                gameboard[i][j] = p1Troops.get(10*i + j); //10*i + j necessary to keep p1Troops on track\r\n                Unit test = gameboard[i][j];\r\n                // set x and y\r\n                test.setxLoc(j * Unit.UNIT_WIDTH);\r\n                test.setyLoc(i * Unit.UNIT_HEIGHT);\r\n            }\r\n        }\r\n\r\n        //p2 aka \"bottom\" half of board\r\n        int k = 0; //for math purposes-- so we can keep formulas from prev loop\r\n        for(int i = 6; i < 10; i++){\r\n            for(int j = 0; j < gameboard.length; j++){\r\n                gameboard[i][j] = p2Troops.get(10*k + j); //10*k + j keeps us moving through arraylist\r\n                Unit test = gameboard[i][j];\r\n                // set x and y\r\n                test.setxLoc(j * Unit.UNIT_WIDTH);\r\n                test.setyLoc(i * Unit.UNIT_HEIGHT);\r\n            }\r\n            k++;\r\n        }\r\n\r\n\r\n\r\n\r\n    }//ctor\r\n\r\n    /**\r\n     * fillRanks\r\n     *\r\n     * helper method to fill the player's Troop Arrays\r\n     */\r\n    public void fillRanks(int pID) {\r\n        if (pID == 0) {\r\n            p1Troops.add(new Unit(0, Unit.MARSHAL));\r\n            p1Troops.add(new Unit(0, Unit.GENERAL));\r\n            p1Troops.add(new Unit(0, Unit.FLAG));\r\n            p1Troops.add(new Unit(0, Unit.SPY));\r\n\r\n            p1Troops.add(new Unit(0, Unit.COLONEL));\r\n            p1Troops.add(new Unit(0, Unit.COLONEL));\r\n\r\n            p1Troops.add(new Unit(0, Unit.MAJOR));\r\n            p1Troops.add(new Unit(0, Unit.MAJOR));\r\n            p1Troops.add(new Unit(0, Unit.MAJOR));\r\n\r\n            for(int i = 0; i < 4; i++){\r\n                p1Troops.add(new Unit(0, Unit.SERGEANT));\r\n            }\r\n\r\n            for(int i = 0; i < 4; i++){\r\n                p1Troops.add(new Unit(0, Unit.LIEUTENANT));\r\n            }\r\n\r\n            for(int i = 0; i < 4; i++){\r\n                p1Troops.add(new Unit(0, Unit.CAPTAIN));\r\n            }\r\n\r\n            for (int i = 0; i < 5; i++) {\r\n                p1Troops.add(new Unit(0, Unit.MINER));\r\n            }\r\n\r\n            for (int i = 0; i < 8; i++) {\r\n                p1Troops.add(new Unit(0, Unit.SCOUT));\r\n            }\r\n\r\n            for (int i = 0; i < 6; i++) {\r\n                p1Troops.add(new Unit(0, Unit.BOMB));\r\n            }\r\n\r\n        } else if (pID == 1) {\r\n            p2Troops.add(new Unit(1, Unit.MARSHAL));\r\n            p2Troops.add(new Unit(1, Unit.GENERAL));\r\n            p2Troops.add(new Unit(1, Unit.FLAG));\r\n            p2Troops.add(new Unit(1, Unit.SPY));\r\n\r\n            p2Troops.add(new Unit(1, Unit.COLONEL));\r\n            p2Troops.add(new Unit(1, Unit.COLONEL));\r\n\r\n            p2Troops.add(new Unit(1, Unit.MAJOR));\r\n            p2Troops.add(new Unit(1, Unit.MAJOR));\r\n            p2Troops.add(new Unit(1, Unit.MAJOR));\r\n\r\n            p2Troops.add(new Unit(1, Unit.SERGEANT));\r\n            p2Troops.add(new Unit(1, Unit.SERGEANT));\r\n            p2Troops.add(new Unit(1, Unit.SERGEANT));\r\n            p2Troops.add(new Unit(1, Unit.SERGEANT));\r\n\r\n            p2Troops.add(new Unit(1, Unit.LIEUTENANT));\r\n            p2Troops.add(new Unit(1, Unit.LIEUTENANT));\r\n            p2Troops.add(new Unit(1, Unit.LIEUTENANT));\r\n            p2Troops.add(new Unit(1, Unit.LIEUTENANT));\r\n\r\n            p2Troops.add(new Unit(1, Unit.CAPTAIN));\r\n            p2Troops.add(new Unit(1, Unit.CAPTAIN));\r\n            p2Troops.add(new Unit(1, Unit.CAPTAIN));\r\n            p2Troops.add(new Unit(1, Unit.CAPTAIN));\r\n\r\n            for (int i = 0; i < 5; i++) {\r\n                p2Troops.add(new Unit(1, Unit.MINER));\r\n            }\r\n\r\n            for (int i = 0; i < 8; i++) {\r\n                p2Troops.add(new Unit(1, Unit.SCOUT));\r\n            }\r\n\r\n            for (int i = 0; i < 6; i++) {\r\n                p2Troops.add(new Unit(1, Unit.BOMB));\r\n            }\r\n        }\r\n    }//fillRanks\r\n\r\n    /**\r\n     * copy ctor\r\n     *\r\n     * @param orig  the original GameState to be copied\r\n     * @Override\r\n     */\r\n    public StrategoGameState(StrategoGameState orig){\r\n        //initialize new gameboard to be just like the old one\r\n        for(int i = 0; i < gameboard.length; i++){\r\n            for(int j = 0; j < gameboard[i].length; j++){\r\n                gameboard[i][j] = orig.gameboard[i][j];\r\n            }\r\n        }\r\n        flagCaptured = orig.flagCaptured;\r\n        whoseTurn = orig.whoseTurn;\r\n        roundNumber = orig.roundNumber;\r\n        p1Troops = new ArrayList<>();\r\n        p2Troops = new ArrayList<>();\r\n\r\n        //makes a deep copy of the the troops arraylist\r\n        for(int i = 0; i < p1Troops.size(); i++){\r\n            p1Troops.add(orig.p1Troops.get(i));\r\n        }\r\n        for(int i = 0; i < p2Troops.size(); i++){\r\n            p2Troops.add(orig.p2Troops.get(i));\r\n        }\r\n\r\n    }//copy ctor\r\n\r\n    /**\r\n     * toString\r\n     *\r\n     * @return a String representation of the current StrategoGameState\r\n     */\r\n    @Override\r\n    public String toString() {\r\n        String foo = null;\r\n        for(int i = 0; i < p1Troops.size(); i++){\r\n            foo = \"\" + p1Troops.get(i).nameRank() + \" \";\r\n        }\r\n        String bar = null;\r\n        for(int i = 0; i < p2Troops.size(); i++){\r\n            bar = \"\" + p2Troops.get(i).nameRank() + \" \";\r\n        }\r\n        return \"Turn:\" + whoseTurn + \"Player 1 Troops: \" + foo\r\n                + \"Player 2 Troops: \" + bar + \"Time Elapsed: \" + timeElapsed\r\n                + \"Flag Captured?: \" + flagCaptured;\r\n    }//toString\r\n\r\n\r\n\r\n\r\n    /**\r\n     * selectPiece\r\n     *\r\n     *\r\n     * @param playerID   the id of the player attempting to choose\r\n     * @param chosenP    the Unit being selected\r\n     */\r\n    public boolean selectPiece(int playerID, Unit chosenP) {\r\n        if (chosenP.getOwnerID() == playerID) {\r\n            clearSelection(playerID);  //sets all Units to false\r\n            chosenP.setSelected(true); //sets selection to true\r\n            return true;\r\n        }\r\n        else {\r\n            return false;\r\n        }\r\n    }//selectPiece\r\n\r\n    /**\r\n     * clearSelection\r\n     *\r\n     * sets the isSelected value of all Units in the player's \"hand\" to false\r\n     *\r\n     * @param playerId  the ID of the user attempting to make a selection\r\n     */\r\n    public void clearSelection(int playerId) {\r\n        switch (playerId) {\r\n            case 0:\r\n                for(int i= 0; i <= p1Troops.size(); i++){\r\n                    p1Troops.get(i).setSelected(false);\r\n                }\r\n                break;\r\n            case 1:\r\n                for(int i= 0; i <= p2Troops.size(); i++){\r\n                    p2Troops.get(i).setSelected(false);\r\n                }\r\n                break;\r\n        }\r\n    }//clearSelection\r\n\r\n    /**\r\n     * placePiece\r\n     *\r\n     * meant for the beginning stage of the game, when players\r\n     * move their pieces from the starting location (graveyard) and onto the board\r\n     *\r\n     * @param playerID  the id of the player making the move\r\n     * @param unit      the unit they're moving\r\n     * @param x         x coord of new location\r\n     * @param y         y coord of new location\r\n     * @return          true if alive and movement is valid, false if not\r\n     */\r\n    public boolean placePiece(int playerID, Unit unit, int x, int y) {\r\n        if (unit.getStatus()) {\r\n            if (playerID == 0 && y < 4) {  //< 4 is for boundary purposes, ensures piece is on your side\r\n                unit.setxLoc(x);\r\n                unit.setxLoc(y);\r\n                gameboard[x][y] = unit;\r\n                return true;\r\n            }\r\n            else if (playerID == 1 && y > 5) {\r\n                unit.setxLoc(x);\r\n                unit.setxLoc(y);\r\n                gameboard[x][y] = unit;\r\n                return true;\r\n            }\r\n            else {\r\n                return false;\r\n            }\r\n        }\r\n        else {\r\n            return false;\r\n        }\r\n    }//placePiece\r\n\r\n    /**\r\n     * getUnit\r\n     *\r\n     * @param id    the id of the player whose \"hand\" you want to access\r\n     * @param index the index you want to access\r\n     * @return      the unit at the given index in the player's \"hand\"\r\n     */\r\n    public Unit getUnit(int id, int index) {\r\n        if (id == 0) {\r\n            return p1Troops.get(index);\r\n        }\r\n        else {\r\n            return p2Troops.get(index);\r\n        }\r\n    }//getUnit\r\n\r\n    public boolean isMinerAttack(int chosenRank) {\r\n        if (chosenRank == Unit.MINER){\r\n            return true;\r\n        }\r\n        else {\r\n            return false;\r\n        }\r\n    }\r\n\r\n    public void setWhoseTurn(int whoseTurn) {\r\n        this.whoseTurn = whoseTurn;\r\n    }\r\n\r\n    public int getWhoseTurn() {\r\n        return whoseTurn;\r\n    }\r\n\r\n    public Unit[][] getGameboard() {\r\n        return gameboard;\r\n    }\r\n\r\n    public ArrayList<Unit> getP1Troops() {\r\n        return p1Troops;\r\n    }\r\n\r\n    public ArrayList<Unit> getP2Troops() {\r\n        return p2Troops;\r\n    }\r\n\r\n    public boolean isFlagCaptured() {\r\n        return flagCaptured;\r\n    }\r\n}//StrategoGameState\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java b/app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java
+--- a/app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java	(revision 3c81195b2e992762b3c82b64e466e40367eacce4)
++++ b/app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java	(date 1648780004597)
+@@ -41,7 +41,7 @@
+      * defines the state of the game on startup
+      *
+      */
+-    public StrategoGameState(){
++    public StrategoGameState() {
+         gameboard = new Unit[10][10];
+         roundNumber = 0;
+         whoseTurn = 0;
+@@ -56,8 +56,8 @@
+         //loop through each "hand", fill gameboard array
+ 
+         //p1 aka the "top" half of board
+-        for(int i = 0; i < 4; i++){
+-            for(int j = 0; j < gameboard.length; j++){
++        for (int i = 0; i < 4; i++) {
++            for (int j = 0; j < gameboard.length; j++) {
+                 gameboard[i][j] = p1Troops.get(10*i + j); //10*i + j necessary to keep p1Troops on track
+                 Unit test = gameboard[i][j];
+                 // set x and y
+@@ -68,8 +68,8 @@
+ 
+         //p2 aka "bottom" half of board
+         int k = 0; //for math purposes-- so we can keep formulas from prev loop
+-        for(int i = 6; i < 10; i++){
+-            for(int j = 0; j < gameboard.length; j++){
++        for (int i = 6; i < 10; i++) {
++            for (int j = 0; j < gameboard.length; j++) {
+                 gameboard[i][j] = p2Troops.get(10*k + j); //10*k + j keeps us moving through arraylist
+                 Unit test = gameboard[i][j];
+                 // set x and y
+@@ -249,12 +249,12 @@
+     public void clearSelection(int playerId) {
+         switch (playerId) {
+             case 0:
+-                for(int i= 0; i <= p1Troops.size(); i++){
++                for(int i= 0; i <= p1Troops.size(); i++) {
+                     p1Troops.get(i).setSelected(false);
+                 }
+                 break;
+             case 1:
+-                for(int i= 0; i <= p2Troops.size(); i++){
++                for(int i= 0; i <= p2Troops.size(); i++) {
+                     p2Troops.get(i).setSelected(false);
+                 }
+                 break;
