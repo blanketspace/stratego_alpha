@@ -69,8 +69,8 @@ public class StrategoLocalGame extends LocalGame {
         //chosenX = chosenPiece.getX();
         //chosenY = chosenPiece.getY();
 
-        if(action instanceof UpAction){
-            if(goldie.getWhoseTurn() == 0){
+        if (action instanceof UpAction) {
+            if (goldie.getWhoseTurn() == 0) {
                 //player 0's turn, therefore p1Troops
             }
             else {
@@ -79,24 +79,24 @@ public class StrategoLocalGame extends LocalGame {
 
 
         }
-        else if(action instanceof DownAction){
-            if(goldie.getWhoseTurn() == 0){
+        else if (action instanceof DownAction) {
+            if (goldie.getWhoseTurn() == 0) {
                 //player 0's turn, therefore p1Troops
             }
             else {
                 //player 1's turn, therefore p2Troops
             }
         }
-        else if(action instanceof LeftAction){
-            if(goldie.getWhoseTurn() == 0){
+        else if (action instanceof LeftAction) {
+            if (goldie.getWhoseTurn() == 0) {
                 //player 0's turn, therefore p1Troops
             }
             else {
                 //player 1's turn, therefore p2Troops
             }
         }
-        else if(action instanceof RightAction){
-            if(goldie.getWhoseTurn() == 0){
+        else if (action instanceof RightAction) {
+            if (goldie.getWhoseTurn() == 0) {
                 //player 0's turn, therefore p1Troops
             }
             else {
@@ -125,7 +125,7 @@ public class StrategoLocalGame extends LocalGame {
  * @return  false if move is illegal, true otherwise
  */
 
-//TODO: up/down/l/r actions will be classes-- switch case will likely need to be modified to accomodate
+//TODO: up/down/l/r actions will be classes-- switch case will likely need to be modified to accommodate
        /* public boolean movePiece(int playerID, Unit chosen, int dir) {
             int chosenY = chosen.getyLoc();
             int chosenX = chosen.getxLoc();
