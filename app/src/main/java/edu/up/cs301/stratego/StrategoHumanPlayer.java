@@ -105,7 +105,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.upButton) {
-            Log.i("BUTTON_CLICK", " UP_fakjhsgkajlfkga_UP_ldkfnba;ndfb;");
+            Log.i("BUTTON_CLICK", " UP_fakjhlsgkajlfkga_UP_ldkfnba;ndfb;");
             UpAction ua = new UpAction(this);
             game.sendAction(ua);
         }
