@@ -150,19 +150,19 @@ public class Unit {
         Paint black = new Paint();
         black.setColor(0xFFFFFFFF);
         black.setStyle(Paint.Style.STROKE);
-        if(ownerID == 0 && isSelected == false) {
+        if (ownerID == 0 && isSelected == false) {
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, redUnits);
             //c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
         }
-        else if (ownerID == 1 && isSelected == false){
+        else if (ownerID == 1 && isSelected == false) {
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, blueUnits);
             //c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
         }
-        else if(ownerID == 0 && isSelected == true){
+        else if (ownerID == 0 && isSelected == true) {
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, redUnits);
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
         }
-        else if(ownerID == 1 && isSelected == true){
+        else if (ownerID == 1 && isSelected == true) {
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, blueUnits);
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
         }

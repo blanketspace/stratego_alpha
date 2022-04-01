@@ -1,0 +1,821 @@
+Index: local.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>## This file must *NOT* be checked into Version Control Systems,\r\n# as it contains information specific to your local configuration.\r\n#\r\n# Location of the SDK. This is only used by Gradle.\r\n# For customization when using a Version Control System, please read the\r\n# header note.\r\n#Thu Mar 24 18:06:13 PDT 2022\r\nsdk.dir=C\\:\\\\Users\\\\katyl\\\\AppData\\\\Local\\\\Android\\\\Sdk\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+diff --git a/local.properties b/local.properties
+--- a/local.properties	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/local.properties	(date 1648254770473)
+@@ -4,5 +4,5 @@
+ # Location of the SDK. This is only used by Gradle.
+ # For customization when using a Version Control System, please read the
+ # header note.
+-#Thu Mar 24 18:06:13 PDT 2022
+-sdk.dir=C\:\\Users\\katyl\\AppData\\Local\\Android\\Sdk
++#Fri Mar 25 16:54:47 PDT 2022
++sdk.dir=C\:\\Users\\pandu\\AppData\\Local\\Android\\Sdk
+Index: app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v14.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n    \"logs\": [\r\n        {\r\n            \"outputFile\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\incremental\\\\mergeDebugResources\\\\merged.dir\\\\values-v14\\\\values-v14.xml\",\r\n            \"map\": [\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values-v14\\\\styles.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"19\",\r\n                        \"endColumns\": \"77\",\r\n                        \"endOffsets\": \"92\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"55\",\r\n                        \"endColumns\": \"76\",\r\n                        \"endOffsets\": \"127\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v14.json b/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v14.json
+--- a/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v14.json	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v14.json	(date 1648254770501)
+@@ -1,10 +1,10 @@
+ {
+     "logs": [
+         {
+-            "outputFile": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
++            "outputFile": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+             "map": [
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v14\\styles.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v14\\styles.xml",
+                     "from": {
+                         "startLines": "2",
+                         "startColumns": "4",
+Index: app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Fri Mar 25 17:27:59 PDT 2022\r\nbase.0=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\dex\\\\debug\\\\mergeDexDebug\\\\classes.dex\r\nrenamed.0=classes.dex\r\npath.0=classes.dex\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt b/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt
+--- a/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt	(date 1648254998432)
+@@ -1,4 +1,4 @@
+-#Fri Mar 25 17:27:59 PDT 2022
+-base.0=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
++#Fri Mar 25 16:56:39 PDT 2022
++base.0=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+ renamed.0=classes.dex
+ path.0=classes.dex
+Index: app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n    \"logs\": [\r\n        {\r\n            \"outputFile\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\values_values.arsc.flat\",\r\n            \"map\": [\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values\\\\color.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"2,3,4\",\r\n                        \"startColumns\": \"4,4,4\",\r\n                        \"startOffsets\": \"57,95,133\",\r\n                        \"endColumns\": \"36,36,37\",\r\n                        \"endOffsets\": \"89,127,166\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"2,3,4\",\r\n                        \"startColumns\": \"4,4,4\",\r\n                        \"startOffsets\": \"55,92,129\",\r\n                        \"endColumns\": \"36,36,37\",\r\n                        \"endOffsets\": \"87,124,162\"\r\n                    }\r\n                },\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values\\\\styles.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"19\",\r\n                        \"endColumns\": \"58\",\r\n                        \"endOffsets\": \"73\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"31\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"1617\",\r\n                        \"endColumns\": \"57\",\r\n                        \"endOffsets\": \"1670\"\r\n                    }\r\n                },\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values\\\\dimen.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"7,2,4,3,6,5\",\r\n                        \"startColumns\": \"4,4,4,4,4,4\",\r\n                        \"startOffsets\": \"314,57,168,112,262,211\",\r\n                        \"endColumns\": \"50,53,41,54,50,49\",\r\n                        \"endOffsets\": \"360,106,205,162,308,256\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"5,6,7,8,9,10\",\r\n                        \"startColumns\": \"4,4,4,4,4,4\",\r\n                        \"startOffsets\": \"167,218,272,314,369,420\",\r\n                        \"endColumns\": \"50,53,41,54,50,49\",\r\n                        \"endOffsets\": \"213,267,309,364,415,465\"\r\n                    }\r\n                },\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values\\\\strings.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"11,2,7,17,18,19,14,3,20,4,8,12,13,21,10,6,15,9,15,5\",\r\n                        \"startColumns\": \"4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,89,4\",\r\n                        \"startOffsets\": \"536,19,319,881,954,1006,693,66,1084,120,370,587,640,1134,479,248,734,416,819,172\",\r\n                        \"endColumns\": \"49,45,49,71,50,76,39,52,48,50,44,51,51,50,55,69,89,61,139,74\",\r\n                        \"endOffsets\": \"581,60,364,948,1000,1078,728,114,1128,166,410,634,687,1180,530,313,819,473,869,242\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30\",\r\n                        \"startColumns\": \"4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4\",\r\n                        \"startOffsets\": \"470,520,566,616,688,739,816,856,909,958,1009,1054,1106,1158,1209,1265,1335,1425,1487,1542\",\r\n                        \"endColumns\": \"49,45,49,71,50,76,39,52,48,50,44,51,51,50,55,69,89,61,54,74\",\r\n                        \"endOffsets\": \"515,561,611,683,734,811,851,904,953,1004,1049,1101,1153,1204,1260,1330,1420,1482,1537,1612\"\r\n                    }\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"outputFile\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\values-v11_values-v11.arsc.flat\",\r\n            \"map\": [\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values-v11\\\\styles.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"19\",\r\n                        \"endColumns\": \"63\",\r\n                        \"endOffsets\": \"78\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"55\",\r\n                        \"endColumns\": \"62\",\r\n                        \"endOffsets\": \"113\"\r\n                    }\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"outputFile\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\values-v14_values-v14.arsc.flat\",\r\n            \"map\": [\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values-v14\\\\styles.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"19\",\r\n                        \"endColumns\": \"77\",\r\n                        \"endOffsets\": \"92\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"55\",\r\n                        \"endColumns\": \"76\",\r\n                        \"endOffsets\": \"127\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json b/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json
+--- a/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json	(date 1648254998478)
+@@ -1,27 +1,10 @@
+ {
+     "logs": [
+         {
+-            "outputFile": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\values_values.arsc.flat",
++            "outputFile": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\values_values.arsc.flat",
+             "map": [
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\color.xml",
+-                    "from": {
+-                        "startLines": "2,3,4",
+-                        "startColumns": "4,4,4",
+-                        "startOffsets": "57,95,133",
+-                        "endColumns": "36,36,37",
+-                        "endOffsets": "89,127,166"
+-                    },
+-                    "to": {
+-                        "startLines": "2,3,4",
+-                        "startColumns": "4,4,4",
+-                        "startOffsets": "55,92,129",
+-                        "endColumns": "36,36,37",
+-                        "endOffsets": "87,124,162"
+-                    }
+-                },
+-                {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\styles.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\styles.xml",
+                     "from": {
+                         "startLines": "2",
+                         "startColumns": "4",
+@@ -38,7 +21,7 @@
+                     }
+                 },
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\dimen.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\dimen.xml",
+                     "from": {
+                         "startLines": "7,2,4,3,6,5",
+                         "startColumns": "4,4,4,4,4,4",
+@@ -55,7 +38,24 @@
+                     }
+                 },
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\strings.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\color.xml",
++                    "from": {
++                        "startLines": "2,3,4",
++                        "startColumns": "4,4,4",
++                        "startOffsets": "57,95,133",
++                        "endColumns": "36,36,37",
++                        "endOffsets": "89,127,166"
++                    },
++                    "to": {
++                        "startLines": "2,3,4",
++                        "startColumns": "4,4,4",
++                        "startOffsets": "55,92,129",
++                        "endColumns": "36,36,37",
++                        "endOffsets": "87,124,162"
++                    }
++                },
++                {
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\strings.xml",
+                     "from": {
+                         "startLines": "11,2,7,17,18,19,14,3,20,4,8,12,13,21,10,6,15,9,15,5",
+                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,89,4",
+@@ -74,45 +74,45 @@
+             ]
+         },
+         {
+-            "outputFile": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\values-v11_values-v11.arsc.flat",
++            "outputFile": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\values-v14_values-v14.arsc.flat",
+             "map": [
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v11\\styles.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v14\\styles.xml",
+                     "from": {
+                         "startLines": "2",
+                         "startColumns": "4",
+                         "startOffsets": "19",
+-                        "endColumns": "63",
+-                        "endOffsets": "78"
++                        "endColumns": "77",
++                        "endOffsets": "92"
+                     },
+                     "to": {
+                         "startLines": "2",
+                         "startColumns": "4",
+                         "startOffsets": "55",
+-                        "endColumns": "62",
+-                        "endOffsets": "113"
++                        "endColumns": "76",
++                        "endOffsets": "127"
+                     }
+                 }
+             ]
+         },
+         {
+-            "outputFile": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\values-v14_values-v14.arsc.flat",
++            "outputFile": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\values-v11_values-v11.arsc.flat",
+             "map": [
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v14\\styles.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v11\\styles.xml",
+                     "from": {
+                         "startLines": "2",
+                         "startColumns": "4",
+                         "startOffsets": "19",
+-                        "endColumns": "77",
+-                        "endOffsets": "92"
++                        "endColumns": "63",
++                        "endOffsets": "78"
+                     },
+                     "to": {
+                         "startLines": "2",
+                         "startColumns": "4",
+                         "startOffsets": "55",
+-                        "endColumns": "76",
+-                        "endOffsets": "127"
++                        "endColumns": "62",
++                        "endOffsets": "113"
+                     }
+                 }
+             ]
+Index: .idea/modules/app/stratego_alpha.app.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module external.linked.project.id=\":app\" external.linked.project.path=\"$MODULE_DIR$/../../../app\" external.root.project.path=\"$MODULE_DIR$/../../..\" external.system.id=\"GRADLE\" external.system.module.group=\"stratego_alpha\" external.system.module.version=\"unspecified\" type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"FacetManager\">\r\n    <facet type=\"android-gradle\" name=\"Android-Gradle\">\r\n      <configuration>\r\n        <option name=\"GRADLE_PROJECT_PATH\" value=\":app\" />\r\n        <option name=\"LAST_SUCCESSFUL_SYNC_AGP_VERSION\" />\r\n        <option name=\"LAST_KNOWN_AGP_VERSION\" value=\"7.0.4\" />\r\n      </configuration>\r\n    </facet>\r\n    <facet type=\"android\" name=\"Android\">\r\n      <configuration>\r\n        <option name=\"SELECTED_BUILD_VARIANT\" value=\"debug\" />\r\n        <option name=\"ASSEMBLE_TASK_NAME\" value=\"assembleDebug\" />\r\n        <option name=\"COMPILE_JAVA_TASK_NAME\" value=\"compileDebugSources\" />\r\n        <afterSyncTasks>\r\n          <task>generateDebugSources</task>\r\n        </afterSyncTasks>\r\n        <option name=\"ALLOW_USER_CONFIGURATION\" value=\"false\" />\r\n        <option name=\"MANIFEST_FILE_RELATIVE_PATH\" value=\"/src/main/AndroidManifest.xml\" />\r\n        <option name=\"RES_FOLDER_RELATIVE_PATH\" value=\"/src/main/res\" />\r\n        <option name=\"RES_FOLDERS_RELATIVE_PATH\" value=\"file://$MODULE_DIR$/../../../app/src/main/res;file://$MODULE_DIR$/../../../app/src/debug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/debug\" />\r\n        <option name=\"TEST_RES_FOLDERS_RELATIVE_PATH\" value=\"file://$MODULE_DIR$/../../../app/src/androidTest/res;file://$MODULE_DIR$/../../../app/src/androidTestDebug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug\" />\r\n        <option name=\"ASSETS_FOLDER_RELATIVE_PATH\" value=\"/src/main/assets\" />\r\n      </configuration>\r\n    </facet>\r\n  </component>\r\n  <component name=\"NewModuleRootManager\" LANGUAGE_LEVEL=\"JDK_1_8\">\r\n    <output url=\"file://$MODULE_DIR$/../../../app/build/intermediates/javac/debug/classes\" />\r\n    <output-test url=\"file://$MODULE_DIR$/../../../app/build/intermediates/javac/debugUnitTest/classes\" />\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$/../../../app\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/../../../app/build/generated/source/buildConfig/debug\" isTestSource=\"false\" generated=\"true\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/../../../app/src/main/java\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/../../../app/src/main/res\" type=\"java-resource\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/../../../app/.gradle\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/../../../app/build\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"Android API 29 Platform\" jdkType=\"Android SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/app/stratego_alpha.app.iml b/.idea/modules/app/stratego_alpha.app.iml
+--- a/.idea/modules/app/stratego_alpha.app.iml	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/.idea/modules/app/stratego_alpha.app.iml	(date 1648259729285)
+@@ -4,7 +4,7 @@
+     <facet type="android-gradle" name="Android-Gradle">
+       <configuration>
+         <option name="GRADLE_PROJECT_PATH" value=":app" />
+-        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" />
++        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="7.0.4" />
+         <option name="LAST_KNOWN_AGP_VERSION" value="7.0.4" />
+       </configuration>
+     </facet>
+@@ -33,6 +33,8 @@
+       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+       <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/java" isTestSource="false" />
+       <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/res" type="java-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/res/resValues/debug" type="java-resource" />
+       <excludeFolder url="file://$MODULE_DIR$/../../../app/.gradle" />
+       <excludeFolder url="file://$MODULE_DIR$/../../../app/build" />
+     </content>
+Index: app/build/intermediates/signing_config_versions/debug/signing-config-versions.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\"enableV1Signing\":false,\"enableV2Signing\":true,\"enableV3Signing\":false,\"enableV4Signing\":false}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json b/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json
+--- a/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json	(date 1648254998497)
+@@ -1,1 +1,1 @@
+-{"enableV1Signing":false,"enableV2Signing":true,"enableV3Signing":false,"enableV4Signing":false}
+\ No newline at end of file
++{"enableV1Signing":true,"enableV2Signing":false,"enableV3Signing":false,"enableV4Signing":false}
+\ No newline at end of file
+Index: app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>[\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_config_main.xml.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_config_main.xml\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-hdpi_purple_delete_button.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-hdpi\\\\purple_delete_button.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face6.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face6.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-ldpi_ic_launcher.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-ldpi\\\\ic_launcher.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face5.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face5.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-hdpi_ic_action_search.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-hdpi\\\\ic_action_search.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_ic_launcher.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\ic_launcher.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-mdpi_ic_action_search.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-mdpi\\\\ic_action_search.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face1.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face1.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_player_list_row.xml.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_player_list_row.xml\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_stratego_board.xml.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\stratego_board.xml\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face2.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face2.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face3.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face3.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_local_tab.xml.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_local_tab.xml\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-hdpi_ic_launcher.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-hdpi\\\\ic_launcher.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_remote_tab.xml.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_remote_tab.xml\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face4.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face4.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_config_tabhost.xml.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_config_tabhost.xml\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-mdpi_ic_launcher.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-mdpi\\\\ic_launcher.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_no_gui.xml.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_no_gui.xml\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_ic_action_search.png.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\ic_action_search.png\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_good_board.jpg.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\good_board.jpg\"\r\n    },\r\n    {\r\n        \"merged\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\menu_game_main.xml.flat\",\r\n        \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\menu\\\\game_main.xml\"\r\n    }\r\n]
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json b/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json
+--- a/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json	(date 1648254998502)
+@@ -1,94 +1,94 @@
+ [
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_main.xml.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_main.xml"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_purple_delete_button.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\purple_delete_button.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_action_search.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_action_search.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face6.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face6.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face1.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face1.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_launcher.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_main.xml.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_main.xml"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face5.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face5.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_good_board.jpg.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\good_board.jpg"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_action_search.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_action_search.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\menu_game_main.xml.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\menu\\game_main.xml"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_action_search.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_action_search.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_purple_delete_button.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\purple_delete_button.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face1.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face1.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_tabhost.xml.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_player_list_row.xml.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_player_list_row.xml"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_stratego_board.xml.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\stratego_board.xml"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_stratego_board.xml.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\stratego_board.xml"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_launcher.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face2.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face2.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_remote_tab.xml.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face3.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face3.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face2.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face2.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_local_tab.xml.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_local_tab.xml"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face5.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face5.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_launcher.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_local_tab.xml.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_local_tab.xml"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_remote_tab.xml.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_no_gui.xml.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_no_gui.xml"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face4.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face4.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_launcher.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_tabhost.xml.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_action_search.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_search.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_launcher.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face6.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face6.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_no_gui.xml.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_no_gui.xml"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_launcher.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_action_search.png.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_search.png"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face3.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face3.png"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_good_board.jpg.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\good_board.jpg"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_player_list_row.xml.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_player_list_row.xml"
+     },
+     {
+-        "merged": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\menu_game_main.xml.flat",
+-        "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\menu\\game_main.xml"
++        "merged": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face4.png.flat",
++        "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face4.png"
+     }
+ ]
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/game_config_main.xml\" value=\"0.2546875\" />\r\n        <entry key=\"..\\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/game_no_gui.xml\" value=\"0.2546875\" />\r\n        <entry key=\"..\\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/game_player_list_row.xml\" value=\"0.2546875\" />\r\n        <entry key=\"..\\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/game_remote_tab.xml\" value=\"0.2546875\" />\r\n        <entry key=\"..\\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/pig_layout.xml\" value=\"0.2546875\" />\r\n        <entry key=\"..\\:/Users/blank/AndroidStudioProjects/PigGameStarter/app/src/main/res/layout/stratego_board.xml\" value=\"0.2546875\" />\r\n        <entry key=\"..\\:/Users/katyl/AndroidStudioProjects/stratego_alpha/app/src/main/res/layout/game_config_main.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/katyl/AndroidStudioProjects/stratego_alpha/app/src/main/res/layout/stratego_board.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/pandu/AndroidStudioProjects/stratego_alpha/app/src/main/res/layout/stratego_board.xml\" value=\"0.17481884057971014\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"NullableNotNullManager\">\r\n    <option name=\"myDefaultNullable\" value=\"android.support.annotation.Nullable\" />\r\n    <option name=\"myDefaultNotNull\" value=\"android.support.annotation.NonNull\" />\r\n    <option name=\"myNullables\">\r\n      <value>\r\n        <list size=\"15\">\r\n          <item index=\"0\" class=\"java.lang.String\" itemvalue=\"org.jetbrains.annotations.Nullable\" />\r\n          <item index=\"1\" class=\"java.lang.String\" itemvalue=\"javax.annotation.Nullable\" />\r\n          <item index=\"2\" class=\"java.lang.String\" itemvalue=\"javax.annotation.CheckForNull\" />\r\n          <item index=\"3\" class=\"java.lang.String\" itemvalue=\"edu.umd.cs.findbugs.annotations.Nullable\" />\r\n          <item index=\"4\" class=\"java.lang.String\" itemvalue=\"android.support.annotation.Nullable\" />\r\n          <item index=\"5\" class=\"java.lang.String\" itemvalue=\"androidx.annotation.Nullable\" />\r\n          <item index=\"6\" class=\"java.lang.String\" itemvalue=\"androidx.annotation.RecentlyNullable\" />\r\n          <item index=\"7\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.qual.Nullable\" />\r\n          <item index=\"8\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.compatqual.NullableDecl\" />\r\n          <item index=\"9\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.compatqual.NullableType\" />\r\n          <item index=\"10\" class=\"java.lang.String\" itemvalue=\"android.annotation.Nullable\" />\r\n          <item index=\"11\" class=\"java.lang.String\" itemvalue=\"com.android.annotations.Nullable\" />\r\n          <item index=\"12\" class=\"java.lang.String\" itemvalue=\"org.eclipse.jdt.annotation.Nullable\" />\r\n          <item index=\"13\" class=\"java.lang.String\" itemvalue=\"io.reactivex.annotations.Nullable\" />\r\n          <item index=\"14\" class=\"java.lang.String\" itemvalue=\"io.reactivex.rxjava3.annotations.Nullable\" />\r\n        </list>\r\n      </value>\r\n    </option>\r\n    <option name=\"myNotNulls\">\r\n      <value>\r\n        <list size=\"15\">\r\n          <item index=\"0\" class=\"java.lang.String\" itemvalue=\"org.jetbrains.annotations.NotNull\" />\r\n          <item index=\"1\" class=\"java.lang.String\" itemvalue=\"javax.annotation.Nonnull\" />\r\n          <item index=\"2\" class=\"java.lang.String\" itemvalue=\"edu.umd.cs.findbugs.annotations.NonNull\" />\r\n          <item index=\"3\" class=\"java.lang.String\" itemvalue=\"android.support.annotation.NonNull\" />\r\n          <item index=\"4\" class=\"java.lang.String\" itemvalue=\"androidx.annotation.NonNull\" />\r\n          <item index=\"5\" class=\"java.lang.String\" itemvalue=\"androidx.annotation.RecentlyNonNull\" />\r\n          <item index=\"6\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.qual.NonNull\" />\r\n          <item index=\"7\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.compatqual.NonNullDecl\" />\r\n          <item index=\"8\" class=\"java.lang.String\" itemvalue=\"org.checkerframework.checker.nullness.compatqual.NonNullType\" />\r\n          <item index=\"9\" class=\"java.lang.String\" itemvalue=\"android.annotation.NonNull\" />\r\n          <item index=\"10\" class=\"java.lang.String\" itemvalue=\"com.android.annotations.NonNull\" />\r\n          <item index=\"11\" class=\"java.lang.String\" itemvalue=\"org.eclipse.jdt.annotation.NonNull\" />\r\n          <item index=\"12\" class=\"java.lang.String\" itemvalue=\"io.reactivex.annotations.NonNull\" />\r\n          <item index=\"13\" class=\"java.lang.String\" itemvalue=\"io.reactivex.rxjava3.annotations.NonNull\" />\r\n          <item index=\"14\" class=\"java.lang.String\" itemvalue=\"lombok.NonNull\" />\r\n        </list>\r\n      </value>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectInspectionProfilesVisibleTreeState\">\r\n    <entry key=\"Project Default\">\r\n      <profile-state>\r\n        <expanded-state>\r\n          <State>\r\n            <id />\r\n          </State>\r\n          <State>\r\n            <id>Java</id>\r\n          </State>\r\n        </expanded-state>\r\n        <selected-state>\r\n          <State>\r\n            <id>Java</id>\r\n          </State>\r\n        </selected-state>\r\n      </profile-state>\r\n    </entry>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" default=\"true\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n  <component name=\"masterDetails\">\r\n    <states>\r\n      <state key=\"ProjectJDKs.UI\">\r\n        <settings>\r\n          <last-edited>1.7</last-edited>\r\n          <splitter-proportions>\r\n            <option name=\"proportions\">\r\n              <list>\r\n                <option value=\"0.2\" />\r\n              </list>\r\n            </option>\r\n          </splitter-proportions>\r\n        </settings>\r\n      </state>\r\n      <state key=\"ScopeChooserConfigurable.UI\">\r\n        <settings>\r\n          <splitter-proportions>\r\n            <option name=\"proportions\">\r\n              <list>\r\n                <option value=\"0.2\" />\r\n              </list>\r\n            </option>\r\n          </splitter-proportions>\r\n        </settings>\r\n      </state>\r\n    </states>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/.idea/misc.xml	(date 1648254998515)
+@@ -80,7 +80,7 @@
+       </profile-state>
+     </entry>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v11.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n    \"logs\": [\r\n        {\r\n            \"outputFile\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\incremental\\\\mergeDebugResources\\\\merged.dir\\\\values-v11\\\\values-v11.xml\",\r\n            \"map\": [\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values-v11\\\\styles.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"19\",\r\n                        \"endColumns\": \"63\",\r\n                        \"endOffsets\": \"78\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"55\",\r\n                        \"endColumns\": \"62\",\r\n                        \"endOffsets\": \"113\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v11.json b/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v11.json
+--- a/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v11.json	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v11.json	(date 1648254998522)
+@@ -1,10 +1,10 @@
+ {
+     "logs": [
+         {
+-            "outputFile": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
++            "outputFile": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+             "map": [
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v11\\styles.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v11\\styles.xml",
+                     "from": {
+                         "startLines": "2",
+                         "startColumns": "4",
+Index: app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n    \"logs\": [\r\n        {\r\n            \"outputFile\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\incremental\\\\mergeDebugResources\\\\merged.dir\\\\values\\\\values.xml\",\r\n            \"map\": [\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values\\\\color.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"2,3,4\",\r\n                        \"startColumns\": \"4,4,4\",\r\n                        \"startOffsets\": \"57,95,133\",\r\n                        \"endColumns\": \"36,36,37\",\r\n                        \"endOffsets\": \"89,127,166\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"2,3,4\",\r\n                        \"startColumns\": \"4,4,4\",\r\n                        \"startOffsets\": \"55,92,129\",\r\n                        \"endColumns\": \"36,36,37\",\r\n                        \"endOffsets\": \"87,124,162\"\r\n                    }\r\n                },\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values\\\\styles.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"2\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"19\",\r\n                        \"endColumns\": \"58\",\r\n                        \"endOffsets\": \"73\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"31\",\r\n                        \"startColumns\": \"4\",\r\n                        \"startOffsets\": \"1617\",\r\n                        \"endColumns\": \"57\",\r\n                        \"endOffsets\": \"1670\"\r\n                    }\r\n                },\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values\\\\dimen.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"7,2,4,3,6,5\",\r\n                        \"startColumns\": \"4,4,4,4,4,4\",\r\n                        \"startOffsets\": \"314,57,168,112,262,211\",\r\n                        \"endColumns\": \"50,53,41,54,50,49\",\r\n                        \"endOffsets\": \"360,106,205,162,308,256\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"5,6,7,8,9,10\",\r\n                        \"startColumns\": \"4,4,4,4,4,4\",\r\n                        \"startOffsets\": \"167,218,272,314,369,420\",\r\n                        \"endColumns\": \"50,53,41,54,50,49\",\r\n                        \"endOffsets\": \"213,267,309,364,415,465\"\r\n                    }\r\n                },\r\n                {\r\n                    \"source\": \"C:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\values\\\\strings.xml\",\r\n                    \"from\": {\r\n                        \"startLines\": \"11,2,7,17,18,19,14,3,20,4,8,12,13,21,10,6,15,9,15,5\",\r\n                        \"startColumns\": \"4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,89,4\",\r\n                        \"startOffsets\": \"536,19,319,881,954,1006,693,66,1084,120,370,587,640,1134,479,248,734,416,819,172\",\r\n                        \"endColumns\": \"49,45,49,71,50,76,39,52,48,50,44,51,51,50,55,69,89,61,139,74\",\r\n                        \"endOffsets\": \"581,60,364,948,1000,1078,728,114,1128,166,410,634,687,1180,530,313,819,473,869,242\"\r\n                    },\r\n                    \"to\": {\r\n                        \"startLines\": \"11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30\",\r\n                        \"startColumns\": \"4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4\",\r\n                        \"startOffsets\": \"470,520,566,616,688,739,816,856,909,958,1009,1054,1106,1158,1209,1265,1335,1425,1487,1542\",\r\n                        \"endColumns\": \"49,45,49,71,50,76,39,52,48,50,44,51,51,50,55,69,89,61,54,74\",\r\n                        \"endOffsets\": \"515,561,611,683,734,811,851,904,953,1004,1049,1101,1153,1204,1260,1330,1420,1482,1537,1612\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json b/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json
+--- a/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json	(date 1648254998529)
+@@ -1,27 +1,10 @@
+ {
+     "logs": [
+         {
+-            "outputFile": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
++            "outputFile": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+             "map": [
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\color.xml",
+-                    "from": {
+-                        "startLines": "2,3,4",
+-                        "startColumns": "4,4,4",
+-                        "startOffsets": "57,95,133",
+-                        "endColumns": "36,36,37",
+-                        "endOffsets": "89,127,166"
+-                    },
+-                    "to": {
+-                        "startLines": "2,3,4",
+-                        "startColumns": "4,4,4",
+-                        "startOffsets": "55,92,129",
+-                        "endColumns": "36,36,37",
+-                        "endOffsets": "87,124,162"
+-                    }
+-                },
+-                {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\styles.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\styles.xml",
+                     "from": {
+                         "startLines": "2",
+                         "startColumns": "4",
+@@ -38,7 +21,7 @@
+                     }
+                 },
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\dimen.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\dimen.xml",
+                     "from": {
+                         "startLines": "7,2,4,3,6,5",
+                         "startColumns": "4,4,4,4,4,4",
+@@ -55,7 +38,24 @@
+                     }
+                 },
+                 {
+-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\strings.xml",
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\color.xml",
++                    "from": {
++                        "startLines": "2,3,4",
++                        "startColumns": "4,4,4",
++                        "startOffsets": "57,95,133",
++                        "endColumns": "36,36,37",
++                        "endOffsets": "89,127,166"
++                    },
++                    "to": {
++                        "startLines": "2,3,4",
++                        "startColumns": "4,4,4",
++                        "startOffsets": "55,92,129",
++                        "endColumns": "36,36,37",
++                        "endOffsets": "87,124,162"
++                    }
++                },
++                {
++                    "source": "C:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\strings.xml",
+                     "from": {
+                         "startLines": "11,2,7,17,18,19,14,3,20,4,8,12,13,21,10,6,15,9,15,5",
+                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,89,4",
+Index: app/build/intermediates/incremental/mergeDebugResources/merger.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<merger version=\"3\"><dataSet aapt-namespace=\"http://schemas.android.com/apk/res-auto\" config=\"main$Generated\" generated=\"true\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\"/><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\generated\\res\\rs\\debug\"/><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\generated\\res\\resValues\\debug\"/></dataSet><dataSet aapt-namespace=\"http://schemas.android.com/apk/res-auto\" config=\"main\" generated-set=\"main$Generated\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\"><file name=\"ic_action_search\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png\" qualifiers=\"hdpi-v4\" type=\"drawable\"/><file name=\"ic_launcher\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png\" qualifiers=\"hdpi-v4\" type=\"drawable\"/><file name=\"purple_delete_button\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\purple_delete_button.png\" qualifiers=\"hdpi-v4\" type=\"drawable\"/><file name=\"ic_launcher\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png\" qualifiers=\"ldpi-v4\" type=\"drawable\"/><file name=\"ic_action_search\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_action_search.png\" qualifiers=\"mdpi-v4\" type=\"drawable\"/><file name=\"ic_launcher\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png\" qualifiers=\"mdpi-v4\" type=\"drawable\"/><file name=\"face1\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face1.png\" qualifiers=\"xhdpi-v4\" type=\"drawable\"/><file name=\"face2\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face2.png\" qualifiers=\"xhdpi-v4\" type=\"drawable\"/><file name=\"face3\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face3.png\" qualifiers=\"xhdpi-v4\" type=\"drawable\"/><file name=\"face4\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face4.png\" qualifiers=\"xhdpi-v4\" type=\"drawable\"/><file name=\"face5\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face5.png\" qualifiers=\"xhdpi-v4\" type=\"drawable\"/><file name=\"face6\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face6.png\" qualifiers=\"xhdpi-v4\" type=\"drawable\"/><file name=\"good_board\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\good_board.jpg\" qualifiers=\"xhdpi-v4\" type=\"drawable\"/><file name=\"ic_action_search\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_search.png\" qualifiers=\"xhdpi-v4\" type=\"drawable\"/><file name=\"ic_launcher\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png\" qualifiers=\"xhdpi-v4\" type=\"drawable\"/><file name=\"game_config_main\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_main.xml\" qualifiers=\"\" type=\"layout\"/><file name=\"game_config_tabhost\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_tabhost.xml\" qualifiers=\"\" type=\"layout\"/><file name=\"game_local_tab\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_local_tab.xml\" qualifiers=\"\" type=\"layout\"/><file name=\"game_no_gui\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_no_gui.xml\" qualifiers=\"\" type=\"layout\"/><file name=\"game_player_list_row\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_player_list_row.xml\" qualifiers=\"\" type=\"layout\"/><file name=\"game_remote_tab\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_remote_tab.xml\" qualifiers=\"\" type=\"layout\"/><file name=\"stratego_board\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\stratego_board.xml\" qualifiers=\"\" type=\"layout\"/><file name=\"game_main\" path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\menu\\game_main.xml\" qualifiers=\"\" type=\"menu\"/><file path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\color.xml\" qualifiers=\"\"><color name=\"black\">#000</color><color name=\"green\">#0F0</color><color name=\"red\">#ff0000</color></file><file path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\dimen.xml\" qualifiers=\"\"><dimen name=\"del_player_button_size\">35dp</dimen><dimen name=\"table_heading_font_size\">14sp</dimen><dimen name=\"tab_height\">75dp</dimen><dimen name=\"table_row_vert_pad\">10dp</dimen><dimen name=\"table_row_horiz_pad\">50dp</dimen><dimen name=\"config_horiz_margin\">20dp</dimen></file><file path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\strings.xml\" qualifiers=\"\"><string name=\"app_name\">Stratego</string><string name=\"hello_world\">Hello world!</string><string name=\"menu_settings\">Settings</string><string name=\"title_activity_game_main\">Shall We Play A Game?</string><string name=\"save_config\">Save As Default Configuration</string><string name=\"begin_game\">Begin Game</string><string name=\"name_label\">Name:</string><string name=\"server_ip_code\">Server\\'s IP Code:</string><string name=\"remove_player\">Remove Player</string><string name=\"add_player\">Add Player</string><string name=\"player_name\">Player Name</string><string name=\"player_type\">Player Type</string><string name=\"guest\">Guest</string><string name=\"save_config_as_default\">Save this Configuration as the Default</string><string name=\"start_the_game\">Start Game!</string><string name=\"dialog_continue_label\">Continue Playing Game</string><string name=\"dialog_quit_label\">Quit</string><string name=\"dialog_quit_question\">Do you really want to quit?</string><string name=\"local_tab\">Local Game</string><string name=\"remote_tab\">Remote Game</string></file><file path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values\\styles.xml\" qualifiers=\"\"><style name=\"AppTheme\" parent=\"android:Theme.Light\"/></file><file path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v11\\styles.xml\" qualifiers=\"v11\"><style name=\"AppTheme\" parent=\"android:Theme.Holo.Light\"/></file><file path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v14\\styles.xml\" qualifiers=\"v14\"><style name=\"AppTheme\" parent=\"android:Theme.Holo.Light.DarkActionBar\"/></file></source><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\generated\\res\\rs\\debug\"/><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\generated\\res\\resValues\\debug\"/></dataSet><dataSet aapt-namespace=\"http://schemas.android.com/apk/res-auto\" config=\"debug$Generated\" generated=\"true\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\debug\\res\"/></dataSet><dataSet aapt-namespace=\"http://schemas.android.com/apk/res-auto\" config=\"debug\" generated-set=\"debug$Generated\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\debug\\res\"/></dataSet><mergedItems/></merger>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/incremental/mergeDebugResources/merger.xml b/app/build/intermediates/incremental/mergeDebugResources/merger.xml
+--- a/app/build/intermediates/incremental/mergeDebugResources/merger.xml	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/incremental/mergeDebugResources/merger.xml	(date 1648254998537)
+@@ -1,2 +1,2 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res"/><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\build\generated\res\rs\debug"/><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res"><file name="ic_action_search" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-hdpi\ic_action_search.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="purple_delete_button" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-hdpi\purple_delete_button.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-ldpi\ic_launcher.png" qualifiers="ldpi-v4" type="drawable"/><file name="ic_action_search" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-mdpi\ic_action_search.png" qualifiers="mdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="face1" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face1.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face2" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face2.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face3" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face3.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face4" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face4.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face5" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face5.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face6" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face6.png" qualifiers="xhdpi-v4" type="drawable"/><file name="good_board" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\good_board.jpg" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_action_search" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\ic_action_search.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="game_config_main" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_config_main.xml" qualifiers="" type="layout"/><file name="game_config_tabhost" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_config_tabhost.xml" qualifiers="" type="layout"/><file name="game_local_tab" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_local_tab.xml" qualifiers="" type="layout"/><file name="game_no_gui" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_no_gui.xml" qualifiers="" type="layout"/><file name="game_player_list_row" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_player_list_row.xml" qualifiers="" type="layout"/><file name="game_remote_tab" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_remote_tab.xml" qualifiers="" type="layout"/><file name="stratego_board" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\stratego_board.xml" qualifiers="" type="layout"/><file name="game_main" path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\menu\game_main.xml" qualifiers="" type="menu"/><file path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\values\color.xml" qualifiers=""><color name="black">#000</color><color name="green">#0F0</color><color name="red">#ff0000</color></file><file path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\values\dimen.xml" qualifiers=""><dimen name="del_player_button_size">35dp</dimen><dimen name="table_heading_font_size">14sp</dimen><dimen name="tab_height">75dp</dimen><dimen name="table_row_vert_pad">10dp</dimen><dimen name="table_row_horiz_pad">50dp</dimen><dimen name="config_horiz_margin">20dp</dimen></file><file path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">Stratego</string><string name="hello_world">Hello world!</string><string name="menu_settings">Settings</string><string name="title_activity_game_main">Shall We Play A Game?</string><string name="save_config">Save As Default Configuration</string><string name="begin_game">Begin Game</string><string name="name_label">Name:</string><string name="server_ip_code">Server\'s IP Code:</string><string name="remove_player">Remove Player</string><string name="add_player">Add Player</string><string name="player_name">Player Name</string><string name="player_type">Player Type</string><string name="guest">Guest</string><string name="save_config_as_default">Save this Configuration as the Default</string><string name="start_the_game">Start Game!</string><string name="dialog_continue_label">Continue Playing Game</string><string name="dialog_quit_label">Quit</string><string name="dialog_quit_question">Do you really want to quit?</string><string name="local_tab">Local Game</string><string name="remote_tab">Remote Game</string></file><file path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="android:Theme.Light"/></file><file path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="AppTheme" parent="android:Theme.Holo.Light"/></file><file path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\res\values-v14\styles.xml" qualifiers="v14"><style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar"/></file></source><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\build\generated\res\rs\debug"/><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\debug\res"/></dataSet><mergedItems/></merger>
+\ No newline at end of file
++<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res"/><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\build\generated\res\rs\debug"/><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res"><file name="ic_action_search" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-hdpi\ic_action_search.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="purple_delete_button" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-hdpi\purple_delete_button.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-ldpi\ic_launcher.png" qualifiers="ldpi-v4" type="drawable"/><file name="ic_action_search" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-mdpi\ic_action_search.png" qualifiers="mdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="face1" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face1.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face2" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face2.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face3" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face3.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face4" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face4.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face5" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face5.png" qualifiers="xhdpi-v4" type="drawable"/><file name="face6" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\face6.png" qualifiers="xhdpi-v4" type="drawable"/><file name="good_board" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\good_board.jpg" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_action_search" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\ic_action_search.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_launcher" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\drawable-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="game_config_main" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_config_main.xml" qualifiers="" type="layout"/><file name="game_config_tabhost" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_config_tabhost.xml" qualifiers="" type="layout"/><file name="game_local_tab" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_local_tab.xml" qualifiers="" type="layout"/><file name="game_no_gui" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_no_gui.xml" qualifiers="" type="layout"/><file name="game_player_list_row" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_player_list_row.xml" qualifiers="" type="layout"/><file name="game_remote_tab" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\game_remote_tab.xml" qualifiers="" type="layout"/><file name="stratego_board" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\layout\stratego_board.xml" qualifiers="" type="layout"/><file name="game_main" path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\menu\game_main.xml" qualifiers="" type="menu"/><file path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\values\color.xml" qualifiers=""><color name="black">#000</color><color name="green">#0F0</color><color name="red">#ff0000</color></file><file path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\values\dimen.xml" qualifiers=""><dimen name="del_player_button_size">35dp</dimen><dimen name="table_heading_font_size">14sp</dimen><dimen name="tab_height">75dp</dimen><dimen name="table_row_vert_pad">10dp</dimen><dimen name="table_row_horiz_pad">50dp</dimen><dimen name="config_horiz_margin">20dp</dimen></file><file path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">Stratego</string><string name="hello_world">Hello world!</string><string name="menu_settings">Settings</string><string name="title_activity_game_main">Shall We Play A Game?</string><string name="save_config">Save As Default Configuration</string><string name="begin_game">Begin Game</string><string name="name_label">Name:</string><string name="server_ip_code">Server\'s IP Code:</string><string name="remove_player">Remove Player</string><string name="add_player">Add Player</string><string name="player_name">Player Name</string><string name="player_type">Player Type</string><string name="guest">Guest</string><string name="save_config_as_default">Save this Configuration as the Default</string><string name="start_the_game">Start Game!</string><string name="dialog_continue_label">Continue Playing Game</string><string name="dialog_quit_label">Quit</string><string name="dialog_quit_question">Do you really want to quit?</string><string name="local_tab">Local Game</string><string name="remote_tab">Remote Game</string></file><file path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="android:Theme.Light"/></file><file path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\values-v11\styles.xml" qualifiers="v11"><style name="AppTheme" parent="android:Theme.Holo.Light"/></file><file path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\res\values-v14\styles.xml" qualifiers="v14"><style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar"/></file></source><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\build\generated\res\rs\debug"/><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\debug\res"/></dataSet><mergedItems/></merger>
+\ No newline at end of file
+Index: app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>1<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n2<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n3    package=\"edu.up.cs301.game\"\r\n4    android:versionCode=\"1\"\r\n5    android:versionName=\"1.0\" >\r\n6\r\n7    <uses-sdk\r\n8        android:minSdkVersion=\"1\"\r\n8-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n9        android:targetSdkVersion=\"29\" />\r\n9-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n10\r\n11    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n11-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:6:5-67\r\n11-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:6:22-64\r\n12    <uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />\r\n12-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:7:5-79\r\n12-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:7:22-76\r\n13\r\n14    <application\r\n14-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:9:5-22:19\r\n15        android:debuggable=\"true\"\r\n16        android:icon=\"@drawable/face1\"\r\n16-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:10:9-39\r\n17        android:label=\"@string/app_name\"\r\n17-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:11:9-41\r\n18        android:testOnly=\"true\"\r\n19        android:theme=\"@style/AppTheme\" >\r\n19-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:12:9-40\r\n20        <activity\r\n20-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:14:9-20:20\r\n21            android:name=\"edu.up.cs301.stratego.StrategoMainActivity\"\r\n21-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:14:19-76\r\n22            android:configChanges=\"keyboard|keyboardHidden|orientation|screenSize\" >\r\n22-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:15:13-83\r\n23            <intent-filter>\r\n23-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:16:13-19:29\r\n24                <action android:name=\"android.intent.action.MAIN\" />\r\n24-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:17:17-69\r\n24-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:17:25-66\r\n25\r\n26                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n26-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:18:17-77\r\n26-->C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:18:27-74\r\n27            </intent-filter>\r\n28        </activity>\r\n29    </application>\r\n30\r\n31</manifest>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt b/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt
+--- a/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt	(date 1648254998545)
+@@ -6,42 +6,42 @@
+ 6
+ 7    <uses-sdk
+ 8        android:minSdkVersion="1"
+-8-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++8-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+ 9        android:targetSdkVersion="29" />
+-9-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++9-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+ 10
+ 11    <uses-permission android:name="android.permission.INTERNET" />
+-11-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:6:5-67
+-11-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:6:22-64
++11-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:6:5-67
++11-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:6:22-64
+ 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+-12-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:7:5-79
+-12-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:7:22-76
++12-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:7:5-79
++12-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:7:22-76
+ 13
+ 14    <application
+-14-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:9:5-22:19
++14-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:9:5-22:19
+ 15        android:debuggable="true"
+ 16        android:icon="@drawable/face1"
+-16-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:10:9-39
++16-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:10:9-39
+ 17        android:label="@string/app_name"
+-17-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:11:9-41
++17-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:11:9-41
+ 18        android:testOnly="true"
+ 19        android:theme="@style/AppTheme" >
+-19-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:12:9-40
++19-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:12:9-40
+ 20        <activity
+-20-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:9-20:20
++20-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:9-20:20
+ 21            android:name="edu.up.cs301.stratego.StrategoMainActivity"
+-21-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:19-76
++21-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:19-76
+ 22            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
+-22-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:15:13-83
++22-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:15:13-83
+ 23            <intent-filter>
+-23-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:16:13-19:29
++23-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:16:13-19:29
+ 24                <action android:name="android.intent.action.MAIN" />
+-24-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:17:17-69
+-24-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:17:25-66
++24-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:17:17-69
++24-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:17:25-66
+ 25
+ 26                <category android:name="android.intent.category.LAUNCHER" />
+-26-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:18:17-77
+-26-->C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:18:27-74
++26-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:18:17-77
++26-->C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:18:27-74
+ 27            </intent-filter>
+ 28        </activity>
+ 29    </application>
+Index: app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<merger version=\"3\"><dataSet config=\"main\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\jniLibs\"/></dataSet><dataSet config=\"debug\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\debug\\jniLibs\"/></dataSet></merger>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml b/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml
+--- a/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml	(date 1648254998554)
+@@ -1,2 +1,2 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\debug\jniLibs"/></dataSet></merger>
+\ No newline at end of file
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\jniLibs"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\debug\jniLibs"/></dataSet></merger>
+\ No newline at end of file
+Index: app/build/outputs/logs/manifest-merger-debug-report.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>-- Merging decision tree log ---\r\nmanifest\r\nADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:1:1-24:12\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:1:1-24:12\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:1:1-24:12\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:1:1-24:12\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:1:1-24:12\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:1:1-24:12\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:1:1-24:12\r\n\tpackage\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:2:5-32\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\tandroid:versionName\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:4:5-30\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\txmlns:android\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:1:11-69\r\n\tandroid:versionCode\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:3:5-28\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\nuses-permission#android.permission.INTERNET\r\nADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:6:5-67\r\n\tandroid:name\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:6:22-64\r\nuses-permission#android.permission.ACCESS_NETWORK_STATE\r\nADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:7:5-79\r\n\tandroid:name\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:7:22-76\r\napplication\r\nADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:9:5-22:19\r\n\tandroid:label\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:11:9-41\r\n\tandroid:icon\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:10:9-39\r\n\tandroid:theme\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:12:9-40\r\nactivity#edu.up.cs301.stratego.StrategoMainActivity\r\nADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:14:9-20:20\r\n\tandroid:configChanges\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:15:13-83\r\n\tandroid:name\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:14:19-76\r\nintent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER\r\nADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:16:13-19:29\r\naction#android.intent.action.MAIN\r\nADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:17:17-69\r\n\tandroid:name\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:17:25-66\r\ncategory#android.intent.category.LAUNCHER\r\nADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:18:17-77\r\n\tandroid:name\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml:18:27-74\r\nuses-sdk\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml reason: use-sdk injection requested\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\nINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\tandroid:targetSdkVersion\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\tandroid:minSdkVersion\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\t\tADDED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n\t\tINJECTED from C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\AndroidManifest.xml\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/outputs/logs/manifest-merger-debug-report.txt b/app/build/outputs/logs/manifest-merger-debug-report.txt
+--- a/app/build/outputs/logs/manifest-merger-debug-report.txt	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/outputs/logs/manifest-merger-debug-report.txt	(date 1648259725955)
+@@ -1,69 +1,69 @@
+ -- Merging decision tree log ---
+ manifest
+-ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
++ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:1-24:12
+ 	package
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:2:5-32
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:2:5-32
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+ 	android:versionName
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:4:5-30
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:4:5-30
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+ 	xmlns:android
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:11-69
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:1:11-69
+ 	android:versionCode
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:3:5-28
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:3:5-28
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+ uses-permission#android.permission.INTERNET
+-ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:6:5-67
++ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:6:5-67
+ 	android:name
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:6:22-64
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:6:22-64
+ uses-permission#android.permission.ACCESS_NETWORK_STATE
+-ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:7:5-79
++ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:7:5-79
+ 	android:name
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:7:22-76
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:7:22-76
+ application
+-ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:9:5-22:19
++ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:9:5-22:19
+ 	android:label
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:11:9-41
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:11:9-41
+ 	android:icon
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:10:9-39
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:10:9-39
+ 	android:theme
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:12:9-40
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:12:9-40
+ activity#edu.up.cs301.stratego.StrategoMainActivity
+-ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:9-20:20
++ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:9-20:20
+ 	android:configChanges
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:15:13-83
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:15:13-83
+ 	android:name
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:19-76
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:14:19-76
+ intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+-ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:16:13-19:29
++ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:16:13-19:29
+ action#android.intent.action.MAIN
+-ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:17:17-69
++ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:17:17-69
+ 	android:name
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:17:25-66
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:17:25-66
+ category#android.intent.category.LAUNCHER
+-ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:18:17-77
++ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:18:17-77
+ 	android:name
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:18:27-74
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml:18:27-74
+ uses-sdk
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+ 	android:targetSdkVersion
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+ 	android:minSdkVersion
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-		ADDED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+-		INJECTED from C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		ADDED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
++		INJECTED from C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\AndroidManifest.xml
+Index: app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Fri Mar 25 17:23:55 PDT 2022\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\ic_launcher.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_ic_launcher.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-ldpi\\\\ic_launcher.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-ldpi_ic_launcher.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face2.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face2.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_local_tab.xml=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_local_tab.xml.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\menu\\\\game_main.xml=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\menu_game_main.xml.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-mdpi\\\\ic_launcher.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-mdpi_ic_launcher.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\stratego_board.xml=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_stratego_board.xml.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face4.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face4.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_remote_tab.xml=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_remote_tab.xml.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-hdpi\\\\ic_action_search.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-hdpi_ic_action_search.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\ic_action_search.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_ic_action_search.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-hdpi\\\\ic_launcher.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-hdpi_ic_launcher.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face6.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face6.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_config_main.xml=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_config_main.xml.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face1.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face1.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\good_board.jpg=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_good_board.jpg.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_player_list_row.xml=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_player_list_row.xml.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-hdpi\\\\purple_delete_button.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-hdpi_purple_delete_button.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_config_tabhost.xml=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_config_tabhost.xml.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\layout\\\\game_no_gui.xml=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\layout_game_no_gui.xml.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-mdpi\\\\ic_action_search.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-mdpi_ic_action_search.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face3.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face3.png.flat\r\nC\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\src\\\\main\\\\res\\\\drawable-xhdpi\\\\face5.png=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\merged_res\\\\debug\\\\drawable-xhdpi_face5.png.flat\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+diff --git a/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties b/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties
+--- a/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties	(date 1648259725887)
+@@ -1,24 +1,24 @@
+-#Fri Mar 25 17:23:55 PDT 2022
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_launcher.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face2.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face2.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_local_tab.xml=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_local_tab.xml.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\menu\\game_main.xml=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\menu_game_main.xml.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_launcher.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\stratego_board.xml=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_stratego_board.xml.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face4.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face4.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_remote_tab.xml=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_remote_tab.xml.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_action_search.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_search.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_action_search.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_launcher.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face6.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face6.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_main.xml=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_main.xml.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face1.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face1.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\good_board.jpg=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_good_board.jpg.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_player_list_row.xml=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_player_list_row.xml.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\purple_delete_button.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_purple_delete_button.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_tabhost.xml=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_tabhost.xml.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_no_gui.xml=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_no_gui.xml.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_action_search.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_action_search.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face3.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face3.png.flat
+-C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face5.png=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face5.png.flat
++#Fri Mar 25 16:56:32 PDT 2022
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face6.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face6.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_player_list_row.xml=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_player_list_row.xml.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face4.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face4.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face1.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face1.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face3.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face3.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\purple_delete_button.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_purple_delete_button.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\stratego_board.xml=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_stratego_board.xml.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_main.xml=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_main.xml.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_local_tab.xml=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_local_tab.xml.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face5.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face5.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_remote_tab.xml=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_remote_tab.xml.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_launcher.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_config_tabhost.xml=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_config_tabhost.xml.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\face2.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_face2.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\menu\\game_main.xml=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\menu_game_main.xml.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_action_search.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_action_search.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\good_board.jpg=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_good_board.jpg.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_launcher.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_launcher.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\layout\\game_no_gui.xml=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\layout_game_no_gui.xml.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_action_search.png.flat
++C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_search.png=C\:\\Users\\pandu\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_action_search.png.flat
+Index: app/build/intermediates/incremental/mergeDebugAssets/merger.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<merger version=\"3\"><dataSet config=\"main\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\assets\"/><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\shader_assets\\debug\\out\"/></dataSet><dataSet config=\"debug\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\debug\\assets\"/></dataSet></merger>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/incremental/mergeDebugAssets/merger.xml b/app/build/intermediates/incremental/mergeDebugAssets/merger.xml
+--- a/app/build/intermediates/incremental/mergeDebugAssets/merger.xml	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/incremental/mergeDebugAssets/merger.xml	(date 1648259725934)
+@@ -1,2 +1,2 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\assets"/><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\build\intermediates\shader_assets\debug\out"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\debug\assets"/></dataSet></merger>
+\ No newline at end of file
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\assets"/><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\build\intermediates\shader_assets\debug\out"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\debug\assets"/></dataSet></merger>
+\ No newline at end of file
+Index: app/build/intermediates/incremental/mergeDebugShaders/merger.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<merger version=\"3\"><dataSet config=\"main\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\shaders\"/></dataSet><dataSet config=\"debug\" ignore_pattern=\"!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~\"><source path=\"C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\debug\\shaders\"/></dataSet></merger>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/incremental/mergeDebugShaders/merger.xml b/app/build/intermediates/incremental/mergeDebugShaders/merger.xml
+--- a/app/build/intermediates/incremental/mergeDebugShaders/merger.xml	(revision 7cf87c79c6b2c35f0c71fe9afe69b240155aad4e)
++++ b/app/build/intermediates/incremental/mergeDebugShaders/merger.xml	(date 1648259725942)
+@@ -1,2 +1,2 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\katyl\AndroidStudioProjects\stratego_alpha\app\src\debug\shaders"/></dataSet></merger>
+\ No newline at end of file
++<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\main\shaders"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\pandu\AndroidStudioProjects\stratego_alpha\app\src\debug\shaders"/></dataSet></merger>
+\ No newline at end of file
