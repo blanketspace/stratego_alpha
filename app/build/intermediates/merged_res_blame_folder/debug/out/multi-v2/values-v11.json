@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "/Users/vincenttruong/AndroidStudioProjects/CS301/stratego_alpha/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "source": "/Users/vincenttruong/AndroidStudioProjects/CS301/stratego_alpha/app/src/main/res/values-v11/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "19",
+                        "startOffsets": "17",
                         "endColumns": "63",
-                        "endOffsets": "78"
+                        "endOffsets": "76"
                     },
                     "to": {
                         "startLines": "2",

@@ -143,6 +143,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         int y = (int)motionEvent.getY();
 
         //match that x,y to a Unit
+        if()
+
 
 
         //initial run testing message
