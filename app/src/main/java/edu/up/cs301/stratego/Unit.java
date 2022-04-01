@@ -42,6 +42,7 @@ public class Unit {
     private Paint redUnits = new Paint();
     private Paint blueUnits = new Paint();
 
+
     /*** Nothing else needs to be added in this Unit class
      * IMPORTANT ELABORATION: Every unit has their ownerID, meaning that
      * the owner's id comes with the unit*/
@@ -149,11 +150,19 @@ public class Unit {
         Paint black = new Paint();
         black.setColor(0xFFFFFFFF);
         black.setStyle(Paint.Style.STROKE);
-        if(ownerID == 0) {
+        if(ownerID == 0 && isSelected == false) {
+            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, redUnits);
+            //c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
+        }
+        else if (ownerID == 1 && isSelected == false){
+            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, blueUnits);
+            //c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
+        }
+        else if(ownerID == 0 && isSelected == true){
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, redUnits);
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
         }
-        else if (ownerID == 1){
+        else if(ownerID == 1 && isSelected == true){
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, blueUnits);
             c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
         }
