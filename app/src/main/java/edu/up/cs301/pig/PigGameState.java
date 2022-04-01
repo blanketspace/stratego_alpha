@@ -80,5 +80,6 @@ public class PigGameState extends GameState {
     public void setRunTotal(int runTotal) {
         this.runTotal = runTotal;
     }
+
 }
 

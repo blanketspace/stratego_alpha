@@ -19,8 +19,6 @@ public class MovePieceAction extends GameAction {
      *
      * @param player the player who created the action
      */
-    public MovePieceAction(GamePlayer player) {
-        super(player);
-    }
+    public MovePieceAction(GamePlayer player) { super(player); }
 }//MovePieceAction
 
