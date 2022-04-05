@@ -64,12 +64,12 @@ public class BoardView extends SurfaceView {
         //TODO: this is only for phase 0?
         //maybe a if(phase == 0)
         //top side of board's units
-       for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board.length; j++) {
-                if (board[i][j] != null) {
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board.length; j++){
+                if(board[i][j] != null){
                     board[i][j].drawMe(canvas);
                 }
-                else {
+                else{
                     //do nothing
                 }
             }
@@ -86,4 +86,7 @@ public class BoardView extends SurfaceView {
 
     }//onDraw
 
+    public StrategoGameState getGameState() {
+        return gameState;
+    }
 }//BoardView

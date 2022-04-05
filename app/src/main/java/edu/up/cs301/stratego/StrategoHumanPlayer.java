@@ -13,6 +13,7 @@ import edu.up.cs301.game.infoMsg.GameInfo;
 import edu.up.cs301.stratego.actions.DownAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
+import edu.up.cs301.stratego.actions.SelectPieceAction;
 import edu.up.cs301.stratego.actions.UpAction;
 
 
@@ -34,6 +35,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private BoardView boardView;
 
     private GameMainActivity gma;
+    private StrategoGameState copyState;
 
     /**
      * constructor
@@ -64,7 +66,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     @Override
     public void receiveInfo(GameInfo info) {
         if (info instanceof StrategoGameState) {
-
+            Log.i("HUM_PLAYER", "rECIEVEiNFO");
+            copyState = (StrategoGameState) info;
         }
         else {
             //something has gone wrong, or it's not this player's turn
@@ -105,7 +108,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.upButton) {
-            Log.i("BUTTON_CLICK", " UP_fakjhlsgkajlfkga_UP_ldkfnba;ndfb;");
+            Log.i("BUTTON_CLICK", " UP_fakjhsgkajlfkga_UP_ldkfnba;ndfb;");
             UpAction ua = new UpAction(this);
             game.sendAction(ua);
         }
@@ -142,15 +145,41 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         int x = (int)motionEvent.getX();
         int y = (int)motionEvent.getY();
 
+
+        copyState = boardView.getGameState();
         //match that x,y to a Unit
-        if()
+        Unit test = this.findUnit(x, y);
+        if(test != null){
+            copyState.selectPiece(copyState.getWhoseTurn(), test);
+            //copyState.clearSelection(1);  KEEP COMMENTED OUT, RESULTS IN CRASH
+            test.setSelected(true);
+            boardView.invalidate();
+        }
 
-
+        SelectPieceAction spa = new SelectPieceAction(this);
+        game.sendAction(spa);
 
         //initial run testing message
         Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
         return false;
     }//onTouch
+
+    /**
+     *findRect
+     *
+     * method to assist in determining whether or not a touch happened in a given element
+     */
+    public Unit findUnit(int x, int y){
+        Unit temp = null;
+        for(int i = 0; i < copyState.getP2Troops().size() - 1; i++){
+            if(copyState.getP2Troops().get(i).containsPoint(x, y)){
+                temp = copyState.getP2Troops().get(i);
+                break;
+            }
+        }
+        return temp;
+    }// findRect
+
 
 }//StrategoHumanPlayer
 

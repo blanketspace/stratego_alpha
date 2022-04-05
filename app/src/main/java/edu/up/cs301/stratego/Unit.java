@@ -77,6 +77,7 @@ public class Unit {
     public void setSelected(boolean selected) {
         if (!isDead) {
             isSelected = selected;
+            //this.drawHighlight();
         }
     }
 
@@ -169,9 +170,21 @@ public class Unit {
 
     }//drawMe
 
-    /*public boolean containsPoint(int x, int y){
 
-    }*/
+    /**
+     * External Citation
+     * based off of a method of the same name in the CustomRect class
+     * provided as a resource for the Custom Coloring homework
+     *
+     * @param x
+     * @param y
+     * @return
+     */
+    public boolean containsPoint(int x, int y) {
+        Rect r = new Rect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT);
+
+        return r.contains(x, y);
+    }//containsPoint
 
 }//class Unit
 
