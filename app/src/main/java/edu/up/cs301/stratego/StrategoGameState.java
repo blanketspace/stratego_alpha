@@ -250,12 +250,12 @@ public class StrategoGameState extends GameState {
     public void clearSelection(int playerId) {
         switch (playerId) {
             case 0:
-                for (int i= 0; i <= p1Troops.size(); i++) {
+                for (int i= 0; i < p1Troops.size(); i++) {
                     p1Troops.get(i).setSelected(false);
                 }
                 break;
             case 1:
-                for (int i= 0; i <= p2Troops.size(); i++) {
+                for (int i= 0; i < p2Troops.size(); i++) {
                     p2Troops.get(i).setSelected(false);
                 }
                 break;

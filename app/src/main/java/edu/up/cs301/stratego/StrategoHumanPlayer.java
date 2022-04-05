@@ -122,7 +122,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             LeftAction la = new LeftAction(this);
             game.sendAction(la);
         }
-        else if (view.getId() == R.id.rightButton); {
+        else if (view.getId() == R.id.rightButton) {  //TODO: this is being called when UP is being called
             Log.i("RIGHT_BUTTON_CLICK", "glkjdfkjglaksjklgdfklsldfk");
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
@@ -151,8 +151,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         Unit test = this.findUnit(x, y);
         if(test != null){
             copyState.selectPiece(copyState.getWhoseTurn(), test);
-            //copyState.clearSelection(1);  KEEP COMMENTED OUT, RESULTS IN CRASH
-            test.setSelected(true);
+            copyState.clearSelection(1);  //clears selection from all Units
+            test.setSelected(true);  //select specific Unit
             boardView.invalidate();
         }
 
