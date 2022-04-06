@@ -38,7 +38,7 @@ public class StrategoMainActivity extends GameMainActivity {
         // Define the allowed player types
         ArrayList<GamePlayerType> playerTypes = new ArrayList<GamePlayerType>();
 
-         //Pig has two player types:  human and computer
+         //Stratego has two player types:  human and computer
         playerTypes.add(new GamePlayerType("Local Human Player") {
             public GamePlayer createPlayer(String name) {
                 return new StrategoHumanPlayer(name);
@@ -48,7 +48,7 @@ public class StrategoMainActivity extends GameMainActivity {
                 return new StrategoDumbCompPlayer(name);
             }});
 
-        // Create a game configuration class for Pig:
+        // Create a game configuration class for Stratego:
         GameConfig defaultConfig = new GameConfig(playerTypes, 1, 2, "Stratego", PORT_NUMBER);
         defaultConfig.addPlayer("Human", 0); // player 1: a human player
         defaultConfig.addPlayer("Computer", 1); // player 2: a computer player

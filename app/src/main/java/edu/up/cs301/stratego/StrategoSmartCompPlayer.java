@@ -1,5 +1,7 @@
 package edu.up.cs301.stratego;
 
+import java.util.Random;
+
 import edu.up.cs301.game.GameComputerPlayer;
 import edu.up.cs301.game.infoMsg.GameInfo;
 
@@ -42,7 +44,28 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
         Unit[][] board = ((StrategoGameState) info).getGameboard();
     }
 
-    public void setUpStrategy(int chosenStrat) {}
+    public void setUpStrategy(int chosenStrat) {
+        switch (chosenStrat) { //We have 6 possible setups from a world champion stratego player
+            case 0:
+                //smth to fill the ranks properly
+                break;
+            case 1:
+                //smth
+                break;
+            case 2:
+                //smth
+                break;
+            case 3:
+                //smth
+                break;
+            case 4:
+                //smth
+                break;
+            case 5:
+                //smth
+                break;
+        }
+    }
 
     public void choosePiece() {} //returns a Unit, not void
 
