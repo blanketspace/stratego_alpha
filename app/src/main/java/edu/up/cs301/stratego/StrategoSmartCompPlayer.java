@@ -32,5 +32,17 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
         if (gameState.getWhoseTurn() != playerNum) {
             return;
         }
+
+        Unit[][] board = ((StrategoGameState) info).getGameboard();
     }
+
+    public void setUpStrategy(int chosenStrat) {}
+
+    public void choosePiece() {} //returns a Unit, not void
+
+    public int checkFlanks(Unit chosen) {return 0;}
+
+    public int chooseMoveDir(Unit chosen) {return 0;}
+
+
 }
