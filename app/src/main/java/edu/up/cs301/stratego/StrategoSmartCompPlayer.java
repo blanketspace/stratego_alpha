@@ -6,7 +6,7 @@ import edu.up.cs301.game.infoMsg.GameInfo;
 /**
  * StrategoDumbCompPlayer
  *
- * @author blank
+ * @author Anne Marie Blank,
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
