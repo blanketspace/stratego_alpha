@@ -11,7 +11,11 @@ import edu.up.cs301.game.infoMsg.GameInfo;
  * @author Vincent Truong,
  * @author Kathryn Weidman
  * @version 4/5/2022
+ *
+ * Reference for smart AI setups from a world champion Stratego player
+ *      * https://www.ultraboardgames.com/stratego/setups.php
  */
+
 public class StrategoSmartCompPlayer extends GameComputerPlayer {
     /**
      * constructor
@@ -21,6 +25,8 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
     public StrategoSmartCompPlayer(String name) {
         super(name);
     }
+
+
 
     @Override
     protected void receiveInfo(GameInfo info) {
