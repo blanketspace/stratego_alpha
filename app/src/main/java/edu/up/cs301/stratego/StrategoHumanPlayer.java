@@ -24,7 +24,7 @@ import edu.up.cs301.stratego.actions.UpAction;
  * @author Harry Vu
  * @author Vincent Truong
  * @author Kathryn Weidman
- * @version 3/29/2022
+ * @version 4/7/2022
  */
 public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClickListener, View.OnTouchListener {
 
@@ -68,6 +68,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         if (info instanceof StrategoGameState) {
             Log.i("HUM_PLAYER", "rECIEVEiNFO");
             copyState = (StrategoGameState) info;
+            this.boardView.invalidate();
         }
         else {
             //something has gone wrong, or it's not this player's turn
@@ -122,7 +123,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             LeftAction la = new LeftAction(this);
             game.sendAction(la);
         }
-        else if (view.getId() == R.id.rightButton) {  //TODO: this is being called when UP is being called
+        else if (view.getId() == R.id.rightButton) {
             Log.i("RIGHT_BUTTON_CLICK", "glkjdfkjglaksjklgdfklsldfk");
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
@@ -154,24 +155,32 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             copyState.clearSelection(1);  //clears selection from all Units
             test.setSelected(true);  //select specific Unit
             boardView.invalidate();
+
+            //initial run testing message
+            Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
+
+            SelectPieceAction spa = new SelectPieceAction(this, test);
+            game.sendAction(spa);
+           // this.sendInfo(copyState);  //this probably breaks things
+        }
+        else {
+            //do nothing, since there's no Unit there
         }
 
-        SelectPieceAction spa = new SelectPieceAction(this);
-        game.sendAction(spa);
 
-        //initial run testing message
-        Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
-        return false;
+        return true;
     }//onTouch
 
     /**
      *findRect
      *
      * method to assist in determining whether or not a touch happened in a given element
+     *
+     * @return  the Unit containing those specific xy coords
      */
     public Unit findUnit(int x, int y){
         Unit temp = null;
-        for(int i = 0; i < copyState.getP2Troops().size() - 1; i++){
+        for(int i = 0; i < copyState.getP2Troops().size(); i++){
             if(copyState.getP2Troops().get(i).containsPoint(x, y)){
                 temp = copyState.getP2Troops().get(i);
                 break;

@@ -17,7 +17,7 @@ import edu.up.cs301.game.infoMsg.GameState;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 3/29/2022
+ * @version 4/7/2022
  */
 public class StrategoGameState extends GameState {
 
@@ -34,6 +34,8 @@ public class StrategoGameState extends GameState {
 
     private boolean flagCaptured;
     private boolean legal;
+
+    private BoardView myBoardView;
 
     /**
      * ctor
@@ -61,11 +63,10 @@ public class StrategoGameState extends GameState {
                 gameboard[i][j] = p1Troops.get(10*i + j); //10*i + j necessary to keep p1Troops on track
                 Unit test = gameboard[i][j];
                 // set x and y
-                test.setxLoc(j * Unit.UNIT_WIDTH);
-                test.setyLoc(i * Unit.UNIT_HEIGHT);
+                test.setxLoc(j);  //changed from j*Unit_Width
+                test.setyLoc(i);
             }
         }
-
         //p2 aka "bottom" half of board
         int k = 0; //for math purposes-- so we can keep formulas from prev loop
         for (int i = 6; i < 10; i++) {
@@ -73,14 +74,11 @@ public class StrategoGameState extends GameState {
                 gameboard[i][j] = p2Troops.get(10*k + j); //10*k + j keeps us moving through arraylist
                 Unit test = gameboard[i][j];
                 // set x and y
-                test.setxLoc(j * Unit.UNIT_WIDTH);
-                test.setyLoc(i * Unit.UNIT_HEIGHT);
+                test.setxLoc(j);
+                test.setyLoc(i);
             }
             k++;
         }
-
-
-
 
     }//ctor
 
@@ -177,6 +175,8 @@ public class StrategoGameState extends GameState {
      * @Override
      */
     public StrategoGameState(StrategoGameState orig){
+        gameboard = new Unit[10][10];
+
         //initialize new gameboard to be just like the old one
         for (int i = 0; i < gameboard.length; i++) {
             for (int j = 0; j < gameboard[i].length; j++) {
@@ -219,7 +219,25 @@ public class StrategoGameState extends GameState {
                 + "Flag Captured?: " + flagCaptured;
     }//toString
 
+    /**
+     * findEquivUnit
+     *
+     * Given a Unit from another game state, find the one in this game state
+     * that is the same (if it exists)
+     */
+    public Unit findEquivUnit(Unit other) {
+        ArrayList<Unit> searchMe = this.p1Troops;
+        if (other.getOwnerID() == 1) {
+            searchMe = this.p2Troops;
+        }
+        for(Unit u : searchMe) {
+            if ((u.getxLoc() == other.getxLoc()) && (u.getyLoc() == other.getyLoc())) {
+                return u;
+            }
+        }
 
+        return null;
+    }
 
 
     /**
@@ -239,6 +257,7 @@ public class StrategoGameState extends GameState {
             return false;
         }
     }//selectPiece
+
 
     /**
      * clearSelection
@@ -261,6 +280,28 @@ public class StrategoGameState extends GameState {
                 break;
         }
     }//clearSelection
+
+
+    /**
+     * getSelectedUnit
+     *
+     * finds the Unit in the gameboard array that is selected
+     *
+     * @return   returns the Unit on the gameboard that is currently selected
+     */
+    public Unit getSelectedUnit(){
+        Unit selected = null;
+        for(int i = 0; i < this.gameboard.length; i++){
+            for(int j = 0; j < this.gameboard.length; j++){
+                if(gameboard[i][j] != null && gameboard[i][j].getSelected()){
+                    //the above condition is met when the Unit at that loc /is/ selected
+                    selected = gameboard[i][j];
+                }
+            }
+        }
+        return selected;  //CAUTION: could return false; this is handled in SLocalGame
+    }//getSelectedUnit
+
 
     /**
      * placePiece
@@ -344,6 +385,18 @@ public class StrategoGameState extends GameState {
 
     public boolean isFlagCaptured() {
         return flagCaptured;
+    }
+
+    public BoardView getMyBoardView() {
+        return myBoardView;
+    }
+
+    public void setMyBoardView(BoardView myBoardView) {
+        this.myBoardView = myBoardView;
+    }
+
+    public void setFlagCaptured(boolean flagCaptured) {
+        this.flagCaptured = flagCaptured;
     }
 }//StrategoGameState
 

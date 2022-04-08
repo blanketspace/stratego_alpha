@@ -21,7 +21,7 @@ import edu.up.cs301.game.R;
  * @author Vincent Truong
  * @author Kathryn Weidman
  *
- * @version 3/29/2022
+ * @version 4/7/2022
  */
 public class BoardView extends SurfaceView {
 
@@ -45,6 +45,7 @@ public class BoardView extends SurfaceView {
 
         gameState = new StrategoGameState();
         board = gameState.getGameboard();
+        gameState.setMyBoardView(this);
 
         setWillNotDraw(false);
     }
@@ -60,10 +61,7 @@ public class BoardView extends SurfaceView {
     @Override
     public void onDraw(Canvas canvas) {
 
-
-        //TODO: this is only for phase 0?
-        //maybe a if(phase == 0)
-        //top side of board's units
+        //loop through array, calls draw on Units
         for(int i = 0; i < board.length; i++){
             for(int j = 0; j < board.length; j++){
                 if(board[i][j] != null){
@@ -74,14 +72,6 @@ public class BoardView extends SurfaceView {
                 }
             }
         }
-
-       /*//bottom side of board's units
-        for(int i = 0; i < 4; i++){
-            for(int j = 0; j < board.length; j++){
-                Unit temp = board[i][j];
-                board[i][j].drawMe(canvas);
-            }
-        }*/
 
 
     }//onDraw
