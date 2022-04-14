@@ -11,7 +11,7 @@ import android.graphics.Rect;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 3/29/2022
+ * @version 4/7/2022
  */
 public class Unit {
     /**
@@ -37,8 +37,8 @@ public class Unit {
 
 
     //for drawing Units
-    public static final int UNIT_WIDTH = 90;
-    public static final int UNIT_HEIGHT = 90;
+    public static final int UNIT_WIDTH = 70;
+    public static final int UNIT_HEIGHT = 70;
     private Paint redUnits = new Paint();
     private Paint blueUnits = new Paint();
 
@@ -60,7 +60,7 @@ public class Unit {
         ownerID = id;
         rank = initRank;
         isSelected = false;
-        isDead = false;
+        isDead = false;    //TODO: rename bc that's confusing
         redUnits.setColor(0xfff24141);
         blueUnits.setColor(0xff4287f5);
 
@@ -85,6 +85,13 @@ public class Unit {
         return this.isSelected;
     }
 
+    /**
+     * this is confusing, so
+     *
+     * @return  true if alive, false if dead
+     *
+     * @param dead
+     */
     public void setStatus(boolean dead){
         this.isDead = dead;
     }
@@ -148,24 +155,24 @@ public class Unit {
      */
     public void drawMe(Canvas c) {
         //the following lines are for drawing the outline of the unit
-        Paint black = new Paint();
-        black.setColor(0xFFFFFFFF);
-        black.setStyle(Paint.Style.STROKE);
-        if (ownerID == 0 && isSelected == false) {
-            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, redUnits);
-            //c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
+        Paint outline = new Paint();
+
+        if(this.isSelected){
+            outline.setColor(0xFFf54266);  //highlight color
+            outline.setStyle(Paint.Style.STROKE);
         }
-        else if (ownerID == 1 && isSelected == false) {
-            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, blueUnits);
-            //c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
+        else{
+            outline.setColor(0xFFFFFFFF); //regular white
+            outline.setStyle(Paint.Style.STROKE);
         }
-        else if (ownerID == 0 && isSelected == true) {
-            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, redUnits);
-            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
+
+        if (ownerID == 0) {
+            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);
+            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
         }
-        else if (ownerID == 1 && isSelected == true) {
-            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, blueUnits);
-            c.drawRect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT, black);
+        else if (ownerID == 1) {
+            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, blueUnits);
+            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
         }
 
     }//drawMe
@@ -181,7 +188,7 @@ public class Unit {
      * @return
      */
     public boolean containsPoint(int x, int y) {
-        Rect r = new Rect(xLoc + 20, yLoc + 20, xLoc + UNIT_WIDTH, yLoc + UNIT_HEIGHT);
+        Rect r = new Rect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT);
 
         return r.contains(x, y);
     }//containsPoint

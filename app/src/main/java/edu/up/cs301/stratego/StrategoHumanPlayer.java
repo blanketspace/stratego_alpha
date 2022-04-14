@@ -10,6 +10,8 @@ import edu.up.cs301.game.GameHumanPlayer;
 import edu.up.cs301.game.GameMainActivity;
 import edu.up.cs301.game.R;
 import edu.up.cs301.game.infoMsg.GameInfo;
+import edu.up.cs301.game.infoMsg.IllegalMoveInfo;
+import edu.up.cs301.game.infoMsg.NotYourTurnInfo;
 import edu.up.cs301.stratego.actions.DownAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
@@ -24,7 +26,7 @@ import edu.up.cs301.stratego.actions.UpAction;
  * @author Harry Vu
  * @author Vincent Truong
  * @author Kathryn Weidman
- * @version 3/29/2022
+ * @version 4/13/2022
  */
 public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClickListener, View.OnTouchListener {
 
@@ -32,10 +34,10 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private Button down;
     private Button left;
     private Button right;
-    private BoardView boardView;
+    private BoardView myBoardView;
 
-    private GameMainActivity gma;
     private StrategoGameState copyState;
+
 
     /**
      * constructor
@@ -50,7 +52,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     /**
      * getTopView
      *
-     * @return
+     * @return    the topmost view
      */
     @Override
     public View getTopView() {
@@ -65,17 +67,43 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      */
     @Override
     public void receiveInfo(GameInfo info) {
-        if (info instanceof StrategoGameState) {
+       /* if (info instanceof StrategoGameState) {
             Log.i("HUM_PLAYER", "rECIEVEiNFO");
             copyState = (StrategoGameState) info;
+            this.myBoardView.invalidate();
         }
         else {
             //something has gone wrong, or it's not this player's turn
             this.flash(Color.RED, 2);
+        }*/
+
+        /**
+         * External Citation
+         */
+        if (myBoardView == null) return;
+
+        if (info instanceof IllegalMoveInfo || info instanceof NotYourTurnInfo) {
+            // if the move was out of turn or otherwise illegal, flash the screen
+            this.flash(Color.RED, 50);
+        }
+        else if (!(info instanceof StrategoGameState))
+            // if we do not have a TTTState, ignore
+            return;
+        else {
+            myBoardView.setGameState((StrategoGameState)info);
+            myBoardView.invalidate();
+            //Logger.log(TAG, "receiving");
         }
 
     }//receiveInfo
 
+
+    /**
+     * setAsGui
+     *
+     * TODO: FINISH ME
+     * @param activity
+     */
     @Override
     public void setAsGui(GameMainActivity activity) {
 
@@ -89,21 +117,24 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.right = activity.findViewById(R.id.rightButton);
 
         //set up boardView variable to reference boardView on Gui
-        this.boardView = activity.findViewById(R.id.strat_boardView);
+        this.myBoardView = activity.findViewById(R.id.strat_boardView);
 
         //set onTouch and onClick listeners
         up.setOnClickListener(this);
         down.setOnClickListener(this);
         left.setOnClickListener(this);
         right.setOnClickListener(this);
-        boardView.setOnTouchListener(this);
+        myBoardView.setOnTouchListener(this);
 
     }//setAsGui
+
 
     /**
      * onClick
      *
-     * @param view
+     * handles click events
+     *
+     * @param view   the view object that was clicked
      */
     @Override
     public void onClick(View view) {
@@ -122,12 +153,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             LeftAction la = new LeftAction(this);
             game.sendAction(la);
         }
-        else if (view.getId() == R.id.rightButton) {  //TODO: this is being called when UP is being called
+        else if (view.getId() == R.id.rightButton) {
             Log.i("RIGHT_BUTTON_CLICK", "glkjdfkjglaksjklgdfklsldfk");
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
         }
-
 
     }//onClick
 
@@ -135,9 +165,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     /**
      * onTouch
      *
-     * @param view
-     * @param motionEvent
-     * @return
+     * handles touch events
+     *
+     * @param view          the view that was touched
+     * @param motionEvent   the MotionEvent object created by the event
+     * @return              true, since the event is being handled
      */
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -146,32 +178,39 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         int y = (int)motionEvent.getY();
 
 
-        copyState = boardView.getGameState();
+        copyState = myBoardView.getGameState();
         //match that x,y to a Unit
         Unit test = this.findUnit(x, y);
         if(test != null){
             copyState.selectPiece(copyState.getWhoseTurn(), test);
             copyState.clearSelection(1);  //clears selection from all Units
             test.setSelected(true);  //select specific Unit
-            boardView.invalidate();
+            myBoardView.invalidate();
+
+            //initial run testing message
+            Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
+
+            SelectPieceAction spa = new SelectPieceAction(this, test);
+            game.sendAction(spa);
+            this.sendInfo(copyState);  //this probably breaks things
         }
-
-        SelectPieceAction spa = new SelectPieceAction(this);
-        game.sendAction(spa);
-
-        //initial run testing message
-        Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
-        return false;
+        else {
+            //do nothing, since there's no Unit there
+        }
+        return true;
     }//onTouch
+
 
     /**
      *findRect
      *
      * method to assist in determining whether or not a touch happened in a given element
+     *
+     * @return  the Unit containing those specific xy coords
      */
     public Unit findUnit(int x, int y){
         Unit temp = null;
-        for(int i = 0; i < copyState.getP2Troops().size() - 1; i++){
+        for(int i = 0; i < copyState.getP2Troops().size(); i++){
             if(copyState.getP2Troops().get(i).containsPoint(x, y)){
                 temp = copyState.getP2Troops().get(i);
                 break;
@@ -181,5 +220,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     }// findRect
 
 
+    public void setMyBoardView(BoardView myBoardView) {
+        this.myBoardView = myBoardView;
+    }
 }//StrategoHumanPlayer
 
