@@ -155,29 +155,24 @@ public class Unit {
      */
     public void drawMe(Canvas c) {
         //the following lines are for drawing the outline of the unit
-        Paint black = new Paint();
-        black.setColor(0xFFFFFFFF);
-        black.setStyle(Paint.Style.STROKE);
+        Paint outline = new Paint();
 
-        Paint highlight = new Paint();
-        highlight.setColor(0xFFf54266);
-        highlight.setStyle(Paint.Style.STROKE);
+        if(this.isSelected){
+            outline.setColor(0xFFf54266);  //highlight color
+            outline.setStyle(Paint.Style.STROKE);
+        }
+        else{
+            outline.setColor(0xFFFFFFFF); //regular white
+            outline.setStyle(Paint.Style.STROKE);
+        }
 
-        if (ownerID == 0 && isSelected == false) {
+        if (ownerID == 0) {
             c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, black);
+            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
         }
-        else if (ownerID == 1 && isSelected == false) {
+        else if (ownerID == 1) {
             c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, blueUnits);
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, black);
-        }
-        else if (ownerID == 0 && isSelected == true) {
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, highlight);
-        }
-        else if (ownerID == 1 && isSelected == true) {
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, blueUnits);
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, highlight);
+            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
         }
 
     }//drawMe

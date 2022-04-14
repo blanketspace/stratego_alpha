@@ -1,11 +1,7 @@
 package edu.up.cs301.stratego;
 
 
-import android.icu.text.UnicodeSetIterator;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import edu.up.cs301.game.infoMsg.GameState;
 
 /**
@@ -17,7 +13,7 @@ import edu.up.cs301.game.infoMsg.GameState;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 4/7/2022
+ * @version 4/13/2022
  */
 public class StrategoGameState extends GameState {
 
@@ -33,15 +29,12 @@ public class StrategoGameState extends GameState {
     private ArrayList<Unit> p2Troops;
 
     private boolean flagCaptured;
-    private boolean legal;
 
-    private BoardView myBoardView;
 
     /**
      * ctor
      *
      * defines the state of the game on startup
-     *
      */
     public StrategoGameState() {
         gameboard = new Unit[10][10];
@@ -82,10 +75,13 @@ public class StrategoGameState extends GameState {
 
     }//ctor
 
+
     /**
      * fillRanks
      *
      * helper method to fill the player's Troop Arrays
+     *
+     * @param pID   the id of the player whose array needs filling
      */
     public void fillRanks(int pID) {
         if (pID == 0) {
@@ -168,6 +164,7 @@ public class StrategoGameState extends GameState {
         }
     }//fillRanks
 
+
     /**
      * copy ctor
      *
@@ -175,7 +172,7 @@ public class StrategoGameState extends GameState {
      * @Override
      */
     public StrategoGameState(StrategoGameState orig){
-        gameboard = new Unit[10][10];
+        this.gameboard = new Unit[10][10];
 
         //initialize new gameboard to be just like the old one
         for (int i = 0; i < gameboard.length; i++) {
@@ -190,14 +187,15 @@ public class StrategoGameState extends GameState {
         p2Troops = new ArrayList<>();
 
         //makes a deep copy of the the troops arraylist
-        for (int i = 0; i < p1Troops.size(); i++) {
-            p1Troops.add(orig.p1Troops.get(i));
+        for (int i = 0; i < orig.p1Troops.size(); i++) {
+            this.p1Troops.add(orig.p1Troops.get(i));
         }
-        for (int i = 0; i < p2Troops.size(); i++) {
-            p2Troops.add(orig.p2Troops.get(i));
+        for (int i = 0; i < orig.p2Troops.size(); i++) {
+            this.p2Troops.add(orig.p2Troops.get(i));
         }
 
     }//copy ctor
+
 
     /**
      * toString
@@ -219,25 +217,33 @@ public class StrategoGameState extends GameState {
                 + "Flag Captured?: " + flagCaptured;
     }//toString
 
+
     /**
      * findEquivUnit
      *
      * Given a Unit from another game state, find the one in this game state
      * that is the same (if it exists)
+     *
+     * @param other   the Unit we're attempting to find a match for
+     * @return        the Unit that matches the one passed in
      */
     public Unit findEquivUnit(Unit other) {
         ArrayList<Unit> searchMe = this.p1Troops;
-        if (other.getOwnerID() == 1) {
-            searchMe = this.p2Troops;
-        }
-        for(Unit u : searchMe) {
-            if ((u.getxLoc() == other.getxLoc()) && (u.getyLoc() == other.getyLoc())) {
-                return u;
+
+        if(other != null){
+            if (other.getOwnerID() == 1) {
+                searchMe = this.p2Troops;
+            }
+            for(Unit u : searchMe) {
+                if ((u.getxLoc() == other.getxLoc()) && (u.getyLoc() == other.getyLoc())) {
+                    return u;
+                }
             }
         }
 
+
         return null;
-    }
+    }//findEquivUnit
 
 
     /**
@@ -338,6 +344,7 @@ public class StrategoGameState extends GameState {
         }
     }//placePiece
 
+
     /**
      * getUnit
      *
@@ -354,6 +361,15 @@ public class StrategoGameState extends GameState {
         }
     }//getUnit
 
+
+    /**
+     * isMinerAttack
+     *
+     * helper method to check for miner vs. bomb interactions
+     *
+     * @param chosenRank  the rank of the unit being checked
+     * @return            true if the unit is a miner, false if else
+     */
     public boolean isMinerAttack(int chosenRank) {
         if (chosenRank == Unit.MINER){
             return true;
@@ -361,7 +377,10 @@ public class StrategoGameState extends GameState {
         else {
             return false;
         }
-    }
+    }//isMinerAttack
+
+
+    /** settters and getters */
 
     public void setWhoseTurn(int whoseTurn) {
         this.whoseTurn = whoseTurn;
@@ -385,14 +404,6 @@ public class StrategoGameState extends GameState {
 
     public boolean isFlagCaptured() {
         return flagCaptured;
-    }
-
-    public BoardView getMyBoardView() {
-        return myBoardView;
-    }
-
-    public void setMyBoardView(BoardView myBoardView) {
-        this.myBoardView = myBoardView;
     }
 
     public void setFlagCaptured(boolean flagCaptured) {

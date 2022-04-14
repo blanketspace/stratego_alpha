@@ -5,7 +5,6 @@ import android.util.Log;
 import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
-import edu.up.cs301.pig.PigGameState;
 import edu.up.cs301.stratego.actions.DownAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
@@ -20,17 +19,15 @@ import edu.up.cs301.stratego.actions.UpAction;
  * @author Vincent Truong
  * @author Kathryn Weidman
  *
- * @version 4/7/2022
+ * @version 4/13/2022
  */
 public class StrategoLocalGame extends LocalGame {
 
     private StrategoGameState goldie;
-    //private BoardView boardView;
     private Unit chosen;
 
     public StrategoLocalGame() {
         goldie = new StrategoGameState();
-        //boardView = goldie.getMyBoardView();  //CAUTION: is null on launch
     }//ctor
 
     /**
@@ -72,6 +69,7 @@ public class StrategoLocalGame extends LocalGame {
 
     }//sendUpdatedSate
 
+
     @Override
     protected String checkIfGameOver() {
         if (goldie.isFlagCaptured()) {
@@ -82,7 +80,8 @@ public class StrategoLocalGame extends LocalGame {
             return null;
         }
 
-    }
+    }//checkIfGameOver
+
 
     /**
      * makeMove
@@ -107,7 +106,8 @@ public class StrategoLocalGame extends LocalGame {
             return true;
         }
 
-        //Unit chosen = null;
+        //the following loops go through each list of troops
+        //and finds the Unit that has been selected
         if(goldie.getWhoseTurn() == 1){
             for(Unit u: goldie.getP1Troops()){
                 if(u.getSelected()){
@@ -126,52 +126,65 @@ public class StrategoLocalGame extends LocalGame {
         }
         if(chosen != null){  //get selected unit through troop array lists
 
-            //boardView = goldie.getMyBoardView();
-
             Log.i("SELECTED_NOT_NULL", "s;lidjgaorjg;drkh");
            /* int chosenX = chosen.getxLoc();
             int chosenY = chosen.getyLoc();*/
 
             if (action instanceof UpAction) {
+                //player 0's turn, therefore p1Troops
+                //this also (temporarily, assuming player 0 is on far side) means UP = y + 1
 
-                    //player 0's turn, therefore p1Troops
-                    //this also (temporarily, assuming player 0 is on far side) means UP = y + 1
+                //calls helper method to get gameboard array to match
+                this.movePiece(1, chosen, goldie.getWhoseTurn());
+                Log.i("MAKE_MOVE_UP", "UPSAKJFLKJOIEJGOIJSL:KGJLDKJG:LKJ");
 
-                    //calls helper method to get gameboard array to match
-                    this.movePiece(1, chosen, goldie.getWhoseTurn());
-                    Log.i("MAKE_MOVE_UP", "UPSAKJFLKJOIEJGOIJSL:KGJLDKJG:LKJ");
-                    return true;
+                if(goldie.getWhoseTurn() == 0){
+                    goldie.setWhoseTurn(1);
+                }
+                else{
+                    goldie.setWhoseTurn(0);
+                }
+
+                return true;
 
             }
             else if (action instanceof DownAction) {
-                if (goldie.getWhoseTurn() == 0) {
-                    //player 0's turn, therefore p1Troops
+                this.movePiece(2, chosen, goldie.getWhoseTurn());
+                if(goldie.getWhoseTurn() == 0){
+                    goldie.setWhoseTurn(1);
                 }
-                else {
-                    //player 1's turn, therefore p2Troops
+                else{
+                    goldie.setWhoseTurn(0);
                 }
+
+                return true;
             }
             else if (action instanceof LeftAction) {
-                if (goldie.getWhoseTurn() == 0) {
-                    //player 0's turn, therefore p1Troops
+                this.movePiece(3, chosen, goldie.getWhoseTurn());
+                if(goldie.getWhoseTurn() == 0){
+                    goldie.setWhoseTurn(1);
                 }
-                else {
-                    //player 1's turn, therefore p2Troops
+                else{
+                    goldie.setWhoseTurn(0);
                 }
+
+                return true;
             }
             else if (action instanceof RightAction) {
-                if (goldie.getWhoseTurn() == 0) {
-                    //player 0's turn, therefore p1Troops
+                this.movePiece(4, chosen, goldie.getWhoseTurn());
+                if(goldie.getWhoseTurn() == 0){
+                    goldie.setWhoseTurn(1);
                 }
-                else {
-                    //player 1's turn, therefore p2Troops
+                else{
+                    goldie.setWhoseTurn(0);
                 }
+
+                return true;
             }
             else {
                 //something went wrong
                 return false;
             }
-            return true;
         }
         else {
             return false; //no Units were selected, therefore no moves can be made
@@ -251,61 +264,84 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
     }
 
 
-    //TODO:  put this back!
-    // if(this.inBounds(newX, newY)) {  //calls helper method to make sure we're in bounds of array
-        if (gameboard[newX][newY] == null) {  //spot is already empty, go ahead and take it
+    //calls helper method to make sure we're in bounds of array
+    if(this.inBounds(newX, newY)) {
+        if (gameboard[newY][newX] == null) {  //spot is already empty, go ahead and take it
             chosen.setyLoc(newY);
             chosen.setxLoc(newX);
             gameboard[newX][newY] = chosen;
+            gameboard[chosenY][chosenX] = null;
             Log.i("SPOT_TAKEN", "WAS_EMPTY_BEFORE_ARGAEJR;BKN;FJBNKDJHSLDJHLKSJTDHKSKLE");
+
+            /*if(goldie.getWhoseTurn() == 0){
+                goldie.setWhoseTurn(1);
+            }
+            else{
+                goldie.setWhoseTurn(0);
+            }*/
+
             return true;
 
         }
-        else if (gameboard[newX][newY].getRank() == Unit.WATER) {
+        else if (gameboard[newY][newX].getRank() == Unit.WATER) {
             //you can't walk on water, therefore do nothing
             //TODO: do we wanna flash the screen?
         }
-        else if (gameboard[newX][newY].getRank() == Unit.FLAG) {
+        else if (gameboard[newY][newX].getRank() == Unit.FLAG) {
             //game over!
             goldie.setFlagCaptured(true);
             return true;
         }
-        else if (gameboard[newX][newY].getRank() == Unit.BOMB) {
+        else if (gameboard[newY][newX].getRank() == Unit.BOMB) {
             if (goldie.isMinerAttack(chosen.getRank())) {
                 //you are a miner, diffuse the bomb
                 gameboard[newX][newY] = null;
-                chosen.setxLoc(newX);
-                chosen.setyLoc(newY);
+                chosen.setxLoc(newY);
+                chosen.setyLoc(newX);
                 gameboard[newX][newY] = chosen;  //fill its old spot
             } else {
                 //you are not a miner, you explode
                 gameboard[chosenX][chosenY] = null;
                 chosen.setStatus(false);
             }
+
+            if(goldie.getWhoseTurn() == 0){
+                goldie.setWhoseTurn(1);
+            }
+            else{
+                goldie.setWhoseTurn(0);
+            }
             return true;
         }
-        else if (gameboard[newX][newY].getOwnerID() != goldie.getWhoseTurn()) {
+        else if (gameboard[newY][newX].getOwnerID() != goldie.getWhoseTurn()) {
             //attack
-            int opponentRank = gameboard[newX][newY].getRank();
+            int opponentRank = gameboard[newY][newX].getRank();
             if (opponentRank > chosen.getRank()) {   //they won
                 chosen.setStatus(false);            //you die
                 gameboard[chosenX][chosenY] = null; //empty your spot
 
             } else {  //you won
-                gameboard[newX][newY].setStatus(false); //they die
+                gameboard[newY][newX].setStatus(false); //they die
                 gameboard[chosenX][chosenY] = null;    //empty your spot
-                chosen.setxLoc(newX);
-                chosen.setyLoc(newY);
-                gameboard[newX][newY] = chosen;       //fill their old spot
+                chosen.setxLoc(newY);
+                chosen.setyLoc(newX);
+                gameboard[newY][newX] = chosen;       //fill their old spot
+            }
+
+            if(goldie.getWhoseTurn() == 0){
+                goldie.setWhoseTurn(1);
+            }
+            else{
+                goldie.setWhoseTurn(0);
             }
             return true;
         }
         return true;
-    //}
-//    else {
-//        //something's gone wrong, likely out of bounds
-//        return false;
-//    }
+    }
+    else {
+        //something's gone wrong, likely out of bounds
+        return false;
+    }
 }//makeMove
 
 
@@ -327,6 +363,11 @@ public boolean inBounds(int x, int y){
     return bounds;
 }//inBounds
 
+
+    /**
+     *
+     * @param u
+     */
 public void holdUnit(Unit u){
     chosen = u;
 }

@@ -21,7 +21,7 @@ import edu.up.cs301.game.R;
  * @author Vincent Truong
  * @author Kathryn Weidman
  *
- * @version 4/7/2022
+ * @version 4/13/2022
  */
 public class BoardView extends SurfaceView {
 
@@ -29,23 +29,12 @@ public class BoardView extends SurfaceView {
     private Unit[][] board;
 
 
-    private Paint highlighter = new Paint();
-
-
-
-    public static final int UNIT_WIDTH = 92;
-    public static final int UNIT_HEIGHT = 98;
-
 
     public BoardView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-
-        highlighter.setColor(0xfff2e641);
-
         gameState = new StrategoGameState();
         board = gameState.getGameboard();
-        gameState.setMyBoardView(this);
 
         setWillNotDraw(false);
     }
@@ -60,6 +49,8 @@ public class BoardView extends SurfaceView {
      */
     @Override
     public void onDraw(Canvas canvas) {
+
+        board = gameState.getGameboard();
 
         //loop through array, calls draw on Units
         for(int i = 0; i < board.length; i++){
@@ -78,5 +69,9 @@ public class BoardView extends SurfaceView {
 
     public StrategoGameState getGameState() {
         return gameState;
+    }
+
+    public void setGameState(StrategoGameState gameState) {
+        this.gameState = gameState;
     }
 }//BoardView
