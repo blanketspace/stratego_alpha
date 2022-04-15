@@ -57,7 +57,7 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
                 //smth
                 break;
         }
-    } //Do we *need* multiple setups?
+    } //Do we *need* multiple setups? theyre kinda long...
 
     private void smartStrat(StrategoGameState gameState) { //UNTESTED
         ArrayList<Unit> p1Troops = gameState.getP1Troops();
