@@ -1,6 +1,7 @@
 package edu.up.cs301.stratego;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
@@ -41,6 +42,7 @@ public class Unit {
     public static final int UNIT_HEIGHT = 70;
     private Paint redUnits = new Paint();
     private Paint blueUnits = new Paint();
+    private Paint textPaint = new Paint();
 
 
     /*** Nothing else needs to be added in this Unit class
@@ -60,11 +62,12 @@ public class Unit {
         ownerID = id;
         rank = initRank;
         isSelected = false;
-        isDead = false;    //TODO: rename bc that's confusing
+        isDead = false;
         redUnits.setColor(0xfff24141);
         blueUnits.setColor(0xff4287f5);
+        textPaint.setColor(Color.BLACK);
 
-    }
+    }//ctor
 
     public int getOwnerID(){
         return this.ownerID;
@@ -85,17 +88,17 @@ public class Unit {
         return this.isSelected;
     }
 
-    /**
-     * this is confusing, so
-     *
-     * @return  true if alive, false if dead
-     *
-     * @param dead
-     */
-    public void setStatus(boolean dead){
+    public void setDead(boolean dead){
         this.isDead = dead;
     }
 
+    /**
+     * getStatus
+     *
+     * this is confusing, so
+     *
+     * @return  true if dead, false if alive
+     */
     public boolean getStatus(){
         return this.isDead;
     }
@@ -158,22 +161,32 @@ public class Unit {
         Paint outline = new Paint();
 
         if(this.isSelected){
-            outline.setColor(0xFFf54266);  //highlight color
+            outline.setColor(0xFFfcfc03);  //highlight color
             outline.setStyle(Paint.Style.STROKE);
         }
         else{
-            outline.setColor(0xFFFFFFFF); //regular white
+            outline.setColor(0xFF000000); //regular black
             outline.setStyle(Paint.Style.STROKE);
         }
 
-        if (ownerID == 0) {
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
+        if(!this.isDead){
+            if (ownerID == 0) {
+                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);
+                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
+            }
+            else if (ownerID == 1) {
+                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, blueUnits);
+                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
+            }
+
+            /**
+             * external citation
+             * 4/19/2022
+             * in-class help from nux
+             */
+            c.drawText("" + this.rank, xLoc*UNIT_WIDTH + UNIT_WIDTH/3, yLoc*UNIT_HEIGHT + UNIT_HEIGHT/3, textPaint);
         }
-        else if (ownerID == 1) {
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, blueUnits);
-            c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
-        }
+
 
     }//drawMe
 
