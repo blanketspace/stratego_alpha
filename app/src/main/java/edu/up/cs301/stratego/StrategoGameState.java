@@ -325,13 +325,13 @@ public class StrategoGameState extends GameState {
         if (unit.getStatus()) {
             if (playerID == 0 && y < 4) {  //< 4 is for boundary purposes, ensures piece is on your side
                 unit.setxLoc(x);
-                unit.setxLoc(y);
+                unit.setyLoc(y);
                 gameboard[x][y] = unit;
                 return true;
             }
             else if (playerID == 1 && y > 5) {
                 unit.setxLoc(x);
-                unit.setxLoc(y);
+                unit.setyLoc(y);
                 gameboard[x][y] = unit;
                 return true;
             }

@@ -31,6 +31,8 @@ edu/up/cs301/pig/PigMainActivity.java
  edu.up.cs301.pig.PigMainActivity
  edu.up.cs301.pig.PigMainActivity$1
  edu.up.cs301.pig.PigMainActivity$2
+edu/up/cs301/stratego/StrategoSmartCompPlayer.java
+ edu.up.cs301.stratego.StrategoSmartCompPlayer
 edu/up/cs301/game/actionMsg/MyNameIsAction.java
  edu.up.cs301.game.actionMsg.MyNameIsAction
 edu/up/cs301/game/infoMsg/GameState.java
@@ -64,11 +66,11 @@ edu/up/cs301/game/util/GameTimer.java
  edu.up.cs301.game.util.GameTimer
  edu.up.cs301.game.util.GameTimer$1
  edu.up.cs301.game.util.GameTimer$MyTimer
-edu/up/cs301/game/actionMsg/ReadyAction.java
- edu.up.cs301.game.actionMsg.ReadyAction
 edu/up/cs301/game/ProxyPlayer.java
  edu.up.cs301.game.ProxyPlayer
  edu.up.cs301.game.ProxyPlayer$1
+edu/up/cs301/game/actionMsg/ReadyAction.java
+ edu.up.cs301.game.actionMsg.ReadyAction
 edu/up/cs301/game/config/GamePlayerType.java
  edu.up.cs301.game.config.GamePlayerType
 edu/up/cs301/game/infoMsg/TimerInfo.java

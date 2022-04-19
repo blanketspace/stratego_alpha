@@ -266,11 +266,11 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
 
     //calls helper method to make sure we're in bounds of array
     if(this.inBounds(newX, newY)) {
-        if (gameboard[newY][newX] == null) {  //spot is already empty, go ahead and take it
+        if (gameboard[newX][newY] == null) {  //spot is already empty, go ahead and take it
             chosen.setyLoc(newY);
             chosen.setxLoc(newX);
             gameboard[newX][newY] = chosen;
-            gameboard[chosenY][chosenX] = null;
+            gameboard[chosenX][chosenY] = null;
             Log.i("SPOT_TAKEN", "WAS_EMPTY_BEFORE_ARGAEJR;BKN;FJBNKDJHSLDJHLKSJTDHKSKLE");
 
             /*if(goldie.getWhoseTurn() == 0){
@@ -283,21 +283,21 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
             return true;
 
         }
-        else if (gameboard[newY][newX].getRank() == Unit.WATER) {
+        else if (gameboard[newX][newY].getRank() == Unit.WATER) {
             //you can't walk on water, therefore do nothing
             //TODO: do we wanna flash the screen?
         }
-        else if (gameboard[newY][newX].getRank() == Unit.FLAG) {
+        else if (gameboard[newX][newY].getRank() == Unit.FLAG) {
             //game over!
             goldie.setFlagCaptured(true);
             return true;
         }
-        else if (gameboard[newY][newX].getRank() == Unit.BOMB) {
+        else if (gameboard[newX][newY].getRank() == Unit.BOMB) {
             if (goldie.isMinerAttack(chosen.getRank())) {
                 //you are a miner, diffuse the bomb
                 gameboard[newX][newY] = null;
-                chosen.setxLoc(newY);
-                chosen.setyLoc(newX);
+                chosen.setxLoc(newX);
+                chosen.setyLoc(newY);
                 gameboard[newX][newY] = chosen;  //fill its old spot
             } else {
                 //you are not a miner, you explode
@@ -313,19 +313,19 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
             }
             return true;
         }
-        else if (gameboard[newY][newX].getOwnerID() != goldie.getWhoseTurn()) {
+        else if (gameboard[newX][newY].getOwnerID() != goldie.getWhoseTurn()) {
             //attack
-            int opponentRank = gameboard[newY][newX].getRank();
+            int opponentRank = gameboard[newX][newY].getRank();
             if (opponentRank > chosen.getRank()) {   //they won
                 chosen.setStatus(false);            //you die
                 gameboard[chosenX][chosenY] = null; //empty your spot
 
             } else {  //you won
-                gameboard[newY][newX].setStatus(false); //they die
+                gameboard[newX][newY].setStatus(false); //they die
                 gameboard[chosenX][chosenY] = null;    //empty your spot
-                chosen.setxLoc(newY);
-                chosen.setyLoc(newX);
-                gameboard[newY][newX] = chosen;       //fill their old spot
+                chosen.setxLoc(newX);
+                chosen.setyLoc(newY);
+                gameboard[newX][newY] = chosen;       //fill their old spot
             }
 
             if(goldie.getWhoseTurn() == 0){
