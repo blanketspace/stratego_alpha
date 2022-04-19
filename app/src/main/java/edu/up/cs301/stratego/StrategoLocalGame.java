@@ -302,7 +302,7 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
             } else {
                 //you are not a miner, you explode
                 gameboard[chosenX][chosenY] = null;
-                chosen.setStatus(false);
+                chosen.setDead(false);
             }
 
             if(goldie.getWhoseTurn() == 0){
@@ -317,11 +317,11 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
             //attack
             int opponentRank = gameboard[newY][newX].getRank();
             if (opponentRank > chosen.getRank()) {   //they won
-                chosen.setStatus(false);            //you die
+                chosen.setDead(false);            //you die
                 gameboard[chosenX][chosenY] = null; //empty your spot
 
             } else {  //you won
-                gameboard[newY][newX].setStatus(false); //they die
+                gameboard[newY][newX].setDead(false); //they die
                 gameboard[chosenX][chosenY] = null;    //empty your spot
                 chosen.setxLoc(newY);
                 chosen.setyLoc(newX);

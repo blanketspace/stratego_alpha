@@ -100,7 +100,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
         int i = 0, j = 6;
         for(Unit troop: p1Troops) { //Coordinates for placePiece are formula from StrategoGameState
             gameState.placePiece(playerNum, troop, i * troop.UNIT_WIDTH, j * troop.UNIT_HEIGHT);
-            troop.setStatus(true);
+            troop.setDead(true);
             switch(i) {
                 case 9: //If we've reached the end of the row, start over a column down
                     i = 0;
