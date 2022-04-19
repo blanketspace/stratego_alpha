@@ -65,7 +65,7 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
         int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0; //how many times each piece has placed
 
         for(Unit troop: p1Troops) {
-            troop.setStatus(false);
+            troop.setDead(false);
             switch (troop.getRank()) {
                 case 1:
                     i = 7;

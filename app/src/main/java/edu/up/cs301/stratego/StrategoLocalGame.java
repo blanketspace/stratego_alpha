@@ -215,6 +215,7 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
     int chosenY = chosen.getyLoc();
     int chosenX = chosen.getxLoc();
     Unit[][] gameboard = goldie.getGameboard();
+    Log.i("Unigue", goldie.boardToString());
 
     /** dir indicates the direction the Unit wishes to go. 1 = up, 2 = down, 3 = left, and 4 = right
      * to simplify this method and save roughly 80 lines of code, the switch case is being used to
@@ -267,14 +268,14 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
 
     //calls helper method to make sure we're in bounds of array
     if(this.inBounds(newX, newY)) {
-        if (gameboard[newX][newY] == null) {  //spot is already empty, go ahead and take it
+        if (gameboard[newY][newX] == null) {  //spot is already empty, go ahead and take it
             //TODO: This section has different results on each run
             //this is potentially due to an error in the comp player
             //check to see if the comp player is accidentally capturing its own troops
             chosen.setyLoc(newY);
             chosen.setxLoc(newX);
-            gameboard[newX][newY] = chosen;
-            gameboard[chosenX][chosenY] = null;
+            gameboard[newY][newX] = chosen;
+            gameboard[chosenY][chosenX] = null;
             Log.i("SPOT_TAKEN", "WAS_EMPTY_BEFORE_ARGAEJR;BKN;FJBNKDJHSLDJHLKSJTDHKSKLE");
 
 
@@ -282,17 +283,17 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
             return true;
 
         }
-        else if (gameboard[newX][newY].getRank() == Unit.WATER) {
+        else if (gameboard[newY][newX].getRank() == Unit.WATER) {
             //you can't walk on water, therefore do nothing
             //TODO: do we wanna flash the screen?
         }
-        else if (gameboard[newX][newY].getRank() == Unit.FLAG) {
+        else if (gameboard[newY][newX].getRank() == Unit.FLAG) {
             //game over!
             goldie.setFlagCaptured(true);
             return true;
         }
-        else if (gameboard[newX][newY].getOwnerID() == goldie.getWhoseTurn()) {
-            if (gameboard[newX][newY].getRank() == Unit.BOMB) {
+        else if (gameboard[newY][newX].getOwnerID() == goldie.getWhoseTurn()) {
+            if (gameboard[newY][newX].getRank() == Unit.BOMB) {
                 if (goldie.isMinerAttack(chosen.getRank())) {
                     //you are a miner, diffuse the bomb
                     gameboard[newX][newY] = null;
