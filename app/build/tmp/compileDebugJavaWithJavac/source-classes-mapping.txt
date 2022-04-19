@@ -31,6 +31,8 @@ edu/up/cs301/pig/PigMainActivity.java
  edu.up.cs301.pig.PigMainActivity
  edu.up.cs301.pig.PigMainActivity$1
  edu.up.cs301.pig.PigMainActivity$2
+edu/up/cs301/stratego/StrategoSmartCompPlayer.java
+ edu.up.cs301.stratego.StrategoSmartCompPlayer
 edu/up/cs301/game/actionMsg/MyNameIsAction.java
  edu.up.cs301.game.actionMsg.MyNameIsAction
 edu/up/cs301/game/infoMsg/GameState.java
@@ -111,6 +113,8 @@ edu/up/cs301/game/util/NetworkObjectPasser.java
  edu.up.cs301.game.util.NetworkObjectPasser$ServerSocketMap
 edu/up/cs301/game/actionMsg/GameOverAckAction.java
  edu.up.cs301.game.actionMsg.GameOverAckAction
+edu/up/cs301/game/BuildConfig.java
+ edu.up.cs301.game.BuildConfig
 edu/up/cs301/game/GameHumanPlayer.java
  edu.up.cs301.game.GameHumanPlayer
  edu.up.cs301.game.GameHumanPlayer$MyRunnable
