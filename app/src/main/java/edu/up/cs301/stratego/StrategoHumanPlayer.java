@@ -14,9 +14,12 @@ import edu.up.cs301.game.infoMsg.GameInfo;
 import edu.up.cs301.game.infoMsg.IllegalMoveInfo;
 import edu.up.cs301.game.infoMsg.NotYourTurnInfo;
 import edu.up.cs301.stratego.actions.DownAction;
+import edu.up.cs301.stratego.actions.ExitAction;
+import edu.up.cs301.stratego.actions.HelpAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
 import edu.up.cs301.stratego.actions.SelectPieceAction;
+import edu.up.cs301.stratego.actions.SurrenderAction;
 import edu.up.cs301.stratego.actions.UpAction;
 
 
@@ -37,6 +40,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private Button right;
     private Button surrender;
     private Button exit;
+    private Button help;
     private BoardView myBoardView;
     private TextView selectedRank;
 
@@ -114,6 +118,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.right = activity.findViewById(R.id.rightButton);
         this.surrender = activity.findViewById(R.id.SurrenderButton);
         this.exit = activity.findViewById(R.id.ExitButton);
+        this.help = activity.findViewById(R.id.helpButton);
 
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
@@ -128,6 +133,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         right.setOnClickListener(this);
         surrender.setOnClickListener(this);
         exit.setOnClickListener(this);
+        help.setOnClickListener(this);
         myBoardView.setOnTouchListener(this);
 
     }//setAsGui
@@ -164,13 +170,18 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         }
         else if (view.getId() == R.id.SurrenderButton) {
             Log.i("SURRENDER_BUTTON_CLICK", "weeheeheehee");
-            RightAction ra = new RightAction(this);
-            game.sendAction(ra);
+            SurrenderAction sa = new SurrenderAction(this);
+            game.sendAction(sa);
         }
         else if (view.getId() == R.id.ExitButton) {
             Log.i("EXIT_BUTTON_CLICK", "ohohohohohohohohohoho");
-            RightAction ra = new RightAction(this);
-            game.sendAction(ra);
+            ExitAction ea = new ExitAction(this);
+            game.sendAction(ea);
+        }
+        else if (view.getId() == R.id.ExitButton) {
+            Log.i("EXIT_BUTTON_CLICK", "ohohohohohohohohohoho");
+            HelpAction ha = new HelpAction(this);
+            game.sendAction(ha);
         }
 
     }//onClick
