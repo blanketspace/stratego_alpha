@@ -35,6 +35,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
      */
     public StrategoDumbCompPlayer(String name) {
         super(name);
+        this.playerNum = 1;
     }
 
     @Override
@@ -46,42 +47,44 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
             if(copyGS.getWhoseTurn() == this.playerNum){
                 //if we've made it here, then it *is* this player's turn, so we can choose moves
                 Random randGen = new Random();
-                //int randomDir = randGen.nextInt(4);
-                int randomDir = 1; //TODO: take out, this was for debugging
+                int randomDir = randGen.nextInt(4);
 
                 Unit[][] board = copyGS.getGameboard();
                 int randomX = randGen.nextInt(39);
                 // int randomY = randGen.nextInt(9);
-                Unit selected = copyGS.getUnit(this.playerNum, randomX);
+                Unit selected = copyGS.getUnit(0, randomX);
 
                 //Unit selected = board[]
                 //TODO: IDEA! use p2troops: only one random and eliminates the "computer picks the water" issue
-                sleep(1);
+                sleep(2000);
 
                 if (selected != null){
-                    SelectPieceAction spa = new SelectPieceAction(this, board[selected.getxLoc()][selected.getyLoc()]);
+                    SelectPieceAction spa = new SelectPieceAction(this, board[selected.getyLoc()][selected.getxLoc()]);
                     game.sendAction(spa);
-                    Log.i("COMP_SELECTED_Peice", "asjgarjigoaet;hdjlksgjdfg");
+                    Log.i("COMP_SELECTED_Piece", "asjgarjigoaet;hdjlksgjdfg");
                 }
                 //send move actions based on random number chosen
                 if(randomDir == 0){ //moving up
                     UpAction upAction = new UpAction(this);
                     game.sendAction(upAction);
+                    Log.i("COMP_MOVED_UP", "aj;lkdjgldjgisldfjgk");
                 }
                 else if(randomDir == 1){ //moving down
                     DownAction downAction = new DownAction(this);
                     game.sendAction(downAction);
+                    Log.i("COMP_MOVED_DOWN", "ijoajglksjdlkfgjs");
                 }
                 else if(randomDir == 2){ //moving left
                     LeftAction leftAction = new LeftAction(this);
                     game.sendAction(leftAction);
+                    Log.i("COMP_MOVED_LEFT", "jkgdlkjgalkjlgkjsd");
                 }
                 else if(randomDir == 3){ //moving right
                     RightAction rightAction = new RightAction(this);
                     game.sendAction(rightAction);
+                    Log.i("COMP_MOVED_RIGHT", "ldjglajdfldkhshd'fj");
                 }
             }
-            //TODO: should it be changing turns here?
 
         }
         else {

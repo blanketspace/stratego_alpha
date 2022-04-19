@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import edu.up.cs301.game.GameHumanPlayer;
 import edu.up.cs301.game.GameMainActivity;
@@ -35,6 +36,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private Button left;
     private Button right;
     private BoardView myBoardView;
+    private TextView selectedRank;
 
     private StrategoGameState copyState;
 
@@ -46,6 +48,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      */
     public StrategoHumanPlayer(String name) {
         super(name);
+        int check = this.playerNum;
     }
 
 
@@ -67,18 +70,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      */
     @Override
     public void receiveInfo(GameInfo info) {
-       /* if (info instanceof StrategoGameState) {
-            Log.i("HUM_PLAYER", "rECIEVEiNFO");
-            copyState = (StrategoGameState) info;
-            this.myBoardView.invalidate();
-        }
-        else {
-            //something has gone wrong, or it's not this player's turn
-            this.flash(Color.RED, 2);
-        }*/
-
         /**
          * External Citation
+         * 4/13/2022
+         *
+         * lifted from tictactoe
          */
         if (myBoardView == null) return;
 
@@ -87,12 +83,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             this.flash(Color.RED, 50);
         }
         else if (!(info instanceof StrategoGameState))
-            // if we do not have a TTTState, ignore
+            // if we do not have a SGState, ignore
             return;
         else {
             myBoardView.setGameState((StrategoGameState)info);
             myBoardView.invalidate();
-            //Logger.log(TAG, "receiving");
         }
 
     }//receiveInfo
@@ -118,6 +113,9 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
+
+        /*//sets up TextView to be altered later on
+        this.selectedRank = activity.findViewById(R.id.DisplayRank);*/  //TODO: doesn't work. don't know why
 
         //set onTouch and onClick listeners
         up.setOnClickListener(this);
@@ -186,6 +184,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             copyState.clearSelection(1);  //clears selection from all Units
             test.setSelected(true);  //select specific Unit
             myBoardView.invalidate();
+            //selectedRank.setText(test.getRank());
 
             //initial run testing message
             Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
