@@ -1,5 +1,3 @@
-edu/up/cs301/pig/PigHoldAction.java
- edu.up.cs301.pig.PigHoldAction
 edu/up/cs301/stratego/actions/MovePieceAction.java
  edu.up.cs301.stratego.actions.MovePieceAction
 edu/up/cs301/pig/PigLocalGame.java
@@ -7,16 +5,10 @@ edu/up/cs301/pig/PigLocalGame.java
 edu/up/cs301/game/config/GameConfig.java
  edu.up.cs301.game.config.GameConfig
  edu.up.cs301.game.config.GameConfig$1
-edu/up/cs301/game/util/Tickable.java
- edu.up.cs301.game.util.Tickable
-edu/up/cs301/stratego/actions/SelectPieceAction.java
- edu.up.cs301.stratego.actions.SelectPieceAction
-edu/up/cs301/game/infoMsg/GameInfo.java
- edu.up.cs301.game.infoMsg.GameInfo
-edu/up/cs301/stratego/StrategoDumbCompPlayer.java
- edu.up.cs301.stratego.StrategoDumbCompPlayer
-edu/up/cs301/stratego/actions/DownAction.java
- edu.up.cs301.stratego.actions.DownAction
+edu/up/cs301/stratego/StrategoMainActivity.java
+ edu.up.cs301.stratego.StrategoMainActivity
+ edu.up.cs301.stratego.StrategoMainActivity$1
+ edu.up.cs301.stratego.StrategoMainActivity$2
 edu/up/cs301/stratego/StrategoGameState.java
  edu.up.cs301.stratego.StrategoGameState
 edu/up/cs301/game/infoMsg/StartGameInfo.java
@@ -31,8 +23,6 @@ edu/up/cs301/game/GameComputerPlayer.java
  edu.up.cs301.game.GameComputerPlayer
  edu.up.cs301.game.GameComputerPlayer$1
  edu.up.cs301.game.GameComputerPlayer$MyRunnable
-edu/up/cs301/pig/PigGameState.java
- edu.up.cs301.pig.PigGameState
 edu/up/cs301/game/infoMsg/GameOverInfo.java
  edu.up.cs301.game.infoMsg.GameOverInfo
 edu/up/cs301/game/actionMsg/GameAction.java
@@ -41,34 +31,12 @@ edu/up/cs301/pig/PigMainActivity.java
  edu.up.cs301.pig.PigMainActivity
  edu.up.cs301.pig.PigMainActivity$1
  edu.up.cs301.pig.PigMainActivity$2
-edu/up/cs301/game/infoMsg/NotYourTurnInfo.java
- edu.up.cs301.game.infoMsg.NotYourTurnInfo
 edu/up/cs301/game/actionMsg/MyNameIsAction.java
  edu.up.cs301.game.actionMsg.MyNameIsAction
-edu/up/cs301/game/infoMsg/BindGameInfo.java
- edu.up.cs301.game.infoMsg.BindGameInfo
-edu/up/cs301/animation/AnimationSurface.java
- edu.up.cs301.animation.AnimationSurface
- edu.up.cs301.animation.AnimationSurface$AnimationThread
-edu/up/cs301/stratego/actions/PlacePieceAction.java
- edu.up.cs301.stratego.actions.PlacePieceAction
 edu/up/cs301/game/infoMsg/GameState.java
  edu.up.cs301.game.infoMsg.GameState
-edu/up/cs301/stratego/StrategoHumanPlayer.java
- edu.up.cs301.stratego.StrategoHumanPlayer
-edu/up/cs301/animation/Animator.java
- edu.up.cs301.animation.Animator
 edu/up/cs301/stratego/actions/RightAction.java
  edu.up.cs301.stratego.actions.RightAction
-edu/up/cs301/game/util/NetworkObjectPasser.java
- edu.up.cs301.game.util.NetworkObjectPasser
- edu.up.cs301.game.util.NetworkObjectPasser$1
- edu.up.cs301.game.util.NetworkObjectPasser$CreateRunner
- edu.up.cs301.game.util.NetworkObjectPasser$MsgRunnable
- edu.up.cs301.game.util.NetworkObjectPasser$RunnerStatus
- edu.up.cs301.game.util.NetworkObjectPasser$ServerSocketMap
-edu/up/cs301/game/actionMsg/GameOverAckAction.java
- edu.up.cs301.game.actionMsg.GameOverAckAction
 edu/up/cs301/pig/PigRollAction.java
  edu.up.cs301.pig.PigRollAction
 edu/up/cs301/stratego/actions/UpAction.java
@@ -90,14 +58,8 @@ edu/up/cs301/game/GameMainActivity.java
  edu.up.cs301.game.GameMainActivity$1
  edu.up.cs301.game.GameMainActivity$2
  edu.up.cs301.game.GameMainActivity$SpinnerListListener
-edu/up/cs301/game/GameHumanPlayer.java
- edu.up.cs301.game.GameHumanPlayer
- edu.up.cs301.game.GameHumanPlayer$MyRunnable
- edu.up.cs301.game.GameHumanPlayer$Unflasher
 edu/up/cs301/game/infoMsg/IllegalMoveInfo.java
  edu.up.cs301.game.infoMsg.IllegalMoveInfo
-edu/up/cs301/game/actionMsg/TimerAction.java
- edu.up.cs301.game.actionMsg.TimerAction
 edu/up/cs301/game/util/GameTimer.java
  edu.up.cs301.game.util.GameTimer
  edu.up.cs301.game.util.GameTimer$1
@@ -109,10 +71,54 @@ edu/up/cs301/game/actionMsg/ReadyAction.java
  edu.up.cs301.game.actionMsg.ReadyAction
 edu/up/cs301/game/config/GamePlayerType.java
  edu.up.cs301.game.config.GamePlayerType
-edu/up/cs301/stratego/actions/LeftAction.java
- edu.up.cs301.stratego.actions.LeftAction
 edu/up/cs301/game/infoMsg/TimerInfo.java
  edu.up.cs301.game.infoMsg.TimerInfo
+edu/up/cs301/stratego/StrategoLocalGame.java
+ edu.up.cs301.stratego.StrategoLocalGame
+edu/up/cs301/pig/PigHoldAction.java
+ edu.up.cs301.pig.PigHoldAction
+edu/up/cs301/game/util/Tickable.java
+ edu.up.cs301.game.util.Tickable
+edu/up/cs301/stratego/actions/SelectPieceAction.java
+ edu.up.cs301.stratego.actions.SelectPieceAction
+edu/up/cs301/game/infoMsg/GameInfo.java
+ edu.up.cs301.game.infoMsg.GameInfo
+edu/up/cs301/stratego/StrategoDumbCompPlayer.java
+ edu.up.cs301.stratego.StrategoDumbCompPlayer
+edu/up/cs301/stratego/actions/DownAction.java
+ edu.up.cs301.stratego.actions.DownAction
+edu/up/cs301/pig/PigGameState.java
+ edu.up.cs301.pig.PigGameState
+edu/up/cs301/game/infoMsg/NotYourTurnInfo.java
+ edu.up.cs301.game.infoMsg.NotYourTurnInfo
+edu/up/cs301/game/infoMsg/BindGameInfo.java
+ edu.up.cs301.game.infoMsg.BindGameInfo
+edu/up/cs301/animation/AnimationSurface.java
+ edu.up.cs301.animation.AnimationSurface
+ edu.up.cs301.animation.AnimationSurface$AnimationThread
+edu/up/cs301/stratego/actions/PlacePieceAction.java
+ edu.up.cs301.stratego.actions.PlacePieceAction
+edu/up/cs301/stratego/StrategoHumanPlayer.java
+ edu.up.cs301.stratego.StrategoHumanPlayer
+edu/up/cs301/animation/Animator.java
+ edu.up.cs301.animation.Animator
+edu/up/cs301/game/util/NetworkObjectPasser.java
+ edu.up.cs301.game.util.NetworkObjectPasser
+ edu.up.cs301.game.util.NetworkObjectPasser$1
+ edu.up.cs301.game.util.NetworkObjectPasser$CreateRunner
+ edu.up.cs301.game.util.NetworkObjectPasser$MsgRunnable
+ edu.up.cs301.game.util.NetworkObjectPasser$RunnerStatus
+ edu.up.cs301.game.util.NetworkObjectPasser$ServerSocketMap
+edu/up/cs301/game/actionMsg/GameOverAckAction.java
+ edu.up.cs301.game.actionMsg.GameOverAckAction
+edu/up/cs301/game/GameHumanPlayer.java
+ edu.up.cs301.game.GameHumanPlayer
+ edu.up.cs301.game.GameHumanPlayer$MyRunnable
+ edu.up.cs301.game.GameHumanPlayer$Unflasher
+edu/up/cs301/game/actionMsg/TimerAction.java
+ edu.up.cs301.game.actionMsg.TimerAction
+edu/up/cs301/stratego/actions/LeftAction.java
+ edu.up.cs301.stratego.actions.LeftAction
 edu/up/cs301/game/util/MessageBox.java
  edu.up.cs301.game.util.MessageBox
 edu/up/cs301/game/Game.java
