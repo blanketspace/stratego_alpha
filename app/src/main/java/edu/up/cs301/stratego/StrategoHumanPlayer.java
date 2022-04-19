@@ -35,6 +35,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private Button down;
     private Button left;
     private Button right;
+    private Button surrender;
+    private Button exit;
     private BoardView myBoardView;
     private TextView selectedRank;
 
@@ -110,6 +112,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.down = activity.findViewById(R.id.downButton);
         this.left = activity.findViewById(R.id.leftButton);
         this.right = activity.findViewById(R.id.rightButton);
+        this.surrender = activity.findViewById(R.id.SurrenderButton);
+        this.exit = activity.findViewById(R.id.ExitButton);
 
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
@@ -122,6 +126,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         down.setOnClickListener(this);
         left.setOnClickListener(this);
         right.setOnClickListener(this);
+        surrender.setOnClickListener(this);
+        exit.setOnClickListener(this);
         myBoardView.setOnTouchListener(this);
 
     }//setAsGui
@@ -153,6 +159,16 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         }
         else if (view.getId() == R.id.rightButton) {
             Log.i("RIGHT_BUTTON_CLICK", "glkjdfkjglaksjklgdfklsldfk");
+            RightAction ra = new RightAction(this);
+            game.sendAction(ra);
+        }
+        else if (view.getId() == R.id.SurrenderButton) {
+            Log.i("SURRENDER_BUTTON_CLICK", "weeheeheehee");
+            RightAction ra = new RightAction(this);
+            game.sendAction(ra);
+        }
+        else if (view.getId() == R.id.ExitButton) {
+            Log.i("EXIT_BUTTON_CLICK", "ohohohohohohohohohoho");
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
         }

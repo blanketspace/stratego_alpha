@@ -15,7 +15,7 @@ import edu.up.cs301.game.infoMsg.GameInfo;
  * @author Kathryn Weidman
  * @version 4/14/2022
  *
- * Reference for smart AI setups from a world champion Stratego player
+ * Reference for smart AI setup from a world champion Stratego player
  *      https://www.ultraboardgames.com/stratego/setups.php
  */
 
