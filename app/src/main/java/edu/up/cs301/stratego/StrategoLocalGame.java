@@ -6,9 +6,14 @@ import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
 import edu.up.cs301.stratego.actions.DownAction;
+import edu.up.cs301.stratego.actions.EndAction;
+import edu.up.cs301.stratego.actions.ExitAction;
+import edu.up.cs301.stratego.actions.HelpAction;
 import edu.up.cs301.stratego.actions.LeftAction;
+import edu.up.cs301.stratego.actions.MenuAction;
 import edu.up.cs301.stratego.actions.RightAction;
 import edu.up.cs301.stratego.actions.SelectPieceAction;
+import edu.up.cs301.stratego.actions.SurrenderAction;
 import edu.up.cs301.stratego.actions.UpAction;
 
 /**
@@ -95,7 +100,22 @@ public class StrategoLocalGame extends LocalGame {
     @Override
     protected boolean makeMove(GameAction action) {
         Log.i("MAKE_MOVE_CALLED", "afgerbkdfblkajd;fgjadfnba;lf");
-        if(action instanceof SelectPieceAction){
+        if (action instanceof ExitAction) {
+            System.exit(0); //Successful exit
+        }
+        else if (action instanceof SurrenderAction) {
+            //TODO: Do something to end the game and send a message yay
+        }
+        else if (action instanceof EndAction) {
+            //TODO: Do something to end the turn
+        }
+        else if (action instanceof HelpAction) {
+            //TODO: Give em the rulebook
+        }
+        else if (action instanceof MenuAction) {
+            //TODO: Give em the menu
+        }
+        else if (action instanceof SelectPieceAction){
             Log.i("SELECT_PIECE", "s;fljwogiej;rkn;aldrh;alrdk");
             SelectPieceAction spa = (SelectPieceAction) action;
             Unit equiv = goldie.findEquivUnit(spa.selected);
@@ -189,7 +209,7 @@ public class StrategoLocalGame extends LocalGame {
                 return false; //no Units were selected, therefore no moves can be made
             }
         }
-
+        return false;
     }//makeMove
 
 
@@ -215,7 +235,7 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
     int chosenY = chosen.getyLoc();
     int chosenX = chosen.getxLoc();
     Unit[][] gameboard = goldie.getGameboard();
-    Log.i("Unigue", goldie.boardToString());
+    //Log.i("Unigue", goldie.boardToString());
 
     /** dir indicates the direction the Unit wishes to go. 1 = up, 2 = down, 3 = left, and 4 = right
      * to simplify this method and save roughly 80 lines of code, the switch case is being used to

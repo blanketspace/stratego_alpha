@@ -14,9 +14,11 @@ import edu.up.cs301.game.infoMsg.GameInfo;
 import edu.up.cs301.game.infoMsg.IllegalMoveInfo;
 import edu.up.cs301.game.infoMsg.NotYourTurnInfo;
 import edu.up.cs301.stratego.actions.DownAction;
+import edu.up.cs301.stratego.actions.EndAction;
 import edu.up.cs301.stratego.actions.ExitAction;
 import edu.up.cs301.stratego.actions.HelpAction;
 import edu.up.cs301.stratego.actions.LeftAction;
+import edu.up.cs301.stratego.actions.MenuAction;
 import edu.up.cs301.stratego.actions.RightAction;
 import edu.up.cs301.stratego.actions.SelectPieceAction;
 import edu.up.cs301.stratego.actions.SurrenderAction;
@@ -41,6 +43,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private Button surrender;
     private Button exit;
     private Button help;
+    private Button end;
+    private Button menu;
     private BoardView myBoardView;
     private TextView selectedRank;
 
@@ -119,6 +123,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.surrender = activity.findViewById(R.id.SurrenderButton);
         this.exit = activity.findViewById(R.id.ExitButton);
         this.help = activity.findViewById(R.id.helpButton);
+        this.end = activity.findViewById(R.id.endButton);
+        this.menu = activity.findViewById(R.id.menuButton);
 
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
@@ -134,6 +140,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         surrender.setOnClickListener(this);
         exit.setOnClickListener(this);
         help.setOnClickListener(this);
+        end.setOnClickListener(this);
+        menu.setOnClickListener(this);
         myBoardView.setOnTouchListener(this);
 
     }//setAsGui
@@ -175,13 +183,23 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         }
         else if (view.getId() == R.id.ExitButton) {
             Log.i("EXIT_BUTTON_CLICK", "ohohohohohohohohohoho");
-            ExitAction ea = new ExitAction(this);
-            game.sendAction(ea);
+            ExitAction exa = new ExitAction(this);
+            game.sendAction(exa);
         }
-        else if (view.getId() == R.id.ExitButton) {
-            Log.i("EXIT_BUTTON_CLICK", "ohohohohohohohohohoho");
+        else if (view.getId() == R.id.helpButton) {
+            Log.i("HELP_BUTTON_CLICK", "oooooooooooooo");
             HelpAction ha = new HelpAction(this);
             game.sendAction(ha);
+        }
+        else if (view.getId() == R.id.endButton) {
+            Log.i("END_BUTTON_CLICK", "aaaaaaaaaaaaa");
+            EndAction ea = new EndAction(this);
+            game.sendAction(ea);
+        }
+        else if (view.getId() == R.id.menuButton) {
+            Log.i("MENU_BUTTON_CLICK", "eeeeeeeeeeeeee");
+            MenuAction ma = new MenuAction(this);
+            game.sendAction(ma);
         }
 
     }//onClick
