@@ -245,6 +245,27 @@ public class StrategoGameState extends GameState {
         return null;
     }//findEquivUnit
 
+    //Nux note
+    public String boardToString() {
+        StringBuilder result = new StringBuilder();
+        result.append(" \n");
+        for(int i = 0; i < gameboard.length; i++){
+            for(int j = 0; j < gameboard[i].length; j++){
+                if(gameboard[i][j] == null){
+                    result.append("..");
+                }
+                else{
+                    if(gameboard[i][j].getRank() < 10){
+                        result.append(" ");
+                    }
+                    result.append(gameboard[i][j].getRank());
+                }
+                result.append(" ");
+            }
+            result.append("\n");
+        }
+        return result.toString();
+    }//boardToString
 
     /**
      * selectPiece
@@ -301,7 +322,7 @@ public class StrategoGameState extends GameState {
             for(int j = 0; j < this.gameboard.length; j++){
                 if(gameboard[i][j] != null && gameboard[i][j].getSelected()){
                     //the above condition is met when the Unit at that loc /is/ selected
-                    selected = gameboard[i][j];
+                    selected = gameboard[j][i];
                 }
             }
         }
@@ -326,13 +347,13 @@ public class StrategoGameState extends GameState {
             if (playerID == 0 && y < 4) {  //< 4 is for boundary purposes, ensures piece is on your side
                 unit.setxLoc(x);
                 unit.setxLoc(y);
-                gameboard[x][y] = unit;
+                gameboard[y][x] = unit;
                 return true;
             }
             else if (playerID == 1 && y > 5) {
                 unit.setxLoc(x);
                 unit.setxLoc(y);
-                gameboard[x][y] = unit;
+                gameboard[y][x] = unit;
                 return true;
             }
             else {
@@ -355,6 +376,10 @@ public class StrategoGameState extends GameState {
     public Unit getUnit(int id, int index) {
         if (id == 0) {
             return p1Troops.get(index);
+        }
+        else if (id == 1)
+        {
+            return p2Troops.get(index);
         }
         else {
             return p2Troops.get(index);

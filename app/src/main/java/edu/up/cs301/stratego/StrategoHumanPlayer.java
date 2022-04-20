@@ -86,7 +86,9 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             // if we do not have a SGState, ignore
             return;
         else {
+            StrategoGameState state = ((StrategoGameState) info);
             myBoardView.setGameState((StrategoGameState)info);
+            Log.i("Board", state.boardToString());
             myBoardView.invalidate();
         }
 
@@ -140,6 +142,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             Log.i("BUTTON_CLICK", " UP_fakjhsgkajlfkga_UP_ldkfnba;ndfb;");
             UpAction ua = new UpAction(this);
             game.sendAction(ua);
+            myBoardView.invalidate();
         }
         else if (view.getId() == R.id.downButton) {
             Log.i("DOWN_BUTTON_CLICK", "ashkgjaero;igja;lkdfbnslkdfb;ldkf");

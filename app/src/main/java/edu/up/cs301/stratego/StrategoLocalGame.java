@@ -296,41 +296,34 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
             if (gameboard[newY][newX].getRank() == Unit.BOMB) {
                 if (goldie.isMinerAttack(chosen.getRank())) {
                     //you are a miner, diffuse the bomb
-                    gameboard[newX][newY] = null;
+                    gameboard[newY][newX] = null;
                     chosen.setxLoc(newX);
                     chosen.setyLoc(newY);
-                    gameboard[newX][newY] = chosen;  //fill its old spot
+                    gameboard[newY][newX] = chosen;  //fill its old spot
                     Log.i("BOMB_DISARMED", "alksjdgaljlkah");
                 } else {
                     //you are not a miner, you explode
-                    gameboard[chosenX][chosenY] = null;
+                    gameboard[chosenY][chosenX] = null;
                     chosen.setDead(true);
                     Log.i("UNIT_EXPLODED", "lakjfdklgajdlfkhj");
                 }
             }
             else{
                 //not a bomb, free to attack
-                int opponentRank = gameboard[newX][newY].getRank();
+                int opponentRank = gameboard[newY][newX].getRank();
                 if (opponentRank > chosen.getRank()) {   //they won
                     chosen.setDead(true);            //you die
-                    gameboard[chosenX][chosenY] = null; //empty your spot
+                    gameboard[chosenY][chosenX] = null; //empty your spot
                     Log.i("OPP_WON_BATTLE", "akjglkjdlhskgkj");
 
                 } else {  //you won
-                    gameboard[newX][newY].setDead(true); //they die
-                    gameboard[chosenX][chosenY] = null;    //empty your spot
+                    gameboard[newY][newX].setDead(true); //they die
+                    gameboard[chosenY][chosenX] = null;    //empty your spot
                     chosen.setxLoc(newX);
                     chosen.setyLoc(newY);
-                    gameboard[newX][newY] = chosen;       //fill their old spot
+                    gameboard[newY][newX] = chosen;       //fill their old spot
                     Log.i("ATTACKER_WON_BATTLE", "sjfgklsjldkhg");
                 }
-            }
-
-            if(goldie.getWhoseTurn() == 0){
-                goldie.setWhoseTurn(1);
-            }
-            else{
-                goldie.setWhoseTurn(0);
             }
             return true;
         }
