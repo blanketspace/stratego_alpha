@@ -17,6 +17,7 @@ import edu.up.cs301.stratego.actions.DownAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
 import edu.up.cs301.stratego.actions.SelectPieceAction;
+import edu.up.cs301.stratego.actions.SurrenderAction;
 import edu.up.cs301.stratego.actions.UpAction;
 
 
@@ -85,6 +86,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 
         if (info instanceof IllegalMoveInfo || info instanceof NotYourTurnInfo) {
             // if the move was out of turn or otherwise illegal, flash the screen
+            Log.i("HUMAN_MADE_AN_ERROR", "akljglakjf;gdl;fk;s");
             this.flash(Color.RED, 50);
         }
         else if (!(info instanceof StrategoGameState))
@@ -92,7 +94,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             return;
         else {
              StrategoGameState state = ((StrategoGameState) info);
-
+            copyState = (StrategoGameState)info;
             myBoardView.setGameState((StrategoGameState)info);
             Log.i("Board", state.boardToString());
             myBoardView.invalidate();
@@ -179,13 +181,15 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 
         }
         else if(view.getId() == R.id.SurrenderButton){
-
+            Log.i("HUMAN_SURRENDER", "BOT_CROWNED_VICTOR_OVER_HUMANITY");
+            SurrenderAction sa = new SurrenderAction(this);
+            game.sendAction(sa);
         }
         else if (view.getId() == R.id.menuButton){
 
         }
         else if (view.getId() == R.id.ExitButton){
-
+            System.exit(1);
         }
 
 

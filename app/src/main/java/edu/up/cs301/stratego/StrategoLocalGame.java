@@ -9,6 +9,7 @@ import edu.up.cs301.stratego.actions.DownAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
 import edu.up.cs301.stratego.actions.SelectPieceAction;
+import edu.up.cs301.stratego.actions.SurrenderAction;
 import edu.up.cs301.stratego.actions.UpAction;
 
 /**
@@ -115,9 +116,15 @@ public class StrategoLocalGame extends LocalGame {
 
             return true;
         }
+        else if(action instanceof SurrenderAction){
+            goldie.setFlagCaptured(true);
+            //TODO: maybe change something so the message doesn't read "flag captured"?
+            return true;
+        }
         else {  //every other action is caught here
             //the following loops go through each list of troops
             //and finds the Unit that has been selected
+            chosen = null;
             if(goldie.getWhoseTurn() == 1){
                 for(Unit u: goldie.getP1Troops()){
                     if(u.getSelected()){
@@ -153,7 +160,7 @@ public class StrategoLocalGame extends LocalGame {
                         goldie.setWhoseTurn(0);
                     }
                     goldie.clearSelection(goldie.getWhoseTurn());
-                    //TODO: i think the above was causing the 'computer gets to take bonus turns' issue
+                    chosen = null;
                     return true;
 
                 }
@@ -166,6 +173,7 @@ public class StrategoLocalGame extends LocalGame {
                         goldie.setWhoseTurn(0);
                     }
                     goldie.clearSelection(goldie.getWhoseTurn());
+                    chosen = null;
                     return true;
                 }
                 else if (action instanceof LeftAction) {
@@ -177,6 +185,7 @@ public class StrategoLocalGame extends LocalGame {
                         goldie.setWhoseTurn(0);
                     }
                     goldie.clearSelection(goldie.getWhoseTurn());
+                    chosen = null;
                     return true;
                 }
                 else if (action instanceof RightAction) {
@@ -188,6 +197,7 @@ public class StrategoLocalGame extends LocalGame {
                         goldie.setWhoseTurn(0);
                     }
                     goldie.clearSelection(goldie.getWhoseTurn());
+                    chosen = null;
                     return true;
                 }
                 else {
