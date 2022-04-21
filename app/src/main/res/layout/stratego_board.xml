@@ -5,11 +5,11 @@
     android:id="@+id/Main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.up.cs301.pig.PigMainActivity">
+    tools:context="edu.up.cs301.stratego.StrategoMainActivity">
 
     <LinearLayout
         android:id="@+id/LeftBar"
-        android:layout_width="wrap_content"
+        android:layout_width="199dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -24,8 +24,13 @@
             android:id="@+id/SurrenderButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Surrender"
-            android:textSize="10dp" />
+            android:text="Surrender" />
+
+        <Button
+            android:id="@+id/helpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HELP" />
 
         <Button
             android:id="@+id/ExitButton"
@@ -60,7 +65,7 @@
                 android:id="@+id/Numberyourtroops"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30"
+                android:text="40"
                 android:textSize="25dp" />
 
             <TextView
@@ -80,31 +85,6 @@
                 android:text="Miner"
                 android:textSize="25dp" />
 
-            <TextView
-                android:id="@+id/Time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:text="|| 06:30"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/TurnText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:text="|| Turn: "
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/TurnNum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="30"
-                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/numTroopEnemy"
@@ -120,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="30"
+                android:text="40"
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -139,7 +119,7 @@
                 android:layout_width="625dp"
                 android:layout_height="625dp"
                 android:background="@drawable/good_board" />
-            --!this ImageView is currently used in Pig files to setTopView!--
+
 
             <edu.up.cs301.stratego.BoardView
                 android:id="@+id/strat_boardView"
@@ -219,17 +199,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/endButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="END" />
 
                 <Button
                     android:id="@+id/upButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="190dp"
                     android:layout_weight="0"
                     android:text="UP" />
 
@@ -240,6 +215,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
+                android:layout_marginLeft="50dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -247,14 +223,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="50dp"
                     android:text="LEFT" />
 
                 <Button
                     android:id="@+id/rightButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="160dp"
+                    android:layout_marginLeft="170dp"
                     android:text="RIGHT" />
 
             </LinearLayout>
@@ -266,17 +242,10 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/helpButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="HELP" />
-
-                <Button
                     android:id="@+id/downButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="125dp"
                     android:text="DOWN" />
             </LinearLayout>
 
