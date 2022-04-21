@@ -35,6 +35,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private Button down;
     private Button left;
     private Button right;
+    private Button exit;
+    private Button menu;
+    private Button surrender;
+    private Button help;
+
     private BoardView myBoardView;
     private TextView selectedRank;
 
@@ -86,7 +91,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             // if we do not have a SGState, ignore
             return;
         else {
-            StrategoGameState state = ((StrategoGameState) info);
+             StrategoGameState state = ((StrategoGameState) info);
+
             myBoardView.setGameState((StrategoGameState)info);
             Log.i("Board", state.boardToString());
             myBoardView.invalidate();
@@ -112,6 +118,10 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.down = activity.findViewById(R.id.downButton);
         this.left = activity.findViewById(R.id.leftButton);
         this.right = activity.findViewById(R.id.rightButton);
+        this.exit = activity.findViewById(R.id.ExitButton);
+        this.surrender = activity.findViewById(R.id.SurrenderButton);
+        this.help = activity.findViewById(R.id.helpButton);
+        this.menu = activity.findViewById(R.id.menuButton);
 
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
@@ -124,6 +134,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         down.setOnClickListener(this);
         left.setOnClickListener(this);
         right.setOnClickListener(this);
+        exit.setOnClickListener(this);
+        surrender.setOnClickListener(this);
+        help.setOnClickListener(this);
+        menu.setOnClickListener(this);
+
         myBoardView.setOnTouchListener(this);
 
     }//setAsGui
@@ -159,6 +174,18 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             Log.i("RIGHT_BUTTON_CLICK", "glkjdfkjglaksjklgdfklsldfk");
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
+        }
+        else if(view.getId() == R.id.helpButton){
+
+        }
+        else if(view.getId() == R.id.SurrenderButton){
+
+        }
+        else if (view.getId() == R.id.menuButton){
+
+        }
+        else if (view.getId() == R.id.ExitButton){
+
         }
 
 

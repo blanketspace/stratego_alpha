@@ -14,7 +14,7 @@ import edu.up.cs301.game.infoMsg.GameState;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 4/13/2022
+ * @version 4/20/2022
  */
 public class StrategoGameState extends GameState {
 
@@ -23,7 +23,7 @@ public class StrategoGameState extends GameState {
     private int whoseTurn;
 
     private Unit[][] gameboard;
-    private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is
+    //private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is
     private double timeElapsed;  //for the timer
 
     private ArrayList<Unit> p1Troops;
@@ -40,7 +40,6 @@ public class StrategoGameState extends GameState {
      */
     public StrategoGameState() {
         gameboard = new Unit[10][10];
-        roundNumber = 0;
         whoseTurn = 0;
         timeElapsed = 0.0;
         flagCaptured = false;
@@ -57,6 +56,7 @@ public class StrategoGameState extends GameState {
 
         //loop through each "hand", fill gameboard array
 
+        //TODO: can we call a method in the computer player class to determine this set up??
         //p1 aka the "top" half of board
         //i is the x, which is the row
         //j is the y, which is the column
@@ -106,6 +106,7 @@ public class StrategoGameState extends GameState {
         waterPieces.get(3).setyLoc(7);
 
 
+        //TODO: change in HUmanPlayerClass??
         //p2 aka "bottom" half of board
         int k = 0; //for math purposes-- so we can keep formulas from prev loop
         for (int i = 6; i < 10; i++) {
@@ -228,7 +229,7 @@ public class StrategoGameState extends GameState {
         }
         flagCaptured = orig.flagCaptured;
         whoseTurn = orig.whoseTurn;
-        roundNumber = orig.roundNumber;
+        //roundNumber = orig.roundNumber;
         p1Troops = new ArrayList<>();
         p2Troops = new ArrayList<>();
 
@@ -264,6 +265,15 @@ public class StrategoGameState extends GameState {
     }//toString
 
 
+    /**
+     * External Citation
+     * TODO: date??
+     * Nux Office Hours
+     *
+     * boardToString
+     *
+     * @return  a string representation of the current elements in the board array
+     */
     public String boardToString() {
         StringBuilder result = new StringBuilder();
         result.append(" \n");

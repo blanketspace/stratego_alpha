@@ -152,7 +152,7 @@
             android:id="@+id/yourGraveyard"
             android:layout_width="match_parent"
             android:layout_height="240dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:orientation="vertical">
 
             <TextView
@@ -163,13 +163,118 @@
                 android:text="Your Graveyard"
                 android:textSize="25dp" />
 
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/ygLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General:"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:id="@+id/yourGeneral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/yMarshLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marshal"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:id="@+id/yourMarshal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+
+                    <TextView
+                        android:id="@+id/yourColonels"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/2"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/yourMajors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/3"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/yourCaptains"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/yourLieutenants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/yourSargeants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/yourMiners"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/5"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/yourScouts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/8"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/yourSpy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"/>
+                </TableRow>
+
+            </TableLayout>
+
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/enemyGraveyard"
             android:layout_width="match_parent"
             android:layout_height="240dp"
-            android:layout_weight="0"
+            android:layout_weight="0.5"
             android:orientation="vertical">
 
             <TextView
@@ -181,6 +286,97 @@
                 android:text="Enemy Graveyard"
                 android:textSize="25dp" />
 
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/enemyGeneral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyMarshal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyColonels"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/2"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyMajors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/3"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyCaptains"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/enemyLieutenants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/enemySargeants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyMiners"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/5"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyScouts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/8"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/enemySpy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"/>
+                </TableRow>
+
+            </TableLayout>
+
 
         </LinearLayout>
 
@@ -188,14 +384,16 @@
             android:id="@+id/controlSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight=".5"
-            android:layout_gravity="center_vertical"
+
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/topLayerControl"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:layout_gravity="center_vertical"
                 android:orientation="horizontal">
 
 
@@ -203,17 +401,15 @@
                     android:id="@+id/upButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="190dp"
-                    android:layout_weight="0"
                     android:text="UP" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/middleLayerControl"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
+
                 android:layout_marginLeft="50dp"
                 android:orientation="horizontal">
 
@@ -221,8 +417,8 @@
                     android:id="@+id/leftButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="50dp"
+
+
                     android:text="LEFT" />
 
                 <Button
@@ -236,15 +432,16 @@
 
             <LinearLayout
                 android:id="@+id/bottomLayerControl"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/downButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="125dp"
                     android:text="DOWN" />
             </LinearLayout>
 

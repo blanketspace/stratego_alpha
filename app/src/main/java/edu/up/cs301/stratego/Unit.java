@@ -12,7 +12,7 @@ import android.graphics.Rect;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 4/7/2022
+ * @version 4/20/2022
  */
 public class Unit {
     /**
@@ -20,7 +20,6 @@ public class Unit {
      *  Date 2/23/2022
      *  Issue: unsure what methods to implement
      *  "Link": Office Hours help from Nux
-     *
      */
     public static final int SPY = 1;
     public static final int SCOUT = 2;
@@ -54,6 +53,7 @@ public class Unit {
     private int rank;     //what kind of unit is this?
     private boolean isSelected;
     private boolean isDead;
+    private boolean isObscured;
     private int xLoc;
     private int yLoc;
 
@@ -63,6 +63,7 @@ public class Unit {
         rank = initRank;
         isSelected = false;
         isDead = false;
+        isObscured = true;
         redUnits.setColor(0xfff24141);
         blueUnits.setColor(0xff4287f5);
         textPaint.setColor(Color.BLACK);
@@ -121,6 +122,10 @@ public class Unit {
         this.yLoc = yLoc;
     }
 
+    public void setObscured(boolean obscured) {
+        isObscured = obscured;
+    }
+
     public String nameRank() {
         String name;
         switch (this.rank)
@@ -171,7 +176,7 @@ public class Unit {
             outline.setStyle(Paint.Style.STROKE);
         }
 
-        if(!this.isDead){
+        if(!this.isDead){  //
             if (ownerID == 0) {
                 c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);
                 c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
@@ -186,20 +191,23 @@ public class Unit {
              * 4/19/2022
              * in-class help from nux
              */
-            if(this.rank == 11) {
-                c.drawText("B", xLoc * UNIT_WIDTH + UNIT_WIDTH*2/5 , yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
+            if(!this.isObscured){  //show the numbers if it's this Unit's player's turn
+                if(this.rank == 11) {
+                    c.drawText("B", xLoc * UNIT_WIDTH + UNIT_WIDTH*2/5 , yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
+                }
+                else if(this.rank == 12)
+                {
+                    c.drawText("Flag", xLoc * UNIT_WIDTH + UNIT_WIDTH/10, yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
+                }
+                else if(this.rank == 13){
+                    //don't do anything, that's water so you don't need a number on the screen
+                }
+                else
+                {
+                    c.drawText(""+this.rank, xLoc * UNIT_WIDTH + UNIT_WIDTH *2/5, yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
+                }
             }
-            else if(this.rank == 12)
-            {
-                c.drawText("Flag", xLoc * UNIT_WIDTH + UNIT_WIDTH/10, yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
-            }
-            else if(this.rank == 13){
-                //don't do anything, that's water so you don't need a number on the screen
-            }
-            else
-            {
-                c.drawText(""+this.rank, xLoc * UNIT_WIDTH + UNIT_WIDTH *2/5, yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
-            }
+
         }
 
 

@@ -22,12 +22,13 @@ import edu.up.cs301.stratego.actions.UpAction;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 4/13/2022
+ * @version 4/20/2022
  */
 public class StrategoDumbCompPlayer extends GameComputerPlayer {
 
     private StrategoGameState copyGS;
     private int dir;
+
 
     /**
      * constructor
@@ -128,7 +129,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
 
 
                 //Unit selected = board[]
-                //TODO: IDEA! use p2troops: only one random and eliminates the "computer picks the water" issue
+                //TODO: put this back in!!
   //              sleep(2000);
 
                 if (selected != null){

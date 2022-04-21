@@ -19,7 +19,7 @@ import edu.up.cs301.stratego.actions.UpAction;
  * @author Vincent Truong
  * @author Kathryn Weidman
  *
- * @version 4/13/2022
+ * @version 4/20/2022
  */
 public class StrategoLocalGame extends LocalGame {
 
@@ -75,7 +75,14 @@ public class StrategoLocalGame extends LocalGame {
     protected String checkIfGameOver() {
         if (goldie.isFlagCaptured()) {
             Log.i("FLAG_CAPTURED", "jaslkgja;eorinb/ldkfn;aoirg");
-            return "Flag Captured. Player " + goldie.getWhoseTurn() + " Wins";
+            String winner = null;
+            if(goldie.getWhoseTurn() == 0){
+                winner = "Computer Player";  //TODO: problematic for network play
+            }
+            else{
+                winner = "Human Player";
+            }
+            return "Flag Captured. " + winner +  " Wins";
         }
         else {
             return null;
@@ -127,7 +134,7 @@ public class StrategoLocalGame extends LocalGame {
                     }
                 }
             }
-            if(chosen != null){  //get selected unit through troop array lists
+            if(chosen != null && chosen.getOwnerID() != goldie.getWhoseTurn()){  //get selected unit through troop array lists
 
                 Log.i("SELECTED_NOT_NULL", "s;lidjgaorjg;drkh");
 
@@ -146,6 +153,7 @@ public class StrategoLocalGame extends LocalGame {
                         goldie.setWhoseTurn(0);
                     }
                     goldie.clearSelection(goldie.getWhoseTurn());
+                    //TODO: i think the above was causing the 'computer gets to take bonus turns' issue
                     return true;
 
                 }
