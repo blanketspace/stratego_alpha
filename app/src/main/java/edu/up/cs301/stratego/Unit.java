@@ -81,7 +81,6 @@ public class Unit {
     public void setSelected(boolean selected) {
         if (!isDead) {
             isSelected = selected;
-            //this.drawHighlight();
         }
     }
 
@@ -103,6 +102,8 @@ public class Unit {
     public boolean getStatus(){
         return this.isDead;
     }
+
+
 
     public int getxLoc() {
         return this.xLoc;
@@ -191,6 +192,9 @@ public class Unit {
             else if(this.rank == 12)
             {
                 c.drawText("Flag", xLoc * UNIT_WIDTH + UNIT_WIDTH/10, yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
+            }
+            else if(this.rank == 13){
+                //don't do anything, that's water so you don't need a number on the screen
             }
             else
             {
