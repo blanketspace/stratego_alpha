@@ -186,23 +186,27 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         Unit test = this.findUnit(x, y);
         if(test != null){
 
-//TODO:  Not needed!  Let the local game send you a new game state with the selected piece (the human player should NOT change the copyGameState; instead, let the local game change the copy of the golden state!)
+            if(test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG){
+                //TODO:  Not needed!  Let the local game send you a new game state with the selected piece
+                // (the human player should NOT change the copyGameState; instead, let the local game change
+                // the copy of the golden state!)
 //            copyState.selectPiece(copyState.getWhoseTurn(), test);
 //            copyState.clearSelection(1);  //clears selection from all Units
 //            test.setSelected(true);  //select specific Unit
 //            myBoardView.invalidate();
 //            //selectedRank.setText(test.getRank());
 
-            //initial run testing message
-            Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
-            Log.i("ON TOUCH", "LOCATION ON BOARD: [" + test.getyLoc()+ ", " + test.getxLoc()+"]");
-            Log.i("ON TOUCH", "TROOP RANK:" + test.getRank() + ": " + test.nameRank());
-            //Log.i("ON TOUCH", "TROOP RANK:" + test.get);
-            //TODO: the yLoc is the col, while the xLoc is the row
+                //initial run testing message
+                Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
+                Log.i("ON TOUCH", "LOCATION ON BOARD: [" + test.getyLoc()+ ", " + test.getxLoc()+"]");
+                Log.i("ON TOUCH", "TROOP RANK:" + test.getRank() + ": " + test.nameRank());
+                //Log.i("ON TOUCH", "TROOP RANK:" + test.get);
+                //TODO: the yLoc is the col, while the xLoc is the row
 
-            SelectPieceAction spa = new SelectPieceAction(this, test);
-            game.sendAction(spa);
-            this.sendInfo(copyState);  //this probably breaks things
+                SelectPieceAction spa = new SelectPieceAction(this, test);
+                game.sendAction(spa);
+                this.sendInfo(copyState);  //this probably breaks things
+            }
         }
         else {
             //do nothing, since there's no Unit there
