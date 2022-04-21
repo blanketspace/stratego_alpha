@@ -1,6 +1,7 @@
 package edu.up.cs301.stratego;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import edu.up.cs301.game.infoMsg.GameState;
 
@@ -27,6 +28,7 @@ public class StrategoGameState extends GameState {
 
     private ArrayList<Unit> p1Troops;
     private ArrayList<Unit> p2Troops;
+    private ArrayList<Unit> waterPieces;
 
     private boolean flagCaptured;
 
@@ -44,6 +46,11 @@ public class StrategoGameState extends GameState {
         flagCaptured = false;
         p1Troops = new ArrayList<Unit>();
         p2Troops = new ArrayList<Unit>();
+        waterPieces = new ArrayList<Unit>();
+
+        for(int i = 0; i < 8; i++){
+            waterPieces.add(new Unit(3, Unit.WATER));
+        }
 
         this.fillRanks(0);
         this.fillRanks(1);
@@ -63,6 +70,42 @@ public class StrategoGameState extends GameState {
                 test.setyLoc(i);
             }
         }
+
+        gameboard[4][2] = waterPieces.get(0);
+        waterPieces.get(0).setxLoc(4);
+        waterPieces.get(0).setyLoc(2);
+
+        gameboard[4][3] = waterPieces.get(1);
+        waterPieces.get(1).setxLoc(4);
+        waterPieces.get(1).setyLoc(3);
+
+        gameboard[5][2] = waterPieces.get(2);
+        waterPieces.get(2).setxLoc(5);
+        waterPieces.get(2).setyLoc(2);
+
+        gameboard[5][3] = waterPieces.get(3);
+        waterPieces.get(3).setxLoc(5);
+        waterPieces.get(3).setyLoc(3);
+
+
+
+        gameboard[4][6] = waterPieces.get(4);
+        waterPieces.get(0).setxLoc(4);
+        waterPieces.get(0).setyLoc(6);
+
+        gameboard[4][7] = waterPieces.get(5);
+        waterPieces.get(1).setxLoc(4);
+        waterPieces.get(1).setyLoc(7);
+
+        gameboard[5][6] = waterPieces.get(6);
+        waterPieces.get(2).setxLoc(5);
+        waterPieces.get(2).setyLoc(6);
+
+        gameboard[5][7] = waterPieces.get(7);
+        waterPieces.get(3).setxLoc(5);
+        waterPieces.get(3).setyLoc(7);
+
+
         //p2 aka "bottom" half of board
         int k = 0; //for math purposes-- so we can keep formulas from prev loop
         for (int i = 6; i < 10; i++) {
