@@ -116,8 +116,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
 
-        /*//sets up TextView to be altered later on
-        this.selectedRank = activity.findViewById(R.id.DisplayRank);*/  //TODO: doesn't work. don't know why
+       // sets up TextView to be altered later on
+        this.selectedRank = activity.findViewById(R.id.DisplayRank); //TODO: doesn't work. don't know why
 
         //set onTouch and onClick listeners
         up.setOnClickListener(this);
@@ -205,6 +205,9 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 
                 SelectPieceAction spa = new SelectPieceAction(this, test);
                 game.sendAction(spa);
+                CharSequence rank = test.nameRank();
+                this.selectedRank.setText(rank);
+
                 this.sendInfo(copyState);  //this probably breaks things
             }
         }

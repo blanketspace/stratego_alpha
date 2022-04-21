@@ -42,7 +42,7 @@
 
     <LinearLayout
         android:id="@+id/MidContent"
-        android:layout_width="wrap_content"
+        android:layout_width="700dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -57,7 +57,6 @@
                 android:id="@+id/NumTroopYours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Your Troops: "
                 android:textSize="25dp" />
 
