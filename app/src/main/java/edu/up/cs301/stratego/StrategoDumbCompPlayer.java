@@ -51,7 +51,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
         int y = unit.getyLoc();
 
         //check UP
-        if (y < 0) {
+        if (y > 0) {
             Unit dest = board[y - 1][x];
             if (dest == null) {
                 temp.add(1);
@@ -65,7 +65,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                 temp.add(2);
             }
         }
-        if (x < 0) { //left
+        if (x > 0) { //left
             Unit dest = board[y][x - 1];
             if (dest == null) {
                 temp.add(3);
@@ -106,14 +106,14 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                 Unit selected = null;
                 while(dir < 0) {
 
-                    int randomX = randGen.nextInt(39);
+                    int randomX = randGen.nextInt(40);
                     // int randomY = randGen.nextInt(9);
                     selected = copyGS.getUnit(0, randomX);
 
 
-                    while(selected.getStatus() == true || selected.getRank() == 11 || selected.getRank() == 12){
-                        randomX = randGen.nextInt(39);
-                        selected = copyGS.getUnit(0, randomX);
+
+                    if(selected.getStatus() == true || selected.getRank() == 11 || selected.getRank() == 12){
+                        continue;
                     }
 
 
@@ -125,12 +125,15 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                         //using the whichOptions index, we will use it to get a dir from the options array
                         dir = options[whichOption];
                     }
-                }
+                }//while
 
 
                 //Unit selected = board[]
                 //TODO: put this back in!!
-  //              sleep(2000);
+                Random sleepTimeInMil = new Random();
+                int randSleepTime = sleepTimeInMil.nextInt(1000);
+                randSleepTime += 200;
+                //sleep(randSleepTime);
 
                 if (selected != null){
                     SelectPieceAction spa = new SelectPieceAction(this, board[selected.getyLoc()][selected.getxLoc()]);
@@ -166,7 +169,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                 Log.i("Board",((StrategoGameState) info).boardToString());
             }
 
-        }
+        }//if stratego game state
         else {
             //something has gone wrong, it's likely not the player's turn
             //here, the human player has the screen flash, but a computer doesn't
