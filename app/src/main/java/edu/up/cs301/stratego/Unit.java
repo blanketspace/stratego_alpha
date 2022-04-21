@@ -66,6 +66,7 @@ public class Unit {
         redUnits.setColor(0xfff24141);
         blueUnits.setColor(0xff4287f5);
         textPaint.setColor(Color.BLACK);
+        textPaint.setTextSize(30.0f);
 
     }//ctor
 

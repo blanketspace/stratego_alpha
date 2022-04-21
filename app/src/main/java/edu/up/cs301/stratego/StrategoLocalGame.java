@@ -26,6 +26,7 @@ public class StrategoLocalGame extends LocalGame {
     private StrategoGameState goldie;
     private Unit chosen;
 
+
     public StrategoLocalGame() {
         goldie = new StrategoGameState();
     }//ctor
@@ -100,6 +101,8 @@ public class StrategoLocalGame extends LocalGame {
             SelectPieceAction spa = (SelectPieceAction) action;
             Unit equiv = goldie.findEquivUnit(spa.selected);
             if (equiv != null) {
+                goldie.clearSelection(0);
+                goldie.clearSelection(1);
                 equiv.setSelected(true);
             }
 
@@ -229,19 +232,19 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
         //assuming player 1 is at the top of the board
         switch(dir){
             case 1:
-                newY = chosenY + 1;
-                break;
-
-            case 2:
                 newY = chosenY - 1;
                 break;
 
+            case 2:
+                newY = chosenY + 1;
+                break;
+
             case 3:
-                newX = chosenX + 1;
+                newX = chosenX - 1;
                 break;
 
             case 4:
-                newX = chosenX - 1;
+                newX = chosenX + 1;
                 break;
         }//end switch
     }

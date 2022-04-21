@@ -51,11 +51,14 @@ public class StrategoGameState extends GameState {
         //loop through each "hand", fill gameboard array
 
         //p1 aka the "top" half of board
+        //i is the x, which is the row
+        //j is the y, which is the column
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < gameboard.length; j++) {
                 gameboard[i][j] = p1Troops.get(10*i + j); //10*i + j necessary to keep p1Troops on track
                 Unit test = gameboard[i][j];
                 // set x and y
+                //TODO: this is something that I'm concerned about
                 test.setxLoc(j);  //changed from j*Unit_Width
                 test.setyLoc(i);
             }
@@ -218,6 +221,28 @@ public class StrategoGameState extends GameState {
     }//toString
 
 
+    public String boardToString() {
+        StringBuilder result = new StringBuilder();
+        result.append(" \n");
+        for(int i = 0; i < gameboard.length; i++){
+            for(int j = 0; j < gameboard[i].length; j++){
+                if(gameboard[i][j] == null){
+                    result.append("..");
+                }
+                else{
+                    if(gameboard[i][j].getRank() < 10){
+                        result.append(" ");
+                    }
+                    result.append(gameboard[i][j].getRank());
+                }
+                result.append(" ");
+            }
+            result.append("\n");
+        }
+        return result.toString();
+    }//boardToString
+
+
     /**
      * findEquivUnit
      *
@@ -246,26 +271,6 @@ public class StrategoGameState extends GameState {
     }//findEquivUnit
 
     //Nux note
-    public String boardToString() {
-        StringBuilder result = new StringBuilder();
-        result.append(" \n");
-        for(int i = 0; i < gameboard.length; i++){
-            for(int j = 0; j < gameboard[i].length; j++){
-                if(gameboard[i][j] == null){
-                    result.append("..");
-                }
-                else{
-                    if(gameboard[i][j].getRank() < 10){
-                        result.append(" ");
-                    }
-                    result.append(gameboard[i][j].getRank());
-                }
-                result.append(" ");
-            }
-            result.append("\n");
-        }
-        return result.toString();
-    }//boardToString
 
     /**
      * selectPiece
@@ -434,6 +439,192 @@ public class StrategoGameState extends GameState {
     public void setFlagCaptured(boolean flagCaptured) {
         this.flagCaptured = flagCaptured;
     }
+
+
+
+    public boolean movePiece(int playerID, Unit chosen, int dir) {
+        int chosenY = chosen.getyLoc();
+        int chosenX = chosen.getxLoc();
+
+        //1 = up, 2 = down, 3 = left, 4 = right
+        boolean legal = false;
+
+        switch(dir) {
+            case 1:  //aka "up"
+                if (gameboard[chosenX][chosenY - 1] == null && chosenY - 1 >= 0) {
+                    chosen.setyLoc(chosenY - 1);
+                    gameboard[chosenX][chosenY] = chosen;
+                    legal = true;
+                }
+                else if (gameboard[chosenX][chosenY - 1].getRank() == Unit.WATER) {
+                    legal = false;
+                }
+                else if (gameboard[chosenX][chosenY - 1].getRank() == Unit.FLAG) {
+                    legal = true;
+                }
+                else if (gameboard[chosenX][chosenY - 1].getRank() == Unit.BOMB) {
+                    legal = isMinerAttack(chosen.getRank());
+                }
+                else if (gameboard[chosenX][chosenY].getOwnerID() != playerID) {
+                    //attack
+                    int opponentRank = gameboard[chosenX][chosenY].getRank();
+                    if (opponentRank > chosen.getRank()) {
+                        chosen.setDead(false);
+                        gameboard[chosenX][chosenY] = null;
+                        legal = true;
+                    }
+                    else {
+                        gameboard[chosenX][chosenY].setDead(false);
+                        gameboard[chosenX][chosenY] = null;
+                        chosen.setxLoc(chosenY - 1);
+                        gameboard[chosenX][chosenY] = chosen;
+                        legal = true;
+                    }
+                }
+                else {
+                    legal = false;
+                }
+                break;
+            //End case 1
+
+            case 2:  //aka "down"
+                if (gameboard[chosenX][chosenY + 1] == null && chosenY + 1 <= 9) {  //aka space is empty
+                    chosen.setyLoc(chosenY + 1);  //move into space
+                    gameboard[chosenX][chosenY] = chosen;
+                    legal = true;
+                }
+                else if (gameboard[chosenX][chosenY + 1].getRank() == Unit.WATER) {
+                    legal = false;  //can't walk on water
+                }
+                else if (gameboard[chosenX][chosenY + 1].getRank() == Unit.FLAG) {
+                    legal = true;
+                }
+                else if (gameboard[chosenX][chosenY + 1].getRank() == Unit.BOMB) {
+                    legal = isMinerAttack(chosen.getRank());
+                }
+                else if (gameboard[chosenX][chosenY + 1].getOwnerID() != playerID) {
+                    //attack
+                    int opponentRank = gameboard[chosenX][chosenY + 1].getRank();
+                    if (opponentRank > chosen.getRank()) {
+                        chosen.setDead(false);  //you died
+                        gameboard[chosenX][chosenY] = null;  //empty space you were just in
+                        legal = true;
+                    }
+                    else {
+                        gameboard[chosenX][chosenY + 1].setDead(false);  //they died
+                        gameboard[chosenX][chosenY] = null;  //empty the space you were just in
+                        chosen.setyLoc(chosenY + 1);  //move into opponent's space
+                        gameboard[chosenX][chosenY + 1] = chosen;  //report location to array
+                        legal = true;
+                    }
+                }
+                else {
+                    legal = false;
+                }
+                break;
+            //End case 2
+
+            case 3:  //aka "left"
+                if (gameboard[chosenX - 1][chosenY] == null && chosenX - 1 >= 0) {
+                    chosen.setxLoc(chosenX - 1);
+                    gameboard[chosenX - 1][chosenY] = chosen;
+                    legal = true;
+                }
+                else if (gameboard[chosenX - 1][chosenY].getRank() == Unit.WATER) {
+                    legal = false;
+                }
+                else if (gameboard[chosenX - 1][chosenY].getRank() == Unit.FLAG) {
+                    legal = true;
+                }
+                else if (gameboard[chosenX - 1][chosenY].getRank() == Unit.BOMB) {
+                    legal = isMinerAttack(chosen.getRank());
+                }
+                else if (gameboard[chosenX - 1][chosenY].getOwnerID() != playerID) {
+                    //attack
+                    int opponentRank = gameboard[chosenX - 1][chosenY].getRank();
+
+                    if (opponentRank > chosen.getRank()) {
+                        chosen.setDead(false);  //you died
+                        gameboard[chosenX][chosenY] = null;
+                        legal = true;
+                    }
+                    else {
+                        gameboard[chosenX - 1][chosenY].setDead(false);  //they died
+                        gameboard[chosenX][chosenY] = null;  //empty your spot
+                        chosen.setxLoc(chosenX - 1);
+                        gameboard[chosenX - 1][chosenY] = chosen;  //take their spot
+                        legal = true;
+                    }
+                }
+                else {
+                    legal = false;
+                }
+                break;
+            //End case 3
+
+            case 4:  //aka "right"
+                if (chosenX + 1 <= 9) {
+                    if (gameboard[chosenX + 1][chosenY] == null && chosenX + 1 <= 9) {
+                        chosen.setxLoc(chosenX + 1);
+                        gameboard[chosenX + 1][chosenY] = chosen;
+                        legal = true;
+                    }
+                    else if (gameboard[chosenX + 1][chosenY].getRank() == Unit.WATER) {
+                        legal = false;
+                    }
+                    else if (gameboard[chosenX + 1][chosenY].getRank() == Unit.FLAG) {
+                        legal = true;
+                    }
+                    else if (gameboard[chosenX + 1][chosenY].getRank() == Unit.BOMB) {
+                        legal = isMinerAttack(chosen.getRank());
+                    }
+                    else {
+                        if (gameboard[chosenX + 1][chosenY].getOwnerID() != playerID) {
+                            //attack
+                            int opponentRank = gameboard[chosenX + 1][chosenY].getRank();
+
+                            if (opponentRank > chosen.getRank()) {
+                                chosen.setDead(false);  //you died
+                                gameboard[chosenX][chosenY] = null;
+                                legal = true;
+                            }
+                            else if (opponentRank <= chosen.getRank()) {
+                                gameboard[chosenX + 1][chosenY].setDead(false);  //they died
+                                gameboard[chosenX][chosenY] = null;  //empty your space
+                                chosen.setxLoc(chosenX + 1);
+                                gameboard[chosenX + 1][chosenY] = chosen;  //take theirs
+                                legal = true;
+                            }
+                            else {
+                                legal = false;
+                            }
+                        }
+                        else {
+                            legal = false;
+                        }
+
+                    }
+                }
+                break;
+            //End of case 4
+
+            default:
+                legal = false;
+                break;
+            //End of default case
+        }//End switch-case*/
+
+        //if (goldie.getWhoseTurn() == 0) {
+        //goldie.setWhoseTurn(1);
+        //}
+        //else {
+        //goldie.setWhoseTurn(0);
+        //}
+
+        //return legal;
+        // }//movePiece
+        return false;
+    }//makeMove
 }//StrategoGameState
 
 
