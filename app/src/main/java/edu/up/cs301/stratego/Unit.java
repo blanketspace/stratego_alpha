@@ -186,15 +186,15 @@ public class Unit {
              * in-class help from nux
              */
             if(this.rank == 11) {
-                c.drawText("Bomb", xLoc * UNIT_WIDTH + UNIT_WIDTH / 3, yLoc * UNIT_HEIGHT + UNIT_HEIGHT / 3, textPaint);
+                c.drawText("B", xLoc * UNIT_WIDTH + UNIT_WIDTH*2/5 , yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
             }
             else if(this.rank == 12)
             {
-                c.drawText("Flag", xLoc * UNIT_WIDTH + UNIT_WIDTH / 3, yLoc * UNIT_HEIGHT + UNIT_HEIGHT / 3, textPaint);
+                c.drawText("Flag", xLoc * UNIT_WIDTH + UNIT_WIDTH/10, yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
             }
             else
             {
-                c.drawText(""+this.rank, xLoc * UNIT_WIDTH + UNIT_WIDTH / 3, yLoc * UNIT_HEIGHT + UNIT_HEIGHT / 3, textPaint);
+                c.drawText(""+this.rank, xLoc * UNIT_WIDTH + UNIT_WIDTH *2/5, yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
             }
         }
 
