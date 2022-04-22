@@ -53,10 +53,10 @@ public class BoardView extends SurfaceView {
         board = gameState.getGameboard();
 
         //loop through array, calls draw on Units
-        for(int i = 0; i < board.length; i++){
-            for(int j = 0; j < board.length; j++){
-                if(board[i][j] != null){
-                    if(board[i][j].getOwnerID() != 0){  //TODO: this might fuck things up during network play
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[i][j] != null) {
+                    if (board[i][j].getOwnerID() != 0) {  //TODO: this might fuck things up during network play
                         board[i][j].setObscured(false);
                     }
                     board[i][j].drawMe(canvas);

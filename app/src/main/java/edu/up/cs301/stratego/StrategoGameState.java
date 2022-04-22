@@ -50,7 +50,7 @@ public class StrategoGameState extends GameState implements Serializable {
         p2Troops = new ArrayList<Unit>();
         waterPieces = new ArrayList<Unit>();
 
-        for(int i = 0; i < 8; i++){
+        for (int i = 0; i < 8; i++) {
             waterPieces.add(new Unit(3, Unit.WATER));
         }
 
@@ -109,7 +109,7 @@ public class StrategoGameState extends GameState implements Serializable {
         waterPieces.get(3).setyLoc(7);
 
 
-        //TODO: change in HUmanPlayerClass??
+        //TODO: change in HumanPlayerClass??
         //p2 aka "bottom" half of board
         int k = 0; //for math purposes-- so we can keep formulas from prev loop
         for (int i = 6; i < 10; i++) {
@@ -280,7 +280,7 @@ public class StrategoGameState extends GameState implements Serializable {
     public String boardToString() {
         StringBuilder result = new StringBuilder();
         result.append(" \n");
-        for(int i = 0; i < gameboard.length; i++){
+        for (int i = 0; i < gameboard.length; i++) {
             for(int j = 0; j < gameboard[i].length; j++){
                 if(gameboard[i][j] == null){
                     result.append("..");
@@ -311,11 +311,11 @@ public class StrategoGameState extends GameState implements Serializable {
     public Unit findEquivUnit(Unit other) {
         ArrayList<Unit> searchMe = this.p1Troops;
 
-        if(other != null){
+        if (other != null) {
             if (other.getOwnerID() == 1) {
                 searchMe = this.p2Troops;
             }
-            for(Unit u : searchMe) {
+            for (Unit u : searchMe) {
                 if ((u.getxLoc() == other.getxLoc()) && (u.getyLoc() == other.getyLoc())) {
                     return u;
                 }
@@ -377,11 +377,11 @@ public class StrategoGameState extends GameState implements Serializable {
      *
      * @return   returns the Unit on the gameboard that is currently selected
      */
-    public Unit getSelectedUnit(){
+    public Unit getSelectedUnit() {
         Unit selected = null;
-        for(int i = 0; i < this.gameboard.length; i++){
-            for(int j = 0; j < this.gameboard.length; j++){
-                if(gameboard[i][j] != null && gameboard[i][j].getSelected()){
+        for (int i = 0; i < this.gameboard.length; i++) {
+            for (int j = 0; j < this.gameboard.length; j++) {
+                if (gameboard[i][j] != null && gameboard[i][j].getSelected()) {
                     //the above condition is met when the Unit at that loc /is/ selected
                     selected = gameboard[j][i];
                 }
@@ -457,7 +457,7 @@ public class StrategoGameState extends GameState implements Serializable {
      * @return            true if the unit is a miner, false if else
      */
     public boolean isMinerAttack(int chosenRank) {
-        if (chosenRank == Unit.MINER){
+        if (chosenRank == Unit.MINER) {
             return true;
         }
         else {

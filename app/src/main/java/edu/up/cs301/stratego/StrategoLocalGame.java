@@ -6,7 +6,6 @@ import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
 import edu.up.cs301.stratego.actions.DownAction;
-import edu.up.cs301.stratego.actions.EndAction;
 import edu.up.cs301.stratego.actions.ExitAction;
 import edu.up.cs301.stratego.actions.HelpAction;
 import edu.up.cs301.stratego.actions.LeftAction;
@@ -111,12 +110,6 @@ public class StrategoLocalGame extends LocalGame {
         if (action instanceof ExitAction) {
             System.exit(0); //Successful exit
         }
-        else if (action instanceof SurrenderAction) {
-            //TODO: Do something to end the game and send a message yay
-        }
-        else if (action instanceof EndAction) {
-            //TODO: Do something to end the turn
-        }
         else if (action instanceof HelpAction) {
             //TODO: Give em the rulebook
         }
@@ -135,7 +128,7 @@ public class StrategoLocalGame extends LocalGame {
 
             return true;
         }
-        else if(action instanceof SurrenderAction){
+        else if (action instanceof SurrenderAction) {
             goldie.setFlagCaptured(true);
             //TODO: maybe change something so the message doesn't read "flag captured"?
             return true;
@@ -144,23 +137,24 @@ public class StrategoLocalGame extends LocalGame {
             //the following loops go through each list of troops
             //and finds the Unit that has been selected
             chosen = null;
-            if(goldie.getWhoseTurn() == 1){
-                for(Unit u: goldie.getP1Troops()){
-                    if(u.getSelected()){
+            if (goldie.getWhoseTurn() == 1) {
+                for (Unit u: goldie.getP1Troops()) {
+                    if (u.getSelected()) {
                         chosen = u;
                         break;
                     }
                 }
             }
-            else{
-                for(Unit u: goldie.getP2Troops()){
-                    if(u.getSelected()){
+            else {
+                for (Unit u: goldie.getP2Troops()) {
+                    if (u.getSelected()) {
                         chosen = u;
                         break;
                     }
                 }
             }
-            if(chosen != null && chosen.getOwnerID() != goldie.getWhoseTurn()){  //get selected unit through troop array lists
+            if (chosen != null && chosen.getOwnerID() != goldie.getWhoseTurn()) {
+                //get selected unit through troop array lists
 
                 Log.i("SELECTED_NOT_NULL", "s;lidjgaorjg;drkh");
 
@@ -172,10 +166,10 @@ public class StrategoLocalGame extends LocalGame {
                     this.movePiece(1, chosen, goldie.getWhoseTurn());
                     Log.i("MAKE_MOVE_UP", "UPSAKJFLKJOIEJGOIJSL:KGJLDKJG:LKJ");
 
-                    if(goldie.getWhoseTurn() == 0){
+                    if (goldie.getWhoseTurn() == 0) {
                         goldie.setWhoseTurn(1);
                     }
-                    else{
+                    else {
                         goldie.setWhoseTurn(0);
                     }
                     goldie.clearSelection(goldie.getWhoseTurn());
@@ -185,10 +179,10 @@ public class StrategoLocalGame extends LocalGame {
                 }
                 else if (action instanceof DownAction) {
                     this.movePiece(2, chosen, goldie.getWhoseTurn());
-                    if(goldie.getWhoseTurn() == 0){
+                    if (goldie.getWhoseTurn() == 0) {
                         goldie.setWhoseTurn(1);
                     }
-                    else{
+                    else {
                         goldie.setWhoseTurn(0);
                     }
                     goldie.clearSelection(goldie.getWhoseTurn());
@@ -197,10 +191,10 @@ public class StrategoLocalGame extends LocalGame {
                 }
                 else if (action instanceof LeftAction) {
                     this.movePiece(3, chosen, goldie.getWhoseTurn());
-                    if(goldie.getWhoseTurn() == 0){
+                    if (goldie.getWhoseTurn() == 0) {
                         goldie.setWhoseTurn(1);
                     }
-                    else{
+                    else {
                         goldie.setWhoseTurn(0);
                     }
                     goldie.clearSelection(goldie.getWhoseTurn());
@@ -209,10 +203,10 @@ public class StrategoLocalGame extends LocalGame {
                 }
                 else if (action instanceof RightAction) {
                     this.movePiece(4, chosen, goldie.getWhoseTurn());
-                    if(goldie.getWhoseTurn() == 0){
+                    if (goldie.getWhoseTurn() == 0) {
                         goldie.setWhoseTurn(1);
                     }
-                    else{
+                    else {
                         goldie.setWhoseTurn(0);
                     }
                     goldie.clearSelection(goldie.getWhoseTurn());
@@ -265,9 +259,9 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
      * */
     int newX = chosenX;
     int newY = chosenY;
-    if(playerID == 1){
+    if (playerID == 1) {
         //assuming player 1 is at the top of the board
-        switch(dir){
+        switch(dir) {
             case 1:
                 newY = chosenY - 1;
                 break;
@@ -285,8 +279,8 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
                 break;
         }//end switch
     }
-    else if(playerID == 0){
-        switch(dir){
+    else if (playerID == 0) {
+        switch(dir) {
             case 1:
                 newY = chosenY - 1;
                 break;
@@ -307,7 +301,7 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
 
 
     //calls helper method to make sure we're in bounds of array
-    if(this.inBounds(newX, newY)) {
+    if (this.inBounds(newX, newY)) {
         if (gameboard[newY][newX] == null) {  //spot is already empty, go ahead and take it
             //TODO: This section has different results on each run
             //this is potentially due to an error in the comp player
@@ -348,7 +342,7 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
                     Log.i("UNIT_EXPLODED", "lakjfdklgajdlfkhj");
                 }
             }
-            else{
+            else {
                 //not a bomb, free to attack
                 int opponentRank = gameboard[newY][newX].getRank();
                 if (opponentRank > chosen.getRank()) {   //they won
@@ -381,10 +375,10 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
  *
  * @return  true if proposed x,y is in the bounds of the array
  */
-public boolean inBounds(int x, int y){
+public boolean inBounds(int x, int y) {
     boolean bounds = false;
-    if(x >= 0 && x < 10){
-        if(y >= 0 && y < 10){
+    if (x >= 0 && x < 10) {
+        if (y >= 0 && y < 10) {
             bounds = true;
         }
     }

@@ -89,7 +89,7 @@ public class Unit {
         return this.isSelected;
     }
 
-    public void setDead(boolean dead){
+    public void setDead(boolean dead) {
         this.isDead = dead;
         this.isSelected = false;
     }
@@ -168,23 +168,27 @@ public class Unit {
         //the following lines are for drawing the outline of the unit
         Paint outline = new Paint();
 
-        if(this.isSelected){
+        if (this.isSelected) {
             outline.setColor(0xFFfcfc03);  //highlight color
             outline.setStyle(Paint.Style.STROKE);
         }
-        else{
+        else {
             outline.setColor(0xFF000000); //regular black
             outline.setStyle(Paint.Style.STROKE);
         }
 
-        if(!this.isDead){  //
+        if (!this.isDead) {  //
             if (ownerID == 0) {
-                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);
-                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
+                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH,
+                        yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);
+                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH,
+                        yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
             }
             else if (ownerID == 1) {
-                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, blueUnits);
-                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
+                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH,
+                        yLoc*UNIT_HEIGHT + UNIT_HEIGHT, blueUnits);
+                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH,
+                        yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);
             }
 
             /**
@@ -192,20 +196,22 @@ public class Unit {
              * 4/19/2022
              * in-class help from nux
              */
-            if(!this.isObscured){  //show the numbers if it's this Unit's player's turn
-                if(this.rank == 11) {
-                    c.drawText("B", xLoc * UNIT_WIDTH + UNIT_WIDTH*2/5 , yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
+            if (!this.isObscured) {  //show the numbers if it's this Unit's player's turn
+                if (this.rank == 11) {
+                    c.drawText("B", xLoc * UNIT_WIDTH + UNIT_WIDTH*2/5 ,
+                            yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
                 }
-                else if(this.rank == 12)
+                else if (this.rank == 12)
                 {
-                    c.drawText("Flag", xLoc * UNIT_WIDTH + UNIT_WIDTH/10, yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
+                    c.drawText("Flag", xLoc * UNIT_WIDTH + UNIT_WIDTH/10,
+                            yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
                 }
-                else if(this.rank == 13){
+                else if (this.rank == 13) {
                     //don't do anything, that's water so you don't need a number on the screen
                 }
-                else
-                {
-                    c.drawText(""+this.rank, xLoc * UNIT_WIDTH + UNIT_WIDTH *2/5, yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
+                else {
+                    c.drawText(""+this.rank, xLoc * UNIT_WIDTH + UNIT_WIDTH *2/5,
+                            yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
                 }
             }
 
@@ -225,8 +231,8 @@ public class Unit {
      * @return
      */
     public boolean containsPoint(int x, int y) {
-        Rect r = new Rect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT);
-
+        Rect r = new Rect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH,
+                yLoc*UNIT_HEIGHT + UNIT_HEIGHT);
         return r.contains(x, y);
     }//containsPoint
 

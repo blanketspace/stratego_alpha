@@ -177,18 +177,18 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
         }
-        else if(view.getId() == R.id.helpButton){
+        else if (view.getId() == R.id.helpButton) {
 
         }
-        else if(view.getId() == R.id.SurrenderButton){
+        else if (view.getId() == R.id.SurrenderButton) {
             Log.i("HUMAN_SURRENDER", "BOT_CROWNED_VICTOR_OVER_HUMANITY");
             SurrenderAction sa = new SurrenderAction(this);
             game.sendAction(sa);
         }
-        else if (view.getId() == R.id.menuButton){
+        else if (view.getId() == R.id.menuButton) {
 
         }
-        else if (view.getId() == R.id.ExitButton){
+        else if (view.getId() == R.id.ExitButton) {
             System.exit(1);
         }
 
@@ -215,9 +215,9 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         copyState = myBoardView.getGameState();
         //match that x,y to a Unit
         Unit test = this.findUnit(x, y);
-        if(test != null){
+        if (test != null) {
 
-            if(test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG){
+            if (test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG) {
                 //TODO:  Not needed!  Let the local game send you a new game state with the selected piece
                 // (the human player should NOT change the copyGameState; instead, let the local game change
                 // the copy of the golden state!)
@@ -258,8 +258,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      */
     public Unit findUnit(int x, int y){
         Unit temp = null;
-        for(int i = 0; i < copyState.getP2Troops().size(); i++){
-            if(copyState.getP2Troops().get(i).containsPoint(x, y)){
+        for (int i = 0; i < copyState.getP2Troops().size(); i++) {
+            if (copyState.getP2Troops().get(i).containsPoint(x, y)) {
                 temp = copyState.getP2Troops().get(i);
                 break;
             }
