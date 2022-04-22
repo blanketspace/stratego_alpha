@@ -37,7 +37,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
      */
     public StrategoDumbCompPlayer(String name) {
         super(name);
-        this.playerNum = 1;
+        //this.playerNum = 0;
     }
 
     /**
@@ -51,21 +51,20 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
         int y = unit.getyLoc();
 
         //check UP
-        if (y < 0) {
+        if (y > 0) {  //changed from y < 0  4/21 4:21
             Unit dest = board[y - 1][x];
             if (dest == null) {
                 temp.add(1);
             }
         }
 
-        //TODO: check down, left, right
-        if (y < 9) {
+        if (y < 9) { //down
             Unit dest = board[y + 1][x];
             if (dest == null) {
                 temp.add(2);
             }
         }
-        if (x < 0) { //left
+        if (x > 0) { //left   changed from x < 0  4/21 4:22
             Unit dest = board[y][x - 1];
             if (dest == null) {
                 temp.add(3);
@@ -79,16 +78,18 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
         }
 
 
-        //conver the temp arraylist to an array of int
-        if (temp.size() == 0) return null;
-
-        int[] result = new int[temp.size()];
-        for(int i = 0; i < temp.size(); ++i) {
-            result[i] = temp.get(i);
+        //convert the temp arraylist to an array of int
+        if (temp.size() == 0) {return null;
         }
+        else{
+            int[] result = new int[temp.size()];
+            for(int i = 0; i < temp.size(); ++i) {
+                result[i] = temp.get(i);
+            }
 
-        return result;
-    }
+            return result;
+        }
+    }//legalDirs
 
     @Override
     protected void receiveInfo(GameInfo info) {
@@ -104,13 +105,15 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                 Unit[][] board = copyGS.getGameboard();
                 dir = -1;
                 Unit selected = null;
-                while(dir < 0) {
+                while(dir < 0) {  //TODO: what's this for?
 
-                    int randomX = randGen.nextInt(39);
+                    int bound = copyGS.getP1Troops().size() - 1;
+                    int randomX = randGen.nextInt(bound);
                     // int randomY = randGen.nextInt(9);
                     selected = copyGS.getUnit(0, randomX);
 
 
+                    //loop to ensure a legal piece is chosen
                     while(selected.getStatus() == true || selected.getRank() == 11 || selected.getRank() == 12){
                         randomX = randGen.nextInt(39);
                         selected = copyGS.getUnit(0, randomX);
@@ -118,7 +121,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
 
 
                     //added a legalDirs method that checks for legal moves that the dumb ai can make
-                    int[] options = legalDirs(selected);
+                    int[] options = this.legalDirs(selected);
                     if (options != null) {
                         //whichOption is index of the options array (randomly selects an index from options)
                         int whichOption = randGen.nextInt(options.length);
@@ -127,8 +130,6 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                     }
                 }
 
-
-                //Unit selected = board[]
                 //TODO: put this back in!!
   //              sleep(2000);
 
@@ -137,10 +138,6 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                     game.sendAction(spa);
                     Log.i("COMP_SELECTED_Piece", "asjgarjigoaet;hdjlksgjdfg");
                 }
-
-                //TODO: THE PLAYER's PIECE MOVES UP TWICE BECAUSE of the PlayerID
-                //only moved down once because we set randomDir = 1 (up), not down, so the if for down
-                //isn't executed.
 
                 //send move actions based on random number chosen
                 if(dir == 1){ //moving up

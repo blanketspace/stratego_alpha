@@ -11,6 +11,7 @@ import edu.up.cs301.game.GameHumanPlayer;
 import edu.up.cs301.game.GameMainActivity;
 import edu.up.cs301.game.R;
 import edu.up.cs301.game.infoMsg.GameInfo;
+import edu.up.cs301.game.infoMsg.GameOverInfo;
 import edu.up.cs301.game.infoMsg.IllegalMoveInfo;
 import edu.up.cs301.game.infoMsg.NotYourTurnInfo;
 import edu.up.cs301.stratego.actions.DownAction;
@@ -88,6 +89,9 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             // if the move was out of turn or otherwise illegal, flash the screen
             Log.i("HUMAN_MADE_AN_ERROR", "akljglakjf;gdl;fk;s");
             this.flash(Color.RED, 50);
+        }
+        else if(info instanceof HelpInfo){
+
         }
         else if (!(info instanceof StrategoGameState))
             // if we do not have a SGState, ignore
@@ -177,15 +181,19 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
         }
-        else if(view.getId() == R.id.helpButton){
+        else if(view.getId() == R.id.helpButton){  //or close the dialog???
+            Log.i("HELP_BUTTON_CLICKED", "lkajdlfkjs;dh;sjk");
+            this.sendInfo(new HelpInfo("OH YOU NEED HELP???"));
 
         }
         else if(view.getId() == R.id.SurrenderButton){
             Log.i("HUMAN_SURRENDER", "BOT_CROWNED_VICTOR_OVER_HUMANITY");
-            SurrenderAction sa = new SurrenderAction(this);
-            game.sendAction(sa);
+            this.sendInfo(new GameOverInfo("LMAOO LOOK AT THIS LOSER!! WHAT A CHUMP"));
+            /*SurrenderAction sa = new SurrenderAction(this);
+            game.sendAction(sa);*/
         }
         else if (view.getId() == R.id.menuButton){
+            Log.i("MENU_BUTTON_CLICKED", "lkjealkgjitjdlkgsh");
 
         }
         else if (view.getId() == R.id.ExitButton){

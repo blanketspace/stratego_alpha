@@ -337,7 +337,7 @@ public class StrategoGameState extends GameState implements Serializable {
      */
     public boolean selectPiece(int playerID, Unit chosenP) {
         if (chosenP.getOwnerID() == playerID) {
-            clearSelection(playerID);  //sets all Units to false
+            this.clearSelection();  //sets all Units to false
             chosenP.setSelected(true); //sets selection to true
             return true;
         }
@@ -354,19 +354,14 @@ public class StrategoGameState extends GameState implements Serializable {
      *
      * @param playerId  the ID of the user attempting to make a selection
      */
-    public void clearSelection(int playerId) {
-        switch (playerId) {
-            case 0:
+    public void clearSelection() {
                 for (int i= 0; i < p1Troops.size(); i++) {
                     p1Troops.get(i).setSelected(false);
                 }
-                break;
-            case 1:
                 for (int i= 0; i < p2Troops.size(); i++) {
                     p2Troops.get(i).setSelected(false);
                 }
-                break;
-        }
+
     }//clearSelection
 
 
@@ -446,24 +441,6 @@ public class StrategoGameState extends GameState implements Serializable {
             return p2Troops.get(index);
         }
     }//getUnit
-
-
-    /**
-     * isMinerAttack
-     *
-     * helper method to check for miner vs. bomb interactions
-     *
-     * @param chosenRank  the rank of the unit being checked
-     * @return            true if the unit is a miner, false if else
-     */
-    public boolean isMinerAttack(int chosenRank) {
-        if (chosenRank == Unit.MINER){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }//isMinerAttack
 
 
     /** settters and getters */
