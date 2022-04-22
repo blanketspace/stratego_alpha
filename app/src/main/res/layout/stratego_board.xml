@@ -190,9 +190,9 @@
                         android:id="@+id/yMarshLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Marshal"
+                        android:text="Marshals: "
                         android:textSize="25dp"
-                        android:layout_marginRight="20dp"/>
+                       />
                     <TextView
                         android:id="@+id/yourMarshal"
                         android:layout_width="wrap_content"
@@ -200,8 +200,16 @@
                         android:text="0/1"
                         android:textSize="25dp"
                         android:layout_marginRight="20dp"/>
+                    </TableRow>
+                <TableRow>
 
-
+                    <TextView
+                        android:id="@+id/yColLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Colonels: "
+                        android:textSize="25dp"
+                        />
                     <TextView
                         android:id="@+id/yourColonels"
                         android:layout_width="wrap_content"
@@ -211,6 +219,13 @@
                         android:layout_marginRight="20dp"/>
 
                     <TextView
+                        android:id="@+id/yMajLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Majors: "
+                        android:textSize="25dp"
+                        />
+                    <TextView
                         android:id="@+id/yourMajors"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -218,18 +233,20 @@
                         android:textSize="25dp"
                         android:layout_marginRight="20dp"/>
 
-                    <TextView
-                        android:id="@+id/yourCaptains"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0/4"
-                        android:textSize="25dp"/>
+
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
 
+                    <TextView
+                        android:id="@+id/yLtLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lieutenants: "
+                        android:textSize="25dp"
+                        />
                     <TextView
                         android:id="@+id/yourLieutenants"
                         android:layout_width="wrap_content"
@@ -238,12 +255,28 @@
                         android:textSize="25dp"/>
 
                     <TextView
+                        android:id="@+id/ySgtLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sargeants: "
+                        android:textSize="25dp"
+                        />
+                    <TextView
                         android:id="@+id/yourSargeants"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0/4"
                         android:textSize="25dp"/>
+                </TableRow>
+                <TableRow>
 
+                    <TextView
+                        android:id="@+id/yMinerLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Miners: "
+                        android:textSize="25dp"
+                        />
                     <TextView
                         android:id="@+id/yourMiners"
                         android:layout_width="wrap_content"
@@ -252,17 +285,47 @@
                         android:textSize="25dp"/>
 
                     <TextView
+                        android:id="@+id/yScoutsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scouts: "
+                        android:textSize="25dp"
+                        />
+                    <TextView
                         android:id="@+id/yourScouts"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0/8"
                         android:textSize="25dp"/>
+                </TableRow>
+                <TableRow>
 
+                    <TextView
+                        android:id="@+id/gSpyLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spy: "
+                        android:textSize="25dp"
+                        />
                     <TextView
                         android:id="@+id/yourSpy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0/1"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/yCapLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Captains: "
+                        android:textSize="25dp"
+                        />
+                    <TextView
+                        android:id="@+id/yourCaptains"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
                         android:textSize="25dp"/>
                 </TableRow>
 
@@ -296,43 +359,70 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/enemyGeneral"
+                        android:id="@+id/ogLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0/1"
-                        android:textSize="25dp"
-                        android:layout_marginRight="20dp"/>
+                        android:layout_marginRight="20dp"
+                        android:text="General:"
+                        android:textSize="25dp" />
 
                     <TextView
-                        android:id="@+id/enemyMarshal"
+                        android:id="@+id/oppGeneral"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+
                         android:text="0/1"
-                        android:textSize="25dp"
-                        android:layout_marginRight="20dp"/>
+                        android:textSize="25dp" />
 
                     <TextView
-                        android:id="@+id/enemyColonels"
+                        android:id="@+id/oMarshLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Marshals: "
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oppMarshal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:text="0/1"
+                        android:textSize="25dp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:id="@+id/oColLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Colonels: "
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oppColonels"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
                         android:text="0/2"
-                        android:textSize="25dp"
-                        android:layout_marginRight="20dp"/>
+                        android:textSize="25dp" />
 
                     <TextView
-                        android:id="@+id/enemyMajors"
+                        android:id="@+id/oMajLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Majors: "
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oppMajors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
                         android:text="0/3"
-                        android:textSize="25dp"
-                        android:layout_marginRight="20dp"/>
+                        android:textSize="25dp" />
 
-                    <TextView
-                        android:id="@+id/enemyCaptains"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0/4"
-                        android:textSize="25dp"/>
+
                 </TableRow>
 
                 <TableRow
@@ -340,39 +430,94 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/enemyLieutenants"
+                        android:id="@+id/oLtLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lieutenants: "
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oppLieutenants"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0/4"
-                        android:textSize="25dp"/>
+                        android:textSize="25dp" />
 
                     <TextView
-                        android:id="@+id/enemySargeants"
+                        android:id="@+id/oSgtLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sargeants: "
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oppSargeants"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0/4"
-                        android:textSize="25dp"/>
+                        android:textSize="25dp" />
+                </TableRow>
+
+                <TableRow>
 
                     <TextView
-                        android:id="@+id/enemyMiners"
+                        android:id="@+id/oMinerLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Miners: "
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oppMiners"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0/5"
-                        android:textSize="25dp"/>
+                        android:textSize="25dp" />
 
                     <TextView
-                        android:id="@+id/enemyScouts"
+                        android:id="@+id/oScoutsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scouts: "
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oppScouts"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0/8"
-                        android:textSize="25dp"/>
+                        android:textSize="25dp" />
+                </TableRow>
+
+                <TableRow>
 
                     <TextView
-                        android:id="@+id/enemySpy"
+                        android:id="@+id/oSpyLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spy: "
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oppSpy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0/1"
-                        android:textSize="25dp"/>
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oCapLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Captains: "
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/oppCaptains"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp" />
                 </TableRow>
 
             </TableLayout>
