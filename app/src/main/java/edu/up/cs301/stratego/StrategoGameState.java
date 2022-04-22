@@ -466,7 +466,7 @@ public class StrategoGameState extends GameState implements Serializable {
     }//isMinerAttack
 
 
-    /** settters and getters */
+    /** setters and getters */
 
     public void setWhoseTurn(int whoseTurn) {
         this.whoseTurn = whoseTurn;
