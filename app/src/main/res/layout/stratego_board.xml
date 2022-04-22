@@ -5,11 +5,11 @@
     android:id="@+id/Main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.up.cs301.pig.PigMainActivity">
+    tools:context="edu.up.cs301.stratego.StrategoMainActivity">
 
     <LinearLayout
         android:id="@+id/LeftBar"
-        android:layout_width="wrap_content"
+        android:layout_width="199dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -24,8 +24,13 @@
             android:id="@+id/SurrenderButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Surrender"
-            android:textSize="10dp" />
+            android:text="Surrender" />
+
+        <Button
+            android:id="@+id/helpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HELP" />
 
         <Button
             android:id="@+id/ExitButton"
@@ -37,7 +42,7 @@
 
     <LinearLayout
         android:id="@+id/MidContent"
-        android:layout_width="wrap_content"
+        android:layout_width="700dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -52,7 +57,6 @@
                 android:id="@+id/NumTroopYours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="Your Troops: "
                 android:textSize="25dp" />
 
@@ -60,7 +64,7 @@
                 android:id="@+id/Numberyourtroops"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30"
+                android:text="40"
                 android:textSize="25dp" />
 
             <TextView
@@ -80,31 +84,6 @@
                 android:text="Miner"
                 android:textSize="25dp" />
 
-            <TextView
-                android:id="@+id/Time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:text="|| 06:30"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/TurnText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:text="|| Turn: "
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/TurnNum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="30"
-                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/numTroopEnemy"
@@ -120,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="30"
+                android:text="40"
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -139,7 +118,7 @@
                 android:layout_width="625dp"
                 android:layout_height="625dp"
                 android:background="@drawable/good_board" />
-            --!this ImageView is currently used in Pig files to setTopView!--
+
 
             <edu.up.cs301.stratego.BoardView
                 android:id="@+id/strat_boardView"
@@ -173,7 +152,7 @@
             android:id="@+id/yourGraveyard"
             android:layout_width="match_parent"
             android:layout_height="240dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:orientation="vertical">
 
             <TextView
@@ -184,13 +163,118 @@
                 android:text="Your Graveyard"
                 android:textSize="25dp" />
 
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/ygLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General:"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:id="@+id/yourGeneral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/yMarshLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marshal"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:id="@+id/yourMarshal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+
+                    <TextView
+                        android:id="@+id/yourColonels"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/2"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/yourMajors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/3"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/yourCaptains"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/yourLieutenants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/yourSargeants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/yourMiners"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/5"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/yourScouts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/8"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/yourSpy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"/>
+                </TableRow>
+
+            </TableLayout>
+
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/enemyGraveyard"
             android:layout_width="match_parent"
             android:layout_height="240dp"
-            android:layout_weight="0"
+            android:layout_weight="0.5"
             android:orientation="vertical">
 
             <TextView
@@ -202,6 +286,97 @@
                 android:text="Enemy Graveyard"
                 android:textSize="25dp" />
 
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/enemyGeneral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyMarshal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyColonels"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/2"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyMajors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/3"
+                        android:textSize="25dp"
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyCaptains"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/enemyLieutenants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/enemySargeants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyMiners"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/5"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/enemyScouts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/8"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/enemySpy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/1"
+                        android:textSize="25dp"/>
+                </TableRow>
+
+            </TableLayout>
+
 
         </LinearLayout>
 
@@ -209,74 +384,64 @@
             android:id="@+id/controlSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight=".5"
-            android:layout_gravity="center_vertical"
+
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/topLayerControl"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:layout_gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/endButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="END" />
 
                 <Button
                     android:id="@+id/upButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:layout_weight="0"
                     android:text="UP" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/middleLayerControl"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
+
+                android:layout_marginLeft="50dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/leftButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="20dp"
+
+
                     android:text="LEFT" />
 
                 <Button
                     android:id="@+id/rightButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="160dp"
+                    android:layout_marginLeft="170dp"
                     android:text="RIGHT" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/bottomLayerControl"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginLeft="170dp"
 
-                <Button
-                    android:id="@+id/helpButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="HELP" />
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/downButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
                     android:text="DOWN" />
             </LinearLayout>
 

@@ -1,6 +1,8 @@
 package edu.up.cs301.stratego;
 
 
+import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import edu.up.cs301.game.infoMsg.GameState;
 
@@ -13,20 +15,23 @@ import edu.up.cs301.game.infoMsg.GameState;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 4/13/2022
+ * @version 4/20/2022
  */
-public class StrategoGameState extends GameState {
+public class StrategoGameState extends GameState implements Serializable {
+
+    private static final long serialVersionUID = 222475674545L;
 
     protected StrategoGameState state;
 
     private int whoseTurn;
 
     private Unit[][] gameboard;
-    private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is
+    //private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is
     private double timeElapsed;  //for the timer
 
     private ArrayList<Unit> p1Troops;
     private ArrayList<Unit> p2Troops;
+    private ArrayList<Unit> waterPieces;
 
     private boolean flagCaptured;
 
@@ -38,28 +43,73 @@ public class StrategoGameState extends GameState {
      */
     public StrategoGameState() {
         gameboard = new Unit[10][10];
-        roundNumber = 0;
         whoseTurn = 0;
         timeElapsed = 0.0;
         flagCaptured = false;
         p1Troops = new ArrayList<Unit>();
         p2Troops = new ArrayList<Unit>();
+        waterPieces = new ArrayList<Unit>();
+
+        for(int i = 0; i < 8; i++){
+            waterPieces.add(new Unit(3, Unit.WATER));
+        }
 
         this.fillRanks(0);
         this.fillRanks(1);
 
         //loop through each "hand", fill gameboard array
 
+        //TODO: can we call a method in the computer player class to determine this set up??
         //p1 aka the "top" half of board
+        //i is the x, which is the row
+        //j is the y, which is the column
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < gameboard.length; j++) {
                 gameboard[i][j] = p1Troops.get(10*i + j); //10*i + j necessary to keep p1Troops on track
                 Unit test = gameboard[i][j];
                 // set x and y
+                //TODO: this is something that I'm concerned about
                 test.setxLoc(j);  //changed from j*Unit_Width
                 test.setyLoc(i);
             }
         }
+
+        gameboard[4][2] = waterPieces.get(0);
+        waterPieces.get(0).setxLoc(4);
+        waterPieces.get(0).setyLoc(2);
+
+        gameboard[4][3] = waterPieces.get(1);
+        waterPieces.get(1).setxLoc(4);
+        waterPieces.get(1).setyLoc(3);
+
+        gameboard[5][2] = waterPieces.get(2);
+        waterPieces.get(2).setxLoc(5);
+        waterPieces.get(2).setyLoc(2);
+
+        gameboard[5][3] = waterPieces.get(3);
+        waterPieces.get(3).setxLoc(5);
+        waterPieces.get(3).setyLoc(3);
+
+
+
+        gameboard[4][6] = waterPieces.get(4);
+        waterPieces.get(0).setxLoc(4);
+        waterPieces.get(0).setyLoc(6);
+
+        gameboard[4][7] = waterPieces.get(5);
+        waterPieces.get(1).setxLoc(4);
+        waterPieces.get(1).setyLoc(7);
+
+        gameboard[5][6] = waterPieces.get(6);
+        waterPieces.get(2).setxLoc(5);
+        waterPieces.get(2).setyLoc(6);
+
+        gameboard[5][7] = waterPieces.get(7);
+        waterPieces.get(3).setxLoc(5);
+        waterPieces.get(3).setyLoc(7);
+
+
+        //TODO: change in HUmanPlayerClass??
         //p2 aka "bottom" half of board
         int k = 0; //for math purposes-- so we can keep formulas from prev loop
         for (int i = 6; i < 10; i++) {
@@ -182,7 +232,7 @@ public class StrategoGameState extends GameState {
         }
         flagCaptured = orig.flagCaptured;
         whoseTurn = orig.whoseTurn;
-        roundNumber = orig.roundNumber;
+        //roundNumber = orig.roundNumber;
         p1Troops = new ArrayList<>();
         p2Troops = new ArrayList<>();
 
@@ -219,6 +269,37 @@ public class StrategoGameState extends GameState {
 
 
     /**
+     * External Citation
+     * TODO: date??
+     * Nux Office Hours
+     *
+     * boardToString
+     *
+     * @return  a string representation of the current elements in the board array
+     */
+    public String boardToString() {
+        StringBuilder result = new StringBuilder();
+        result.append(" \n");
+        for(int i = 0; i < gameboard.length; i++){
+            for(int j = 0; j < gameboard[i].length; j++){
+                if(gameboard[i][j] == null){
+                    result.append("..");
+                }
+                else{
+                    if(gameboard[i][j].getRank() < 10){
+                        result.append(" ");
+                    }
+                    result.append(gameboard[i][j].getRank());
+                }
+                result.append(" ");
+            }
+            result.append("\n");
+        }
+        return result.toString();
+    }//boardToString
+
+
+    /**
      * findEquivUnit
      *
      * Given a Unit from another game state, find the one in this game state
@@ -245,6 +326,7 @@ public class StrategoGameState extends GameState {
         return null;
     }//findEquivUnit
 
+    //Nux note
 
     /**
      * selectPiece
@@ -301,7 +383,7 @@ public class StrategoGameState extends GameState {
             for(int j = 0; j < this.gameboard.length; j++){
                 if(gameboard[i][j] != null && gameboard[i][j].getSelected()){
                     //the above condition is met when the Unit at that loc /is/ selected
-                    selected = gameboard[i][j];
+                    selected = gameboard[j][i];
                 }
             }
         }
@@ -325,14 +407,14 @@ public class StrategoGameState extends GameState {
         if (unit.getStatus()) {
             if (playerID == 0 && y < 4) {  //< 4 is for boundary purposes, ensures piece is on your side
                 unit.setxLoc(x);
-                unit.setyLoc(y);
-                gameboard[x][y] = unit;
+                unit.setxLoc(y);
+                gameboard[y][x] = unit;
                 return true;
             }
             else if (playerID == 1 && y > 5) {
                 unit.setxLoc(x);
-                unit.setyLoc(y);
-                gameboard[x][y] = unit;
+                unit.setxLoc(y);
+                gameboard[y][x] = unit;
                 return true;
             }
             else {
@@ -355,6 +437,10 @@ public class StrategoGameState extends GameState {
     public Unit getUnit(int id, int index) {
         if (id == 0) {
             return p1Troops.get(index);
+        }
+        else if (id == 1)
+        {
+            return p2Troops.get(index);
         }
         else {
             return p2Troops.get(index);
@@ -409,6 +495,7 @@ public class StrategoGameState extends GameState {
     public void setFlagCaptured(boolean flagCaptured) {
         this.flagCaptured = flagCaptured;
     }
+
 }//StrategoGameState
 
 

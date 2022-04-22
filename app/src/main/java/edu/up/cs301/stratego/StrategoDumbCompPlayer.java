@@ -22,11 +22,13 @@ import edu.up.cs301.stratego.actions.UpAction;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 4/13/2022
+ * @version 4/20/2022
  */
 public class StrategoDumbCompPlayer extends GameComputerPlayer {
 
     private StrategoGameState copyGS;
+    private int dir;
+
 
     /**
      * constructor
@@ -36,6 +38,56 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
     public StrategoDumbCompPlayer(String name) {
         super(name);
         this.playerNum = 1;
+    }
+
+    /**
+     * @return a list of legal directions that a given piece can move to. If no legal
+     * directions are possible, then it returns null.
+     */
+    protected int[] legalDirs(Unit unit) {
+        Unit[][] board = copyGS.getGameboard();
+        ArrayList<Integer> temp = new ArrayList<>();
+        int x = unit.getxLoc();
+        int y = unit.getyLoc();
+
+        //check UP
+        if (y > 0) {
+            Unit dest = board[y - 1][x];
+            if (dest == null) {
+                temp.add(1);
+            }
+        }
+
+        //TODO: check down, left, right
+        if (y < 9) {
+            Unit dest = board[y + 1][x];
+            if (dest == null) {
+                temp.add(2);
+            }
+        }
+        if (x > 0) { //left
+            Unit dest = board[y][x - 1];
+            if (dest == null) {
+                temp.add(3);
+            }
+        }
+        if (x < 9) { // right
+            Unit dest = board[y][x + 1];
+            if (dest == null) {
+                temp.add(4);
+            }
+        }
+
+
+        //conver the temp arraylist to an array of int
+        if (temp.size() == 0) return null;
+
+        int[] result = new int[temp.size()];
+        for(int i = 0; i < temp.size(); ++i) {
+            result[i] = temp.get(i);
+        }
+
+        return result;
     }
 
     @Override
@@ -50,43 +102,74 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                 int randomDir = randGen.nextInt(4);
 
                 Unit[][] board = copyGS.getGameboard();
-                int randomX = randGen.nextInt(39);
-                // int randomY = randGen.nextInt(9);
-                Unit selected = copyGS.getUnit(0, randomX);
+                dir = -1;
+                Unit selected = null;
+                while(dir < 0) {
+
+                    int randomX = randGen.nextInt(40);
+                    // int randomY = randGen.nextInt(9);
+                    selected = copyGS.getUnit(0, randomX);
+
+
+
+                    if(selected.getStatus() == true || selected.getRank() == 11 || selected.getRank() == 12){
+                        continue;
+                    }
+
+
+                    //added a legalDirs method that checks for legal moves that the dumb ai can make
+                    int[] options = legalDirs(selected);
+                    if (options != null) {
+                        //whichOption is index of the options array (randomly selects an index from options)
+                        int whichOption = randGen.nextInt(options.length);
+                        //using the whichOptions index, we will use it to get a dir from the options array
+                        dir = options[whichOption];
+                    }
+                }//while
+
 
                 //Unit selected = board[]
-                //TODO: IDEA! use p2troops: only one random and eliminates the "computer picks the water" issue
-                sleep(2000);
+                //TODO: put this back in!!
+                Random sleepTimeInMil = new Random();
+                int randSleepTime = sleepTimeInMil.nextInt(1000);
+                randSleepTime += 200;
+                //sleep(randSleepTime);
 
                 if (selected != null){
                     SelectPieceAction spa = new SelectPieceAction(this, board[selected.getyLoc()][selected.getxLoc()]);
                     game.sendAction(spa);
                     Log.i("COMP_SELECTED_Piece", "asjgarjigoaet;hdjlksgjdfg");
                 }
+
+                //TODO: THE PLAYER's PIECE MOVES UP TWICE BECAUSE of the PlayerID
+                //only moved down once because we set randomDir = 1 (up), not down, so the if for down
+                //isn't executed.
+
                 //send move actions based on random number chosen
-                if(randomDir == 0){ //moving up
+                if(dir == 1){ //moving up
                     UpAction upAction = new UpAction(this);
                     game.sendAction(upAction);
                     Log.i("COMP_MOVED_UP", "aj;lkdjgldjgisldfjgk");
                 }
-                else if(randomDir == 1){ //moving down
+                else if(dir == 2){ //moving down
                     DownAction downAction = new DownAction(this);
                     game.sendAction(downAction);
                     Log.i("COMP_MOVED_DOWN", "ijoajglksjdlkfgjs");
                 }
-                else if(randomDir == 2){ //moving left
+                else if(dir == 3){ //moving left
                     LeftAction leftAction = new LeftAction(this);
                     game.sendAction(leftAction);
                     Log.i("COMP_MOVED_LEFT", "jkgdlkjgalkjlgkjsd");
                 }
-                else if(randomDir == 3){ //moving right
+                else if(dir == 4){ //moving right
                     RightAction rightAction = new RightAction(this);
                     game.sendAction(rightAction);
                     Log.i("COMP_MOVED_RIGHT", "ldjglajdfldkhshd'fj");
                 }
+                Log.i("Board",((StrategoGameState) info).boardToString());
             }
 
-        }
+        }//if stratego game state
         else {
             //something has gone wrong, it's likely not the player's turn
             //here, the human player has the screen flash, but a computer doesn't
@@ -96,7 +179,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
     }//receiveInfo
 
     public void setUpDumbPieces(StrategoGameState gameState) { //Untested 4/7/22, Unsure of proper location
-        ArrayList<Unit> p1Troops = gameState.getP1Troops();
+        /*ArrayList<Unit> p1Troops = gameState.getP1Troops();
         int i = 0, j = 6;
         for(Unit troop: p1Troops) { //Coordinates for placePiece are formula from StrategoGameState
             gameState.placePiece(playerNum, troop, i * troop.UNIT_WIDTH, j * troop.UNIT_HEIGHT);
@@ -111,7 +194,7 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                     i++;
                     break;
             } //Possible bug: troop arraylist being too short/long causing errors in placement;
-        }
+        }*/
     }
 }//StrategoDumbCompPlayer
 

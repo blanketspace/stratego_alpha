@@ -5,10 +5,8 @@ edu/up/cs301/pig/PigLocalGame.java
 edu/up/cs301/game/config/GameConfig.java
  edu.up.cs301.game.config.GameConfig
  edu.up.cs301.game.config.GameConfig$1
-edu/up/cs301/stratego/StrategoMainActivity.java
- edu.up.cs301.stratego.StrategoMainActivity
- edu.up.cs301.stratego.StrategoMainActivity$1
- edu.up.cs301.stratego.StrategoMainActivity$2
+edu/up/cs301/game/Game.java
+ edu.up.cs301.game.Game
 edu/up/cs301/stratego/StrategoGameState.java
  edu.up.cs301.stratego.StrategoGameState
 edu/up/cs301/game/infoMsg/StartGameInfo.java
@@ -66,19 +64,17 @@ edu/up/cs301/game/util/GameTimer.java
  edu.up.cs301.game.util.GameTimer
  edu.up.cs301.game.util.GameTimer$1
  edu.up.cs301.game.util.GameTimer$MyTimer
+edu/up/cs301/game/actionMsg/ReadyAction.java
+ edu.up.cs301.game.actionMsg.ReadyAction
 edu/up/cs301/game/ProxyPlayer.java
  edu.up.cs301.game.ProxyPlayer
  edu.up.cs301.game.ProxyPlayer$1
-edu/up/cs301/game/actionMsg/ReadyAction.java
- edu.up.cs301.game.actionMsg.ReadyAction
 edu/up/cs301/game/config/GamePlayerType.java
  edu.up.cs301.game.config.GamePlayerType
 edu/up/cs301/game/infoMsg/TimerInfo.java
  edu.up.cs301.game.infoMsg.TimerInfo
 edu/up/cs301/stratego/StrategoLocalGame.java
  edu.up.cs301.stratego.StrategoLocalGame
-edu/up/cs301/stratego/actions/SurrenderAction.java
- edu.up.cs301.stratego.actions.SurrenderAction
 edu/up/cs301/pig/PigHoldAction.java
  edu.up.cs301.pig.PigHoldAction
 edu/up/cs301/game/util/Tickable.java
@@ -87,14 +83,12 @@ edu/up/cs301/stratego/actions/SelectPieceAction.java
  edu.up.cs301.stratego.actions.SelectPieceAction
 edu/up/cs301/game/infoMsg/GameInfo.java
  edu.up.cs301.game.infoMsg.GameInfo
-edu/up/cs301/stratego/StrategoDumbCompPlayer.java
- edu.up.cs301.stratego.StrategoDumbCompPlayer
+edu/up/cs301/stratego/StrategoHumanPlayer.java
+ edu.up.cs301.stratego.StrategoHumanPlayer
 edu/up/cs301/stratego/actions/DownAction.java
  edu.up.cs301.stratego.actions.DownAction
 edu/up/cs301/pig/PigGameState.java
  edu.up.cs301.pig.PigGameState
-edu/up/cs301/stratego/actions/HelpAction.java
- edu.up.cs301.stratego.actions.HelpAction
 edu/up/cs301/game/infoMsg/NotYourTurnInfo.java
  edu.up.cs301.game.infoMsg.NotYourTurnInfo
 edu/up/cs301/game/infoMsg/BindGameInfo.java
@@ -104,8 +98,8 @@ edu/up/cs301/animation/AnimationSurface.java
  edu.up.cs301.animation.AnimationSurface$AnimationThread
 edu/up/cs301/stratego/actions/PlacePieceAction.java
  edu.up.cs301.stratego.actions.PlacePieceAction
-edu/up/cs301/stratego/StrategoHumanPlayer.java
- edu.up.cs301.stratego.StrategoHumanPlayer
+edu/up/cs301/game/util/IPCoder.java
+ edu.up.cs301.game.util.IPCoder
 edu/up/cs301/animation/Animator.java
  edu.up.cs301.animation.Animator
 edu/up/cs301/game/util/NetworkObjectPasser.java
@@ -129,9 +123,9 @@ edu/up/cs301/stratego/actions/LeftAction.java
  edu.up.cs301.stratego.actions.LeftAction
 edu/up/cs301/game/util/MessageBox.java
  edu.up.cs301.game.util.MessageBox
-edu/up/cs301/game/Game.java
- edu.up.cs301.game.Game
-edu/up/cs301/game/util/IPCoder.java
- edu.up.cs301.game.util.IPCoder
-edu/up/cs301/stratego/actions/ExitAction.java
- edu.up.cs301.stratego.actions.ExitAction
+edu/up/cs301/stratego/StrategoDumbCompPlayer.java
+ edu.up.cs301.stratego.StrategoDumbCompPlayer
+edu/up/cs301/stratego/StrategoMainActivity.java
+ edu.up.cs301.stratego.StrategoMainActivity
+ edu.up.cs301.stratego.StrategoMainActivity$1
+ edu.up.cs301.stratego.StrategoMainActivity$2

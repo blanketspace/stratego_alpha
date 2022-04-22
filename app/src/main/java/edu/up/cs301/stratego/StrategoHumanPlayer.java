@@ -14,11 +14,7 @@ import edu.up.cs301.game.infoMsg.GameInfo;
 import edu.up.cs301.game.infoMsg.IllegalMoveInfo;
 import edu.up.cs301.game.infoMsg.NotYourTurnInfo;
 import edu.up.cs301.stratego.actions.DownAction;
-import edu.up.cs301.stratego.actions.EndAction;
-import edu.up.cs301.stratego.actions.ExitAction;
-import edu.up.cs301.stratego.actions.HelpAction;
 import edu.up.cs301.stratego.actions.LeftAction;
-import edu.up.cs301.stratego.actions.MenuAction;
 import edu.up.cs301.stratego.actions.RightAction;
 import edu.up.cs301.stratego.actions.SelectPieceAction;
 import edu.up.cs301.stratego.actions.SurrenderAction;
@@ -40,11 +36,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private Button down;
     private Button left;
     private Button right;
-    private Button surrender;
     private Button exit;
-    private Button help;
-    private Button end;
     private Button menu;
+    private Button surrender;
+    private Button help;
+
     private BoardView myBoardView;
     private TextView selectedRank;
 
@@ -90,13 +86,17 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 
         if (info instanceof IllegalMoveInfo || info instanceof NotYourTurnInfo) {
             // if the move was out of turn or otherwise illegal, flash the screen
+            Log.i("HUMAN_MADE_AN_ERROR", "akljglakjf;gdl;fk;s");
             this.flash(Color.RED, 50);
         }
         else if (!(info instanceof StrategoGameState))
             // if we do not have a SGState, ignore
             return;
         else {
+             StrategoGameState state = ((StrategoGameState) info);
+            copyState = (StrategoGameState)info;
             myBoardView.setGameState((StrategoGameState)info);
+            Log.i("Board", state.boardToString());
             myBoardView.invalidate();
         }
 
@@ -120,28 +120,27 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.down = activity.findViewById(R.id.downButton);
         this.left = activity.findViewById(R.id.leftButton);
         this.right = activity.findViewById(R.id.rightButton);
-        this.surrender = activity.findViewById(R.id.SurrenderButton);
         this.exit = activity.findViewById(R.id.ExitButton);
+        this.surrender = activity.findViewById(R.id.SurrenderButton);
         this.help = activity.findViewById(R.id.helpButton);
-        this.end = activity.findViewById(R.id.endButton);
         this.menu = activity.findViewById(R.id.menuButton);
 
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
 
-        /*//sets up TextView to be altered later on
-        this.selectedRank = activity.findViewById(R.id.DisplayRank);*/  //TODO: doesn't work. don't know why
+       // sets up TextView to be altered later on
+        this.selectedRank = activity.findViewById(R.id.DisplayRank); //TODO: doesn't work. don't know why
 
         //set onTouch and onClick listeners
         up.setOnClickListener(this);
         down.setOnClickListener(this);
         left.setOnClickListener(this);
         right.setOnClickListener(this);
-        surrender.setOnClickListener(this);
         exit.setOnClickListener(this);
+        surrender.setOnClickListener(this);
         help.setOnClickListener(this);
-        end.setOnClickListener(this);
         menu.setOnClickListener(this);
+
         myBoardView.setOnTouchListener(this);
 
     }//setAsGui
@@ -156,10 +155,12 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      */
     @Override
     public void onClick(View view) {
+
         if (view.getId() == R.id.upButton) {
             Log.i("BUTTON_CLICK", " UP_fakjhsgkajlfkga_UP_ldkfnba;ndfb;");
             UpAction ua = new UpAction(this);
             game.sendAction(ua);
+            myBoardView.invalidate();
         }
         else if (view.getId() == R.id.downButton) {
             Log.i("DOWN_BUTTON_CLICK", "ashkgjaero;igja;lkdfbnslkdfb;ldkf");
@@ -176,31 +177,21 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
         }
-        else if (view.getId() == R.id.SurrenderButton) {
-            Log.i("SURRENDER_BUTTON_CLICK", "weeheeheehee");
+        else if(view.getId() == R.id.helpButton){
+
+        }
+        else if(view.getId() == R.id.SurrenderButton){
+            Log.i("HUMAN_SURRENDER", "BOT_CROWNED_VICTOR_OVER_HUMANITY");
             SurrenderAction sa = new SurrenderAction(this);
             game.sendAction(sa);
         }
-        else if (view.getId() == R.id.ExitButton) {
-            Log.i("EXIT_BUTTON_CLICK", "ohohohohohohohohohoho");
-            ExitAction exa = new ExitAction(this);
-            game.sendAction(exa);
+        else if (view.getId() == R.id.menuButton){
+
         }
-        else if (view.getId() == R.id.helpButton) {
-            Log.i("HELP_BUTTON_CLICK", "oooooooooooooo");
-            HelpAction ha = new HelpAction(this);
-            game.sendAction(ha);
+        else if (view.getId() == R.id.ExitButton){
+            System.exit(1);
         }
-        else if (view.getId() == R.id.endButton) {
-            Log.i("END_BUTTON_CLICK", "aaaaaaaaaaaaa");
-            EndAction ea = new EndAction(this);
-            game.sendAction(ea);
-        }
-        else if (view.getId() == R.id.menuButton) {
-            Log.i("MENU_BUTTON_CLICK", "eeeeeeeeeeeeee");
-            MenuAction ma = new MenuAction(this);
-            game.sendAction(ma);
-        }
+
 
     }//onClick
 
@@ -225,18 +216,31 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         //match that x,y to a Unit
         Unit test = this.findUnit(x, y);
         if(test != null){
-            copyState.selectPiece(copyState.getWhoseTurn(), test);
-            copyState.clearSelection(1);  //clears selection from all Units
-            test.setSelected(true);  //select specific Unit
-            myBoardView.invalidate();
-            //selectedRank.setText(test.getRank());
 
-            //initial run testing message
-            Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
+            if(test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG){
+                //TODO:  Not needed!  Let the local game send you a new game state with the selected piece
+                // (the human player should NOT change the copyGameState; instead, let the local game change
+                // the copy of the golden state!)
+//            copyState.selectPiece(copyState.getWhoseTurn(), test);
+//            copyState.clearSelection(1);  //clears selection from all Units
+//            test.setSelected(true);  //select specific Unit
+//            myBoardView.invalidate();
+//            //selectedRank.setText(test.getRank());
 
-            SelectPieceAction spa = new SelectPieceAction(this, test);
-            game.sendAction(spa);
-            this.sendInfo(copyState);  //this probably breaks things
+                //initial run testing message
+                Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
+                Log.i("ON TOUCH", "LOCATION ON BOARD: [" + test.getyLoc()+ ", " + test.getxLoc()+"]");
+                Log.i("ON TOUCH", "TROOP RANK:" + test.getRank() + ": " + test.nameRank());
+                //Log.i("ON TOUCH", "TROOP RANK:" + test.get);
+                //TODO: the yLoc is the col, while the xLoc is the row
+
+                SelectPieceAction spa = new SelectPieceAction(this, test);
+                game.sendAction(spa);
+                CharSequence rank = test.nameRank();
+                this.selectedRank.setText(rank);
+
+                this.sendInfo(copyState);  //this probably breaks things
+            }
         }
         else {
             //do nothing, since there's no Unit there

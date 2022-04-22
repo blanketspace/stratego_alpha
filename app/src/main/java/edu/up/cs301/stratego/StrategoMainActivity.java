@@ -8,6 +8,7 @@ import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.R;
 import edu.up.cs301.game.config.GameConfig;
 import edu.up.cs301.game.config.GamePlayerType;
+import edu.up.cs301.game.infoMsg.GameState;
 
 /**
  * StrategoMainActivity-- based heavily off of PigMainActivity from the starter code
@@ -22,7 +23,7 @@ import edu.up.cs301.game.config.GamePlayerType;
 public class StrategoMainActivity extends GameMainActivity {
 
     // the port number that this game will use when playing over the network
-    private static final int PORT_NUMBER = 2278;
+    private static final int PORT_NUMBER = 222410;
 
     /**
      * Create the default configuration for this game:
@@ -68,4 +69,6 @@ public class StrategoMainActivity extends GameMainActivity {
         return new StrategoLocalGame();
     }
 
-}
+
+
+}//StrategoMainActivity

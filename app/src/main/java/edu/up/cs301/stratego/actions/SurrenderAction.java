@@ -9,5 +9,7 @@ public class SurrenderAction extends GameAction {
      *
      * @param player the player who created the action
      */
-    public SurrenderAction(GamePlayer player) { super(player); }
+    public SurrenderAction(GamePlayer player) {
+        super(player);
+    }
 }
