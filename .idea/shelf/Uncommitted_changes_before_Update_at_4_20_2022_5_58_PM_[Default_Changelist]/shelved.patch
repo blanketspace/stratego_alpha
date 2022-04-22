@@ -1,0 +1,1756 @@
+Index: app/src/main/java/edu/up/cs301/stratego/Unit.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package edu.up.cs301.stratego;\r\n\r\nimport android.graphics.Canvas;\r\nimport android.graphics.Color;\r\nimport android.graphics.Paint;\r\nimport android.graphics.Rect;\r\n\r\n/**\r\n * class Unit\r\n *\r\n * @author Anne Marie Blank,\r\n * @author Harry Vu,\r\n * @author Vincent Truong,\r\n * @author Kathryn Weidman\r\n * @version 4/7/2022\r\n */\r\npublic class Unit {\r\n    /**\r\n     *  External Citation\r\n     *  Date 2/23/2022\r\n     *  Issue: unsure what methods to implement\r\n     *  \"Link\": Office Hours help from Nux\r\n     *\r\n     */\r\n    public static final int SPY = 1;\r\n    public static final int SCOUT = 2;\r\n    public static final int MINER = 3;\r\n    public static final int SERGEANT = 4;\r\n    public static final int LIEUTENANT = 5;\r\n    public static final int CAPTAIN = 6;\r\n    public static final int MAJOR = 7;\r\n    public static final int COLONEL = 8;\r\n    public static final int GENERAL = 9;\r\n    public static final int MARSHAL = 10;\r\n    public static final int BOMB = 11;\r\n    public static final int FLAG = 12;\r\n    public static final int WATER = 13; //only completely non-movable piece\r\n\r\n\r\n    //for drawing Units\r\n    public static final int UNIT_WIDTH = 70;\r\n    public static final int UNIT_HEIGHT = 70;\r\n    private Paint redUnits = new Paint();\r\n    private Paint blueUnits = new Paint();\r\n    private Paint textPaint = new Paint();\r\n\r\n\r\n    /*** Nothing else needs to be added in this Unit class\r\n     * IMPORTANT ELABORATION: Every unit has their ownerID, meaning that\r\n     * the owner's id comes with the unit*/\r\n\r\n\r\n    private int ownerID;  //the id of the player who owns the piece\r\n    private int rank;     //what kind of unit is this?\r\n    private boolean isSelected;\r\n    private boolean isDead;\r\n    private int xLoc;\r\n    private int yLoc;\r\n\r\n\r\n    public Unit(int id, int initRank) {\r\n        ownerID = id;\r\n        rank = initRank;\r\n        isSelected = false;\r\n        isDead = false;\r\n        redUnits.setColor(0xfff24141);\r\n        blueUnits.setColor(0xff4287f5);\r\n        textPaint.setColor(Color.BLACK);\r\n\r\n    }//ctor\r\n\r\n    public int getOwnerID(){\r\n        return this.ownerID;\r\n    }\r\n\r\n    public int getRank() {\r\n        return rank;\r\n    }\r\n\r\n    public void setSelected(boolean selected) {\r\n        if (!isDead) {\r\n            isSelected = selected;\r\n            //this.drawHighlight();\r\n        }\r\n    }\r\n\r\n    public boolean getSelected(){\r\n        return this.isSelected;\r\n    }\r\n\r\n    public void setDead(boolean dead){\r\n        this.isDead = dead;\r\n    }\r\n\r\n    /**\r\n     * getStatus\r\n     *\r\n     * this is confusing, so\r\n     *\r\n     * @return  true if dead, false if alive\r\n     */\r\n    public boolean getStatus(){\r\n        return this.isDead;\r\n    }\r\n\r\n    public int getxLoc() {\r\n        return this.xLoc;\r\n    }\r\n\r\n    public int getyLoc() {\r\n        return this.yLoc;\r\n    }\r\n\r\n    public void setxLoc(int xLoc) {\r\n        this.xLoc = xLoc;\r\n    }\r\n\r\n    public void setyLoc(int yLoc) {\r\n        this.yLoc = yLoc;\r\n    }\r\n\r\n    public String nameRank() {\r\n        String name;\r\n        switch (this.rank)\r\n        {\r\n            case 1:\r\n                return \"Spy\";\r\n            case 2:\r\n                return \"Scout\";\r\n            case 3:\r\n                return \"Miner\";\r\n            case 4:\r\n                return \"Sergeant\";\r\n            case 5:\r\n                return \"Lieutenant\";\r\n            case 6:\r\n                return \"Captain\";\r\n            case 7:\r\n                return \"Major\";\r\n            case 8:\r\n                return \"Colonel\";\r\n            case 9:\r\n                return \"General\";\r\n            case 10:\r\n                return \"Marshal\";\r\n            case 11:\r\n                return \"Bomb\";\r\n            case 12:\r\n                return \"Flag\";\r\n        }\r\n        return \"bad\";\r\n    }//nameRank\r\n\r\n    /**\r\n     * drawMe\r\n     *\r\n     * @param c  the canvas to draw on\r\n     */\r\n    public void drawMe(Canvas c) {\r\n        //the following lines are for drawing the outline of the unit\r\n        Paint outline = new Paint();\r\n\r\n        if(this.isSelected){\r\n            outline.setColor(0xFFfcfc03);  //highlight color\r\n            outline.setStyle(Paint.Style.STROKE);\r\n        }\r\n        else{\r\n            outline.setColor(0xFF000000); //regular black\r\n            outline.setStyle(Paint.Style.STROKE);\r\n        }\r\n\r\n        if(!this.isDead){\r\n            if (ownerID == 0) {\r\n                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);\r\n                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);\r\n            }\r\n            else if (ownerID == 1) {\r\n                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, blueUnits);\r\n                c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT, outline);\r\n            }\r\n\r\n            /**\r\n             * external citation\r\n             * 4/19/2022\r\n             * in-class help from nux\r\n             */\r\n            if(this.rank == 11) {\r\n                c.drawText(\"Bomb\", xLoc * UNIT_WIDTH + UNIT_WIDTH / 3, yLoc * UNIT_HEIGHT + UNIT_HEIGHT / 3, textPaint);\r\n            }\r\n            else if(this.rank == 12)\r\n            {\r\n                c.drawText(\"Flag\", xLoc * UNIT_WIDTH + UNIT_WIDTH / 3, yLoc * UNIT_HEIGHT + UNIT_HEIGHT / 3, textPaint);\r\n            }\r\n            else\r\n            {\r\n                c.drawText(\"\"+this.rank, xLoc * UNIT_WIDTH + UNIT_WIDTH / 3, yLoc * UNIT_HEIGHT + UNIT_HEIGHT / 3, textPaint);\r\n            }\r\n        }\r\n\r\n\r\n    }//drawMe\r\n\r\n\r\n    /**\r\n     * External Citation\r\n     * based off of a method of the same name in the CustomRect class\r\n     * provided as a resource for the Custom Coloring homework\r\n     *\r\n     * @param x\r\n     * @param y\r\n     * @return\r\n     */\r\n    public boolean containsPoint(int x, int y) {\r\n        Rect r = new Rect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH, yLoc*UNIT_HEIGHT + UNIT_HEIGHT);\r\n\r\n        return r.contains(x, y);\r\n    }//containsPoint\r\n\r\n}//class Unit\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/stratego/Unit.java b/app/src/main/java/edu/up/cs301/stratego/Unit.java
+--- a/app/src/main/java/edu/up/cs301/stratego/Unit.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ b/app/src/main/java/edu/up/cs301/stratego/Unit.java	(date 1650502129081)
+@@ -103,6 +103,8 @@
+         return this.isDead;
+     }
+ 
++
++
+     public int getxLoc() {
+         return this.xLoc;
+     }
+Index: local.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>## This file must *NOT* be checked into Version Control Systems,\r\n# as it contains information specific to your local configuration.\r\n#\r\n# Location of the SDK. This is only used by Gradle.\r\n# For customization when using a Version Control System, please read the\r\n# header note.\r\n#Thu Mar 24 18:06:13 PDT 2022\r\nsdk.dir=C\\:\\\\Users\\\\katyl\\\\AppData\\\\Local\\\\Android\\\\Sdk\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+diff --git a/local.properties b/local.properties
+--- a/local.properties	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ b/local.properties	(date 1650502710025)
+@@ -5,4 +5,4 @@
+ # For customization when using a Version Control System, please read the
+ # header note.
+ #Thu Mar 24 18:06:13 PDT 2022
+-sdk.dir=C\:\\Users\\katyl\\AppData\\Local\\Android\\Sdk
++sdk.dir=C\:\\Users\\blank\\AppData\\Local\\Android\\Sdk
+Index: app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package edu.up.cs301.stratego;\r\n\r\n\r\nimport java.util.ArrayList;\r\nimport edu.up.cs301.game.infoMsg.GameState;\r\n\r\n/**\r\n * StrategoGameState\r\n *\r\n * class to store and describe the current state of the game\r\n *\r\n * @author Anne Marie Blank,\r\n * @author Harry Vu,\r\n * @author Vincent Truong,\r\n * @author Kathryn Weidman\r\n * @version 4/13/2022\r\n */\r\npublic class StrategoGameState extends GameState {\r\n\r\n    protected StrategoGameState state;\r\n\r\n    private int whoseTurn;\r\n\r\n    private Unit[][] gameboard;\r\n    private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is\r\n    private double timeElapsed;  //for the timer\r\n\r\n    private ArrayList<Unit> p1Troops;\r\n    private ArrayList<Unit> p2Troops;\r\n\r\n    private boolean flagCaptured;\r\n\r\n\r\n    /**\r\n     * ctor\r\n     *\r\n     * defines the state of the game on startup\r\n     */\r\n    public StrategoGameState() {\r\n        gameboard = new Unit[10][10];\r\n        roundNumber = 0;\r\n        whoseTurn = 0;\r\n        timeElapsed = 0.0;\r\n        flagCaptured = false;\r\n        p1Troops = new ArrayList<Unit>();\r\n        p2Troops = new ArrayList<Unit>();\r\n\r\n        this.fillRanks(0);\r\n        this.fillRanks(1);\r\n\r\n        //loop through each \"hand\", fill gameboard array\r\n\r\n        //p1 aka the \"top\" half of board\r\n        for (int i = 0; i < 4; i++) {\r\n            for (int j = 0; j < gameboard.length; j++) {\r\n                gameboard[i][j] = p1Troops.get(10*i + j); //10*i + j necessary to keep p1Troops on track\r\n                Unit test = gameboard[i][j];\r\n                // set x and y\r\n                test.setxLoc(j);  //changed from j*Unit_Width\r\n                test.setyLoc(i);\r\n            }\r\n        }\r\n        //p2 aka \"bottom\" half of board\r\n        int k = 0; //for math purposes-- so we can keep formulas from prev loop\r\n        for (int i = 6; i < 10; i++) {\r\n            for (int j = 0; j < gameboard.length; j++) {\r\n                gameboard[i][j] = p2Troops.get(10*k + j); //10*k + j keeps us moving through arraylist\r\n                Unit test = gameboard[i][j];\r\n                // set x and y\r\n                test.setxLoc(j);\r\n                test.setyLoc(i);\r\n            }\r\n            k++;\r\n        }\r\n\r\n    }//ctor\r\n\r\n\r\n    /**\r\n     * fillRanks\r\n     *\r\n     * helper method to fill the player's Troop Arrays\r\n     *\r\n     * @param pID   the id of the player whose array needs filling\r\n     */\r\n    public void fillRanks(int pID) {\r\n        if (pID == 0) {\r\n            p1Troops.add(new Unit(0, Unit.MARSHAL));\r\n            p1Troops.add(new Unit(0, Unit.GENERAL));\r\n            p1Troops.add(new Unit(0, Unit.FLAG));\r\n            p1Troops.add(new Unit(0, Unit.SPY));\r\n\r\n            p1Troops.add(new Unit(0, Unit.COLONEL));\r\n            p1Troops.add(new Unit(0, Unit.COLONEL));\r\n\r\n            p1Troops.add(new Unit(0, Unit.MAJOR));\r\n            p1Troops.add(new Unit(0, Unit.MAJOR));\r\n            p1Troops.add(new Unit(0, Unit.MAJOR));\r\n\r\n            for (int i = 0; i < 4; i++) {\r\n                p1Troops.add(new Unit(0, Unit.SERGEANT));\r\n            }\r\n\r\n            for (int i = 0; i < 4; i++) {\r\n                p1Troops.add(new Unit(0, Unit.LIEUTENANT));\r\n            }\r\n\r\n            for (int i = 0; i < 4; i++) {\r\n                p1Troops.add(new Unit(0, Unit.CAPTAIN));\r\n            }\r\n\r\n            for (int i = 0; i < 5; i++) {\r\n                p1Troops.add(new Unit(0, Unit.MINER));\r\n            }\r\n\r\n            for (int i = 0; i < 8; i++) {\r\n                p1Troops.add(new Unit(0, Unit.SCOUT));\r\n            }\r\n\r\n            for (int i = 0; i < 6; i++) {\r\n                p1Troops.add(new Unit(0, Unit.BOMB));\r\n            }\r\n\r\n        }\r\n        else if (pID == 1) {\r\n            p2Troops.add(new Unit(1, Unit.MARSHAL));\r\n            p2Troops.add(new Unit(1, Unit.GENERAL));\r\n            p2Troops.add(new Unit(1, Unit.FLAG));\r\n            p2Troops.add(new Unit(1, Unit.SPY));\r\n\r\n            p2Troops.add(new Unit(1, Unit.COLONEL));\r\n            p2Troops.add(new Unit(1, Unit.COLONEL));\r\n\r\n            p2Troops.add(new Unit(1, Unit.MAJOR));\r\n            p2Troops.add(new Unit(1, Unit.MAJOR));\r\n            p2Troops.add(new Unit(1, Unit.MAJOR));\r\n\r\n            p2Troops.add(new Unit(1, Unit.SERGEANT));\r\n            p2Troops.add(new Unit(1, Unit.SERGEANT));\r\n            p2Troops.add(new Unit(1, Unit.SERGEANT));\r\n            p2Troops.add(new Unit(1, Unit.SERGEANT));\r\n\r\n            p2Troops.add(new Unit(1, Unit.LIEUTENANT));\r\n            p2Troops.add(new Unit(1, Unit.LIEUTENANT));\r\n            p2Troops.add(new Unit(1, Unit.LIEUTENANT));\r\n            p2Troops.add(new Unit(1, Unit.LIEUTENANT));\r\n\r\n            p2Troops.add(new Unit(1, Unit.CAPTAIN));\r\n            p2Troops.add(new Unit(1, Unit.CAPTAIN));\r\n            p2Troops.add(new Unit(1, Unit.CAPTAIN));\r\n            p2Troops.add(new Unit(1, Unit.CAPTAIN));\r\n\r\n            for (int i = 0; i < 5; i++) {\r\n                p2Troops.add(new Unit(1, Unit.MINER));\r\n            }\r\n\r\n            for (int i = 0; i < 8; i++) {\r\n                p2Troops.add(new Unit(1, Unit.SCOUT));\r\n            }\r\n\r\n            for (int i = 0; i < 6; i++) {\r\n                p2Troops.add(new Unit(1, Unit.BOMB));\r\n            }\r\n        }\r\n    }//fillRanks\r\n\r\n\r\n    /**\r\n     * copy ctor\r\n     *\r\n     * @param orig  the original GameState to be copied\r\n     * @Override\r\n     */\r\n    public StrategoGameState(StrategoGameState orig){\r\n        this.gameboard = new Unit[10][10];\r\n\r\n        //initialize new gameboard to be just like the old one\r\n        for (int i = 0; i < gameboard.length; i++) {\r\n            for (int j = 0; j < gameboard[i].length; j++) {\r\n                gameboard[i][j] = orig.gameboard[i][j];\r\n            }\r\n        }\r\n        flagCaptured = orig.flagCaptured;\r\n        whoseTurn = orig.whoseTurn;\r\n        roundNumber = orig.roundNumber;\r\n        p1Troops = new ArrayList<>();\r\n        p2Troops = new ArrayList<>();\r\n\r\n        //makes a deep copy of the the troops arraylist\r\n        for (int i = 0; i < orig.p1Troops.size(); i++) {\r\n            this.p1Troops.add(orig.p1Troops.get(i));\r\n        }\r\n        for (int i = 0; i < orig.p2Troops.size(); i++) {\r\n            this.p2Troops.add(orig.p2Troops.get(i));\r\n        }\r\n\r\n    }//copy ctor\r\n\r\n\r\n    /**\r\n     * toString\r\n     *\r\n     * @return a String representation of the current StrategoGameState\r\n     */\r\n    @Override\r\n    public String toString() {\r\n        String foo = null;\r\n        for (int i = 0; i < p1Troops.size(); i++) {\r\n            foo = \"\" + p1Troops.get(i).nameRank() + \" \";\r\n        }\r\n        String bar = null;\r\n        for (int i = 0; i < p2Troops.size(); i++) {\r\n            bar = \"\" + p2Troops.get(i).nameRank() + \" \";\r\n        }\r\n        return \"Turn:\" + whoseTurn + \"Player 1 Troops: \" + foo\r\n                + \"Player 2 Troops: \" + bar + \"Time Elapsed: \" + timeElapsed\r\n                + \"Flag Captured?: \" + flagCaptured;\r\n    }//toString\r\n\r\n\r\n    /**\r\n     * findEquivUnit\r\n     *\r\n     * Given a Unit from another game state, find the one in this game state\r\n     * that is the same (if it exists)\r\n     *\r\n     * @param other   the Unit we're attempting to find a match for\r\n     * @return        the Unit that matches the one passed in\r\n     */\r\n    public Unit findEquivUnit(Unit other) {\r\n        ArrayList<Unit> searchMe = this.p1Troops;\r\n\r\n        if(other != null){\r\n            if (other.getOwnerID() == 1) {\r\n                searchMe = this.p2Troops;\r\n            }\r\n            for(Unit u : searchMe) {\r\n                if ((u.getxLoc() == other.getxLoc()) && (u.getyLoc() == other.getyLoc())) {\r\n                    return u;\r\n                }\r\n            }\r\n        }\r\n\r\n\r\n        return null;\r\n    }//findEquivUnit\r\n\r\n    //Nux note\r\n    public String boardToString() {\r\n        StringBuilder result = new StringBuilder();\r\n        result.append(\" \\n\");\r\n        for(int i = 0; i < gameboard.length; i++){\r\n            for(int j = 0; j < gameboard[i].length; j++){\r\n                if(gameboard[i][j] == null){\r\n                    result.append(\"..\");\r\n                }\r\n                else{\r\n                    if(gameboard[i][j].getRank() < 10){\r\n                        result.append(\" \");\r\n                    }\r\n                    result.append(gameboard[i][j].getRank());\r\n                }\r\n                result.append(\" \");\r\n            }\r\n            result.append(\"\\n\");\r\n        }\r\n        return result.toString();\r\n    }//boardToString\r\n\r\n    /**\r\n     * selectPiece\r\n     *\r\n     *\r\n     * @param playerID   the id of the player attempting to choose\r\n     * @param chosenP    the Unit being selected\r\n     */\r\n    public boolean selectPiece(int playerID, Unit chosenP) {\r\n        if (chosenP.getOwnerID() == playerID) {\r\n            clearSelection(playerID);  //sets all Units to false\r\n            chosenP.setSelected(true); //sets selection to true\r\n            return true;\r\n        }\r\n        else {\r\n            return false;\r\n        }\r\n    }//selectPiece\r\n\r\n\r\n    /**\r\n     * clearSelection\r\n     *\r\n     * sets the isSelected value of all Units in the player's \"hand\" to false\r\n     *\r\n     * @param playerId  the ID of the user attempting to make a selection\r\n     */\r\n    public void clearSelection(int playerId) {\r\n        switch (playerId) {\r\n            case 0:\r\n                for (int i= 0; i < p1Troops.size(); i++) {\r\n                    p1Troops.get(i).setSelected(false);\r\n                }\r\n                break;\r\n            case 1:\r\n                for (int i= 0; i < p2Troops.size(); i++) {\r\n                    p2Troops.get(i).setSelected(false);\r\n                }\r\n                break;\r\n        }\r\n    }//clearSelection\r\n\r\n\r\n    /**\r\n     * getSelectedUnit\r\n     *\r\n     * finds the Unit in the gameboard array that is selected\r\n     *\r\n     * @return   returns the Unit on the gameboard that is currently selected\r\n     */\r\n    public Unit getSelectedUnit(){\r\n        Unit selected = null;\r\n        for(int i = 0; i < this.gameboard.length; i++){\r\n            for(int j = 0; j < this.gameboard.length; j++){\r\n                if(gameboard[i][j] != null && gameboard[i][j].getSelected()){\r\n                    //the above condition is met when the Unit at that loc /is/ selected\r\n                    selected = gameboard[j][i];\r\n                }\r\n            }\r\n        }\r\n        return selected;  //CAUTION: could return false; this is handled in SLocalGame\r\n    }//getSelectedUnit\r\n\r\n\r\n    /**\r\n     * placePiece\r\n     *\r\n     * meant for the beginning stage of the game, when players\r\n     * move their pieces from the starting location (graveyard) and onto the board\r\n     *\r\n     * @param playerID  the id of the player making the move\r\n     * @param unit      the unit they're moving\r\n     * @param x         x coord of new location\r\n     * @param y         y coord of new location\r\n     * @return          true if alive and movement is valid, false if not\r\n     */\r\n    public boolean placePiece(int playerID, Unit unit, int x, int y) {\r\n        if (unit.getStatus()) {\r\n            if (playerID == 0 && y < 4) {  //< 4 is for boundary purposes, ensures piece is on your side\r\n                unit.setxLoc(x);\r\n                unit.setxLoc(y);\r\n                gameboard[y][x] = unit;\r\n                return true;\r\n            }\r\n            else if (playerID == 1 && y > 5) {\r\n                unit.setxLoc(x);\r\n                unit.setxLoc(y);\r\n                gameboard[y][x] = unit;\r\n                return true;\r\n            }\r\n            else {\r\n                return false;\r\n            }\r\n        }\r\n        else {\r\n            return false;\r\n        }\r\n    }//placePiece\r\n\r\n\r\n    /**\r\n     * getUnit\r\n     *\r\n     * @param id    the id of the player whose \"hand\" you want to access\r\n     * @param index the index you want to access\r\n     * @return      the unit at the given index in the player's \"hand\"\r\n     */\r\n    public Unit getUnit(int id, int index) {\r\n        if (id == 0) {\r\n            return p1Troops.get(index);\r\n        }\r\n        else if (id == 1)\r\n        {\r\n            return p2Troops.get(index);\r\n        }\r\n        else {\r\n            return p2Troops.get(index);\r\n        }\r\n    }//getUnit\r\n\r\n\r\n    /**\r\n     * isMinerAttack\r\n     *\r\n     * helper method to check for miner vs. bomb interactions\r\n     *\r\n     * @param chosenRank  the rank of the unit being checked\r\n     * @return            true if the unit is a miner, false if else\r\n     */\r\n    public boolean isMinerAttack(int chosenRank) {\r\n        if (chosenRank == Unit.MINER){\r\n            return true;\r\n        }\r\n        else {\r\n            return false;\r\n        }\r\n    }//isMinerAttack\r\n\r\n\r\n    /** settters and getters */\r\n\r\n    public void setWhoseTurn(int whoseTurn) {\r\n        this.whoseTurn = whoseTurn;\r\n    }\r\n\r\n    public int getWhoseTurn() {\r\n        return whoseTurn;\r\n    }\r\n\r\n    public Unit[][] getGameboard() {\r\n        return gameboard;\r\n    }\r\n\r\n    public ArrayList<Unit> getP1Troops() {\r\n        return p1Troops;\r\n    }\r\n\r\n    public ArrayList<Unit> getP2Troops() {\r\n        return p2Troops;\r\n    }\r\n\r\n    public boolean isFlagCaptured() {\r\n        return flagCaptured;\r\n    }\r\n\r\n    public void setFlagCaptured(boolean flagCaptured) {\r\n        this.flagCaptured = flagCaptured;\r\n    }\r\n}//StrategoGameState\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java b/app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java
+--- a/app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ b/app/src/main/java/edu/up/cs301/stratego/StrategoGameState.java	(date 1650502129106)
+@@ -22,7 +22,7 @@
+     private int whoseTurn;
+ 
+     private Unit[][] gameboard;
+-    private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is
++    //private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is
+     private double timeElapsed;  //for the timer
+ 
+     private ArrayList<Unit> p1Troops;
+@@ -38,15 +38,15 @@
+      */
+     public StrategoGameState() {
+         gameboard = new Unit[10][10];
+-        roundNumber = 0;
++        //roundNumber = 0;
+         whoseTurn = 0;
+         timeElapsed = 0.0;
+         flagCaptured = false;
+         p1Troops = new ArrayList<Unit>();
+         p2Troops = new ArrayList<Unit>();
+ 
+-        this.fillRanks(0);
+         this.fillRanks(1);
++        this.fillRanks(0);
+ 
+         //loop through each "hand", fill gameboard array
+ 
+@@ -182,7 +182,7 @@
+         }
+         flagCaptured = orig.flagCaptured;
+         whoseTurn = orig.whoseTurn;
+-        roundNumber = orig.roundNumber;
++        //roundNumber = orig.roundNumber;
+         p1Troops = new ArrayList<>();
+         p2Troops = new ArrayList<>();
+ 
+Index: app/src/main/res/layout/stratego_board.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/Main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\"edu.up.cs301.pig.PigMainActivity\">\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/LeftBar\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <Button\r\n            android:id=\"@+id/menuButton\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"50dp\"\r\n            android:text=\"Menu\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/SurrenderButton\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Surrender\"\r\n            android:textSize=\"10dp\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/ExitButton\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Exit\" />\r\n\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/MidContent\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/TopBar\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:gravity=\"top\"\r\n            android:orientation=\"horizontal\">\r\n\r\n            <TextView\r\n                android:id=\"@+id/NumTroopYours\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"1\"\r\n                android:text=\"Your Troops: \"\r\n                android:textSize=\"25dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/Numberyourtroops\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"30\"\r\n                android:textSize=\"25dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/RankSelectedTroop\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginLeft=\"5dp\"\r\n                android:layout_weight=\"1\"\r\n                android:text=\"|| Rank of troop: \"\r\n                android:textSize=\"25dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/DisplayRank\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"1\"\r\n                android:text=\"Miner\"\r\n                android:textSize=\"25dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/Time\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginLeft=\"5dp\"\r\n                android:layout_weight=\"1\"\r\n                android:text=\"|| 06:30\"\r\n                android:textSize=\"25dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/TurnText\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginLeft=\"5dp\"\r\n                android:layout_weight=\"1\"\r\n                android:text=\"|| Turn: \"\r\n                android:textSize=\"25dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/TurnNum\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"1\"\r\n                android:text=\"30\"\r\n                android:textSize=\"25dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/numTroopEnemy\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginLeft=\"5dp\"\r\n                android:layout_weight=\"1\"\r\n                android:text=\"|| Enemy Troops: \"\r\n                android:textSize=\"25dp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/NumberEnemyTroops\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"1\"\r\n                android:text=\"30\"\r\n                android:textSize=\"25dp\" />\r\n\r\n        </LinearLayout>\r\n\r\n        <RelativeLayout\r\n            android:id=\"@+id/RelativeLay_board\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:layout_marginBottom=\"5dp\"\r\n            android:gravity=\"center\">\r\n\r\n\r\n            <ImageView\r\n                android:id=\"@+id/BoardIBackGround\"\r\n                android:layout_width=\"625dp\"\r\n                android:layout_height=\"625dp\"\r\n                android:background=\"@drawable/good_board\" />\r\n            --!this ImageView is currently used in Pig files to setTopView!--\r\n\r\n            <edu.up.cs301.stratego.BoardView\r\n                android:id=\"@+id/strat_boardView\"\r\n                android:layout_width=\"625dp\"\r\n                android:layout_height=\"625dp\"\r\n                android:background=\"@drawable/good_board\" />\r\n\r\n\r\n\r\n        </RelativeLayout>\r\n\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/RightContent\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_weight=\"1\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/strategoLabel\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\"\r\n\r\n            android:text=\"Stratego\"\r\n            android:textSize=\"30sp\" />\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/yourGraveyard\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"240dp\"\r\n            android:layout_weight=\"1\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <TextView\r\n                android:id=\"@+id/GraveYoursText\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:gravity=\"center\"\r\n                android:text=\"Your Graveyard\"\r\n                android:textSize=\"25dp\" />\r\n\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/enemyGraveyard\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"240dp\"\r\n            android:layout_weight=\"0\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <TextView\r\n                android:id=\"@+id/graveEnemyText\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"0\"\r\n                android:gravity=\"center\"\r\n                android:text=\"Enemy Graveyard\"\r\n                android:textSize=\"25dp\" />\r\n\r\n\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:id=\"@+id/controlSection\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\".5\"\r\n            android:layout_gravity=\"center_vertical\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <LinearLayout\r\n                android:id=\"@+id/topLayerControl\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"horizontal\">\r\n\r\n                <Button\r\n                    android:id=\"@+id/endButton\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:text=\"END\" />\r\n\r\n                <Button\r\n                    android:id=\"@+id/upButton\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginLeft=\"50dp\"\r\n                    android:layout_weight=\"0\"\r\n                    android:text=\"UP\" />\r\n\r\n            </LinearLayout>\r\n\r\n            <LinearLayout\r\n                android:id=\"@+id/middleLayerControl\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"0\"\r\n                android:orientation=\"horizontal\">\r\n\r\n                <Button\r\n                    android:id=\"@+id/leftButton\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_gravity=\"left\"\r\n                    android:layout_marginLeft=\"20dp\"\r\n                    android:text=\"LEFT\" />\r\n\r\n                <Button\r\n                    android:id=\"@+id/rightButton\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginLeft=\"160dp\"\r\n                    android:text=\"RIGHT\" />\r\n\r\n            </LinearLayout>\r\n\r\n            <LinearLayout\r\n                android:id=\"@+id/bottomLayerControl\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"horizontal\">\r\n\r\n                <Button\r\n                    android:id=\"@+id/helpButton\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_weight=\"0\"\r\n                    android:text=\"HELP\" />\r\n\r\n                <Button\r\n                    android:id=\"@+id/downButton\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginLeft=\"50dp\"\r\n                    android:text=\"DOWN\" />\r\n            </LinearLayout>\r\n\r\n        </LinearLayout>\r\n\r\n    </LinearLayout>\r\n\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/stratego_board.xml b/app/src/main/res/layout/stratego_board.xml
+--- a/app/src/main/res/layout/stratego_board.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ b/app/src/main/res/layout/stratego_board.xml	(date 1650502129093)
+@@ -5,7 +5,7 @@
+     android:id="@+id/Main"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context="edu.up.cs301.pig.PigMainActivity">
++    tools:context="edu.up.cs301.stratego.StrategoMainActivity">
+ 
+     <LinearLayout
+         android:id="@+id/LeftBar"
+Index: app/build/intermediates/transforms/instantRun/debug/__content__.json
+===================================================================
+diff --git a/app/build/intermediates/transforms/instantRun/debug/__content__.json b/app/build/intermediates/transforms/instantRun/debug/__content__.json
+deleted file mode 100644
+--- a/app/build/intermediates/transforms/instantRun/debug/__content__.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"name":"classes","index":0,"scopes":["PROJECT","SUB_PROJECTS"],"types":["CLASSES"],"format":"DIRECTORY","present":true},{"name":"enhanced_classes","index":1,"scopes":["PROJECT","SUB_PROJECTS"],"types":["CLASSES_ENHANCED"],"format":"DIRECTORY","present":true}]
+\ No newline at end of file
+Index: app/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/output.json
+===================================================================
+diff --git a/app/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/output.json b/app/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/output.json
+deleted file mode 100644
+--- a/app/build/intermediates/metadata_feature_manifest/debug/processDebugManifest/metadata-feature/output.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"outputType":{"type":"METADATA_FEATURE_MANIFEST"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"1.0","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug"},"path":"AndroidManifest.xml","properties":{}}]
+\ No newline at end of file
+Index: app/src/main/java/edu/up/cs301/pig/PigMainActivity.java
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/pig/PigMainActivity.java b/app/src/main/java/edu/up/cs301/pig/PigMainActivity.java
+deleted file mode 100644
+--- a/app/src/main/java/edu/up/cs301/pig/PigMainActivity.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,66 +0,0 @@
+-package edu.up.cs301.pig;
+-
+-import java.util.ArrayList;
+-
+-import edu.up.cs301.game.GameMainActivity;
+-import edu.up.cs301.game.GamePlayer;
+-import edu.up.cs301.game.LocalGame;
+-import edu.up.cs301.game.config.GameConfig;
+-import edu.up.cs301.game.config.GamePlayerType;
+-
+-/**
+- * this is the primary activity for Pig
+- *
+- * @author Andrew M. Nuxoll, modified by Steven R. Vegdahl
+- * @version February 2016
+- */
+-public class PigMainActivity extends GameMainActivity {
+-
+-    // the port number that this game will use when playing over the network
+-    private static final int PORT_NUMBER = 2278;
+-
+-    /**
+-     * Create the default configuration for this game:
+-     * - one human player vs. one computer player
+-     * - minimum of 1 player, maximum of 2
+-     *
+-     * @return
+-     * 		the new configuration object, representing the default configuration
+-     */
+-    @Override
+-    public GameConfig createDefaultConfig() {
+-
+-        // Define the allowed player types
+-        ArrayList<GamePlayerType> playerTypes = new ArrayList<GamePlayerType>();
+-
+-        // Pig has two player types:  human and computer
+-        playerTypes.add(new GamePlayerType("Local Human Player") {
+-            public GamePlayer createPlayer(String name) {
+-                return new PigHumanPlayer(name);
+-            }});
+-        playerTypes.add(new GamePlayerType("Computer Player") {
+-            public GamePlayer createPlayer(String name) {
+-                return new PigComputerPlayer(name);
+-            }});
+-
+-        // Create a game configuration class for Pig:
+-        GameConfig defaultConfig = new GameConfig(playerTypes, 1, 2, "Pig", PORT_NUMBER);
+-        defaultConfig.addPlayer("Human", 0); // player 1: a human player
+-        defaultConfig.addPlayer("Computer", 1); // player 2: a computer player
+-        defaultConfig.setRemoteData("Remote Human Player", "", 0);
+-
+-        return defaultConfig;
+-    }//createDefaultConfig
+-
+-    /**
+-     * create a local game
+-     *
+-     * @return
+-     * 		the local game, a pig game
+-     */
+-    @Override
+-    public LocalGame createLocalGame() {
+-        return new PigLocalGame();
+-    }
+-
+-}
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_8/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_8/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_8/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_8/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_8_apk">
+-</manifest>
+Index: app/build/intermediates/signing_config/debug/out/signing-config.json
+===================================================================
+diff --git a/app/build/intermediates/signing_config/debug/out/signing-config.json b/app/build/intermediates/signing_config/debug/out/signing-config.json
+deleted file mode 100644
+--- a/app/build/intermediates/signing_config/debug/out/signing-config.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-{"mName":"debug","mStoreFile":"C:\\Users\\blank\\.android\\debug.keystore","mStorePassword":"android","mKeyAlias":"AndroidDebugKey","mKeyPassword":"android","mStoreType":"jks","mV1SigningEnabled":true,"mV2SigningEnabled":true}
+\ No newline at end of file
+Index: app/build/intermediates/transforms/externalLibsDexMerger/debug/__content__.json
+===================================================================
+diff --git a/app/build/intermediates/transforms/externalLibsDexMerger/debug/__content__.json b/app/build/intermediates/transforms/externalLibsDexMerger/debug/__content__.json
+deleted file mode 100644
+--- a/app/build/intermediates/transforms/externalLibsDexMerger/debug/__content__.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"name":"main","index":0,"scopes":["EXTERNAL_LIBRARIES"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true}]
+\ No newline at end of file
+Index: app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/AndroidManifest.xml b/app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,30 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-    package="edu.up.cs301.game"
+-    android:targetSandboxVersion="2"
+-    android:versionCode="1"
+-    android:versionName="1.0" >
+-
+-    <uses-sdk android:targetSdkVersion="27" />
+-
+-    <uses-permission android:name="android.permission.INTERNET" />
+-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+-
+-    <application
+-        android:debuggable="true"
+-        android:icon="@drawable/face1"
+-        android:label="@string/app_name"
+-        android:testOnly="true"
+-        android:theme="@style/AppTheme" >
+-        <activity
+-            android:name="edu.up.cs301.pig.PigMainActivity"
+-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity>
+-    </application>
+-
+-</manifest>
+\ No newline at end of file
+Index: app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/output.json
+===================================================================
+diff --git a/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/output.json b/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/output.json
+deleted file mode 100644
+--- a/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/output.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"outputType":{"type":"BUNDLE_MANIFEST"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"1.0","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug"},"path":"AndroidManifest.xml","properties":{"packageId":"edu.up.cs301.game","split":"","minSdkVersion":"1"}}]
+\ No newline at end of file
+Index: app/src/main/java/edu/up/cs301/pig/PigHumanPlayer.java
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/pig/PigHumanPlayer.java b/app/src/main/java/edu/up/cs301/pig/PigHumanPlayer.java
+deleted file mode 100644
+--- a/app/src/main/java/edu/up/cs301/pig/PigHumanPlayer.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,161 +0,0 @@
+-package edu.up.cs301.pig;
+-
+-import edu.up.cs301.game.GameHumanPlayer;
+-import edu.up.cs301.game.GameMainActivity;
+-import edu.up.cs301.game.R;
+-import edu.up.cs301.game.infoMsg.GameInfo;
+-
+-import android.graphics.Color;
+-import android.graphics.drawable.Drawable;
+-import android.util.Log;
+-import android.view.View;
+-import android.widget.Button;
+-import android.widget.ImageButton;
+-import android.widget.TextView;
+-import android.view.View.OnClickListener;
+-
+-/**
+- * A GUI for a human to play Pig. This default version displays the GUI but is incomplete
+- *
+- *
+- * @author Andrew M. Nuxoll, modified by Steven R. Vegdahl
+- * @version February 2016
+- */
+-public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
+-
+-	/* instance variables */
+-
+-    // These variables will reference widgets that will be modified during play
+-    private TextView    playerScoreTextView = null;
+-    private TextView    oppScoreTextView    = null;
+-    private TextView    turnTotalTextView   = null;
+-    private TextView    messageTextView     = null;
+-    private ImageButton dieImageButton      = null;
+-    private Button      holdButton          = null;
+-
+-    // the android activity that we are running
+-    private GameMainActivity myActivity;
+-
+-    /**
+-     * constructor does nothing extra
+-     */
+-    public PigHumanPlayer(String name) {
+-        super(name);
+-    }
+-
+-    /**
+-     * Returns the GUI's top view object
+-     *
+-     * @return
+-     * 		the top object in the GUI's view heirarchy
+-     */
+-    public View getTopView() {
+-        return myActivity.findViewById(R.id.BoardIBackGround);
+-    }
+-
+-    /**
+-     * callback method when we get a message (e.g., from the game)
+-     *
+-     * @param info
+-     * 		the message
+-     */
+-    @Override
+-    public void receiveInfo(GameInfo info) {
+-        //AFFIRMATIVE, RUNS ON LAUNCH
+-        //Log.d("HEllO!???", "I think it worked!!");
+-        if(info instanceof PigGameState) {
+-            //update TextView to display score, opponent score and total
+-            oppScoreTextView = myActivity.findViewById(R.id.NumTroopYours);
+-            playerScoreTextView = myActivity.findViewById(R.id.NumberEnemyTroops);
+-            turnTotalTextView = myActivity.findViewById(R.id.numTroopEnemy);
+-
+-            if(playerNum == 0){
+-                oppScoreTextView.setText("" + ((PigGameState) info).getPlayer1Score());
+-                playerScoreTextView.setText("" + ((PigGameState) info).getPlayer0Score());
+-
+-            }
+-            else{
+-                oppScoreTextView.setText("" + ((PigGameState) info).getPlayer0Score());
+-                playerScoreTextView.setText("" + ((PigGameState) info).getPlayer1Score());
+-            }
+-            turnTotalTextView.setText("" + ((PigGameState) info).getRunTotal());
+-
+-            //update die image displayed
+-            int dieVal = ((PigGameState) info).getCurrentDieVal();
+-            if(dieVal == 1){
+-                dieImageButton.setImageResource(R.drawable.face1);
+-            }
+-            else if(dieVal ==2){
+-                dieImageButton.setImageResource(R.drawable.face2);
+-            }
+-            else if(dieVal == 3){
+-                dieImageButton.setImageResource(R.drawable.face3);
+-            }
+-            else if(dieVal == 4){
+-                dieImageButton.setImageResource(R.drawable.face4);
+-            }
+-            else if(dieVal == 5){
+-                dieImageButton.setImageResource(R.drawable.face5);
+-            }
+-            else if(dieVal == 6){
+-                dieImageButton.setImageResource(R.drawable.face6);
+-            }
+-        }
+-        else{
+-            this.flash(Color.RED, 2);
+-        }
+-    }//receiveInfo
+-
+-    /**
+-     * this method gets called when the user clicks the die or hold button. It
+-     * creates a new PigRollAction or PigHoldAction and sends it to the game.
+-     *
+-     * @param button
+-     * 		the button that was clicked
+-     */
+-    public void onClick(View button) {
+-        //send appropriate action objects to the game
+-        if(button instanceof ImageButton){
+-            //then it's the die
+-            PigRollAction pra = new PigRollAction(this);
+-            //send to game
+-            game.sendAction(pra);
+-        }
+-        else{
+-            //it's a hold
+-            PigHoldAction pha = new PigHoldAction(this);
+-            game.sendAction(pha);
+-        }
+-
+-    }// onClick
+-
+-    /**
+-     * callback method--our game has been chosen/rechosen to be the GUI,
+-     * called from the GUI thread
+-     *
+-     * @param activity
+-     * 		the activity under which we are running
+-     */
+-    public void setAsGui(GameMainActivity activity) {
+-
+-        // remember the activity
+-        myActivity = activity;
+-
+-        // Load the layout resource for our GUI
+-        activity.setContentView(R.layout.stratego_board);
+-
+-        //Initialize the widget reference member variables
+-        /*this.playerScoreTextView = (TextView)activity.findViewById(R.id.yourScoreValue);
+-        this.oppScoreTextView    = (TextView)activity.findViewById(R.id.oppScoreValue);
+-        this.turnTotalTextView   = (TextView)activity.findViewById(R.id.turnTotalValue);
+-        this.messageTextView     = (TextView)activity.findViewById(R.id.messageTextView);
+-        this.dieImageButton      = (ImageButton)activity.findViewById(R.id.dieButton);
+-        this.holdButton          = (Button)activity.findViewById(R.id.holdButton);*/
+-
+-        //Listen for button presses
+-      /*  dieImageButton.setOnClickListener(this);
+-        holdButton.setOnClickListener(this);*/
+-
+-    }//setAsGui
+-
+-}// class PigHumanPlayer
+Index: app/build/intermediates/instant-run-resources/output.json
+===================================================================
+diff --git a/app/build/intermediates/instant-run-resources/output.json b/app/build/intermediates/instant-run-resources/output.json
+deleted file mode 100644
+--- a/app/build/intermediates/instant-run-resources/output.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"outputType":{"type":"INSTANT_RUN_PACKAGED_RESOURCES"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"1.0","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug"},"path":"resources-debug.ir.ap_","properties":{}}]
+\ No newline at end of file
+Index: app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml b/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,29 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-    package="edu.up.cs301.game"
+-    android:versionCode="1"
+-    android:versionName="1.0" >
+-
+-    <uses-sdk android:targetSdkVersion="27" />
+-
+-    <uses-permission android:name="android.permission.INTERNET" />
+-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+-
+-    <application
+-        android:debuggable="true"
+-        android:icon="@drawable/face1"
+-        android:label="@string/app_name"
+-        android:testOnly="true"
+-        android:theme="@style/AppTheme" >
+-        <activity
+-            android:name="edu.up.cs301.pig.PigMainActivity"
+-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity>
+-    </application>
+-
+-</manifest>
+\ No newline at end of file
+Index: app/build/intermediates/blame/res/debug/multi-v2/values.json
+===================================================================
+diff --git a/app/build/intermediates/blame/res/debug/multi-v2/values.json b/app/build/intermediates/blame/res/debug/multi-v2/values.json
+deleted file mode 100644
+--- a/app/build/intermediates/blame/res/debug/multi-v2/values.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,77 +0,0 @@
+-{
+-    "logs": [
+-        {
+-            "outputFile": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+-            "map": [
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values\\color.xml",
+-                    "from": {
+-                        "startLines": "2,3,4",
+-                        "startColumns": "4,4,4",
+-                        "startOffsets": "57,95,133",
+-                        "endColumns": "36,36,37",
+-                        "endOffsets": "89,127,166"
+-                    },
+-                    "to": {
+-                        "startLines": "2,3,4",
+-                        "startColumns": "4,4,4",
+-                        "startOffsets": "55,92,129",
+-                        "endColumns": "36,36,37",
+-                        "endOffsets": "87,124,162"
+-                    }
+-                },
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values\\styles.xml",
+-                    "from": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "19",
+-                        "endColumns": "58",
+-                        "endOffsets": "73"
+-                    },
+-                    "to": {
+-                        "startLines": "31",
+-                        "startColumns": "4",
+-                        "startOffsets": "1612",
+-                        "endColumns": "57",
+-                        "endOffsets": "1665"
+-                    }
+-                },
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values\\dimen.xml",
+-                    "from": {
+-                        "startLines": "7,2,4,3,6,5",
+-                        "startColumns": "4,4,4,4,4,4",
+-                        "startOffsets": "314,57,168,112,262,211",
+-                        "endColumns": "50,53,41,54,50,49",
+-                        "endOffsets": "360,106,205,162,308,256"
+-                    },
+-                    "to": {
+-                        "startLines": "5,6,7,8,9,10",
+-                        "startColumns": "4,4,4,4,4,4",
+-                        "startOffsets": "167,218,272,314,369,420",
+-                        "endColumns": "50,53,41,54,50,49",
+-                        "endOffsets": "213,267,309,364,415,465"
+-                    }
+-                },
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values\\strings.xml",
+-                    "from": {
+-                        "startLines": "11,2,7,17,18,19,14,3,20,4,8,12,13,21,10,6,15,9,15,5",
+-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,89,4",
+-                        "startOffsets": "531,19,314,876,949,1001,688,61,1079,115,365,582,635,1129,474,243,729,411,814,167",
+-                        "endColumns": "49,40,49,71,50,76,39,52,48,50,44,51,51,50,55,69,89,61,139,74",
+-                        "endOffsets": "576,55,359,943,995,1073,723,109,1123,161,405,629,682,1175,525,308,814,468,864,237"
+-                    },
+-                    "to": {
+-                        "startLines": "11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30",
+-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+-                        "startOffsets": "470,520,561,611,683,734,811,851,904,953,1004,1049,1101,1153,1204,1260,1330,1420,1482,1537",
+-                        "endColumns": "49,40,49,71,50,76,39,52,48,50,44,51,51,50,55,69,89,61,54,74",
+-                        "endOffsets": "515,556,606,678,729,806,846,899,948,999,1044,1096,1148,1199,1255,1325,1415,1477,1532,1607"
+-                    }
+-                }
+-            ]
+-        }
+-    ]
+-}
+\ No newline at end of file
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_2/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_2/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_2/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_2/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_2_apk">
+-</manifest>
+Index: app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json
+===================================================================
+diff --git a/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json b/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json
+deleted file mode 100644
+--- a/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"name":"resources","index":0,"scopes":["PROJECT","SUB_PROJECTS","EXTERNAL_LIBRARIES"],"types":["NATIVE_LIBS"],"format":"DIRECTORY","present":false}]
+\ No newline at end of file
+Index: app/src/main/java/edu/up/cs301/pig/PigComputerPlayer.java
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/pig/PigComputerPlayer.java b/app/src/main/java/edu/up/cs301/pig/PigComputerPlayer.java
+deleted file mode 100644
+--- a/app/src/main/java/edu/up/cs301/pig/PigComputerPlayer.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,48 +0,0 @@
+-package edu.up.cs301.pig;
+-
+-import edu.up.cs301.game.GameComputerPlayer;
+-import edu.up.cs301.game.actionMsg.GameAction;
+-import edu.up.cs301.game.infoMsg.GameInfo;
+-import edu.up.cs301.game.util.Tickable;
+-
+-/**
+- * An AI for Pig
+- *
+- * @author Andrew M. Nuxoll
+- * @version August 2015
+- */
+-public class PigComputerPlayer extends GameComputerPlayer {
+-
+-    /**
+-     * ctor does nothing extra
+-     */
+-    public PigComputerPlayer(String name) {
+-        super(name);
+-    }
+-
+-    /**
+-     * callback method--game's state has changed
+-     *
+-     * @param info
+-     * 		the information (presumably containing the game's state)
+-     */
+-    @Override
+-    protected void receiveInfo(GameInfo info) {
+-        PigGameState oinkGame = new PigGameState((PigGameState)info);
+-        if(oinkGame.getPlayerTurn() != this.playerNum){
+-            return;
+-        }
+-        else{
+-            double rand = Math.random();
+-            if(rand % 2 == 0){
+-                PigRollAction pr = new PigRollAction(this);
+-                game.sendAction(pr);
+-            }
+-            else{
+-                PigHoldAction ph = new PigHoldAction(this);
+-                game.sendAction(ph);
+-            }
+-        }
+-    }//receiveInfo
+-
+-}
+Index: app/build/intermediates/manifest-checker/debug/manifest.xml
+===================================================================
+diff --git a/app/build/intermediates/manifest-checker/debug/manifest.xml b/app/build/intermediates/manifest-checker/debug/manifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/manifest-checker/debug/manifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,34 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-    package="edu.up.cs301.game"
+-    android:versionCode="1"
+-    android:versionName="1.0" >
+-
+-    <uses-sdk android:targetSdkVersion="27" />
+-
+-    <uses-permission android:name="android.permission.INTERNET" />
+-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+-
+-    <application
+-        android:debuggable="true"
+-        android:icon="@drawable/face1"
+-        android:label="@string/app_name"
+-        android:testOnly="true"
+-        android:theme="@style/AppTheme" >
+-        <activity
+-            android:name="edu.up.cs301.pig.PigMainActivity"
+-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+-        </activity>
+-
+-        <provider
+-            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+-            android:authorities="edu.up.cs301.game.com.android.tools.ir.server.InstantRunContentProvider"
+-            android:multiprocess="true" />
+-    </application>
+-
+-</manifest>
+\ No newline at end of file
+Index: app/src/main/java/edu/up/cs301/pig/PigRollAction.java
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/pig/PigRollAction.java b/app/src/main/java/edu/up/cs301/pig/PigRollAction.java
+deleted file mode 100644
+--- a/app/src/main/java/edu/up/cs301/pig/PigRollAction.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,16 +0,0 @@
+-package edu.up.cs301.pig;
+-
+-import edu.up.cs301.game.GamePlayer;
+-import edu.up.cs301.game.actionMsg.GameAction;
+-
+-public class PigRollAction extends GameAction {
+-
+-    /**
+-     * constructor for GameAction
+-     *
+-     * @param player the player who created the action
+-     */
+-    public PigRollAction(GamePlayer player) {
+-        super(player);
+-    }
+-}
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_9/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_9/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_9/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_9/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_9_apk">
+-</manifest>
+Index: app/build/intermediates/instant_run_merged_manifests/debug/processDebugManifest/instant-run/output.json
+===================================================================
+diff --git a/app/build/intermediates/instant_run_merged_manifests/debug/processDebugManifest/instant-run/output.json b/app/build/intermediates/instant_run_merged_manifests/debug/processDebugManifest/instant-run/output.json
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_merged_manifests/debug/processDebugManifest/instant-run/output.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"outputType":{"type":"INSTANT_RUN_MERGED_MANIFESTS"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"1.0","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug"},"path":"AndroidManifest.xml","properties":{"packageId":"edu.up.cs301.game","split":"","minSdkVersion":"1"}}]
+\ No newline at end of file
+Index: app/src/main/java/edu/up/cs301/pig/PigLocalGame.java
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/pig/PigLocalGame.java b/app/src/main/java/edu/up/cs301/pig/PigLocalGame.java
+deleted file mode 100644
+--- a/app/src/main/java/edu/up/cs301/pig/PigLocalGame.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,134 +0,0 @@
+-package edu.up.cs301.pig;
+-
+-import edu.up.cs301.game.GamePlayer;
+-import edu.up.cs301.game.LocalGame;
+-import edu.up.cs301.game.actionMsg.GameAction;
+-import edu.up.cs301.game.infoMsg.GameState;
+-
+-import android.util.Log;
+-
+-// dummy comment, to see if commit and push work from srvegdahl account
+-
+-/**
+- * class PigLocalGame controls the play of the game
+- *
+- * @author Andrew M. Nuxoll, modified by Steven R. Vegdahl
+- * @version February 2016
+- */
+-public class PigLocalGame extends LocalGame {
+-
+-    private PigGameState goldenPig;  //will be used to store the official game state
+-
+-    /**
+-     * This ctor creates a new game state
+-     */
+-    public PigLocalGame() {
+-        goldenPig = new PigGameState();
+-    }
+-
+-    /**
+-     * can the player with the given id take an action right now?
+-     */
+-    @Override
+-    protected boolean canMove(int playerIdx) {
+-        if(playerIdx == goldenPig.getPlayerTurn()){
+-            return true;
+-        }
+-        else {
+-            return false;
+-        }
+-    }
+-
+-    /**
+-     * This method is called when a new action arrives from a player
+-     *
+-     * @return true if the action was taken or false if the action was invalid/illegal.
+-     */
+-    @Override
+-    protected boolean makeMove(GameAction action) {
+-        int currentPlayer = goldenPig.getPlayerTurn();
+-
+-        if(action instanceof PigHoldAction){
+-            if(currentPlayer == 0) {
+-                goldenPig.setPlayer0Score(goldenPig.getPlayer0Score()
+-                        + goldenPig.getRunTotal());
+-            }
+-            else {
+-                goldenPig.setPlayer1Score(goldenPig.getPlayer1Score()
+-                        + goldenPig.getRunTotal());
+-            }
+-
+-            goldenPig.setRunTotal(0);
+-
+-            if(currentPlayer == 0){
+-                goldenPig.setPlayerTurn(1);
+-            }
+-            else{
+-                goldenPig.setPlayerTurn(0);
+-            }
+-            return true;
+-        }
+-
+-        else if (action instanceof  PigRollAction){
+-           goldenPig.setCurrentDieVal((int) (Math.random()*6));
+-           if (goldenPig.getCurrentDieVal() != 1){
+-               //add die value to current running total
+-               int newTotal = goldenPig.getCurrentDieVal() + goldenPig.getRunTotal();
+-               goldenPig.setRunTotal(newTotal);
+-           }
+-           else{
+-               //current running total=0
+-               goldenPig.setRunTotal(0);
+-
+-               //make it other player's turn
+-               if(currentPlayer == 0){
+-                   goldenPig.setPlayerTurn(1);
+-               }
+-               else{
+-                   goldenPig.setPlayerTurn(0);
+-               }
+-           }
+-           return true;
+-        }
+-        else {
+-            return false;
+-        }
+-
+-    }//makeMove
+-
+-    /**
+-     * send the updated state to a given player
+-     */
+-    @Override
+-    protected void sendUpdatedStateTo(GamePlayer p) {
+-        //make a copy of current game state
+-        PigGameState copyPig = new PigGameState(goldenPig);
+-
+-        //use GamePlayer sendInfo to send it to p
+-        p.sendInfo(copyPig);
+-
+-    }//sendUpdatedSate
+-
+-    /**
+-     * Check if the game is over
+-     *
+-     * @return
+-     * 		a message that tells who has won the game, or null if the
+-     * 		game is not over
+-     */
+-    @Override
+-    protected String checkIfGameOver() {
+-        if(goldenPig.getPlayer0Score() >= 50){
+-            //return name of player and score
+-            return "" + this.playerNames[0] + " wins! Score: " + goldenPig.getPlayer0Score();
+-        }
+-        else if(goldenPig.getPlayer1Score() >= 50){
+-            //return name of player and score
+-            return "" + this.playerNames[1] + " wins! Score: " + goldenPig.getPlayer1Score();
+-        }
+-        else {
+-            return null;
+-        }
+-    }
+-
+-}// class PigLocalGame
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_5/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_5/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_5/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_5/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_5_apk">
+-</manifest>
+Index: app/build/intermediates/blame/res/debug/single/debug.json
+===================================================================
+diff --git a/app/build/intermediates/blame/res/debug/single/debug.json b/app/build/intermediates/blame/res/debug/single/debug.json
+deleted file mode 100644
+--- a/app/build/intermediates/blame/res/debug/single/debug.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,90 +0,0 @@
+-[
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_face5.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-xhdpi\\face5.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\menu_game_main.xml.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\menu\\game_main.xml"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_face4.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-xhdpi\\face4.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_face6.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-xhdpi\\face6.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\layout_game_remote_tab.xml.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\layout\\game_remote_tab.xml"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_face3.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-xhdpi\\face3.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_face2.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-xhdpi\\face2.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_purple_delete_button.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-hdpi\\purple_delete_button.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\layout_game_local_tab.xml.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\layout\\game_local_tab.xml"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_search.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_search.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\layout_game_config_tabhost.xml.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\layout\\game_config_tabhost.xml"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_search.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-hdpi\\ic_action_search.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_face1.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-xhdpi\\face1.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\layout_game_player_list_row.xml.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\layout\\game_player_list_row.xml"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_action_search.png.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\drawable-mdpi\\ic_action_search.png"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\layout_game_config_main.xml.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\layout\\game_config_main.xml"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\layout_pig_layout.xml.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\layout\\pig_layout.xml"
+-    },
+-    {
+-        "merged": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\layout_game_no_gui.xml.flat",
+-        "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\layout\\game_no_gui.xml"
+-    }
+-]
+\ No newline at end of file
+Index: app/src/main/java/edu/up/cs301/pig/PigHoldAction.java
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/pig/PigHoldAction.java b/app/src/main/java/edu/up/cs301/pig/PigHoldAction.java
+deleted file mode 100644
+--- a/app/src/main/java/edu/up/cs301/pig/PigHoldAction.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,16 +0,0 @@
+-package edu.up.cs301.pig;
+-
+-import edu.up.cs301.game.GamePlayer;
+-import edu.up.cs301.game.actionMsg.GameAction;
+-
+-public class PigHoldAction extends GameAction {
+-
+-    /**
+-     * constructor for GameAction
+-     *
+-     * @param player the player who created the action
+-     */
+-    public PigHoldAction(GamePlayer player) {
+-        super(player);
+-    }
+-}
+Index: app/build/intermediates/transforms/instantRunSlicesApk/debug/__content__.json
+===================================================================
+diff --git a/app/build/intermediates/transforms/instantRunSlicesApk/debug/__content__.json b/app/build/intermediates/transforms/instantRunSlicesApk/debug/__content__.json
+deleted file mode 100644
+--- a/app/build/intermediates/transforms/instantRunSlicesApk/debug/__content__.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[]
+\ No newline at end of file
+Index: app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/edu/up/cs301/game/R.java
+===================================================================
+diff --git a/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/edu/up/cs301/game/R.java b/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/edu/up/cs301/game/R.java
+deleted file mode 100644
+--- a/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/edu/up/cs301/game/R.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,110 +0,0 @@
+-/* AUTO-GENERATED FILE. DO NOT MODIFY.
+- *
+- * This class was automatically generated by the
+- * aapt tool from the resource data it found. It
+- * should not be modified by hand.
+- */
+-
+-package edu.up.cs301.game;
+-
+-public final class R {
+-  public static final class color {
+-    public static final int black=0x7f010000;
+-    public static final int green=0x7f010001;
+-    public static final int red=0x7f010002;
+-  }
+-  public static final class dimen {
+-    public static final int config_horiz_margin=0x7f020000;
+-    public static final int del_player_button_size=0x7f020001;
+-    public static final int tab_height=0x7f020002;
+-    public static final int table_heading_font_size=0x7f020003;
+-    public static final int table_row_horiz_pad=0x7f020004;
+-    public static final int table_row_vert_pad=0x7f020005;
+-  }
+-  public static final class drawable {
+-    public static final int face1=0x7f030000;
+-    public static final int face2=0x7f030001;
+-    public static final int face3=0x7f030002;
+-    public static final int face4=0x7f030003;
+-    public static final int face5=0x7f030004;
+-    public static final int face6=0x7f030005;
+-    public static final int ic_action_search=0x7f030006;
+-    public static final int ic_launcher=0x7f030007;
+-    public static final int purple_delete_button=0x7f030008;
+-  }
+-  public static final class id {
+-    public static final int addPlayerButton=0x7f040000;
+-    public static final int backButton2=0x7f040001;
+-    public static final int configTableLayout=0x7f040002;
+-    public static final int delPlayerButton=0x7f040003;
+-    public static final int dieButton=0x7f040004;
+-    public static final int holdButton=0x7f040005;
+-    public static final int ipCodeLabel=0x7f040006;
+-    public static final int localGameTab=0x7f040007;
+-    public static final int localTabLayout=0x7f040008;
+-    public static final int menu_settings=0x7f040009;
+-    public static final int messageTextView=0x7f04000a;
+-    public static final int oppScoreText=0x7f04000b;
+-    public static final int oppScoreValue=0x7f04000c;
+-    public static final int playGameButton=0x7f04000d;
+-    public static final int playerNameEditText=0x7f04000e;
+-    public static final int playerNameHeadingText=0x7f04000f;
+-    public static final int playerTypeHeadingText=0x7f040010;
+-    public static final int playerTypeSpinner=0x7f040011;
+-    public static final int remoteGameTab=0x7f040012;
+-    public static final int remoteIPCodeEditText=0x7f040013;
+-    public static final int remoteNameEditText=0x7f040014;
+-    public static final int remoteTabLayout=0x7f040015;
+-    public static final int remote_player_spinner=0x7f040016;
+-    public static final int saveConfigButton=0x7f040017;
+-    public static final int serverIPCode=0x7f040018;
+-    public static final int tabHost=0x7f040019;
+-    public static final int tableDataRow=0x7f04001a;
+-    public static final int tableHeadingRow=0x7f04001b;
+-    public static final int textView1=0x7f04001c;
+-    public static final int textView2=0x7f04001d;
+-    public static final int titleText=0x7f04001e;
+-    public static final int top_gui_layout=0x7f04001f;
+-    public static final int turnTotalText=0x7f040020;
+-    public static final int turnTotalValue=0x7f040021;
+-    public static final int yourScoreText=0x7f040022;
+-    public static final int yourScoreValue=0x7f040023;
+-  }
+-  public static final class layout {
+-    public static final int game_config_main=0x7f050000;
+-    public static final int game_config_tabhost=0x7f050001;
+-    public static final int game_local_tab=0x7f050002;
+-    public static final int game_no_gui=0x7f050003;
+-    public static final int game_player_list_row=0x7f050004;
+-    public static final int game_remote_tab=0x7f050005;
+-    public static final int pig_layout=0x7f050006;
+-  }
+-  public static final class menu {
+-    public static final int game_main=0x7f060000;
+-  }
+-  public static final class string {
+-    public static final int add_player=0x7f070000;
+-    public static final int app_name=0x7f070001;
+-    public static final int begin_game=0x7f070002;
+-    public static final int dialog_continue_label=0x7f070003;
+-    public static final int dialog_quit_label=0x7f070004;
+-    public static final int dialog_quit_question=0x7f070005;
+-    public static final int guest=0x7f070006;
+-    public static final int hello_world=0x7f070007;
+-    public static final int local_tab=0x7f070008;
+-    public static final int menu_settings=0x7f070009;
+-    public static final int name_label=0x7f07000a;
+-    public static final int player_name=0x7f07000b;
+-    public static final int player_type=0x7f07000c;
+-    public static final int remote_tab=0x7f07000d;
+-    public static final int remove_player=0x7f07000e;
+-    public static final int save_config=0x7f07000f;
+-    public static final int save_config_as_default=0x7f070010;
+-    public static final int server_ip_code=0x7f070011;
+-    public static final int start_the_game=0x7f070012;
+-    public static final int title_activity_game_main=0x7f070013;
+-  }
+-  public static final class style {
+-    public static final int AppTheme=0x7f080000;
+-  }
+-}
+\ No newline at end of file
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_7/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_7/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_7/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_7/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_7_apk">
+-</manifest>
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_1/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_1/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_1/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_1/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_1_apk">
+-</manifest>
+Index: app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/output.json
+===================================================================
+diff --git a/app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/output.json b/app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/output.json
+deleted file mode 100644
+--- a/app/build/intermediates/instant_app_manifest/debug/processDebugManifest/instant-app-manifest/output.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"outputType":{"type":"INSTANT_APP_MANIFEST"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"1.0","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug"},"path":"AndroidManifest.xml","properties":{"packageId":"edu.up.cs301.game","split":"","minSdkVersion":"1"}}]
+\ No newline at end of file
+Index: app/build/intermediates/transforms/dexBuilder/debug/__content__.json
+===================================================================
+diff --git a/app/build/intermediates/transforms/dexBuilder/debug/__content__.json b/app/build/intermediates/transforms/dexBuilder/debug/__content__.json
+deleted file mode 100644
+--- a/app/build/intermediates/transforms/dexBuilder/debug/__content__.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"name":"C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\javac\\debug\\compileDebugJavaWithJavac\\classes","index":0,"scopes":["PROJECT"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true}]
+\ No newline at end of file
+Index: app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json
+===================================================================
+diff --git a/app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json b/app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json
+deleted file mode 100644
+--- a/app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"name":"resources","index":0,"scopes":["PROJECT","SUB_PROJECTS","EXTERNAL_LIBRARIES"],"types":["RESOURCES"],"format":"JAR","present":true}]
+\ No newline at end of file
+Index: app/build/intermediates/transforms/extractJars/debug/__content__.json
+===================================================================
+diff --git a/app/build/intermediates/transforms/extractJars/debug/__content__.json b/app/build/intermediates/transforms/extractJars/debug/__content__.json
+deleted file mode 100644
+--- a/app/build/intermediates/transforms/extractJars/debug/__content__.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[]
+\ No newline at end of file
+Index: app/build/intermediates/blame/res/debug/multi-v2/values-v14.json
+===================================================================
+diff --git a/app/build/intermediates/blame/res/debug/multi-v2/values-v14.json b/app/build/intermediates/blame/res/debug/multi-v2/values-v14.json
+deleted file mode 100644
+--- a/app/build/intermediates/blame/res/debug/multi-v2/values-v14.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,26 +0,0 @@
+-{
+-    "logs": [
+-        {
+-            "outputFile": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+-            "map": [
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values-v14\\styles.xml",
+-                    "from": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "19",
+-                        "endColumns": "77",
+-                        "endOffsets": "92"
+-                    },
+-                    "to": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "55",
+-                        "endColumns": "76",
+-                        "endOffsets": "127"
+-                    }
+-                }
+-            ]
+-        }
+-    ]
+-}
+\ No newline at end of file
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_4/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_4/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_4/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_4/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_4_apk">
+-</manifest>
+Index: app/build/intermediates/processed_res/debug/processDebugResources/out/output.json
+===================================================================
+diff --git a/app/build/intermediates/processed_res/debug/processDebugResources/out/output.json b/app/build/intermediates/processed_res/debug/processDebugResources/out/output.json
+deleted file mode 100644
+--- a/app/build/intermediates/processed_res/debug/processDebugResources/out/output.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"outputType":{"type":"PROCESSED_RES"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"1.0","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug"},"path":"resources-debug.ap_","properties":{"packageId":"edu.up.cs301.game","split":"","minSdkVersion":"1"}}]
+\ No newline at end of file
+Index: app/build/intermediates/blame/res/debug/multi-v2/values-v11.json
+===================================================================
+diff --git a/app/build/intermediates/blame/res/debug/multi-v2/values-v11.json b/app/build/intermediates/blame/res/debug/multi-v2/values-v11.json
+deleted file mode 100644
+--- a/app/build/intermediates/blame/res/debug/multi-v2/values-v11.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,26 +0,0 @@
+-{
+-    "logs": [
+-        {
+-            "outputFile": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+-            "map": [
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values-v11\\styles.xml",
+-                    "from": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "19",
+-                        "endColumns": "63",
+-                        "endOffsets": "78"
+-                    },
+-                    "to": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "55",
+-                        "endColumns": "62",
+-                        "endOffsets": "113"
+-                    }
+-                }
+-            ]
+-        }
+-    ]
+-}
+\ No newline at end of file
+Index: app/build/intermediates/blame/res/debug/multi-v2/debug.json
+===================================================================
+diff --git a/app/build/intermediates/blame/res/debug/multi-v2/debug.json b/app/build/intermediates/blame/res/debug/multi-v2/debug.json
+deleted file mode 100644
+--- a/app/build/intermediates/blame/res/debug/multi-v2/debug.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,121 +0,0 @@
+-{
+-    "logs": [
+-        {
+-            "outputFile": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\values-v14_values-v14.arsc.flat",
+-            "map": [
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values-v14\\styles.xml",
+-                    "from": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "19",
+-                        "endColumns": "77",
+-                        "endOffsets": "92"
+-                    },
+-                    "to": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "55",
+-                        "endColumns": "76",
+-                        "endOffsets": "127"
+-                    }
+-                }
+-            ]
+-        },
+-        {
+-            "outputFile": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+-            "map": [
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values\\color.xml",
+-                    "from": {
+-                        "startLines": "2,3,4",
+-                        "startColumns": "4,4,4",
+-                        "startOffsets": "57,95,133",
+-                        "endColumns": "36,36,37",
+-                        "endOffsets": "89,127,166"
+-                    },
+-                    "to": {
+-                        "startLines": "2,3,4",
+-                        "startColumns": "4,4,4",
+-                        "startOffsets": "55,92,129",
+-                        "endColumns": "36,36,37",
+-                        "endOffsets": "87,124,162"
+-                    }
+-                },
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values\\styles.xml",
+-                    "from": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "19",
+-                        "endColumns": "58",
+-                        "endOffsets": "73"
+-                    },
+-                    "to": {
+-                        "startLines": "31",
+-                        "startColumns": "4",
+-                        "startOffsets": "1612",
+-                        "endColumns": "57",
+-                        "endOffsets": "1665"
+-                    }
+-                },
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values\\dimen.xml",
+-                    "from": {
+-                        "startLines": "7,2,4,3,6,5",
+-                        "startColumns": "4,4,4,4,4,4",
+-                        "startOffsets": "314,57,168,112,262,211",
+-                        "endColumns": "50,53,41,54,50,49",
+-                        "endOffsets": "360,106,205,162,308,256"
+-                    },
+-                    "to": {
+-                        "startLines": "5,6,7,8,9,10",
+-                        "startColumns": "4,4,4,4,4,4",
+-                        "startOffsets": "167,218,272,314,369,420",
+-                        "endColumns": "50,53,41,54,50,49",
+-                        "endOffsets": "213,267,309,364,415,465"
+-                    }
+-                },
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values\\strings.xml",
+-                    "from": {
+-                        "startLines": "11,2,7,17,18,19,14,3,20,4,8,12,13,21,10,6,15,9,15,5",
+-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,89,4",
+-                        "startOffsets": "531,19,314,876,949,1001,688,61,1079,115,365,582,635,1129,474,243,729,411,814,167",
+-                        "endColumns": "49,40,49,71,50,76,39,52,48,50,44,51,51,50,55,69,89,61,139,74",
+-                        "endOffsets": "576,55,359,943,995,1073,723,109,1123,161,405,629,682,1175,525,308,814,468,864,237"
+-                    },
+-                    "to": {
+-                        "startLines": "11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30",
+-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+-                        "startOffsets": "470,520,561,611,683,734,811,851,904,953,1004,1049,1101,1153,1204,1260,1330,1420,1482,1537",
+-                        "endColumns": "49,40,49,71,50,76,39,52,48,50,44,51,51,50,55,69,89,61,54,74",
+-                        "endOffsets": "515,556,606,678,729,806,846,899,948,999,1044,1096,1148,1199,1255,1325,1415,1477,1532,1607"
+-                    }
+-                }
+-            ]
+-        },
+-        {
+-            "outputFile": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\build\\intermediates\\res\\merged\\debug\\values-v11_values-v11.arsc.flat",
+-            "map": [
+-                {
+-                    "source": "C:\\Users\\blank\\AndroidStudioProjects\\PigGameStarter\\app\\src\\main\\res\\values-v11\\styles.xml",
+-                    "from": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "19",
+-                        "endColumns": "63",
+-                        "endOffsets": "78"
+-                    },
+-                    "to": {
+-                        "startLines": "2",
+-                        "startColumns": "4",
+-                        "startOffsets": "55",
+-                        "endColumns": "62",
+-                        "endOffsets": "113"
+-                    }
+-                }
+-            ]
+-        }
+-    ]
+-}
+\ No newline at end of file
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_6/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_6/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_6/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_6/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_6_apk">
+-</manifest>
+Index: app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml
+===================================================================
+diff --git a/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml b/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml
+deleted file mode 100644
+--- a/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,4 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar"/>
+-</resources>
+\ No newline at end of file
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_0/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_0/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_0/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_0/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_0_apk">
+-</manifest>
+Index: app/build/intermediates/transforms/instantRunDependenciesApk/debug/__content__.json
+===================================================================
+diff --git a/app/build/intermediates/transforms/instantRunDependenciesApk/debug/__content__.json b/app/build/intermediates/transforms/instantRunDependenciesApk/debug/__content__.json
+deleted file mode 100644
+--- a/app/build/intermediates/transforms/instantRunDependenciesApk/debug/__content__.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[]
+\ No newline at end of file
+Index: app/build/intermediates/instant-run-apk/debug/output.json
+===================================================================
+diff --git a/app/build/intermediates/instant-run-apk/debug/output.json b/app/build/intermediates/instant-run-apk/debug/output.json
+deleted file mode 100644
+--- a/app/build/intermediates/instant-run-apk/debug/output.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"outputType":{"type":"APK"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":1,"versionName":"1.0","enabled":true,"outputFile":"app-debug.apk","fullName":"debug","baseName":"debug"},"path":"app-debug.apk","properties":{}}]
+\ No newline at end of file
+Index: app/build/intermediates/build-info/debug/build-info.xml
+===================================================================
+diff --git a/app/build/intermediates/build-info/debug/build-info.xml b/app/build/intermediates/build-info/debug/build-info.xml
+deleted file mode 100644
+--- a/app/build/intermediates/build-info/debug/build-info.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,99 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<instant-run
+-    abi="arm64-v8a,armeabi-v7a,armeabi"
+-    api-level="23"
+-    build-mode="FULL"
+-    density="xhdpi"
+-    format="10"
+-    plugin-version="3.3.2"
+-    timestamp="1570128104493"
+-    token="973070000093779966"
+-    verifier="FULL_BUILD_REQUESTED" >
+-
+-    <task
+-        name="javac"
+-        duration="0" />
+-    <task
+-        name="instant-run-dex"
+-        duration="0" />
+-    <task
+-        name="instant-run-transform"
+-        duration="881" />
+-    <task
+-        name="verifier"
+-        duration="1340" />
+-
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+-        type="SPLIT" />
+-    <artifact
+-        location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+-        type="SPLIT_MAIN" />
+-
+-    <build
+-        build-mode="FULL"
+-        timestamp="1570128104493"
+-        verifier="FULL_BUILD_REQUESTED" >
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+-            type="SPLIT" />
+-        <artifact
+-            location="P:\temp\CS371\CS371PigGameStarter\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+-            type="SPLIT_MAIN" />
+-    </build>
+-
+-</instant-run>
+Index: app/src/main/java/edu/up/cs301/pig/PigGameState.java
+===================================================================
+diff --git a/app/src/main/java/edu/up/cs301/pig/PigGameState.java b/app/src/main/java/edu/up/cs301/pig/PigGameState.java
+deleted file mode 100644
+--- a/app/src/main/java/edu/up/cs301/pig/PigGameState.java	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,85 +0,0 @@
+-package edu.up.cs301.pig;
+-
+-import edu.up.cs301.game.infoMsg.GameState;
+-
+-public class PigGameState extends GameState {
+-    private int playerTurn;
+-    private int player0Score;
+-    private int player1Score;
+-    private int runTotal; //current running total to be added should the player hold
+-    private int currentDieVal;
+-
+-    /**
+-     * PigGameState ctor
+-     *
+-     *  initializes all variables for new game (at the start)
+-     */
+-    public PigGameState(){
+-        player0Score = 0;
+-        player1Score = 0;
+-        runTotal = 0;
+-        currentDieVal = 0;
+-        playerTurn = 0;
+-    }
+-
+-    /**
+-     * PigGameState copy ctor
+-     *
+-     * @param orig  the GameState to be copied
+-     */
+-    public PigGameState(PigGameState orig){
+-        //copy ctor
+-        playerTurn = orig.playerTurn;
+-        player1Score = orig.player1Score;
+-        player0Score = orig.player0Score;
+-        runTotal = orig.runTotal;
+-        currentDieVal = orig.currentDieVal;
+-    }
+-
+-    /**getters for each instance*/
+-
+-    public int getPlayerTurn(){
+-        return playerTurn;
+-    }
+-
+-    public int getPlayer0Score(){
+-        return player0Score;
+-    }
+-
+-    public int getPlayer1Score(){
+-        return player1Score;
+-    }
+-
+-    public int getCurrentDieVal(){
+-        return currentDieVal;
+-    }
+-
+-    public int getRunTotal() {
+-        return runTotal;
+-    }
+-
+-
+-    /**setters for each instance variable */
+-
+-    public void setCurrentDieVal(int currentDieVal) {
+-        this.currentDieVal = currentDieVal;
+-    }
+-
+-    public void setPlayer0Score(int player0Score) {
+-        this.player0Score = player0Score;
+-    }
+-
+-    public void setPlayer1Score(int player1Score) {
+-        this.player1Score = player1Score;
+-    }
+-
+-    public void setPlayerTurn(int playerTurn) {
+-        this.playerTurn = playerTurn;
+-    }
+-
+-    public void setRunTotal(int runTotal) {
+-        this.runTotal = runTotal;
+-    }
+-
+-}
+-
+Index: app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml
+===================================================================
+diff --git a/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml b/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml
+deleted file mode 100644
+--- a/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,4 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <style name="AppTheme" parent="android:Theme.Holo.Light"/>
+-</resources>
+\ No newline at end of file
+Index: app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml
+===================================================================
+diff --git a/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml b/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml
+deleted file mode 100644
+--- a/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,33 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <color name="black">#000</color>
+-    <color name="green">#0F0</color>
+-    <color name="red">#ff0000</color>
+-    <dimen name="config_horiz_margin">20dp</dimen>
+-    <dimen name="del_player_button_size">35dp</dimen>
+-    <dimen name="tab_height">75dp</dimen>
+-    <dimen name="table_heading_font_size">14sp</dimen>
+-    <dimen name="table_row_horiz_pad">50dp</dimen>
+-    <dimen name="table_row_vert_pad">10dp</dimen>
+-    <string name="add_player">Add Player</string>
+-    <string name="app_name">Stratego</string>
+-    <string name="begin_game">Begin Game</string>
+-    <string name="dialog_continue_label">Continue Playing Game</string>
+-    <string name="dialog_quit_label">Quit</string>
+-    <string name="dialog_quit_question">Do you really want to quit?</string>
+-    <string name="guest">Guest</string>
+-    <string name="hello_world">Hello world!</string>
+-    <string name="local_tab">Local Game</string>
+-    <string name="menu_settings">Settings</string>
+-    <string name="name_label">Name:</string>
+-    <string name="player_name">Player Name</string>
+-    <string name="player_type">Player Type</string>
+-    <string name="remote_tab">Remote Game</string>
+-    <string name="remove_player">Remove Player</string>
+-    <string name="save_config">Save As Default Configuration</string>
+-    <string name="save_config_as_default">Save this Configuration as the Default</string>
+-    <string name="server_ip_code">Server\'s IP Code:</string>
+-    <string name="start_the_game">Start Game!</string>
+-    <string name="title_activity_game_main">Shall We Play A Game?</string>
+-    <style name="AppTheme" parent="android:Theme.Light"/>
+-</resources>
+\ No newline at end of file
+Index: app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_3/AndroidManifest.xml
+===================================================================
+diff --git a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_3/AndroidManifest.xml b/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_3/AndroidManifest.xml
+deleted file mode 100644
+--- a/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_3/AndroidManifest.xml	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-      package="edu.up.cs301.game"
+-      android:versionCode="1"
+-      android:versionName="1.0"
+-      split="lib_slice_3_apk">
+-</manifest>
+Index: app/build/intermediates/transforms/dexMerger/debug/__content__.json
+===================================================================
+diff --git a/app/build/intermediates/transforms/dexMerger/debug/__content__.json b/app/build/intermediates/transforms/dexMerger/debug/__content__.json
+deleted file mode 100644
+--- a/app/build/intermediates/transforms/dexMerger/debug/__content__.json	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
++++ /dev/null	(revision 26f92ea579be58994dc10eb312075c185c37d3e6)
+@@ -1,1 +0,0 @@
+-[{"name":"slice_0","index":0,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"slice_1","index":1,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"slice_2","index":2,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"slice_3","index":3,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"slice_4","index":4,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"slice_5","index":5,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"slice_6","index":6,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"slice_7","index":7,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"slice_8","index":8,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"slice_9","index":9,"scopes":["PROJECT","SUB_PROJECTS"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\externalLibsDexMerger\\debug\\0","index":10,"scopes":["EXTERNAL_LIBRARIES"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\10.jar","index":11,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\11.jar","index":12,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\12.jar","index":13,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\13.jar","index":14,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\14.jar","index":15,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\15.jar","index":16,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\16.jar","index":17,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\17.jar","index":18,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\18.jar","index":19,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\19.jar","index":20,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\transforms\\dexBuilder\\debug\\21.jar","index":21,"scopes":["MAIN_SPLIT"],"types":["DEX"],"format":"DIRECTORY","present":true},{"name":"externalLibs","index":22,"scopes":["EXTERNAL_LIBRARIES"],"types":["DEX"],"format":"DIRECTORY","present":true}]
+\ No newline at end of file
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+new file mode 100644

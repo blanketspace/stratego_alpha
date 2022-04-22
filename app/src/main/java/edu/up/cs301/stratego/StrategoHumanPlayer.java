@@ -88,7 +88,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         if (info instanceof IllegalMoveInfo || info instanceof NotYourTurnInfo) {
             // if the move was out of turn or otherwise illegal, flash the screen
             Log.i("HUMAN_MADE_AN_ERROR", "akljglakjf;gdl;fk;s");
-            this.flash(Color.RED, 50);
+            //this.flash(Color.RED, 50);
         }
         else if(info instanceof HelpInfo){
 
