@@ -15,7 +15,7 @@ import edu.up.cs301.game.infoMsg.GameInfo;
  * @author Kathryn Weidman
  * @version 4/14/2022
  *
- * Reference for smart AI setups from a world champion Stratego player
+ * Reference for smart AI setup from a world champion Stratego player
  *      https://www.ultraboardgames.com/stratego/setups.php
  */
 
@@ -64,7 +64,7 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
         int i = 0, j = 0; //i is left/right, j is up/down
         int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0, h = 0; //how many times each piece has placed
 
-        for(Unit troop: p1Troops) {
+        for (Unit troop: p1Troops) {
             troop.setDead(false);
             switch (troop.getRank()) {
                 case 1:

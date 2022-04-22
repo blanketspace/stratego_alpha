@@ -50,7 +50,8 @@ public class StrategoMainActivity extends GameMainActivity {
             }});
 
         // Create a game configuration class for Stratego:
-        GameConfig defaultConfig = new GameConfig(playerTypes, 1, 2, "Stratego", PORT_NUMBER);
+        GameConfig defaultConfig = new GameConfig(playerTypes, 1, 2,
+                "Stratego", PORT_NUMBER);
         defaultConfig.addPlayer("Human", 0); // player 1: a human player
         defaultConfig.addPlayer("Computer", 1); // player 2: a computer player
         defaultConfig.setRemoteData("Remote Human Player", "", 0);
@@ -67,7 +68,5 @@ public class StrategoMainActivity extends GameMainActivity {
     public LocalGame createLocalGame() {
         return new StrategoLocalGame();
     }
-
-
 
 }//StrategoMainActivity
