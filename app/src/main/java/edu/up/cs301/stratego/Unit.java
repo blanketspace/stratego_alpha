@@ -92,6 +92,8 @@ public class Unit {
     public void setDead(boolean dead) {
         this.isDead = dead;
         this.isSelected = false;
+        this.setyLoc(-1);
+        this.setxLoc(-1);
     }
 
     /**
