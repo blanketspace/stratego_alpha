@@ -1,0 +1,79 @@
+Index: app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>edu/up/cs301/stratego/actions/MovePieceAction.java\r\n edu.up.cs301.stratego.actions.MovePieceAction\r\nedu/up/cs301/pig/PigLocalGame.java\r\n edu.up.cs301.pig.PigLocalGame\r\nedu/up/cs301/game/config/GameConfig.java\r\n edu.up.cs301.game.config.GameConfig\r\n edu.up.cs301.game.config.GameConfig$1\r\nedu/up/cs301/stratego/StrategoMainActivity.java\r\n edu.up.cs301.stratego.StrategoMainActivity\r\n edu.up.cs301.stratego.StrategoMainActivity$1\r\n edu.up.cs301.stratego.StrategoMainActivity$2\r\nedu/up/cs301/stratego/StrategoGameState.java\r\n edu.up.cs301.stratego.StrategoGameState\r\nedu/up/cs301/game/infoMsg/StartGameInfo.java\r\n edu.up.cs301.game.infoMsg.StartGameInfo\r\nedu/up/cs301/stratego/BoardView.java\r\n edu.up.cs301.stratego.BoardView\r\nedu/up/cs301/pig/PigHumanPlayer.java\r\n edu.up.cs301.pig.PigHumanPlayer\r\nedu/up/cs301/pig/PigComputerPlayer.java\r\n edu.up.cs301.pig.PigComputerPlayer\r\nedu/up/cs301/game/GameComputerPlayer.java\r\n edu.up.cs301.game.GameComputerPlayer\r\n edu.up.cs301.game.GameComputerPlayer$1\r\n edu.up.cs301.game.GameComputerPlayer$MyRunnable\r\nedu/up/cs301/game/infoMsg/GameOverInfo.java\r\n edu.up.cs301.game.infoMsg.GameOverInfo\r\nedu/up/cs301/game/actionMsg/GameAction.java\r\n edu.up.cs301.game.actionMsg.GameAction\r\nedu/up/cs301/pig/PigMainActivity.java\r\n edu.up.cs301.pig.PigMainActivity\r\n edu.up.cs301.pig.PigMainActivity$1\r\n edu.up.cs301.pig.PigMainActivity$2\r\nedu/up/cs301/stratego/StrategoSmartCompPlayer.java\r\n edu.up.cs301.stratego.StrategoSmartCompPlayer\r\nedu/up/cs301/game/actionMsg/MyNameIsAction.java\r\n edu.up.cs301.game.actionMsg.MyNameIsAction\r\nedu/up/cs301/game/infoMsg/GameState.java\r\n edu.up.cs301.game.infoMsg.GameState\r\nedu/up/cs301/stratego/actions/RightAction.java\r\n edu.up.cs301.stratego.actions.RightAction\r\nedu/up/cs301/pig/PigRollAction.java\r\n edu.up.cs301.pig.PigRollAction\r\nedu/up/cs301/stratego/actions/UpAction.java\r\n edu.up.cs301.stratego.actions.UpAction\r\nedu/up/cs301/game/ProxyGame.java\r\n edu.up.cs301.game.ProxyGame\r\n edu.up.cs301.game.ProxyGame$1\r\nedu/up/cs301/game/GamePlayer.java\r\n edu.up.cs301.game.GamePlayer\r\nedu/up/cs301/stratego/Unit.java\r\n edu.up.cs301.stratego.Unit\r\nedu/up/cs301/game/LocalGame.java\r\n edu.up.cs301.game.LocalGame\r\n edu.up.cs301.game.LocalGame$1\r\n edu.up.cs301.game.LocalGame$GameStage\r\n edu.up.cs301.game.LocalGame$MyHandler\r\nedu/up/cs301/game/GameMainActivity.java\r\n edu.up.cs301.game.GameMainActivity\r\n edu.up.cs301.game.GameMainActivity$1\r\n edu.up.cs301.game.GameMainActivity$2\r\n edu.up.cs301.game.GameMainActivity$SpinnerListListener\r\nedu/up/cs301/game/infoMsg/IllegalMoveInfo.java\r\n edu.up.cs301.game.infoMsg.IllegalMoveInfo\r\nedu/up/cs301/game/util/GameTimer.java\r\n edu.up.cs301.game.util.GameTimer\r\n edu.up.cs301.game.util.GameTimer$1\r\n edu.up.cs301.game.util.GameTimer$MyTimer\r\nedu/up/cs301/game/ProxyPlayer.java\r\n edu.up.cs301.game.ProxyPlayer\r\n edu.up.cs301.game.ProxyPlayer$1\r\nedu/up/cs301/game/actionMsg/ReadyAction.java\r\n edu.up.cs301.game.actionMsg.ReadyAction\r\nedu/up/cs301/game/config/GamePlayerType.java\r\n edu.up.cs301.game.config.GamePlayerType\r\nedu/up/cs301/game/infoMsg/TimerInfo.java\r\n edu.up.cs301.game.infoMsg.TimerInfo\r\nedu/up/cs301/stratego/StrategoLocalGame.java\r\n edu.up.cs301.stratego.StrategoLocalGame\r\nedu/up/cs301/pig/PigHoldAction.java\r\n edu.up.cs301.pig.PigHoldAction\r\nedu/up/cs301/game/util/Tickable.java\r\n edu.up.cs301.game.util.Tickable\r\nedu/up/cs301/stratego/actions/SelectPieceAction.java\r\n edu.up.cs301.stratego.actions.SelectPieceAction\r\nedu/up/cs301/game/infoMsg/GameInfo.java\r\n edu.up.cs301.game.infoMsg.GameInfo\r\nedu/up/cs301/stratego/StrategoDumbCompPlayer.java\r\n edu.up.cs301.stratego.StrategoDumbCompPlayer\r\nedu/up/cs301/stratego/actions/DownAction.java\r\n edu.up.cs301.stratego.actions.DownAction\r\nedu/up/cs301/pig/PigGameState.java\r\n edu.up.cs301.pig.PigGameState\r\nedu/up/cs301/game/infoMsg/NotYourTurnInfo.java\r\n edu.up.cs301.game.infoMsg.NotYourTurnInfo\r\nedu/up/cs301/game/infoMsg/BindGameInfo.java\r\n edu.up.cs301.game.infoMsg.BindGameInfo\r\nedu/up/cs301/animation/AnimationSurface.java\r\n edu.up.cs301.animation.AnimationSurface\r\n edu.up.cs301.animation.AnimationSurface$AnimationThread\r\nedu/up/cs301/stratego/actions/PlacePieceAction.java\r\n edu.up.cs301.stratego.actions.PlacePieceAction\r\nedu/up/cs301/stratego/StrategoHumanPlayer.java\r\n edu.up.cs301.stratego.StrategoHumanPlayer\r\nedu/up/cs301/animation/Animator.java\r\n edu.up.cs301.animation.Animator\r\nedu/up/cs301/game/util/NetworkObjectPasser.java\r\n edu.up.cs301.game.util.NetworkObjectPasser\r\n edu.up.cs301.game.util.NetworkObjectPasser$1\r\n edu.up.cs301.game.util.NetworkObjectPasser$CreateRunner\r\n edu.up.cs301.game.util.NetworkObjectPasser$MsgRunnable\r\n edu.up.cs301.game.util.NetworkObjectPasser$RunnerStatus\r\n edu.up.cs301.game.util.NetworkObjectPasser$ServerSocketMap\r\nedu/up/cs301/game/actionMsg/GameOverAckAction.java\r\n edu.up.cs301.game.actionMsg.GameOverAckAction\r\nedu/up/cs301/game/BuildConfig.java\r\n edu.up.cs301.game.BuildConfig\r\nedu/up/cs301/game/GameHumanPlayer.java\r\n edu.up.cs301.game.GameHumanPlayer\r\n edu.up.cs301.game.GameHumanPlayer$MyRunnable\r\n edu.up.cs301.game.GameHumanPlayer$Unflasher\r\nedu/up/cs301/game/actionMsg/TimerAction.java\r\n edu.up.cs301.game.actionMsg.TimerAction\r\nedu/up/cs301/stratego/actions/LeftAction.java\r\n edu.up.cs301.stratego.actions.LeftAction\r\nedu/up/cs301/game/util/MessageBox.java\r\n edu.up.cs301.game.util.MessageBox\r\nedu/up/cs301/game/Game.java\r\n edu.up.cs301.game.Game\r\nedu/up/cs301/game/util/IPCoder.java\r\n edu.up.cs301.game.util.IPCoder\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt b/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt
+--- a/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt	(revision c9eb82952b374afb49119d9cdaf6caab28d8f4d6)
++++ b/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt	(date 1650411598163)
+@@ -5,10 +5,8 @@
+ edu/up/cs301/game/config/GameConfig.java
+  edu.up.cs301.game.config.GameConfig
+  edu.up.cs301.game.config.GameConfig$1
+-edu/up/cs301/stratego/StrategoMainActivity.java
+- edu.up.cs301.stratego.StrategoMainActivity
+- edu.up.cs301.stratego.StrategoMainActivity$1
+- edu.up.cs301.stratego.StrategoMainActivity$2
++edu/up/cs301/game/util/MessageBox.java
++ edu.up.cs301.game.util.MessageBox
+ edu/up/cs301/stratego/StrategoGameState.java
+  edu.up.cs301.stratego.StrategoGameState
+ edu/up/cs301/game/infoMsg/StartGameInfo.java
+@@ -31,8 +29,8 @@
+  edu.up.cs301.pig.PigMainActivity
+  edu.up.cs301.pig.PigMainActivity$1
+  edu.up.cs301.pig.PigMainActivity$2
+-edu/up/cs301/stratego/StrategoSmartCompPlayer.java
+- edu.up.cs301.stratego.StrategoSmartCompPlayer
++edu/up/cs301/game/util/IPCoder.java
++ edu.up.cs301.game.util.IPCoder
+ edu/up/cs301/game/actionMsg/MyNameIsAction.java
+  edu.up.cs301.game.actionMsg.MyNameIsAction
+ edu/up/cs301/game/infoMsg/GameState.java
+@@ -100,8 +98,8 @@
+  edu.up.cs301.animation.AnimationSurface$AnimationThread
+ edu/up/cs301/stratego/actions/PlacePieceAction.java
+  edu.up.cs301.stratego.actions.PlacePieceAction
+-edu/up/cs301/stratego/StrategoHumanPlayer.java
+- edu.up.cs301.stratego.StrategoHumanPlayer
++edu/up/cs301/game/Game.java
++ edu.up.cs301.game.Game
+ edu/up/cs301/animation/Animator.java
+  edu.up.cs301.animation.Animator
+ edu/up/cs301/game/util/NetworkObjectPasser.java
+@@ -123,9 +121,11 @@
+  edu.up.cs301.game.actionMsg.TimerAction
+ edu/up/cs301/stratego/actions/LeftAction.java
+  edu.up.cs301.stratego.actions.LeftAction
+-edu/up/cs301/game/util/MessageBox.java
+- edu.up.cs301.game.util.MessageBox
+-edu/up/cs301/game/Game.java
+- edu.up.cs301.game.Game
+-edu/up/cs301/game/util/IPCoder.java
+- edu.up.cs301.game.util.IPCoder
++edu/up/cs301/stratego/StrategoSmartCompPlayer.java
++ edu.up.cs301.stratego.StrategoSmartCompPlayer
++edu/up/cs301/stratego/StrategoHumanPlayer.java
++ edu.up.cs301.stratego.StrategoHumanPlayer
++edu/up/cs301/stratego/StrategoMainActivity.java
++ edu.up.cs301.stratego.StrategoMainActivity
++ edu.up.cs301.stratego.StrategoMainActivity$1
++ edu.up.cs301.stratego.StrategoMainActivity$2
+Index: app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Tue Apr 19 16:15:54 PDT 2022\r\nbase.0=C\\:\\\\Users\\\\katyl\\\\AndroidStudioProjects\\\\stratego_alpha\\\\app\\\\build\\\\intermediates\\\\dex\\\\debug\\\\mergeDexDebug\\\\classes.dex\r\nrenamed.0=classes.dex\r\npath.0=classes.dex\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt b/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt
+--- a/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt	(revision c9eb82952b374afb49119d9cdaf6caab28d8f4d6)
++++ b/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt	(date 1650411598709)
+@@ -1,4 +1,4 @@
+-#Tue Apr 19 16:15:54 PDT 2022
++#Tue Apr 19 16:39:58 PDT 2022
+ base.0=C\:\\Users\\katyl\\AndroidStudioProjects\\stratego_alpha\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+ renamed.0=classes.dex
+ path.0=classes.dex

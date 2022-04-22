@@ -1,0 +1,214 @@
+<changelist name="Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]" date="1650409681271" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 4/19/2022 4:07 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoMainActivity$2.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoMainActivity$2.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/StrategoMainActivity$2.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/graph.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/actions/DownAction.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/actions/DownAction.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/DownAction.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/javaCompile/taskHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/javaCompile/taskHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/taskHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/graph1.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/processed_res/debug/out/resources-debug.ap_" />
+    <option name="AFTER_PATH" value="app/build/intermediates/processed_res/debug/out/resources-debug.ap_" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/resources-debug.ap_" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/javaCompile/javaCompile.lock" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/javaCompile/javaCompile.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/javaCompile.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/jar_5216bcd02ffaae1baa210dbb6c61668ffec6b7bc71198247b8da966b8cffdd97_bucket_0/graph.bin" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/jar_5216bcd02ffaae1baa210dbb6c61668ffec6b7bc71198247b8da966b8cffdd97_bucket_3/graph.bin" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/graph2.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoLocalGame.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoLocalGame.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/StrategoLocalGame.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/jar_48d2d214b32c5e55411011d4e377f1ca0920d7b11e58e7349e776c96bbf5da4c_bucket_3/graph.bin" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/StrategoMainActivity$1.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/StrategoMainActivity$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/StrategoMainActivity$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/jar_48d2d214b32c5e55411011d4e377f1ca0920d7b11e58e7349e776c96bbf5da4c_bucket_1/graph.bin" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/jar_48d2d214b32c5e55411011d4e377f1ca0920d7b11e58e7349e776c96bbf5da4c_bucket_2/graph.bin" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="AFTER_PATH" value=".gradle/buildOutputCleanup/outputFiles.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/outputFiles.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/actions/MovePieceAction.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/actions/MovePieceAction.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/MovePieceAction.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/javaCompile/classAnalysis.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/javaCompile/classAnalysis.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/classAnalysis.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/jar_48d2d214b32c5e55411011d4e377f1ca0920d7b11e58e7349e776c96bbf5da4c_bucket_0/graph.bin" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/classes.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/outputs/apk/debug/app-debug.apk" />
+    <option name="AFTER_PATH" value="app/build/outputs/apk/debug/app-debug.apk" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/app-debug.apk" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/jar_5216bcd02ffaae1baa210dbb6c61668ffec6b7bc71198247b8da966b8cffdd97_bucket_2/graph.bin" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/actions/SelectPieceAction.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/actions/SelectPieceAction.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/SelectPieceAction.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoMainActivity$1.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoMainActivity$1.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/StrategoMainActivity$1.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoGameState.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoGameState.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/StrategoGameState.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" />
+    <option name="AFTER_PATH" value="app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/androidResources" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/StrategoMainActivity$2.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/StrategoMainActivity$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/StrategoMainActivity$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/actions/SelectPieceAction.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/actions/SelectPieceAction.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/SelectPieceAction.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/jar_5216bcd02ffaae1baa210dbb6c61668ffec6b7bc71198247b8da966b8cffdd97_bucket_1/graph.bin" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/graph3.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/graph4.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/StrategoLocalGame.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/StrategoLocalGame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/StrategoLocalGame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoDumbCompPlayer.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/StrategoDumbCompPlayer.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/StrategoDumbCompPlayer.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/StrategoGameState.class" />
+    <option name="AFTER_PATH" value="app/build/intermediates/javac/debug/classes/edu/up/cs301/stratego/StrategoGameState.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/StrategoGameState.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/actions/MovePieceAction.dex" />
+    <option name="AFTER_PATH" value="app/build/intermediates/project_dex_archive/debug/out/edu/up/cs301/stratego/actions/MovePieceAction.dex" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/MovePieceAction.dex" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/7.0.2/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value=".gradle/7.0.2/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" />
+    <option name="AFTER_PATH" value="app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2022_4_07_PM_[Default_Changelist]/graph5.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/build/intermediates/project_dex_archive/debug/out/89c5590da4469d12384cbe407b53899a9f90f85d3a9d312c330a85cc48cb3095_0.jar" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>
