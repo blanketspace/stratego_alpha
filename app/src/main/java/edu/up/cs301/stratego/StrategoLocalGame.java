@@ -80,7 +80,7 @@ public class StrategoLocalGame extends LocalGame {
             Log.i("FLAG_CAPTURED", "jaslkgja;eorinb/ldkfn;aoirg");
             String winner = null;
             if(goldie.getWhoseTurn() == 0){
-                winner = "Computer Player";  //TODO: problematic for network play
+                winner = "Computer Player";
             }
             else{
                 winner = "Human Player";
@@ -187,27 +187,8 @@ public class StrategoLocalGame extends LocalGame {
                     return false;
                 }
 
-                /*if(action instanceof ScoutBonusAction){
-                    //TODO: if end button not clicked, keep turn
-                    if(!goldie.notScoutTurn()){
-                        //the end scout turn button has not been clicked
-                        //this means the scout can still move
-
-                    }
-                    else {
-                        if(goldie.getWhoseTurn() == 0){
-                            goldie.setWhoseTurn(1);
-                        }
-                        else{
-                            goldie.setWhoseTurn(0);
-                        }
-                        goldie.clearSelection();
-                    }
-                    //else change turns*/
-                //}
-                //else{
                     if(goldie.notScoutTurn()){
-                        //it's not the scout's turn
+                        //it's not the scout's turn, so switch players
                         if(goldie.getWhoseTurn() == 0){
                             goldie.setWhoseTurn(1);
                         }
@@ -216,7 +197,6 @@ public class StrategoLocalGame extends LocalGame {
                         }
                         goldie.clearSelection();
                     }
-               // }
 
                 //chosen = null;
                 return true;
@@ -306,19 +286,15 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
     //calls helper method to make sure we're in bounds of array
     if(this.inBounds(newX, newY)) {
         if (gameboard[newY][newX] == null) {  //spot is already empty, go ahead and take it
-            //TODO: This section has different results on each run
-            //this is potentially due to an error in the comp player
-            //check to see if the comp player is accidentally capturing its own troops
             chosen.setyLoc(newY);
             chosen.setxLoc(newX);
-            gameboard[newY][newX] = chosen;
+            gameboard[newY][newX] = chosen;  //fill that empty spot
             gameboard[chosenY][chosenX] = null;
             Log.i("SPOT_TAKEN", "WAS_EMPTY_BEFORE_ARGAEJR;BKN;FJBNKDJHSLDJHLKSJTDHKSKLE");
 
         }
         else if (gameboard[newY][newX].getRank() == Unit.WATER) {
             //you can't walk on water, therefore do nothing
-            //TODO: do we wanna flash the screen?
             goldie.setEndScout(true);
         }
         else if (gameboard[newY][newX].getOwnerID() == goldie.getWhoseTurn()) {  //turns and player nums are reversed
@@ -329,14 +305,14 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
 
                     gameboard[newY][newX] = null;
 
-
                     chosen.setxLoc(newX);
                     chosen.setyLoc(newY);
                     gameboard[newY][newX] = chosen;  //fill its old spot
                     gameboard[chosenY][chosenX] = null;  //empty your old spot
 
                     Log.i("BOMB_DISARMED", "alksjdgaljlkah");
-                } else {
+                }
+                else {
                     //you are not a miner, you explode
                     goldie.setEndScout(true);  //ensure the scout ends its turn
                     gameboard[chosenY][chosenX] = null;
@@ -360,7 +336,6 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
                     Log.i("OPP_WON_BATTLE", "akjglkjdlhskgkj");
 
                 } else {  //you won
-                    //TODO: add counter of dead troops thta incriments
                     gameboard[newY][newX].setDead(true); //they die
                     gameboard[chosenY][chosenX] = null;    //empty your spot
                     gameboard[newY][newX] = null;
@@ -414,9 +389,7 @@ public boolean isSpyAttack(int x, int y, Unit chosen){
     else{
         return false;
     }
-}
-
-
+}//isSpyAttack
 
 
 }//class StrategoLocalGame

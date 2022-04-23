@@ -149,8 +149,9 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     /**
      * setAsGui
      *
-     * TODO: FINISH ME
-     * @param activity
+     * sets up communication between the GUI in the xml and this player
+     *
+     * @param activity  this game's MainActivity
      */
     @Override
     public void setAsGui(GameMainActivity activity) {
@@ -172,7 +173,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
 
        // sets up TextView to be altered later on
-        this.selectedRank = activity.findViewById(R.id.DisplayRank); //TODO: doesn't work. don't know why
+        this.selectedRank = activity.findViewById(R.id.DisplayRank);
 
         this.yourTroops = activity.findViewById(R.id.Numberyourtroops);
         this.enemyTroops = activity.findViewById(R.id.NumberEnemyTroops);
@@ -392,15 +393,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         if(test != null){
 
             if(test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG){
-                //TODO:  Not needed!  Let the local game send you a new game state with the selected piece
-                // (the human player should NOT change the copyGameState; instead, let the local game change
-                // the copy of the golden state!)
-//            copyState.selectPiece(copyState.getWhoseTurn(), test);
-//            copyState.clearSelection(1);  //clears selection from all Units
-//            test.setSelected(true);  //select specific Unit
-//            myBoardView.invalidate();
-//            //selectedRank.setText(test.getRank());
 
+                //check to see if unit is a scout (special game rules)
                 if(test.getRank() == Unit.SCOUT){
                     ScoutBonusAction sba = new ScoutBonusAction(this);
                     game.sendAction(sba);
@@ -410,8 +404,6 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
                 Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
                 Log.i("ON TOUCH", "LOCATION ON BOARD: [" + test.getyLoc()+ ", " + test.getxLoc()+"]");
                 Log.i("ON TOUCH", "TROOP RANK:" + test.getRank() + ": " + test.nameRank());
-                //Log.i("ON TOUCH", "TROOP RANK:" + test.get);
-                //TODO: the yLoc is the col, while the xLoc is the row
 
                 SelectPieceAction spa = new SelectPieceAction(this, test);
                 game.sendAction(spa);
