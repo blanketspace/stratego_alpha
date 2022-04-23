@@ -648,11 +648,4 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
         }
     } //end smartStrat2
 
-    public void choosePiece() {} //returns a Unit, not void
-
-    public int checkFlanks(Unit chosen) {return 0;}
-
-    public int chooseMoveDir(Unit chosen) {return 0;}
-
-
-}
+} //end StrategoSmartCompPlayer class
