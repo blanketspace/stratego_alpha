@@ -10,6 +10,8 @@ import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 import edu.up.cs301.animation.AnimationSurface;
 import edu.up.cs301.game.R;
 
@@ -66,6 +68,7 @@ public class BoardView extends SurfaceView {
                 }
             }
         }
+
 
 
     }//onDraw
