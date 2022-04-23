@@ -8,6 +8,7 @@ import edu.up.cs301.game.actionMsg.GameAction;
 import edu.up.cs301.stratego.actions.DownAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
+import edu.up.cs301.stratego.actions.ScoutBonusAction;
 import edu.up.cs301.stratego.actions.SelectPieceAction;
 import edu.up.cs301.stratego.actions.SurrenderAction;
 import edu.up.cs301.stratego.actions.UpAction;
@@ -169,13 +170,20 @@ public class StrategoLocalGame extends LocalGame {
                     return false;
                 }
 
-                if(goldie.getWhoseTurn() == 0){
-                    goldie.setWhoseTurn(1);
+                if(action instanceof ScoutBonusAction){
+                    //TODO: if end button not clicked, keep turn
+                    //else change turns
                 }
                 else{
-                    goldie.setWhoseTurn(0);
+                    if(goldie.getWhoseTurn() == 0){
+                        goldie.setWhoseTurn(1);
+                    }
+                    else{
+                        goldie.setWhoseTurn(0);
+                    }
+                    goldie.clearSelection();
                 }
-                goldie.clearSelection();
+
                 //chosen = null;
                 return true;
 
