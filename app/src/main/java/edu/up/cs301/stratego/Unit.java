@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
+import java.io.Serializable;
+
 /**
  * class Unit
  *
@@ -14,7 +16,7 @@ import android.graphics.Rect;
  * @author Kathryn Weidman
  * @version 4/20/2022
  */
-public class Unit {
+public class Unit implements Serializable {
     /**
      *  External Citation
      *  Date 2/23/2022
