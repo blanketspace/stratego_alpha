@@ -90,7 +90,7 @@ public class Unit implements Serializable {
         return this.isSelected;
     }
 
-    /** sets Unit's statuses to dead */
+    /** sets Unit's statuses to dead and moves them off the board*/
     public void setDead(boolean dead) {
         this.isDead = dead;
         this.isSelected = false;
@@ -125,6 +125,7 @@ public class Unit implements Serializable {
         this.yLoc = yLoc;
     }
 
+    /** shows unit ranks if false */
     public void setObscured(boolean obscured) {
         isObscured = obscured;
     }
@@ -137,7 +138,6 @@ public class Unit implements Serializable {
      * @return  String version of the Unit's rank
      */
     public String nameRank() {
-        String name;
         switch (this.rank)
         {
             case 1:
@@ -189,7 +189,7 @@ public class Unit implements Serializable {
             outline.setStyle(Paint.Style.STROKE);
         }
 
-        if (!this.isDead) {  //if not dead, draw
+        if (!this.isDead) {  //if not dead, draw unit
             if (ownerID == 0) {
                 c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH,
                         yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);
