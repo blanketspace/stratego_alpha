@@ -20,8 +20,9 @@ import edu.up.cs301.stratego.actions.UpAction;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 4/14/2022
+ * @version 4/22/2022
  *
+ * External Citation
  * Reference for smart AI setup from a world champion Stratego player
  *      https://www.ultraboardgames.com/stratego/setups.php
  */
@@ -44,6 +45,8 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
 
 
     /**
+     * legalDirs
+     *
      * @return a list of legal directions that a given piece can move to. If no legal
      * directions are possible, then it returns null.
      */
@@ -88,7 +91,6 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
             }
         }
 
-
         //convert the temp arraylist to an array of int
         if (temp.size() == 0) {return null;
         }
@@ -103,7 +105,13 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
     }//legalDirs
 
 
-
+    /**
+     * receiveInfo
+     *
+     * method to handle all information sent by the game
+     *
+     * @param info  the GameInfo to be used
+     */
     @Override
     protected void receiveInfo(GameInfo info) {
         if(info instanceof StrategoGameState){
@@ -227,7 +235,7 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
             //need that visual cue, so we're leaving this empty
         }
 
-    }
+    }//receiveInfo
 
     public void setUpStrategy(int chosenStrat) {
         switch (chosenStrat) { //We have possible setups from a world champion stratego player
@@ -241,7 +249,7 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
                 //smth
                 break;
         }
-    } //Do we *need* multiple setups? theyre kinda long...
+    }//setUpStrategy
 
     private void smartStrat(StrategoGameState gameState) { //UNTESTED
         ArrayList<Unit> p1Troops = gameState.getP1Troops();
@@ -442,13 +450,6 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
             } //X and Y for placePiece from dumbComp setup method
             gameState.placePiece(playerNum, troop, i * troop.UNIT_WIDTH, (j + 6) * troop.UNIT_HEIGHT);
         }
-    } //end smartStrat
+    } //smartStrat
 
-    public void choosePiece() {} //returns a Unit, not void
-
-    public int checkFlanks(Unit chosen) {return 0;}
-
-    public int chooseMoveDir(Unit chosen) {return 0;}
-
-
-}
+}//class StrategoSmartPlayer

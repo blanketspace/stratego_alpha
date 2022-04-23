@@ -10,11 +10,11 @@ import edu.up.cs301.game.actionMsg.GameAction;
  * @author Harry Vu
  * @author Vincent Truong
  * @author Kathryn Weidman
- * @version 3/18/2022
+ * @version 4/22/2022
  */
 public class PlacePieceAction extends GameAction {
     /**
-     * constructor for GameAction
+     * ctor
      *
      * @param player the player who created the action
      */

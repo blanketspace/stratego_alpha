@@ -5,7 +5,7 @@ import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.actionMsg.GameAction;
 
 /**
- * StrategoLocalGame
+ * MovePieceAction
  *
  * @author Anne Marie Blank
  * @author Harry Vu
@@ -15,7 +15,7 @@ import edu.up.cs301.game.actionMsg.GameAction;
  */
 public class MovePieceAction extends GameAction {
     /**
-     * constructor for GameAction
+     * ctor
      *
      * @param player the player who created the action
      */

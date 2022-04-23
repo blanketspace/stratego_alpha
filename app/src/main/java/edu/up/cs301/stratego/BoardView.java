@@ -23,7 +23,7 @@ import edu.up.cs301.game.R;
  * @author Vincent Truong
  * @author Kathryn Weidman
  *
- * @version 4/20/2022
+ * @version 4/22/2022
  */
 public class BoardView extends SurfaceView {
 
@@ -31,7 +31,9 @@ public class BoardView extends SurfaceView {
     private Unit[][] board;
 
 
-
+    /**
+     * ctor
+     */
     public BoardView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
@@ -39,13 +41,13 @@ public class BoardView extends SurfaceView {
         board = gameState.getGameboard();
 
         setWillNotDraw(false);
-    }
+    }//ctor
 
 
     /**
      * onDraw
      *
-     * method to get the Unit onto the GUI board
+     * method to get the Units onto the GUI board
      *
      * @param canvas the drawing space for the Unit
      */
@@ -68,9 +70,6 @@ public class BoardView extends SurfaceView {
                 }
             }
         }
-
-
-
     }//onDraw
 
     public StrategoGameState getGameState() {
@@ -80,4 +79,5 @@ public class BoardView extends SurfaceView {
     public void setGameState(StrategoGameState gameState) {
         this.gameState = gameState;
     }
-}//BoardView
+
+}//class BoardView

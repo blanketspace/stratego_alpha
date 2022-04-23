@@ -2,6 +2,16 @@ package edu.up.cs301.stratego;
 
 import edu.up.cs301.game.infoMsg.GameInfo;
 
+/**
+ * class HelpInfo
+ *
+ * @author Anne Marie Blank
+ * @author Vincent Truong
+ * @author Harry Vu
+ * @author Kathryn Wiedmann
+ *
+ * @version 4/22/2022
+ */
 public class HelpInfo extends GameInfo {
 
     /**

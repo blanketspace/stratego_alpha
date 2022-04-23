@@ -11,7 +11,7 @@ import edu.up.cs301.stratego.Unit;
  * @author Harry Vu
  * @author Vincent Truong
  * @author Kathryn Weidman
- * @version 3/18/2022
+ * @version 4/22/2022
  */
 public class SelectPieceAction extends GameAction {
     public Unit selected = null;

@@ -14,9 +14,13 @@ import java.io.Serializable;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 4/20/2022
+ * @version 4/22/2022
  */
 public class Unit implements Serializable {
+
+    private static final long serialVersionUID = 36744115L;
+
+
     /**
      *  External Citation
      *  Date 2/23/2022
@@ -44,11 +48,6 @@ public class Unit implements Serializable {
     private Paint redUnits = new Paint();
     private Paint blueUnits = new Paint();
     private Paint textPaint = new Paint();
-
-
-    /*** Nothing else needs to be added in this Unit class
-     * IMPORTANT ELABORATION: Every unit has their ownerID, meaning that
-     * the owner's id comes with the unit*/
 
 
     private int ownerID;  //the id of the player who owns the piece
@@ -91,6 +90,7 @@ public class Unit implements Serializable {
         return this.isSelected;
     }
 
+    /** sets Unit's statuses to dead */
     public void setDead(boolean dead) {
         this.isDead = dead;
         this.isSelected = false;
@@ -108,8 +108,6 @@ public class Unit implements Serializable {
     public boolean getStatus(){
         return this.isDead;
     }
-
-
 
     public int getxLoc() {
         return this.xLoc;
@@ -131,6 +129,13 @@ public class Unit implements Serializable {
         isObscured = obscured;
     }
 
+    /**
+     * nameRank
+     *
+     * method to return the String version of the Unit's rank
+     *
+     * @return  String version of the Unit's rank
+     */
     public String nameRank() {
         String name;
         switch (this.rank)
@@ -166,12 +171,15 @@ public class Unit implements Serializable {
     /**
      * drawMe
      *
+     * method to draw each Unit
+     *
      * @param c  the canvas to draw on
      */
     public void drawMe(Canvas c) {
         //the following lines are for drawing the outline of the unit
         Paint outline = new Paint();
 
+        //draw highlight during selection
         if (this.isSelected) {
             outline.setColor(0xFFfcfc03);  //highlight color
             outline.setStyle(Paint.Style.STROKE);
@@ -181,7 +189,7 @@ public class Unit implements Serializable {
             outline.setStyle(Paint.Style.STROKE);
         }
 
-        if (!this.isDead) {  //
+        if (!this.isDead) {  //if not dead, draw
             if (ownerID == 0) {
                 c.drawRect(xLoc*UNIT_WIDTH, yLoc*UNIT_HEIGHT, xLoc*UNIT_WIDTH + UNIT_WIDTH,
                         yLoc*UNIT_HEIGHT + UNIT_HEIGHT, redUnits);

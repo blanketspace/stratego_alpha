@@ -1,6 +1,6 @@
 package edu.up.cs301.stratego;
 
-import android.graphics.Color;
+
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -20,7 +20,6 @@ import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
 import edu.up.cs301.stratego.actions.ScoutBonusAction;
 import edu.up.cs301.stratego.actions.SelectPieceAction;
-import edu.up.cs301.stratego.actions.SurrenderAction;
 import edu.up.cs301.stratego.actions.UpAction;
 
 
@@ -49,6 +48,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private TextView yourTroops;
     private TextView enemyTroops;
 
+    //graveyard dead troop counters
     private TextView yourGeneralCount;
     private TextView yourColonelCount;
     private TextView yourLieutenantsCount;
@@ -71,10 +71,9 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private TextView enemyCaptainsCount;
     private TextView enemyMajorCount;
 
-
     private StrategoGameState copyState;
 
-    //number of dead troops
+    //int for keeping track of the number of dead troops
     private int deadG;
     private int deadC;
     private int deadL;
@@ -156,7 +155,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     @Override
     public void setAsGui(GameMainActivity activity) {
 
-        // set the GUI to be the game's layout xml
+        //set the GUI to be the game's layout xml
         activity.setContentView(R.layout.stratego_board);
 
         //set up each button so it aligns with GUI
@@ -172,7 +171,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
 
-       // sets up TextView to be altered later on
+        //sets up TextView to be altered later on
         this.selectedRank = activity.findViewById(R.id.DisplayRank);
 
         this.yourTroops = activity.findViewById(R.id.Numberyourtroops);
@@ -254,7 +253,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         }
         else if(view.getId() == R.id.SurrenderButton){
             Log.i("HUMAN_SURRENDER", "BOT_CROWNED_VICTOR_OVER_HUMANITY");
-            this.sendInfo(new GameOverInfo("LMAOO LOOK AT THIS LOSER!! WHAT A CHUMP"));
+            this.sendInfo(new GameOverInfo("BOT CROWNED VICTOR OVER HUMANITY"));
         }
         else if (view.getId() == R.id.endButton){
             Log.i("END_BUTTON_CLICKED", "lkjealkgjitjdlkgsh");
@@ -290,7 +289,6 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         yourCaptainsCount.setText("" + deadCap  + "/4");
 
 
-
         resetDeadNum();
         int eTroopsAlive = 0;
         for(int j = 0; j < copyState.getP1Troops().size(); j++){
@@ -314,13 +312,16 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         enemyMarshalsCount.setText("" + deadMarsh  + "/1");
         enemyCaptainsCount.setText("" + deadCap  + "/4");
 
-
-
-
-
     }//onClick
 
 
+    /**
+     * graveyardMethod
+     *
+     * helper method to incriment the count of currently dead units
+     *
+     * @param unit  the Unit to add to the graveyard
+     */
     public void graveyardMethod(Unit unit){
         if(unit.getRank() == Unit.GENERAL){
             deadG++;
@@ -355,8 +356,13 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         else{
             //do nothing
         }
-    }
+    }//graveyardMethod
 
+    /**
+     * resetDeadNum
+     *
+     * resets the count of Units that have died
+     */
     public void resetDeadNum(){
         deadCap = 0;
         deadC = 0;
@@ -368,7 +374,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         deadL = 0;
         deadMin = 0;
         deadSpy = 0;
-    }
+    }//resetDeadNum
 
 
     /**
@@ -438,9 +444,5 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         return temp;
     }// findRect
 
-
-    public void setMyBoardView(BoardView myBoardView) {
-        this.myBoardView = myBoardView;
-    }
 }//StrategoHumanPlayer
 

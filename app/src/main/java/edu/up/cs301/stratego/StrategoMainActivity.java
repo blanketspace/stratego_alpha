@@ -75,4 +75,4 @@ public class StrategoMainActivity extends GameMainActivity {
         return new StrategoLocalGame();
     }
 
-}//StrategoMainActivity
+}//class StrategoMainActivity

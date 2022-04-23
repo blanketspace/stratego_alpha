@@ -15,7 +15,7 @@ import edu.up.cs301.game.infoMsg.GameState;
  * @author Harry Vu,
  * @author Vincent Truong,
  * @author Kathryn Weidman
- * @version 4/20/2022
+ * @version 4/22/2022
  */
 public class StrategoGameState extends GameState implements Serializable {
 
@@ -26,8 +26,6 @@ public class StrategoGameState extends GameState implements Serializable {
     private int whoseTurn;
 
     private Unit[][] gameboard;
-    //private int roundNumber;     //will be initialized to zero, changed to indicate who's turn it is
-    private double timeElapsed;  //for the timer
 
     private ArrayList<Unit> p1Troops;
     private ArrayList<Unit> p2Troops;
@@ -44,8 +42,7 @@ public class StrategoGameState extends GameState implements Serializable {
      */
     public StrategoGameState() {
         gameboard = new Unit[10][10];
-        whoseTurn = 0;
-        timeElapsed = 0.0;
+        whoseTurn = 1;
         flagCaptured = false;
         p1Troops = new ArrayList<Unit>();
         p2Troops = new ArrayList<Unit>();
@@ -74,6 +71,7 @@ public class StrategoGameState extends GameState implements Serializable {
             }
         }
 
+        //set the water pieces directly onto the board
         gameboard[4][2] = waterPieces.get(0);
         waterPieces.get(0).setxLoc(4);
         waterPieces.get(0).setyLoc(2);
@@ -262,7 +260,7 @@ public class StrategoGameState extends GameState implements Serializable {
             bar = "" + p2Troops.get(i).nameRank() + " ";
         }
         return "Turn:" + whoseTurn + "Player 1 Troops: " + foo
-                + "Player 2 Troops: " + bar + "Time Elapsed: " + timeElapsed
+                + "Player 2 Troops: " + bar
                 + "Flag Captured?: " + flagCaptured;
     }//toString
 
@@ -320,8 +318,6 @@ public class StrategoGameState extends GameState implements Serializable {
                 }
             }
         }
-
-
         return null;
     }//findEquivUnit
 
