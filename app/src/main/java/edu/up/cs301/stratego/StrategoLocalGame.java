@@ -137,6 +137,7 @@
                 return true;
             }
             else if(action instanceof EndScoutAction){
+                //ends the scout's bonus moves, sets turn to be opponent's
                 goldie.setEndScout(true);
                 if(goldie.getWhoseTurn() == 0){
                     goldie.setWhoseTurn(1);
@@ -153,7 +154,6 @@
             else {  //every other action is caught here
                 //the following loops go through each list of troops
                 //and finds the Unit that has been selected
-
 
                 chosen = null;
                 if(goldie.getWhoseTurn() == 1){
@@ -198,13 +198,12 @@
                         //something went wrong
                         return false;
                     }
-
                         if(goldie.notScoutTurn()){
                             //it's not the scout's turn, so switch players
                             if(goldie.getWhoseTurn() == 0){
                                 goldie.setWhoseTurn(1);
                             }
-                            else{
+                            else {
                                 goldie.setWhoseTurn(0);
                             }
                             goldie.clearSelection();
@@ -257,30 +256,30 @@
         if(playerID == 1){
             //assuming player 1 is at the bottom of the board
             switch(dir){
-                case 1:
+                case 1: //up
                     newY = chosenY - 1;
                     break;
 
-                case 2:
+                case 2: //down
                     newY = chosenY + 1;
                     break;
 
-                case 3:
+                case 3: //left
                     newX = chosenX - 1;
                     break;
 
-                case 4:
+                case 4: //right
                     newX = chosenX + 1;
                     break;
             }//end switch
         }
-        else if(playerID == 0){
+        else if(playerID == 0){  //assumed to be player at top of board
             switch(dir){
-                case 1:
+                case 1: //up
                     newY = chosenY - 1;
                     break;
 
-                case 2:
+                case 2: //down
                     newY = chosenY + 1;
                     break;
 
@@ -288,14 +287,13 @@
                     newX = chosenX - 1;
                     break;
 
-                case 4:
+                case 4: //right
                     newX = chosenX + 1;
                     break;
             }//end switch
         }
 
-
-        //calls helper method to make sure we're in bounds of array
+        //calls helper method to make sure we're in bounds of gameboard array
         if(this.inBounds(newX, newY)) {
             if (gameboard[newY][newX] == null) {  //spot is already empty, go ahead and take it
                 chosen.setyLoc(newY);
@@ -340,11 +338,10 @@
 
                 }
                 else if (isSpyAttack(newX, newY, chosen) || gameboard[newY][newX].getRank() != Unit.MARSHAL){
-                    //not a bomb, free to attack
+                    //not a bomb, or it's a spy vs marshal free to attack
                     int opponentRank = gameboard[newY][newX].getRank();
                     if (opponentRank > chosen.getRank()) {   //they won
                         chosen.setDead(true);            //you die
-
                         gameboard[chosenY][chosenX] = null; //empty your spot
                         Log.i("OPP_WON_BATTLE", "akjglkjdlhskgkj");
 
@@ -406,5 +403,4 @@
             return false;
         }
     }//isSpyAttack
-
     }//class StrategoLocalGame
