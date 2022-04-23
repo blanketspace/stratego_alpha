@@ -17,6 +17,7 @@ import edu.up.cs301.game.infoMsg.NotYourTurnInfo;
 import edu.up.cs301.stratego.actions.DownAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
+import edu.up.cs301.stratego.actions.ScoutBonusAction;
 import edu.up.cs301.stratego.actions.SelectPieceAction;
 import edu.up.cs301.stratego.actions.SurrenderAction;
 import edu.up.cs301.stratego.actions.UpAction;
@@ -164,7 +165,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.exit = activity.findViewById(R.id.ExitButton);
         this.surrender = activity.findViewById(R.id.SurrenderButton);
         this.help = activity.findViewById(R.id.helpButton);
-        this.menu = activity.findViewById(R.id.menuButton);
+        //this.menu = activity.findViewById(R.id.menuButton);
 
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
@@ -206,7 +207,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         exit.setOnClickListener(this);
         surrender.setOnClickListener(this);
         help.setOnClickListener(this);
-        menu.setOnClickListener(this);
+        //menu.setOnClickListener(this);
 
         myBoardView.setOnTouchListener(this);
 
@@ -255,10 +256,10 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             /*SurrenderAction sa = new SurrenderAction(this);
             game.sendAction(sa);*/
         }
-        else if (view.getId() == R.id.menuButton){
+        /*else if (view.getId() == R.id.menuButton){
             Log.i("MENU_BUTTON_CLICKED", "lkjealkgjitjdlkgsh");
 
-        }
+        }*/
         else if (view.getId() == R.id.ExitButton){
             System.exit(1);
         }
@@ -388,8 +389,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         //match that x,y to a Unit
         Unit test = this.findUnit(x, y);
         if(test != null){
-
-            if(test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG){
+            if(test.getRank() == Unit.SCOUT){
+                ScoutBonusAction sba = new ScoutBonusAction(this);
+                game.sendAction(sba);
+            }
+            else if(test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG){
                 //TODO:  Not needed!  Let the local game send you a new game state with the selected piece
                 // (the human player should NOT change the copyGameState; instead, let the local game change
                 // the copy of the golden state!)
@@ -408,11 +412,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 
                 SelectPieceAction spa = new SelectPieceAction(this, test);
                 game.sendAction(spa);
-                CharSequence rank = test.nameRank();
-                this.selectedRank.setText(rank);
-
-                this.sendInfo(copyState);  //this probably breaks things
             }
+            CharSequence rank = test.nameRank();
+            this.selectedRank.setText(rank);
+
+            this.sendInfo(copyState);
         }
         else {
             //do nothing, since there's no Unit there
