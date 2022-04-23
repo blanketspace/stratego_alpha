@@ -257,16 +257,19 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             System.exit(1);
         }
 
-        resetDeadNum();
+        resetDeadNum();  //resets the counters for dead troops
         int pTroopsAlive = 0;
         for(int i = 0; i < copyState.getP2Troops().size(); i++){
+            //check to see if that troop is alive
             if(copyState.getP2Troops().get(i).getStatus() == false){
                 pTroopsAlive++;
             }
             else{
+                //fill graveyard
                 graveyardMethod(copyState.getP2Troops().get(i));
             }
         }
+        //set all player text views to report correct number of dead/alive troops
         yourTroops.setText("" + pTroopsAlive);
         yourCaptainsCount.setText("" + deadCap + "/4");
         yourSargeantsCount.setText("" + deadSar + "/4");
@@ -281,16 +284,19 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         yourCaptainsCount.setText("" + deadCap  + "/4");
 
 
-        resetDeadNum();
+        resetDeadNum();  //resets the counters for dead troops
         int eTroopsAlive = 0;
         for(int j = 0; j < copyState.getP1Troops().size(); j++){
+            //check to see if that troop is alive
             if(copyState.getP1Troops().get(j).getStatus() == false){
                 eTroopsAlive++;
             }
             else{
+                //fill graveyard
                 graveyardMethod(copyState.getP1Troops().get(j));
             }
         }
+        //set all enemy text views to report correct number of dead/alive troops
         enemyTroops.setText("" + eTroopsAlive);
         enemyCaptainsCount.setText("" + deadCap + "/4");
         enemySargeantsCount.setText("" + deadSar + "/4");
@@ -310,7 +316,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     /**
      * graveyardMethod
      *
-     * helper method to incriment the count of currently dead units
+     * helper method to increment the count of currently dead units
      *
      * @param unit  the Unit to add to the graveyard
      */
@@ -434,7 +440,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             }
         }
         return temp;
-    }// findRect
+    }//findRect
 
 }//StrategoHumanPlayer
 
