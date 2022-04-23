@@ -19,7 +19,7 @@ import edu.up.cs301.game.infoMsg.GameState;
  * @author Vincent Truong
  * @author Kathryn Weidman
  *
- * @version 3/29/2022
+ * @version 4/22/2022
  */
 public class StrategoMainActivity extends GameMainActivity {
 
@@ -46,13 +46,9 @@ public class StrategoMainActivity extends GameMainActivity {
                 return new StrategoHumanPlayer(name);
             }});
         playerTypes.add(new GamePlayerType("Computer Player") {
-            public GamePlayer createPlayer(String name) {
-                return new StrategoDumbCompPlayer(name);
-            }});
+            public GamePlayer createPlayer(String name) { return new StrategoDumbCompPlayer(name); }});
         playerTypes.add(new GamePlayerType("Smart Computer Player") {
-            public GamePlayer createPlayer(String name) {
-                return new StrategoSmartCompPlayer(name);
-            }});
+            public GamePlayer createPlayer(String name) { return new StrategoSmartCompPlayer(name); }});
 
         // Create a game configuration class for Stratego:
         GameConfig defaultConfig = new GameConfig(playerTypes, 1, 2,

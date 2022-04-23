@@ -219,7 +219,7 @@ public class StrategoGameState extends GameState implements Serializable {
      * @param orig  the original GameState to be copied
      * @Override
      */
-    public StrategoGameState(StrategoGameState orig){
+    public StrategoGameState(StrategoGameState orig) {
         this.gameboard = new Unit[10][10];
 
         //initialize new gameboard to be just like the old one
@@ -278,13 +278,13 @@ public class StrategoGameState extends GameState implements Serializable {
     public String boardToString() {
         StringBuilder result = new StringBuilder();
         result.append(" \n");
-        for(int i = 0; i < gameboard.length; i++){
-            for(int j = 0; j < gameboard[i].length; j++){
-                if(gameboard[i][j] == null){
+        for (int i = 0; i < gameboard.length; i++) {
+            for (int j = 0; j < gameboard[i].length; j++) {
+                if (gameboard[i][j] == null) {
                     result.append("..");
                 }
-                else{
-                    if(gameboard[i][j].getRank() < 10){
+                else {
+                    if (gameboard[i][j].getRank() < 10) {
                         result.append(" ");
                     }
                     result.append(gameboard[i][j].getRank());
@@ -309,11 +309,11 @@ public class StrategoGameState extends GameState implements Serializable {
     public Unit findEquivUnit(Unit other) {
         ArrayList<Unit> searchMe = this.p1Troops;
 
-        if(other != null){
+        if (other != null) {
             if (other.getOwnerID() == 1) {
                 searchMe = this.p2Troops;
             }
-            for(Unit u : searchMe) {
+            for (Unit u : searchMe) {
                 if ((u.getxLoc() == other.getxLoc()) && (u.getyLoc() == other.getyLoc())) {
                     return u;
                 }
@@ -385,7 +385,7 @@ public class StrategoGameState extends GameState implements Serializable {
      * @param chosenP    the Unit being selected
      *
      */
-    public boolean selectPiece(int playerID, Unit chosenP){
+    public boolean selectPiece(int playerID, Unit chosenP) {
         //Checks to see if the unit selected is one of the user's troop
         if (chosenP.getOwnerID() == playerID) {
             clearSelection();  //sets all Units to false

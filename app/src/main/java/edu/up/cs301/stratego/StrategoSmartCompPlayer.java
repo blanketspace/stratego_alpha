@@ -236,5 +236,4 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
 
     }//receiveInfo
 
-
 } //end StrategoSmartCompPlayer class

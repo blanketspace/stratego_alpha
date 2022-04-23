@@ -30,7 +30,7 @@ import edu.up.cs301.stratego.actions.UpAction;
  * @author Harry Vu
  * @author Vincent Truong
  * @author Kathryn Weidman
- * @version 4/13/2022
+ * @version 4/22/2022
  */
 public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClickListener, View.OnTouchListener {
 
@@ -259,12 +259,12 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 
         resetDeadNum();  //resets the counters for dead troops
         int pTroopsAlive = 0;
-        for(int i = 0; i < copyState.getP2Troops().size(); i++){
+        for (int i = 0; i < copyState.getP2Troops().size(); i++) {
             //check to see if that troop is alive
-            if(copyState.getP2Troops().get(i).getStatus() == false){
+            if (copyState.getP2Troops().get(i).getStatus() == false) {
                 pTroopsAlive++;
             }
-            else{
+            else {
                 //fill graveyard
                 graveyardMethod(copyState.getP2Troops().get(i));
             }
@@ -286,12 +286,12 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 
         resetDeadNum();  //resets the counters for dead troops
         int eTroopsAlive = 0;
-        for(int j = 0; j < copyState.getP1Troops().size(); j++){
+        for (int j = 0; j < copyState.getP1Troops().size(); j++) {
             //check to see if that troop is alive
-            if(copyState.getP1Troops().get(j).getStatus() == false){
+            if (copyState.getP1Troops().get(j).getStatus() == false) {
                 eTroopsAlive++;
             }
-            else{
+            else {
                 //fill graveyard
                 graveyardMethod(copyState.getP1Troops().get(j));
             }
@@ -320,38 +320,38 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      *
      * @param unit  the Unit to add to the graveyard
      */
-    public void graveyardMethod(Unit unit){
-        if(unit.getRank() == Unit.GENERAL){
+    public void graveyardMethod(Unit unit) {
+        if (unit.getRank() == Unit.GENERAL) {
             deadG++;
         }
-        else if(unit.getRank() == Unit.COLONEL){
+        else if (unit.getRank() == Unit.COLONEL) {
             deadC++;
         }
-        else if(unit.getRank() == Unit.LIEUTENANT){
+        else if (unit.getRank() == Unit.LIEUTENANT) {
             deadL++;
         }
-        else if(unit.getRank() == Unit.MINER){
+        else if (unit.getRank() == Unit.MINER) {
             deadMin++;
         }
-        else if(unit.getRank() == Unit.SPY){
+        else if (unit.getRank() == Unit.SPY) {
             deadSpy++;
         }
-        else if(unit.getRank() == Unit.MARSHAL){
+        else if (unit.getRank() == Unit.MARSHAL) {
             deadMarsh++;
         }
-        else if(unit.getRank() == Unit.MAJOR){
+        else if (unit.getRank() == Unit.MAJOR) {
             deadMaj++;
         }
-        else if(unit.getRank() == Unit.SERGEANT){
+        else if (unit.getRank() == Unit.SERGEANT) {
             deadSar++;
         }
-        else if(unit.getRank() == Unit.SCOUT){
+        else if (unit.getRank() == Unit.SCOUT) {
             deadSco++;
         }
-        else if(unit.getRank() == Unit.CAPTAIN){
+        else if (unit.getRank() == Unit.CAPTAIN) {
             deadCap++;
         }
-        else{
+        else {
             //do nothing
         }
     }//graveyardMethod
@@ -361,7 +361,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      *
      * resets the count of Units that have died
      */
-    public void resetDeadNum(){
+    public void resetDeadNum() {
         deadCap = 0;
         deadC = 0;
         deadG = 0;
@@ -394,20 +394,22 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         copyState = myBoardView.getGameState();
         //match that x,y to a Unit
         Unit test = this.findUnit(x, y);
-        if(test != null){
+        if (test != null) {
 
-            if(test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG){
+            if (test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG) {
 
                 //check to see if unit is a scout (special game rules)
-                if(test.getRank() == Unit.SCOUT){
+                if (test.getRank() == Unit.SCOUT) {
                     ScoutBonusAction sba = new ScoutBonusAction(this);
                     game.sendAction(sba);
-
                 }
                 //initial run testing message
-                Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
-                Log.i("ON TOUCH", "LOCATION ON BOARD: [" + test.getyLoc()+ ", " + test.getxLoc()+"]");
-                Log.i("ON TOUCH", "TROOP RANK:" + test.getRank() + ": " + test.nameRank());
+                Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked "
+                        + x + " " + y);
+                Log.i("ON TOUCH", "LOCATION ON BOARD: [" + test.getyLoc()+ ", "
+                        + test.getxLoc()+"]");
+                Log.i("ON TOUCH", "TROOP RANK:" + test.getRank() + ": "
+                        + test.nameRank());
 
                 SelectPieceAction spa = new SelectPieceAction(this, test);
                 game.sendAction(spa);
@@ -431,11 +433,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      *
      * @return  the Unit containing those specific xy coords
      */
-    public Unit findUnit(int x, int y){
+    public Unit findUnit(int x, int y) {
         Unit temp = null;
         //loops through the copyState and see if troops is at xy location.
-        for(int i = 0; i < copyState.getP2Troops().size(); i++){
-            if(copyState.getP2Troops().get(i).containsPoint(x, y)){
+        for (int i = 0; i < copyState.getP2Troops().size(); i++) {
+            if (copyState.getP2Troops().get(i).containsPoint(x, y)) {
                 temp = copyState.getP2Troops().get(i);
                 break;
             }

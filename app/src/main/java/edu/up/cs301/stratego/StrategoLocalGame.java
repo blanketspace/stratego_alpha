@@ -91,10 +91,10 @@
             if (goldie.isFlagCaptured()) {
                 Log.i("FLAG_CAPTURED", "jaslkgja;eorinb/ldkfn;aoirg");
                 String winner = null;
-                if(goldie.getWhoseTurn() == 0){
+                if (goldie.getWhoseTurn() == 0) {
                     winner = "Computer Player";
                 }
-                else{
+                else {
                     winner = "Human Player";
                 }
                 return "Flag Captured. " + winner +  " Wins";
@@ -117,7 +117,7 @@
         @Override
         protected boolean makeMove(GameAction action) {
             Log.i("MAKE_MOVE_CALLED", "afgerbkdfblkajd;fgjadfnba;lf");
-            if(action instanceof SelectPieceAction){
+            if (action instanceof SelectPieceAction) {
                 Log.i("SELECT_PIECE", "s;fljwogiej;rkn;aldrh;alrdk");
                 SelectPieceAction spa = (SelectPieceAction) action;
                 Unit equiv = goldie.findEquivUnit(spa.selected);
@@ -126,28 +126,27 @@
                     goldie.clearSelection();
                     equiv.setSelected(true);
 
-                    if(equiv.getRank() == Unit.SCOUT && goldie.getWhoseTurn() != 1){
+                    if (equiv.getRank() == Unit.SCOUT && goldie.getWhoseTurn() != 1) {
                         goldie.setEndScout(false);
                     }
-                    else{
+                    else {
                         goldie.setEndScout(true);
                     }
                 }
 
                 return true;
             }
-            else if(action instanceof EndScoutAction){
-                //ends the scout's bonus moves, sets turn to be opponent's
+            else if (action instanceof EndScoutAction) {
                 goldie.setEndScout(true);
-                if(goldie.getWhoseTurn() == 0){
+                if (goldie.getWhoseTurn() == 0) {
                     goldie.setWhoseTurn(1);
                 }
-                else{
+                else {
                     goldie.setWhoseTurn(0);
                 }
                 return true;
             }
-            else if(action instanceof SurrenderAction){
+            else if (action instanceof SurrenderAction) {
                 goldie.setFlagCaptured(true);
                 return true;
             }
@@ -155,52 +154,49 @@
                 //the following loops go through each list of troops
                 //and finds the Unit that has been selected
 
+
                 chosen = null;
-                if(goldie.getWhoseTurn() == 1){
-                    for(Unit u: goldie.getP1Troops()){
-                        if(u.getSelected()){
+                if (goldie.getWhoseTurn() == 1) {
+                    for (Unit u: goldie.getP1Troops()) {
+                        if (u.getSelected()) {
                             chosen = u;
                             break;
                         }
                     }
                 }
-                else{
-                    for(Unit u: goldie.getP2Troops()){
-                        if(u.getSelected()){
+                else {
+                    for (Unit u: goldie.getP2Troops()) {
+                        if (u.getSelected()) {
                             chosen = u;
                             break;
                         }
                     }
                 }
               //final check to make sure the move is legal
-                if(chosen != null && chosen.getOwnerID() != goldie.getWhoseTurn()){
-
+                if (chosen != null && chosen.getOwnerID() != goldie.getWhoseTurn()) {
                     Log.i("SELECTED_NOT_NULL", "s;lidjgaorjg;drkh");
 
                     if (action instanceof UpAction) {
                         //calls helper method to get gameboard array to match
                         this.movePiece(1, chosen, goldie.getWhoseTurn());
                         Log.i("MAKE_MOVE_UP", "UPSAKJFLKJOIEJGOIJSL:KGJLDKJG:LKJ");
-
                     }
                     else if (action instanceof DownAction) {
                         this.movePiece(2, chosen, goldie.getWhoseTurn());
-
                     }
                     else if (action instanceof LeftAction) {
                         this.movePiece(3, chosen, goldie.getWhoseTurn());
                     }
                     else if (action instanceof RightAction) {
                         this.movePiece(4, chosen, goldie.getWhoseTurn());
-
                     }
                     else {
                         //something went wrong
                         return false;
                     }
-                        if(goldie.notScoutTurn()){
+                        if (goldie.notScoutTurn()) {
                             //it's not the scout's turn, so switch players
-                            if(goldie.getWhoseTurn() == 0){
+                            if (goldie.getWhoseTurn() == 0) {
                                 goldie.setWhoseTurn(1);
                             }
                             else {
@@ -208,10 +204,8 @@
                             }
                             goldie.clearSelection();
                         }
-
                     //chosen = null;
                     return true;
-
                 }
                 else {
                     return false; //no Units were selected, therefore no moves can be made
@@ -253,33 +247,33 @@
 
         //the following ifs set chosenX/Y to the correct direction
         //(based on which side of the board the player is on)
-        if(playerID == 1){
+        if (playerID == 1) {
             //assuming player 1 is at the bottom of the board
-            switch(dir){
-                case 1: //up
+            switch(dir) {
+                case 1:
                     newY = chosenY - 1;
                     break;
 
-                case 2: //down
+                case 2:
                     newY = chosenY + 1;
                     break;
 
-                case 3: //left
+                case 3:
                     newX = chosenX - 1;
                     break;
 
-                case 4: //right
+                case 4:
                     newX = chosenX + 1;
                     break;
             }//end switch
         }
-        else if(playerID == 0){  //assumed to be player at top of board
-            switch(dir){
-                case 1: //up
+        else if (playerID == 0) {
+            switch(dir) {
+                case 1:
                     newY = chosenY - 1;
                     break;
 
-                case 2: //down
+                case 2:
                     newY = chosenY + 1;
                     break;
 
@@ -287,14 +281,15 @@
                     newX = chosenX - 1;
                     break;
 
-                case 4: //right
+                case 4:
                     newX = chosenX + 1;
                     break;
             }//end switch
         }
 
-        //calls helper method to make sure we're in bounds of gameboard array
-        if(this.inBounds(newX, newY)) {
+
+        //calls helper method to make sure we're in bounds of array
+        if (this.inBounds(newX, newY)) {
             if (gameboard[newY][newX] == null) {  //spot is already empty, go ahead and take it
                 chosen.setyLoc(newY);
                 chosen.setxLoc(newX);
@@ -337,11 +332,12 @@
                     goldie.setFlagCaptured(true);
 
                 }
-                else if (isSpyAttack(newX, newY, chosen) || gameboard[newY][newX].getRank() != Unit.MARSHAL){
-                    //not a bomb, or it's a spy vs marshal free to attack
+                else if (isSpyAttack(newX, newY, chosen) || gameboard[newY][newX].getRank() != Unit.MARSHAL) {
+                    //not a bomb, free to attack
                     int opponentRank = gameboard[newY][newX].getRank();
                     if (opponentRank > chosen.getRank()) {   //they won
                         chosen.setDead(true);            //you die
+
                         gameboard[chosenY][chosenX] = null; //empty your spot
                         Log.i("OPP_WON_BATTLE", "akjglkjdlhskgkj");
 
@@ -375,10 +371,10 @@
      *
      * @return  true if proposed x,y is in the bounds of the array
      */
-    public boolean inBounds(int x, int y){
+    public boolean inBounds(int x, int y) {
         boolean bounds = false;
-        if(x >= 0 && x < 10){
-            if(y >= 0 && y < 10){
+        if (x >= 0 && x < 10) {
+            if (y >= 0 && y < 10) {
                 bounds = true;
             }
         }
@@ -395,12 +391,13 @@
      *
      * @return true if it's a legal spy attack, false if not
      */
-    public boolean isSpyAttack(int x, int y, Unit chosen){
-        if(goldie.getGameboard()[y][x].getRank() == Unit.MARSHAL && chosen.getRank() == Unit.SPY ){
+    public boolean isSpyAttack(int x, int y, Unit chosen) {
+        if (goldie.getGameboard()[y][x].getRank() == Unit.MARSHAL && chosen.getRank() == Unit.SPY ) {
             return true;
         }
-        else{
+        else {
             return false;
         }
     }//isSpyAttack
+
     }//class StrategoLocalGame

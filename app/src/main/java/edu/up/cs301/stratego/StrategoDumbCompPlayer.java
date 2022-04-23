@@ -82,25 +82,25 @@
 
 
             //convert the temp arraylist to an array of int
-            if (temp.size() == 0) {return null;
+            if (temp.size() == 0) {
+                return null;
             }
-            else{
+            else {
                 int[] result = new int[temp.size()];
-                for(int i = 0; i < temp.size(); ++i) {
+                for (int i = 0; i < temp.size(); ++i) {
                     result[i] = temp.get(i);
                 }
-
                 return result;
             }
         }//legalDirs
 
         @Override
         protected void receiveInfo(GameInfo info) {
-            if(info instanceof StrategoGameState){
+            if (info instanceof StrategoGameState) {
                 copyGS = (StrategoGameState) info;
                 Log.i("DUMB_COMP","RECEIVED_NEW_INFO_alknrg;ladn");
 
-                if(copyGS.getWhoseTurn() == this.playerNum){
+                if (copyGS.getWhoseTurn() == this.playerNum) {
                     //if we've made it here, then it *is* this player's turn, so we can choose moves
                     Random randGen = new Random();
                     int randomDir = randGen.nextInt(4);
@@ -117,7 +117,8 @@
 
 
                         //loop to ensure a legal piece is chosen
-                        while(selected.getStatus() == true || selected.getRank() == 11 || selected.getRank() == 12){
+                        while (selected.getStatus() == true || selected.getRank() == 11
+                                || selected.getRank() == 12){
                             randomX = randGen.nextInt(39);
                             selected = copyGS.getUnit(0, randomX);
                         }
@@ -136,29 +137,29 @@
                    //wait, so the human is able to keep up
                    sleep(1000);
 
-                    if (selected != null){
+                    if (selected != null) {
                         SelectPieceAction spa = new SelectPieceAction(this, board[selected.getyLoc()][selected.getxLoc()]);
                         game.sendAction(spa);
                         Log.i("COMP_SELECTED_Piece", "asjgarjigoaet;hdjlksgjdfg");
                     }
 
                     //send move actions based on random number chosen
-                    if(dir == 1){ //moving up
+                    if (dir == 1) { //moving up
                         UpAction upAction = new UpAction(this);
                         game.sendAction(upAction);
                         Log.i("COMP_MOVED_UP", "aj;lkdjgldjgisldfjgk");
                     }
-                    else if(dir == 2){ //moving down
+                    else if (dir == 2) { //moving down
                         DownAction downAction = new DownAction(this);
                         game.sendAction(downAction);
                         Log.i("COMP_MOVED_DOWN", "ijoajglksjdlkfgjs");
                     }
-                    else if(dir == 3){ //moving left
+                    else if (dir == 3) { //moving left
                         LeftAction leftAction = new LeftAction(this);
                         game.sendAction(leftAction);
                         Log.i("COMP_MOVED_LEFT", "jkgdlkjgalkjlgkjsd");
                     }
-                    else if(dir == 4){ //moving right
+                    else if (dir == 4) { //moving right
                         RightAction rightAction = new RightAction(this);
                         game.sendAction(rightAction);
                         Log.i("COMP_MOVED_RIGHT", "ldjglajdfldkhshd'fj");
