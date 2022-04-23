@@ -222,38 +222,38 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     @Override
     public void onClick(View view) {
 
-        if (view.getId() == R.id.upButton) {
+        if (view.getId() == R.id.upButton) {//up button
             Log.i("BUTTON_CLICK", " UP_fakjhsgkajlfkga_UP_ldkfnba;ndfb;");
             UpAction ua = new UpAction(this);
             game.sendAction(ua);
             myBoardView.invalidate();
         }
-        else if (view.getId() == R.id.downButton) {
+        else if (view.getId() == R.id.downButton) {//down button
             Log.i("DOWN_BUTTON_CLICK", "ashkgjaero;igja;lkdfbnslkdfb;ldkf");
             DownAction da = new DownAction(this);
             game.sendAction(da);
         }
-        else if (view.getId() == R.id.leftButton) {
+        else if (view.getId() == R.id.leftButton) {//left button
             Log.i("LEFT_BUTTON_CLICK", "asjglaurjfaskfjasjgla");
             LeftAction la = new LeftAction(this);
             game.sendAction(la);
         }
-        else if (view.getId() == R.id.rightButton) {
+        else if (view.getId() == R.id.rightButton) {//right button
             Log.i("RIGHT_BUTTON_CLICK", "glkjdfkjglaksjklgdfklsldfk");
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
         }
-        else if(view.getId() == R.id.SurrenderButton){
+        else if(view.getId() == R.id.SurrenderButton){//surrender button
             Log.i("HUMAN_SURRENDER", "BOT_CROWNED_VICTOR_OVER_HUMANITY");
             this.sendInfo(new GameOverInfo("BOT CROWNED VICTOR OVER HUMANITY"));
         }
-        else if (view.getId() == R.id.endButton){
+        else if (view.getId() == R.id.endButton){// end  button
             Log.i("END_BUTTON_CLICKED", "lkjealkgjitjdlkgsh");
             EndScoutAction esa = new EndScoutAction(this);
             game.sendAction(esa);
 
         }
-        else if (view.getId() == R.id.ExitButton){
+        else if (view.getId() == R.id.ExitButton){ //exit
             System.exit(1);
         }
 
@@ -433,6 +433,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
      */
     public Unit findUnit(int x, int y){
         Unit temp = null;
+        //loops through the copyState and see if troops is at xy location.
         for(int i = 0; i < copyState.getP2Troops().size(); i++){
             if(copyState.getP2Troops().get(i).containsPoint(x, y)){
                 temp = copyState.getP2Troops().get(i);
