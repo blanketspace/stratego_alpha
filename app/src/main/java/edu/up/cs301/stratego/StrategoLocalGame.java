@@ -290,6 +290,7 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
                     chosen.setxLoc(newX);
                     chosen.setyLoc(newY);
                     gameboard[newY][newX] = chosen;  //fill its old spot
+                    gameboard[chosenY][chosenX] = null;  //empty your old spot
                     Log.i("BOMB_DISARMED", "alksjdgaljlkah");
                 } else {
                     //you are not a miner, you explode
@@ -303,7 +304,7 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
                 //game over!
                 goldie.setFlagCaptured(true);
             }
-            else{
+            else if (isSpyAttack(newX, newY, chosen) || gameboard[newY][newX].getRank() != Unit.MARSHAL){
                 //not a bomb, free to attack
                 int opponentRank = gameboard[newY][newX].getRank();
                 if (opponentRank > chosen.getRank()) {   //they won
@@ -313,11 +314,12 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
                     Log.i("OPP_WON_BATTLE", "akjglkjdlhskgkj");
 
                 } else {  //you won
+                    //TODO: add counter of dead troops thta incriments
                     gameboard[newY][newX].setDead(true); //they die
                     gameboard[chosenY][chosenX] = null;    //empty your spot
+                    gameboard[newY][newX] = null;
                     chosen.setxLoc(newX);
                     chosen.setyLoc(newY);
-                    
                     gameboard[newY][newX] = chosen;       //fill their old spot
                     Log.i("ATTACKER_WON_BATTLE", "sjfgklsjldkhg");
                 }
@@ -351,13 +353,20 @@ public boolean inBounds(int x, int y){
     return bounds;
 }//inBounds
 
-
-    /**
-     *
-     * @param u
-     */
-public void holdUnit(Unit u){
-    chosen = u;
+/**
+ * isSpyAttack
+ *
+ * checks to see if the Unit is a Spy
+ *
+ * @return true if it's a legal spy attack, false if not
+ */
+public boolean isSpyAttack(int x, int y, Unit chosen){
+    if(goldie.getGameboard()[y][x].getRank() == Unit.MARSHAL && chosen.getRank() == Unit.SPY ){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 
