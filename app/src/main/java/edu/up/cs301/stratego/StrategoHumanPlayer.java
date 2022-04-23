@@ -15,6 +15,7 @@ import edu.up.cs301.game.infoMsg.GameOverInfo;
 import edu.up.cs301.game.infoMsg.IllegalMoveInfo;
 import edu.up.cs301.game.infoMsg.NotYourTurnInfo;
 import edu.up.cs301.stratego.actions.DownAction;
+import edu.up.cs301.stratego.actions.EndScoutAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
 import edu.up.cs301.stratego.actions.ScoutBonusAction;
@@ -39,7 +40,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private Button left;
     private Button right;
     private Button exit;
-    private Button menu;
+    private Button end;
     private Button surrender;
     private Button help;
 
@@ -165,7 +166,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.exit = activity.findViewById(R.id.ExitButton);
         this.surrender = activity.findViewById(R.id.SurrenderButton);
         this.help = activity.findViewById(R.id.helpButton);
-        //this.menu = activity.findViewById(R.id.menuButton);
+        this.end = activity.findViewById(R.id.endButton);
 
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
@@ -207,7 +208,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         exit.setOnClickListener(this);
         surrender.setOnClickListener(this);
         help.setOnClickListener(this);
-        //menu.setOnClickListener(this);
+        end.setOnClickListener(this);
 
         myBoardView.setOnTouchListener(this);
 
@@ -253,13 +254,13 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         else if(view.getId() == R.id.SurrenderButton){
             Log.i("HUMAN_SURRENDER", "BOT_CROWNED_VICTOR_OVER_HUMANITY");
             this.sendInfo(new GameOverInfo("LMAOO LOOK AT THIS LOSER!! WHAT A CHUMP"));
-            /*SurrenderAction sa = new SurrenderAction(this);
-            game.sendAction(sa);*/
         }
-        /*else if (view.getId() == R.id.menuButton){
-            Log.i("MENU_BUTTON_CLICKED", "lkjealkgjitjdlkgsh");
+        else if (view.getId() == R.id.endButton){
+            Log.i("END_BUTTON_CLICKED", "lkjealkgjitjdlkgsh");
+            EndScoutAction esa = new EndScoutAction(this);
+            game.sendAction(esa);
 
-        }*/
+        }
         else if (view.getId() == R.id.ExitButton){
             System.exit(1);
         }
@@ -389,11 +390,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         //match that x,y to a Unit
         Unit test = this.findUnit(x, y);
         if(test != null){
-            if(test.getRank() == Unit.SCOUT){
-                ScoutBonusAction sba = new ScoutBonusAction(this);
-                game.sendAction(sba);
-            }
-            else if(test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG){
+
+            if(test.getRank() != Unit.BOMB && test.getRank() != Unit.FLAG){
                 //TODO:  Not needed!  Let the local game send you a new game state with the selected piece
                 // (the human player should NOT change the copyGameState; instead, let the local game change
                 // the copy of the golden state!)
@@ -403,6 +401,11 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 //            myBoardView.invalidate();
 //            //selectedRank.setText(test.getRank());
 
+                if(test.getRank() == Unit.SCOUT){
+                    ScoutBonusAction sba = new ScoutBonusAction(this);
+                    game.sendAction(sba);
+
+                }
                 //initial run testing message
                 Log.i("ON_TOUCH", "hey this is a rlly long message to let u know it worked " + x + " " + y);
                 Log.i("ON TOUCH", "LOCATION ON BOARD: [" + test.getyLoc()+ ", " + test.getxLoc()+"]");
