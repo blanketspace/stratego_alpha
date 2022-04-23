@@ -175,23 +175,5 @@
 
         }//receiveInfo
 
-        public void setUpDumbPieces(StrategoGameState gameState) { //Untested 4/7/22, Unsure of proper location
-            /*ArrayList<Unit> p1Troops = gameState.getP1Troops();
-            int i = 0, j = 6;
-            for(Unit troop: p1Troops) { //Coordinates for placePiece are formula from StrategoGameState
-                gameState.placePiece(playerNum, troop, i * troop.UNIT_WIDTH, j * troop.UNIT_HEIGHT);
-                troop.setDead(true);
-                switch(i) {
-                    case 9: //If we've reached the end of the row, start over a column down
-                        i = 0;
-                        j++;
-
-                        break;
-                    default:
-                        i++;
-                        break;
-                } //Possible bug: troop arraylist being too short/long causing errors in placement;
-            }*/
-        }
     }//StrategoDumbCompPlayer
 
