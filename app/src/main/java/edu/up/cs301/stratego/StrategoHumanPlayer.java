@@ -47,7 +47,42 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
     private TextView yourTroops;
     private TextView enemyTroops;
 
+    private TextView yourGeneralCount;
+    private TextView yourColonelCount;
+    private TextView yourLieutenantsCount;
+    private TextView yourMinerCount;
+    private TextView yourSpyCount;
+    private TextView yourMarshalsCount;
+    private TextView yourSargeantsCount;
+    private TextView yourScoutCount;
+    private TextView yourCaptainsCount;
+    private TextView yourMajorCount;
+
+    private TextView enemyGeneralCount;
+    private TextView enemyColonelCount;
+    private TextView enemyLieutenantsCount;
+    private TextView enemyMinerCount;
+    private TextView enemySpyCount;
+    private TextView enemyMarshalsCount;
+    private TextView enemySargeantsCount;
+    private TextView enemyScoutCount;
+    private TextView enemyCaptainsCount;
+    private TextView enemyMajorCount;
+
+
     private StrategoGameState copyState;
+
+    //number of dead troops
+    private int deadG;
+    private int deadC;
+    private int deadL;
+    private int deadMin;
+    private int deadSpy;
+    private int deadMarsh;
+    private int deadMaj;
+    private int deadSar;
+    private int deadSco;
+    private int deadCap;
 
 
     /**
@@ -140,6 +175,29 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.yourTroops = activity.findViewById(R.id.Numberyourtroops);
         this.enemyTroops = activity.findViewById(R.id.NumberEnemyTroops);
 
+
+        this.yourGeneralCount = activity.findViewById(R.id.yourGeneral);
+        this.yourColonelCount = activity.findViewById(R.id.yourColonels);
+        this.yourLieutenantsCount = activity.findViewById(R.id.yourLieutenants);
+        this.yourMinerCount = activity.findViewById(R.id.yourMiners);
+        this.yourSpyCount = activity.findViewById(R.id.yourSpy);
+        this.yourMarshalsCount = activity.findViewById(R.id.yourMarshal);
+        this.yourSargeantsCount = activity.findViewById(R.id.yourSargeants);
+        this.yourScoutCount = activity.findViewById(R.id.yourScouts);
+        this.yourCaptainsCount = activity.findViewById(R.id.yourCaptains);
+        this.yourMajorCount = activity.findViewById(R.id.yourMajors);
+
+        this.enemyGeneralCount = activity.findViewById(R.id.oppGeneral);
+        this.enemyColonelCount = activity.findViewById(R.id.oppColonels);
+        this.enemyLieutenantsCount = activity.findViewById(R.id.oppLieutenants);
+        this.enemyMinerCount = activity.findViewById(R.id.oppMiners);
+        this.enemySpyCount = activity.findViewById(R.id.oppSpy);
+        this.enemyMarshalsCount = activity.findViewById(R.id.oppMarshal);
+        this.enemySargeantsCount = activity.findViewById(R.id.oppSargeants);
+        this.enemyScoutCount = activity.findViewById(R.id.oppScouts);
+        this.enemyCaptainsCount = activity.findViewById(R.id.oppCaptains);
+        this.enemyMajorCount = activity.findViewById(R.id.oppMajors);
+
         //set onTouch and onClick listeners
         up.setOnClickListener(this);
         down.setOnClickListener(this);
@@ -205,27 +263,109 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             System.exit(1);
         }
 
+        resetDeadNum();
         int pTroopsAlive = 0;
         for(int i = 0; i < copyState.getP2Troops().size(); i++){
             if(copyState.getP2Troops().get(i).getStatus() == false){
                 pTroopsAlive++;
             }
+            else{
+                graveyardMethod(copyState.getP2Troops().get(i));
+            }
         }
         yourTroops.setText("" + pTroopsAlive);
+        yourCaptainsCount.setText("" + deadCap + "/4");
+        yourSargeantsCount.setText("" + deadSar + "/4");
+        yourColonelCount.setText("" + deadC + "/2");
+        yourMajorCount.setText("" + deadMaj + "/3");
+        yourMinerCount.setText("" + deadMin  + "/5");
+        yourScoutCount.setText("" + deadSco  + "/8");
+        yourSpyCount.setText("" + deadSpy  + "/1");
+        yourLieutenantsCount.setText("" + deadL  + "/4");
+        yourGeneralCount.setText("" + deadG  + "/1");
+        yourMarshalsCount.setText("" + deadMarsh  + "/1");
+        yourCaptainsCount.setText("" + deadCap  + "/4");
 
 
+
+        resetDeadNum();
         int eTroopsAlive = 0;
         for(int j = 0; j < copyState.getP1Troops().size(); j++){
             if(copyState.getP1Troops().get(j).getStatus() == false){
                 eTroopsAlive++;
             }
+            else{
+                graveyardMethod(copyState.getP1Troops().get(j));
+            }
         }
         enemyTroops.setText("" + eTroopsAlive);
+        enemyCaptainsCount.setText("" + deadCap + "/4");
+        enemySargeantsCount.setText("" + deadSar + "/4");
+        enemyColonelCount.setText("" + deadC + "/2");
+        enemyMajorCount.setText("" + deadMaj + "/3");
+        enemyMinerCount.setText("" + deadMin  + "/5");
+        enemyScoutCount.setText("" + deadSco  + "/8");
+        enemySpyCount.setText("" + deadSpy  + "/1");
+        enemyLieutenantsCount.setText("" + deadL  + "/4");
+        enemyGeneralCount.setText("" + deadG  + "/1");
+        enemyMarshalsCount.setText("" + deadMarsh  + "/1");
+        enemyCaptainsCount.setText("" + deadCap  + "/4");
+
 
 
 
 
     }//onClick
+
+
+    public void graveyardMethod(Unit unit){
+        if(unit.getRank() == Unit.GENERAL){
+            deadG++;
+        }
+        else if(unit.getRank() == Unit.COLONEL){
+            deadC++;
+        }
+        else if(unit.getRank() == Unit.LIEUTENANT){
+            deadL++;
+        }
+        else if(unit.getRank() == Unit.MINER){
+            deadMin++;
+        }
+        else if(unit.getRank() == Unit.SPY){
+            deadSpy++;
+        }
+        else if(unit.getRank() == Unit.MARSHAL){
+            deadMarsh++;
+        }
+        else if(unit.getRank() == Unit.MAJOR){
+            deadMaj++;
+        }
+        else if(unit.getRank() == Unit.SERGEANT){
+            deadSar++;
+        }
+        else if(unit.getRank() == Unit.SCOUT){
+            deadSco++;
+        }
+        else if(unit.getRank() == Unit.CAPTAIN){
+            deadCap++;
+        }
+        else{
+            //do nothing
+        }
+    }
+
+    public void resetDeadNum(){
+        deadCap = 0;
+        deadC = 0;
+        deadG = 0;
+        deadSco = 0;
+        deadSar = 0;
+        deadMaj = 0;
+        deadMarsh = 0;
+        deadL = 0;
+        deadMin = 0;
+        deadSpy = 0;
+    }
 
 
     /**
