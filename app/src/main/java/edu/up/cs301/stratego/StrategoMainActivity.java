@@ -49,12 +49,17 @@ public class StrategoMainActivity extends GameMainActivity {
             public GamePlayer createPlayer(String name) {
                 return new StrategoDumbCompPlayer(name);
             }});
+        playerTypes.add(new GamePlayerType("Smart Computer Player") {
+            public GamePlayer createPlayer(String name) {
+                return new StrategoSmartCompPlayer(name);
+            }});
 
         // Create a game configuration class for Stratego:
         GameConfig defaultConfig = new GameConfig(playerTypes, 1, 2,
                 "Stratego", PORT_NUMBER);
         defaultConfig.addPlayer("Human", 0); // player 1: a human player
         defaultConfig.addPlayer("Computer", 1); // player 2: a computer player
+        defaultConfig.addPlayer("Computer", 1); // player 2: a smart computer player
         defaultConfig.setRemoteData("Remote Human Player", "", 0);
 
         return defaultConfig;
