@@ -133,7 +133,7 @@
                         }
                     }
 
-
+                   //wait, so the human is able to keep up
                    sleep(1000);
 
                     if (selected != null){

@@ -128,9 +128,6 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             Log.i("HUMAN_MADE_AN_ERROR", "akljglakjf;gdl;fk;s");
             //this.flash(Color.RED, 50);
         }
-        else if(info instanceof HelpInfo){
-
-        }
         else if (!(info instanceof StrategoGameState))
             // if we do not have a SGState, ignore
             return;
@@ -245,11 +242,6 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
             Log.i("RIGHT_BUTTON_CLICK", "glkjdfkjglaksjklgdfklsldfk");
             RightAction ra = new RightAction(this);
             game.sendAction(ra);
-        }
-        else if(view.getId() == R.id.helpButton){  //or close the dialog???
-            Log.i("HELP_BUTTON_CLICKED", "lkajdlfkjs;dh;sjk");
-            this.sendInfo(new HelpInfo("OH YOU NEED HELP???"));
-
         }
         else if(view.getId() == R.id.SurrenderButton){
             Log.i("HUMAN_SURRENDER", "BOT_CROWNED_VICTOR_OVER_HUMANITY");

@@ -88,8 +88,7 @@ public class StrategoGameState extends GameState implements Serializable {
         waterPieces.get(3).setxLoc(5);
         waterPieces.get(3).setyLoc(3);
 
-
-
+        //even more water!!
         gameboard[4][6] = waterPieces.get(4);
         waterPieces.get(0).setxLoc(4);
         waterPieces.get(0).setyLoc(6);
@@ -321,26 +320,6 @@ public class StrategoGameState extends GameState implements Serializable {
         return null;
     }//findEquivUnit
 
-    //Nux note
-
-    /**
-     * selectPiece
-     *
-     *
-     * @param playerID   the id of the player attempting to choose
-     * @param chosenP    the Unit being selected
-     */
-    public boolean selectPiece(int playerID, Unit chosenP) {
-        if (chosenP.getOwnerID() == playerID) {
-            this.clearSelection();  //sets all Units to false
-            chosenP.setSelected(true); //sets selection to true
-            return true;
-        }
-        else {
-            return false;
-        }
-    }//selectPiece
-
 
     /**
      * clearSelection
@@ -358,26 +337,6 @@ public class StrategoGameState extends GameState implements Serializable {
 
     }//clearSelection
 
-
-    /**
-     * getSelectedUnit
-     *
-     * finds the Unit in the gameboard array that is selected
-     *
-     * @return   returns the Unit on the gameboard that is currently selected
-     */
-    public Unit getSelectedUnit(){
-        Unit selected = null;
-        for(int i = 0; i < this.gameboard.length; i++){
-            for(int j = 0; j < this.gameboard.length; j++){
-                if(gameboard[i][j] != null && gameboard[i][j].getSelected()){
-                    //the above condition is met when the Unit at that loc /is/ selected
-                    selected = gameboard[j][i];
-                }
-            }
-        }
-        return selected;  //CAUTION: could return false; this is handled in SLocalGame
-    }//getSelectedUnit
 
 
     /**
