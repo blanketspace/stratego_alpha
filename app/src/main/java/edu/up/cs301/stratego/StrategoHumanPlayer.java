@@ -166,6 +166,7 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         this.exit = activity.findViewById(R.id.ExitButton);
         this.surrender = activity.findViewById(R.id.SurrenderButton);
         this.help = activity.findViewById(R.id.helpButton);
+        this.end = activity.findViewById(R.id.endButton);
 
         //set up boardView variable to reference boardView on Gui
         this.myBoardView = activity.findViewById(R.id.strat_boardView);
