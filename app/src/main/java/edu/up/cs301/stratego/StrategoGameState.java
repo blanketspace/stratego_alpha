@@ -31,6 +31,8 @@ public class StrategoGameState extends GameState implements Serializable {
     private ArrayList<Unit> p2Troops;
     private ArrayList<Unit> waterPieces;
 
+    private int playerID;
+
     private boolean flagCaptured;
     private boolean endScoutTurn;  //true if the scout turn is over
 
@@ -373,6 +375,27 @@ public class StrategoGameState extends GameState implements Serializable {
             return false;
         }
     }//placePiece
+
+
+    /**
+     * selectPiece
+     *
+     *
+     * @param playerID   the id of the player attempting to choose
+     * @param chosenP    the Unit being selected
+     *
+     */
+    public boolean selectPiece(int playerID, Unit chosenP){
+        //Checks to see if the unit selected is one of the user's troop
+        if (chosenP.getOwnerID() == playerID) {
+            clearSelection();  //sets all Units to false
+            chosenP.setSelected(true); //sets selection to true
+            return true;
+        }
+        else {
+            return false;
+        }
+    }//selectPiece
 
 
     /**
