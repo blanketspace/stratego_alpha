@@ -1,6 +1,7 @@
 package edu.up.cs301.stratego;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 import edu.up.cs301.game.GameMainActivity;
 import edu.up.cs301.game.GamePlayer;
