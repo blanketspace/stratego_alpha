@@ -2,6 +2,7 @@ package edu.up.cs301.stratego;
 
 import android.util.Log;
 
+import edu.up.cs301.game.GameComputerPlayer;
 import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
@@ -115,7 +116,7 @@ public class StrategoLocalGame extends LocalGame {
                 goldie.clearSelection();
                 equiv.setSelected(true);
 
-                if(equiv.getRank() == Unit.SCOUT){
+                if(equiv.getRank() == Unit.SCOUT && goldie.getWhoseTurn() != 1){
                     goldie.setEndScout(false);
                 }
                 else{

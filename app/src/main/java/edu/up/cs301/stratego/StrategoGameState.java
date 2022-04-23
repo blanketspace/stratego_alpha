@@ -61,7 +61,6 @@ public class StrategoGameState extends GameState implements Serializable {
 
         //loop through each "hand", fill gameboard array
 
-        //TODO: can we call a method in the computer player class to determine this set up??
         //p1 aka the "top" half of board
         //i is the x, which is the row
         //j is the y, which is the column
@@ -70,7 +69,6 @@ public class StrategoGameState extends GameState implements Serializable {
                 gameboard[i][j] = p1Troops.get(10*i + j); //10*i + j necessary to keep p1Troops on track
                 Unit test = gameboard[i][j];
                 // set x and y
-                //TODO: this is something that I'm concerned about
                 test.setxLoc(j);  //changed from j*Unit_Width
                 test.setyLoc(i);
             }
@@ -111,7 +109,6 @@ public class StrategoGameState extends GameState implements Serializable {
         waterPieces.get(3).setyLoc(7);
 
 
-        //TODO: change in HUmanPlayerClass??
         //p2 aka "bottom" half of board
         int k = 0; //for math purposes-- so we can keep formulas from prev loop
         for (int i = 6; i < 10; i++) {
@@ -272,7 +269,7 @@ public class StrategoGameState extends GameState implements Serializable {
 
     /**
      * External Citation
-     * TODO: date??
+     * 4/19/2022
      * Nux Office Hours
      *
      * boardToString
