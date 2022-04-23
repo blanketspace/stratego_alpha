@@ -14,13 +14,6 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/menuButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Menu" />
-
-        <Button
             android:id="@+id/SurrenderButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -567,10 +560,20 @@
                     android:text="LEFT" />
 
                 <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_weight="1"
+                    android:text="End" />
+
+                <Button
                     android:id="@+id/rightButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="170dp"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginLeft="60dp"
                     android:text="RIGHT" />
 
             </LinearLayout>
