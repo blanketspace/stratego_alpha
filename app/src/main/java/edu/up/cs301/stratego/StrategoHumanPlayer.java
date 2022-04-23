@@ -44,6 +44,8 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
 
     private BoardView myBoardView;
     private TextView selectedRank;
+    private TextView yourTroops;
+    private TextView enemyTroops;
 
     private StrategoGameState copyState;
 
@@ -135,6 +137,9 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
        // sets up TextView to be altered later on
         this.selectedRank = activity.findViewById(R.id.DisplayRank); //TODO: doesn't work. don't know why
 
+        this.yourTroops = activity.findViewById(R.id.Numberyourtroops);
+        this.enemyTroops = activity.findViewById(R.id.NumberEnemyTroops);
+
         //set onTouch and onClick listeners
         up.setOnClickListener(this);
         down.setOnClickListener(this);
@@ -199,6 +204,25 @@ public class StrategoHumanPlayer extends GameHumanPlayer implements View.OnClick
         else if (view.getId() == R.id.ExitButton){
             System.exit(1);
         }
+
+        int pTroopsAlive = 0;
+        for(int i = 0; i < copyState.getP2Troops().size(); i++){
+            if(copyState.getP2Troops().get(i).getStatus() == false){
+                pTroopsAlive++;
+            }
+        }
+        yourTroops.setText("" + pTroopsAlive);
+
+
+        int eTroopsAlive = 0;
+        for(int j = 0; j < copyState.getP1Troops().size(); j++){
+            if(copyState.getP1Troops().get(j).getStatus() == false){
+                eTroopsAlive++;
+            }
+        }
+        enemyTroops.setText("" + eTroopsAlive);
+
+
 
 
     }//onClick
