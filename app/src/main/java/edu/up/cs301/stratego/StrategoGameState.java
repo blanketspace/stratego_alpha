@@ -34,6 +34,7 @@ public class StrategoGameState extends GameState implements Serializable {
     private ArrayList<Unit> waterPieces;
 
     private boolean flagCaptured;
+    private boolean endScoutTurn;  //true if the scout turn is over
 
 
     /**
@@ -49,6 +50,7 @@ public class StrategoGameState extends GameState implements Serializable {
         p1Troops = new ArrayList<Unit>();
         p2Troops = new ArrayList<Unit>();
         waterPieces = new ArrayList<Unit>();
+        endScoutTurn = true;
 
         for(int i = 0; i < 8; i++){
             waterPieces.add(new Unit(3, Unit.WATER));
@@ -352,7 +354,6 @@ public class StrategoGameState extends GameState implements Serializable {
      *
      * sets the isSelected value of all Units in the player's "hand" to false
      *
-     * @param playerId  the ID of the user attempting to make a selection
      */
     public void clearSelection() {
                 for (int i= 0; i < p1Troops.size(); i++) {
@@ -471,6 +472,18 @@ public class StrategoGameState extends GameState implements Serializable {
 
     public void setFlagCaptured(boolean flagCaptured) {
         this.flagCaptured = flagCaptured;
+    }
+
+    public void setEndScout(boolean end){
+        this.endScoutTurn = end;
+    }
+
+    /**
+     *
+     * @return  true if scout turn is over
+     */
+    public boolean notScoutTurn(){
+        return this.endScoutTurn;
     }
 
 }//StrategoGameState

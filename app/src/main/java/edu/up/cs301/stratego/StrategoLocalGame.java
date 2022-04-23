@@ -6,6 +6,7 @@ import edu.up.cs301.game.GamePlayer;
 import edu.up.cs301.game.LocalGame;
 import edu.up.cs301.game.actionMsg.GameAction;
 import edu.up.cs301.stratego.actions.DownAction;
+import edu.up.cs301.stratego.actions.EndScoutAction;
 import edu.up.cs301.stratego.actions.LeftAction;
 import edu.up.cs301.stratego.actions.RightAction;
 import edu.up.cs301.stratego.actions.ScoutBonusAction;
@@ -109,21 +110,40 @@ public class StrategoLocalGame extends LocalGame {
             Log.i("SELECT_PIECE", "s;fljwogiej;rkn;aldrh;alrdk");
             SelectPieceAction spa = (SelectPieceAction) action;
             Unit equiv = goldie.findEquivUnit(spa.selected);
+
             if (equiv != null) {
                 goldie.clearSelection();
                 equiv.setSelected(true);
+
+                if(equiv.getRank() == Unit.SCOUT){
+                    goldie.setEndScout(false);
+                }
+                else{
+                    goldie.setEndScout(true);
+                }
             }
 
             return true;
         }
+        else if(action instanceof EndScoutAction){
+            goldie.setEndScout(true);
+            if(goldie.getWhoseTurn() == 0){
+                goldie.setWhoseTurn(1);
+            }
+            else{
+                goldie.setWhoseTurn(0);
+            }
+            return true;
+        }
         else if(action instanceof SurrenderAction){
             goldie.setFlagCaptured(true);
-            //TODO: maybe change something so the message doesn't read "flag captured"?
             return true;
         }
         else {  //every other action is caught here
             //the following loops go through each list of troops
             //and finds the Unit that has been selected
+
+
             chosen = null;
             if(goldie.getWhoseTurn() == 1){
                 for(Unit u: goldie.getP1Troops()){
@@ -146,12 +166,9 @@ public class StrategoLocalGame extends LocalGame {
                 Log.i("SELECTED_NOT_NULL", "s;lidjgaorjg;drkh");
 
                 if (action instanceof UpAction) {
-
                     //calls helper method to get gameboard array to match
                     this.movePiece(1, chosen, goldie.getWhoseTurn());
                     Log.i("MAKE_MOVE_UP", "UPSAKJFLKJOIEJGOIJSL:KGJLDKJG:LKJ");
-
-
 
                 }
                 else if (action instanceof DownAction) {
@@ -170,19 +187,36 @@ public class StrategoLocalGame extends LocalGame {
                     return false;
                 }
 
-                if(action instanceof ScoutBonusAction){
+                /*if(action instanceof ScoutBonusAction){
                     //TODO: if end button not clicked, keep turn
-                    //else change turns
-                }
-                else{
-                    if(goldie.getWhoseTurn() == 0){
-                        goldie.setWhoseTurn(1);
+                    if(!goldie.notScoutTurn()){
+                        //the end scout turn button has not been clicked
+                        //this means the scout can still move
+
                     }
-                    else{
-                        goldie.setWhoseTurn(0);
+                    else {
+                        if(goldie.getWhoseTurn() == 0){
+                            goldie.setWhoseTurn(1);
+                        }
+                        else{
+                            goldie.setWhoseTurn(0);
+                        }
+                        goldie.clearSelection();
                     }
-                    goldie.clearSelection();
-                }
+                    //else change turns*/
+                //}
+                //else{
+                    if(goldie.notScoutTurn()){
+                        //it's not the scout's turn
+                        if(goldie.getWhoseTurn() == 0){
+                            goldie.setWhoseTurn(1);
+                        }
+                        else{
+                            goldie.setWhoseTurn(0);
+                        }
+                        goldie.clearSelection();
+                    }
+               // }
 
                 //chosen = null;
                 return true;
@@ -285,6 +319,7 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
         else if (gameboard[newY][newX].getRank() == Unit.WATER) {
             //you can't walk on water, therefore do nothing
             //TODO: do we wanna flash the screen?
+            goldie.setEndScout(true);
         }
         else if (gameboard[newY][newX].getOwnerID() == goldie.getWhoseTurn()) {  //turns and player nums are reversed
             if (gameboard[newY][newX].getRank() == Unit.BOMB) {
@@ -299,10 +334,11 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
                     chosen.setyLoc(newY);
                     gameboard[newY][newX] = chosen;  //fill its old spot
                     gameboard[chosenY][chosenX] = null;  //empty your old spot
+
                     Log.i("BOMB_DISARMED", "alksjdgaljlkah");
                 } else {
                     //you are not a miner, you explode
-
+                    goldie.setEndScout(true);  //ensure the scout ends its turn
                     gameboard[chosenY][chosenX] = null;
                     chosen.setDead(true);
                     Log.i("UNIT_EXPLODED", "lakjfdklgajdlfkhj");
@@ -310,7 +346,9 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
             }
             else if (gameboard[newY][newX].getRank() == Unit.FLAG) {
                 //game over!
+                goldie.setEndScout(true);  //ensure the scout ends its turn
                 goldie.setFlagCaptured(true);
+
             }
             else if (isSpyAttack(newX, newY, chosen) || gameboard[newY][newX].getRank() != Unit.MARSHAL){
                 //not a bomb, free to attack
@@ -331,6 +369,7 @@ public boolean movePiece(int dir, Unit chosen, int playerID) {
                     gameboard[newY][newX] = chosen;       //fill their old spot
                     Log.i("ATTACKER_WON_BATTLE", "sjfgklsjldkhg");
                 }
+                goldie.setEndScout(true);  //ensure the scout ends its turn
             }
             return true;
         }

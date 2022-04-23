@@ -130,8 +130,8 @@ public class StrategoDumbCompPlayer extends GameComputerPlayer {
                     }
                 }
 
-                //TODO: put this back in!!
-  //              sleep(2000);
+
+               sleep(1000);
 
                 if (selected != null){
                     SelectPieceAction spa = new SelectPieceAction(this, board[selected.getyLoc()][selected.getxLoc()]);
