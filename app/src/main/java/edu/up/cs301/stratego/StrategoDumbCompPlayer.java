@@ -108,7 +108,7 @@
                     Unit[][] board = copyGS.getGameboard();
                     dir = -1;
                     Unit selected = null;
-                    while(dir < 0) {  //TODO: what's this for?
+                    while(dir < 0) {
 
                         int bound = copyGS.getP1Troops().size() - 1;
                         int randomX = randGen.nextInt(bound);

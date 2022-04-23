@@ -124,7 +124,7 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
                 Unit[][] board = copyGS.getGameboard();
                 dir = -1;
                 Unit selected = null;
-                while(dir < 0) {  //TODO: what's this for?
+                while(dir < 0) {
 
                     int bound = copyGS.getP1Troops().size() - 1;
                     int randomX = randGen.nextInt(bound);
@@ -192,9 +192,7 @@ public class StrategoSmartCompPlayer extends GameComputerPlayer {
                         }
                     }
                 }
-
-                //TODO: put this back in!!
-                //              sleep(2000);
+                 sleep(1000);
 
                 if (selected != null){
                     SelectPieceAction spa = new SelectPieceAction(this, board[selected.getyLoc()][selected.getxLoc()]);

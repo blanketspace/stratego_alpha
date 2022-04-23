@@ -60,7 +60,7 @@ public class BoardView extends SurfaceView {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
                 if (board[i][j] != null) {
-                    if (board[i][j].getOwnerID() != 0) {  //TODO: this might fuck things up during network play
+                    if (board[i][j].getOwnerID() != 0) {
                         board[i][j].setObscured(false);
                     }
                     board[i][j].drawMe(canvas);
