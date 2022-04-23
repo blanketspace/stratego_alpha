@@ -211,6 +211,10 @@ public class Unit {
                 else if (this.rank == 13) {
                     //don't do anything, that's water so you don't need a number on the screen
                 }
+                else if (this.rank == 1){
+                    c.drawText("Spy", xLoc * UNIT_WIDTH + UNIT_WIDTH/10,
+                            yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
+                }
                 else {
                     c.drawText(""+this.rank, xLoc * UNIT_WIDTH + UNIT_WIDTH *2/5,
                             yLoc * UNIT_HEIGHT + UNIT_HEIGHT*2 / 3, textPaint);
